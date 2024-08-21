@@ -45,49 +45,64 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="nhsNumberRadio" method="get" class="form">
+        <form action="booking-complete" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Do you know your NHS number?
+            <h1 class="nhsuk-fieldset__heading">
+                Enter contact details
               </h1>
           </legend>
 
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>Your NHS number is a 10 digit number, like 485 777 3456.</p>
-          <p>You can find it:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>on any letter the NHS has sent you</li>
-            <li>on a prescription</li>
-            <li>by logging in to a GP practice online service</li>
-            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
-          </ul>
-        </div>
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know my NHS number
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter my name and postcode instead
-              </label>
-            </div>
-      
-          </div>
-          </div>
+            <h2 class="nhsuk-heading-s">
+                Email address (optional)
+              </h2>
+        
+              <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Email address
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm email address
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
         </fieldset>
+
+        <h2 class="nhsuk-heading-s">
+            Mobile number (optional)
+          </h2>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Mobile number
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm mobile number
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
     </form>
+
+    <p class="nhsuk-body">If you do not have a mobile number or email address</p>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
+        Continue to enter landline
+      </a>
+
       
       </div>
       <!-- End of content -->

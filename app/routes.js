@@ -74,3 +74,14 @@ router.get(/nhsNumberRadio/, function (req, res) {
                                 res.redirect('manage-appt');
                                 }
                             });
+
+// covid routes //
+
+router.get(/immuneSystem/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('what-you-can-bring');
+        }
+    });

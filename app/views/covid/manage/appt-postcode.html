@@ -45,50 +45,29 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="nhsNumberRadio" method="get" class="form">
+      <form action="access-needs" method="get" class="form">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Do you know your NHS number?
-              </h1>
-          </legend>
-
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>Your NHS number is a 10 digit number, like 485 777 3456.</p>
-          <p>You can find it:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>on any letter the NHS has sent you</li>
-            <li>on a prescription</li>
-            <li>by logging in to a GP practice online service</li>
-            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
-          </ul>
-        </div>
         <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know my NHS number
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Enter a postcode near where you'd like your appointment
+                </h1>
+              </legend>
+          
+              <label class="nhsuk-label" for="postcode">
+                Enter a postcode
               </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter my name and postcode instead
-              </label>
-            </div>
-      
+              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+
+            </fieldset>
+          
           </div>
-          </div>
-        </fieldset>
+
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>
-    </form>
-      
+        </button>    </form>
+    
       </div>
       <!-- End of content -->
 

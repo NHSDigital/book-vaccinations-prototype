@@ -1,0 +1,92 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Book, cancel or change a COVID-19 vaccination appointment
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p>Use this service to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>check if you need an appointment</li>
+        <li>book an appointment</li>
+        <li>check your exisiting appointment details</li>
+        <li>cancel your appointment</li>
+      </ul>
+
+      <p>You can use this service if you are registered with a GP surgery in England.  Find out <a class="nhsuk-link" style="text-decoration: underline;">how to register with a GP surgery</a> if you're not registered.</p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Online COVID-19 bookings closed
+          </span>
+        </h3>
+        <p>You can no longer book a COVID-19 vaccination using this service.  this also applies to the 119 service.</p>
+
+        <p>The service will reopen later in the year.  If your NHS record suggests you may be eligible for a further COVID-19 vaccination, the NHS will contact you.</p>
+
+      </div>
+      <h2 class="nhsuk-heading-l">
+        More information
+      </h2>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="#">How to get a COVID-19 vaccination</a></li>
+      </ul>      
+
+      <h3 class="nhsuk-heading-m">
+        More in <a class="nhsuk-link" style="text-decoration: underline;">COVID-19 vaccination services</a>
+      </h3>
+
+      <h2>
+        More information
+      </h2>
+
+      <p>
+          <a href="#" style="text-decoration: underline;">Find a walk-in COVID-19 vaccination appointment</a>
+      </p>
+
+      <p>
+        <a href="#" style="text-decoration: underline;">Choose whether to be invited for future vaccination</a>
+    </p>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
