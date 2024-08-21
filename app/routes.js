@@ -35,3 +35,42 @@ router.get(/nhsNumberRadio/, function (req, res) {
                 res.redirect('contact-details');
                 }
             });
+
+            router.get(/appConfirmationMessages/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('confirm-details');
+                    }
+                else {
+                    res.redirect('contact-no');
+                    }
+                });
+
+                router.get(/contactDetailsCorrect/, function (req, res) {
+                    if (req.query.radioGroup === "yes" ) {
+                        res.redirect('booking-complete');
+                        }
+                    else {
+                        res.redirect('contact-details');
+                        }
+                    });
+
+                    router.get(/manageAppointment/, function (req, res) {
+                        if (req.query.radioGroup === "change" ) {
+                            res.redirect('appt-postcode');
+                            }
+                        else if (req.query.radioGroup === "cancel" ) {
+                            res.redirect('cancel-sure');
+                            }
+                        else {
+                                res.redirect('index');
+                                }
+                        });
+
+                        router.get(/cancelAppointment/, function (req, res) {
+                            if (req.query.radioGroup === "yes" ) {
+                                res.redirect('appt-cancelled');
+                                }
+                            else {
+                                res.redirect('manage-appt');
+                                }
+                            });
