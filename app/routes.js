@@ -85,3 +85,14 @@ router.get(/immuneSystem/, function (req, res) {
         res.redirect('what-you-can-bring');
         }
     });
+
+
+    router.get(/confirmChange/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('confirmation-messages');
+            }
+        else {
+            res.redirect('manage-appt');
+            }
+        });
+    

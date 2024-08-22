@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -49,14 +49,14 @@ Book vaccinations prototype
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
                 <h1 class="nhsuk-fieldset__heading">
                   Enter a postcode near where you'd like your appointment
                 </h1>
               </legend>
           
               <label class="nhsuk-label" for="postcode">
-                Enter a postcode
+                Enter a full postcode
               </label>
               <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
 

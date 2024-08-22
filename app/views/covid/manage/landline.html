@@ -45,46 +45,51 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="areYouSure" method="get" class="form">
+        <form action="booking-complete" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
             <h1 class="nhsuk-fieldset__heading">
-                Are you sure?
+                Enter a landline
               </h1>
           </legend>
+
           <div class="nhsuk-warning-callout">
             <h3 class="nhsuk-warning-callout__label">
               <span role="text">
-               Important
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Important
               </span>
             </h3>
-            <p>If you do not provide contact details, we will not be able to let you know if your appointment has been cancelled.</p>
+            <p>If you only leave a landline, we cannot send you confirmation or reminder messages.  If the site needs to cancel your appointment, they may use this number to call you.</p>
           </div>
 
-          <div class="nhsuk-radios">
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="are-you-sure-1" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-1">
-                Yes, I understand I will not recieve confirmation, reminder or cancellation messages
-              </label>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Landline including area code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              For example, 0113 496 0845 or +44 207946 0310
             </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="are-you-sure-2" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-2">
-                No, I want to receive confirmation, reminder and cancellation messages
-              </label>
-            </div>
-      
-          </div>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm landline including area code
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
         </fieldset>
-        <br><br>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
+          Complete booking
         </button>
     </form>
+
+    <p class="nhsuk-body">If you do not have a mobile number or email address</p>
+
+
       
       </div>
       <!-- End of content -->
