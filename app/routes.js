@@ -96,3 +96,23 @@ router.get(/immuneSystem/, function (req, res) {
             }
         });
     
+
+// flu routes //
+
+router.get(/eligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('what-you-can-bring');
+        }
+    });
+
+    router.get(/coAdmin/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('coadmin/appt-postcode');
+            }
+        else {
+            res.redirect('appt-postcode');
+            }
+        });

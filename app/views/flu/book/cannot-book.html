@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -35,7 +35,6 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -45,51 +44,48 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="booking-complete" method="get" class="form">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading">
-                Enter a landline
-              </h1>
-          </legend>
+      <form action="choose-appt" method="get" class="form">
 
-          <div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">
-              <span role="text">
-                <span class="nhsuk-u-visually-hidden">Important: </span>
-                Important
-              </span>
-            </h3>
-            <p>If you only leave a landline, we cannot send you confirmation or reminder messages.  If the site needs to cancel your appointment, they may use this number to call you.</p>
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                  You are not able to book an appointment
+                </h1>
+              </legend>
+
+              <p class="nhsuk-body">You can <a class="nhsuk-link" href="#">read more about the flu vaccine, including where to get it</a></p>
+
+            </fieldset>
+          
+          </div>
+    
+        <a class="nhsuk-button" href="index">
+            Back to start
+          </a>
+    </form>
+    
+    <div class="nhsuk-card nhsuk-card--feature">
+        <div class="nhsuk-card__content">
+            <h5 class="nhsuk-card__heading nhsuk-heading-l">
+                Help us improve our website
+              </h5>
+
+            <p class="nhsuk-card__description">
+                Can you answer some questions about your visit today?
+            </p>
+
+            <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                <a href="#">
+                Take our survey
+                
+                </a>
+                </p>
           </div>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="email">
-              Landline including area code
-            </label>
-            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              For example, 0113 496 0845 or +44 207946 0310
-            </div>
-            <input class="nhsuk-input" id="email" name="email" type="text">
-          </div> 
-          
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="confirm-email">
-              Confirm landline including area code
-            </label>
-            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
-          </div> 
-        </fieldset>
-        
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Complete booking
-        </button>
-    </form>
+    </div>        
 
-
-
-      
       </div>
       <!-- End of content -->
 

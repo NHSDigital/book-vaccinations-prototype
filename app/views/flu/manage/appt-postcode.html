@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,51 +45,29 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="booking-complete" method="get" class="form">
+      <form action="access-needs" method="get" class="form">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-            <h1 class="nhsuk-fieldset__heading">
-                Enter a landline
-              </h1>
-          </legend>
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                  Enter a postcode near where you'd like your appointment
+                </h1>
+              </legend>
+          
+              <label class="nhsuk-label" for="postcode">
+                Enter a full postcode
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
 
-          <div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">
-              <span role="text">
-                <span class="nhsuk-u-visually-hidden">Important: </span>
-                Important
-              </span>
-            </h3>
-            <p>If you only leave a landline, we cannot send you confirmation or reminder messages.  If the site needs to cancel your appointment, they may use this number to call you.</p>
+            </fieldset>
+          
           </div>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="email">
-              Landline including area code
-            </label>
-            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              For example, 0113 496 0845 or +44 207946 0310
-            </div>
-            <input class="nhsuk-input" id="email" name="email" type="text">
-          </div> 
-          
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="confirm-email">
-              Confirm landline including area code
-            </label>
-            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
-          </div> 
-        </fieldset>
-        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Complete booking
-        </button>
-    </form>
-
-
-
-      
+          Continue
+        </button>    </form>
+    
       </div>
       <!-- End of content -->
 

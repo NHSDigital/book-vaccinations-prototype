@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -48,46 +48,63 @@ Book vaccinations prototype
         <form action="booking-complete" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-                Enter a landline
+                Enter contact details
               </h1>
           </legend>
-
-          <div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">
-              <span role="text">
-                <span class="nhsuk-u-visually-hidden">Important: </span>
-                Important
-              </span>
-            </h3>
-            <p>If you only leave a landline, we cannot send you confirmation or reminder messages.  If the site needs to cancel your appointment, they may use this number to call you.</p>
+          <div class="nhsuk-hint" id="contact-hint">
+            Enter contact details for the person you want to be notified.
           </div>
 
-          <div class="nhsuk-form-group">
+            <h2 class="nhsuk-heading-m">
+                Email address (optional)
+              </h2>
+        
+              <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="email">
-              Landline including area code
+              Email address
             </label>
-            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              For example, 0113 496 0845 or +44 207946 0310
-            </div>
             <input class="nhsuk-input" id="email" name="email" type="text">
           </div> 
           
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="confirm-email">
-              Confirm landline including area code
+              Confirm email address
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+
+        <h2 class="nhsuk-heading-m">
+            Mobile number (optional)
+          </h2>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Mobile number
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm mobile number
             </label>
             <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
           </div> 
         </fieldset>
         
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Complete booking
+          Continue
         </button>
     </form>
 
+    <h3 class="nhsuk-heading-xs">If you do not have a mobile number or email address</h3>
 
+    <a class="nhsuk-button nhsuk-button--secondary" href="landline">
+        Continue to enter landline
+      </a>
 
       
       </div>
