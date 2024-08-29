@@ -29,48 +29,76 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
       <!-- Change the page title here -->
-      <h1>
+      <h1 class="nhsuk-heading-xl">
         Book a vaccination prototype
       </h1>
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <h3>Respiratory Syncytial Virus (RSV)</h3>
 
-      <h4>Version 6 - August 24</h4>
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link" href="rsv-index">RSV</a>
+                <p class="nhsuk-card__description">RSV journeys from August 2024 onwards.</p>
+              </h5>
+      
+            </div>
+          </div>
+      
+        </li>
 
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="rsv-v6/book/index" class="nhsuk-link">Book an appointment</a></li>
-      <li><a href="rsv-v6/app/index" class="nhsuk-link">Book an appointment (via NHS app)</a></li>
-      <li><a href="rsv-v6/manage/index" class="nhsuk-link">Manage an appointment</a></li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link" href="covid-index">COVID-19</a>
+                <p class="nhsuk-card__description">COVID-19 journeys from August 2024 onwards.</p>
+              </h5>
+      
+            </div>
+          </div>
+      
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link" href="flu-index">Flu</a>
+                <p class="nhsuk-card__description">Flu journeys from August 2024 onwards.</p>
+              </h5>
+      
+            </div>
+          </div>
+      
+        </li>
       </ul>
 
-
-      <h3>COVID</h3>
-
-      <h4>E2E IT1 - August 24</h4>
+      <h2 class="nhsuk-heading-l">Kickout/error pages - August 24</h2>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="covid/book/nhs-no-radio" class="nhsuk-link">Book an appointment</a></li>
-      <li><a href="covid/manage/ref-no" class="nhsuk-link">Manage an appointment</a></li>
+        <li><a href="rsv-v6/time-out" class="nhsuk-link">Time-out - book</a></li>
+        <li><a href="rsv-v6/time-out-manage" class="nhsuk-link">Time-out - manage</a></li>
+      <li><a href="rsv-v6/details-no-match" class="nhsuk-link">details not matched</a></li>
+      <li><a href="rsv-v6/ineligible" class="nhsuk-link">ineligible</a></li>
+      <li><a href="rsv-v6/no-sites" class="nhsuk-link">No sites available</a></li>
+      <li><a href="rsv-v6/cancel-fail" class="nhsuk-link">Appointment cancellation failure</a></li>
+      <li><a href="rsv-v6/change-fail" class="nhsuk-link">Appointment change failure</a></li>
+      <li><a href="rsv-v6/date-fail" class="nhsuk-link">Appointment date no longer available</a></li>
+      <li><a href="rsv-v6/error" class="nhsuk-link">Error page</a></li>
+      <li><a href="rsv-v6/technical-error" class="nhsuk-link">Technical error page</a></li>
       </ul>
 
-      <p><a href="covid/booking-complete" class="nhsuk-link">Confirmation page - August 24</a></p>
-
-      <h3>Flu</h3>
-
-      <h4>E2E IT1 - August 24</h4>
-
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="flu/book/nhs-no-radio" class="nhsuk-link">Book an appointment</a></li>
-      <li><a href="flu/manage/ref-no" class="nhsuk-link">Manage an appointment</a></li>
-      </ul>
-
-      <p><a href="flu/booking-complete" class="nhsuk-link">Confirmation page - August 24</a></p>
       <!-- End of content -->
 
     </div>

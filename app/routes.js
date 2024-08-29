@@ -116,3 +116,15 @@ router.get(/eligibleFlu/, function (req, res) {
             res.redirect('appt-postcode');
             }
         });
+
+        router.get(/detailsNoMatch/, function (req, res) {
+            if (req.query.radioGroup === "nhsnumber" ) {
+                res.redirect('book/nhs-no');
+                }
+            else if (req.query.radioGroup === "name" ) {
+                res.redirect('book/name');
+                }
+            else {
+                    res.redirect('book/index');
+                    }
+            });
