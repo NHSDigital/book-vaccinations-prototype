@@ -82,7 +82,7 @@ router.get(/immuneSystem/, function (req, res) {
         res.redirect('cannot-book');
         }
     else {
-        res.redirect('what-you-can-bring');
+        res.redirect('choose-appt');
         }
     });
 
@@ -104,7 +104,7 @@ router.get(/eligibleFlu/, function (req, res) {
         res.redirect('cannot-book');
         }
     else {
-        res.redirect('what-you-can-bring');
+        res.redirect('choose-appt');
         }
     });
 
