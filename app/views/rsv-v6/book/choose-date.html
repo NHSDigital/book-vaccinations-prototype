@@ -53,7 +53,7 @@ Book vaccinations prototype
                 Choose a date
               </h1>
           </legend>
-          <p>Crosby Lakeside Centre, Crosby Marina, Crosby, L22 2NP</p>
+          <p>{{data['pharmacy']}}</p>
 
           <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
@@ -66,9 +66,9 @@ Book vaccinations prototype
           <div class="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="radioGroup" type="radio" value="25sep">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday 9 September">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                Monday 25 September
+                Monday 9 September
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -77,16 +77,50 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="radioGroup" type="radio" value="30sep">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday 10 September">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Saturday 30 September
+                Tuesday 10 September
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
                 PM - Unavailable
               </div>
             </div>
-      
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday 11 September">
+              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
+                Wednesday 11 September
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                AM - Available <br>
+                PM - Unavailable
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday 12 September">
+              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
+                Thursday 12 September
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                AM - Available <br>
+                PM - Unavailable
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday 13 September">
+              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
+                Friday 13 September
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                AM - Available <br>
+                PM - Unavailable
+              </div>
+            </div>
+
+
           </div>
           </div>
         </fieldset>

@@ -75,12 +75,8 @@ Book vaccinations prototype
                         Site location
                       </h5>
 
-                    <p class="nhsuk-card__description">
-                        Crosby Lakeside Centre<br>
-                        Crosby Marina<br>
-                        Sefton<br>
-                        L22 1AP
-                    </p>
+                      <p>{{data['pharmacy']}}</p>
+
 
                     <p class="nhsuk-body">
                         <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
@@ -95,7 +91,7 @@ Book vaccinations prototype
                           </h5>
     
                         <p class="nhsuk-card__description">
-                            Thursday 18 September at 10:15am
+                          {{data['date']}} at {{data['time']}}
                         </p>
     
                 
