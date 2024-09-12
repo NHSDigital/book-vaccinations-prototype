@@ -48,16 +48,15 @@ Book vaccinations prototype
         <form action="choose-time" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1>
                 Choose a time range
               </h1>
           </legend>
-          <p>Integration Test Site, Site Address</p>
+          <p>{{data['pharmacy']}}</p>
 
-          <hr>
 
-          <h2 class="nhsuk-heading-l">Available time ranges</h2>
+          <p class="nhsuk-body-l">Available time ranges</p>
       
 
         <div class="nhsuk-form-group">
@@ -96,7 +95,7 @@ Book vaccinations prototype
         </button>
     </form>
 
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-site">
+    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
         Choose a different site
       </a>
 

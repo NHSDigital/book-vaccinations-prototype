@@ -82,7 +82,7 @@ router.get(/immuneSystem/, function (req, res) {
         res.redirect('cannot-book');
         }
     else {
-        res.redirect('choose-appt');
+        res.redirect('co-admin');
         }
     });
 

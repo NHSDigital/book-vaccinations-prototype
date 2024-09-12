@@ -46,7 +46,7 @@ Book vaccinations prototype
       </div>-->
 
 
-            <h1 class="nhsuk-heading-l">
+            <h1 class="nhsuk-heading-xl">
                 Your appointment
               </h1>
 
@@ -56,14 +56,15 @@ Book vaccinations prototype
                       Booking complete
                     </h3>
             
-                    <p class="nhsuk-card__description nhsuk-u-font-size-22">Your reference number <span  class="nhsuk-u-font-weight-bold">112912</span></p>
+                    <p class="nhsuk-card__description nhsuk-u-font-size-22">Your reference number <span  class="nhsuk-u-font-weight-bold">1583033</span></p>
 
                     <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  you'll need it to view or cancel your appointment.</p>
                   </div>
         
             </div>
 
-            <h3 class="nhsuk-heading-m">
+            <hr>
+            <h3 class="nhsuk-heading-l">
                 Your appointment details
               </h3>
 
@@ -74,10 +75,8 @@ Book vaccinations prototype
                         Site location
                       </h5>
 
-                    <p class="nhsuk-card__description">
-                        Integration Test Site<br>
-                        Site Address
-                    </p>
+                      <p>{{data['pharmacy']}}</p>
+
 
                     <p class="nhsuk-body">
                         <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
@@ -92,7 +91,7 @@ Book vaccinations prototype
                           </h5>
     
                         <p class="nhsuk-card__description">
-                            Sunday 25 August at 8:10am
+                          {{data['date']}} at {{data['time']}}
                         </p>
     
                 
@@ -102,12 +101,14 @@ Book vaccinations prototype
     
                         <p class="nhsuk-card__description">
                             Flu and COVID-19
+
                         </p>
 
                   </div>
         
             </div>        
-            <a href="#" class="nhsuk-link">Print this page</a>
+
+            <hr>
 
             <div class="nhsuk-card nhsuk-card--feature">
                 <div class="nhsuk-card__content">
@@ -127,13 +128,14 @@ Book vaccinations prototype
                         </p>
                   </div>
         
-            </div>   
+            </div>  
             
             <h5 class="nhsuk-heading-m">More ways to feel your best this autumn and winter</h5>
 
             <p class="nhsuk-body">Find over 100 healthy and easy-to-follow recipes to try out this autumn and winter. These fun and simple step by step recipes include breakfast, dinner, snacks and desserts.</p>
 
             <p class="nhsuk-body"><a href="#" class="nhsuk-link">Visit the Healthier Families website</a></p>
+
 
       </div>
       <!-- End of content -->

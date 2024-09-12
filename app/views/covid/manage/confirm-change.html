@@ -66,31 +66,29 @@ Book vaccinations prototype
 
 
             <div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
+              <div class="nhsuk-card__content">
+                <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                    Site location
+                  </h5>
+
+                  <p>{{data['pharmacy']}}</p>
+
+
+                <p class="nhsuk-body">
+                    <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
+                    Map and directions (opens in Google maps)
+                    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                    </a>
+                    </p>
+                    
+
                     <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                        Site location
+                        Date and time
                       </h5>
 
                     <p class="nhsuk-card__description">
-                        Integration Test Site<br>
-                        Site Address
+                      {{data['date']}} at {{data['time']}}
                     </p>
-
-                    <p class="nhsuk-body">
-                        <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
-                        Map and directions (opens in Google maps)
-                        <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                        </a>
-                        </p>
-                        
-
-                        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Date and time
-                          </h5>
-    
-                        <p class="nhsuk-card__description">
-                            Thursday 18 September at 10:15am
-                        </p>
     
                 
                         <h5 class="nhsuk-card__heading nhsuk-heading-xs">

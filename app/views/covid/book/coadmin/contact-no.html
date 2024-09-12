@@ -45,78 +45,46 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="confirm-change" method="get" class="form">
+        <form action="areYouSure" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose an appointment time
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Are you sure?
               </h1>
           </legend>
-          <p>{{data['pharmacy']}}</p>
-
-
-          <p class="nhsuk-body-l">Available appointment times</p>
-      
-
-        <div class="nhsuk-form-group">
-            
-          <div class="nhsuk-radios">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:10am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:10am
-              </label>
-            </div>
-            
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:20am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:20am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:30am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:30am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:40am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:40am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:50am">
-                <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                  8:50am
-                </label>
-              </div>
-      
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+               Important
+              </span>
+            </h3>
+            <p>If you do not provide contact details, we will not be able to let you know if your appointment has been cancelled.</p>
           </div>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="are-you-sure-1" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-1">
+                Yes, I understand I will not recieve confirmation, reminder or cancellation messages
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="are-you-sure-2" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-2">
+                No, I want to receive confirmation, reminder and cancellation messages
+              </label>
+            </div>
+      
           </div>
         </fieldset>
-        
+        <br><br>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
     </form>
-
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different site
-      </a>
-
       
       </div>
       <!-- End of content -->

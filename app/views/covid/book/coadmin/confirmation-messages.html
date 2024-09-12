@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,78 +45,46 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="confirm-change" method="get" class="form">
+        <form action="confirmationMessages" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1>
-                Choose an appointment time
+                Can we send you confirmation, reminder and cancellation messages?
               </h1>
           </legend>
-          <p>{{data['pharmacy']}}</p>
 
-
-          <p class="nhsuk-body-l">Available appointment times</p>
-      
-
+          <div class="nhsuk-hint" id="nhs-number-hint">
+          <p>We will only contact you to send:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>a confirmation and reminder message with a booking reference number</li>
+            <li>a cancellation message if the appointment needs to be changed</li>
+          </ul>
+        </div>
         <div class="nhsuk-form-group">
-            
           <div class="nhsuk-radios">
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8am
+              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-yes">
+                Yes
               </label>
             </div>
-
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:10am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:10am
+              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-no">
+                No
               </label>
             </div>
-            
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:20am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:20am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:30am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:30am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:40am">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:40am
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="8:50am">
-                <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                  8:50am
-                </label>
-              </div>
       
           </div>
           </div>
         </fieldset>
-        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
     </form>
-
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different site
-      </a>
-
       
       </div>
       <!-- End of content -->
