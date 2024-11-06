@@ -128,3 +128,14 @@ router.get(/eligibleFlu/, function (req, res) {
                     res.redirect('book/index');
                     }
             });
+
+// RSV pregnancy SR //
+
+router.get(/rsvPregnant/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('choose-appt');
+        }
+    else {
+        res.redirect('../ineligible');
+        }
+    });
