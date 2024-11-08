@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,41 +45,50 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="rsvPregnant" method="get" class="form">
-
-            <h1>
-              Are you over 28 weeks pregnant?
-              </h1>
-
-          <p class="nhsuk-body">As you're under 65, you're only able to get an RSV vaccine if you're over 28 weeks pregnant.</p>
+        <form action="booking-complete" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, I am over 28 weeks pregnant
-              </label>
-            </div>
-      
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Enter a landline
+              </h1>
+          </legend>
 
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
-                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, I am not over 28 weeks pregnant
-                </label>
-              </div>
-  
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Important
+              </span>
+            </h3>
+            <p>If you only leave a landline, we cannot send you confirmation or reminder messages.  If the site needs to cancel your appointment, they may use this number to call you.</p>
           </div>
-          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Landline including area code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              For example, 0113 496 0845 or +44 207946 0310
+            </div>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm landline including area code
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
         </fieldset>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
+          Complete booking
         </button>
     </form>
+
+
+
       
       </div>
       <!-- End of content -->
