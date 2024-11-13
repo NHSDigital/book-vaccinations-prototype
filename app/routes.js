@@ -136,6 +136,6 @@ router.get(/rsvPregnant/, function (req, res) {
         res.redirect('choose-appt');
         }
     else {
-        res.redirect('../ineligible');
+        res.redirect('../ineligible-pregnancy');
         }
     });
