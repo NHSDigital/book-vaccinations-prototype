@@ -139,3 +139,15 @@ router.get(/rsvPregnant/, function (req, res) {
         res.redirect('../ineligible-pregnancy');
         }
     });
+
+
+// RSV V-7 - joint booking routes //
+
+router.get(/jointBooking/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('joint/nhs-no-radio');
+        }
+    else {
+        res.redirect('nhs-no-radio');
+        }
+    });
