@@ -45,65 +45,62 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="choose-time" method="get" class="form">
+        <form action="contact-details-2" method="post" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose a time range
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Enter contact details for Jean Davidson
               </h1>
           </legend>
 
-          <p>Booking for:</p>
-          <ul class="nhsuk-list  nhsuk-list--bullet">
-            <li>Jean Davidson</li>
-            <li>Roger Davidson</li>
-          </ul>
-    
-          <p>{{data['pharmacy']}}</p>
-
-
-          <p class="nhsuk-body-l">Available time ranges</p>
-      
-
-        <div class="nhsuk-form-group">
-            
-          <div class="nhsuk-radios">
-        <p class="nhsuk-u-font-weight-bold">AM</p>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="8to9">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                8am to 9am
-              </label>
-            </div>
-            <br>
-            <p class="nhsuk-u-font-weight-bold">PM</p>
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="2to3">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                2pm to 3pm
-              </label>
-            </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="6to7">
-                <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                  6pm to 7pm
-                </label>
-              </div>
-      
-          </div>
-          </div>
+            <h2 class="nhsuk-heading-s">
+                Email address (optional)
+              </h2>
+        
+              <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Email address
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm email address
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
         </fieldset>
 
+        <h2 class="nhsuk-heading-s">
+            Mobile number (optional)
+          </h2>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Mobile number
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm mobile number
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue and choose appointment time
+          Continue
         </button>
     </form>
 
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different site
+    <p class="nhsuk-body">If you do not have a mobile number or email address</p>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="landline">
+        Continue to enter landline
       </a>
 
       

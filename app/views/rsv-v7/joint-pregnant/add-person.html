@@ -45,67 +45,63 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="choose-time" method="get" class="form">
+        <form action="addPerson" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose a time range
+            <h1 class="nhsuk-heading-xl">
+                Do you want to add another person to this booking?
               </h1>
           </legend>
 
-          <p>Booking for:</p>
-          <ul class="nhsuk-list  nhsuk-list--bullet">
-            <li>Jean Davidson</li>
-            <li>Roger Davidson</li>
-          </ul>
-    
-          <p>{{data['pharmacy']}}</p>
-
-
-          <p class="nhsuk-body-l">Available time ranges</p>
-      
-
-        <div class="nhsuk-form-group">
-            
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">You can book an appointment for these people</caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  NHS Number
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Date of birth
+                  </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Jane Roberts</td>
+                <td class="nhsuk-table__cell ">999 123 4563</td>
+                <td class="nhsuk-table__cell ">4 March 1988</td>
+              </tr>
+            </tbody>
+          </table>        
+          
+          <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
-        <p class="nhsuk-u-font-weight-bold">AM</p>
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="8to9">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                8am to 9am
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
+                Yes, add another person
               </label>
             </div>
-            <br>
-            <p class="nhsuk-u-font-weight-bold">PM</p>
-
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="2to3">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                2pm to 3pm
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
+                No, Continue without adding anyone else
               </label>
             </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="6to7">
-                <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                  6pm to 7pm
-                </label>
-              </div>
       
           </div>
           </div>
         </fieldset>
-
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue and choose appointment time
+          Continue
         </button>
     </form>
-
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different site
-      </a>
-
       
       </div>
       <!-- End of content -->

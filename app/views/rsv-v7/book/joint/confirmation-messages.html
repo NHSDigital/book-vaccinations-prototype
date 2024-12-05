@@ -45,7 +45,7 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="confirmationMessages" method="get" class="form">
+        <form action="jointConfirmationMessages" method="post" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -60,27 +60,43 @@ Book vaccinations prototype
             <li>a confirmation and reminder message with a booking reference number</li>
             <li>a cancellation message if the appointment needs to be changed</li>
           </ul>
+          <p>Select who you want us to send confirmation, reminder and cancellation messages to</p>
+
         </div>
         <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="symptoms-hint">
       
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-yes">
-                Yes
-              </label>
+            <div class="nhsuk-checkboxes">
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="messages-1" name="messages" type="checkbox" value="jean" data-checkbox-exclusive-group="symptoms-list">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-1">
+                  Jean Davidson
+                </label>
+              </div>
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="messages-2" name="messages" type="checkbox" value="roger" data-checkbox-exclusive-group="symptoms-list">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-2">
+                  Roger Davidson
+                </label>
+              </div>
+      
+      
+              <div class="nhsuk-checkboxes__divider">or</div>
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="messages-5" name="messages" type="checkbox" value="none" data-checkbox-exclusive data-checkbox-exclusive-group="symptoms-list">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-5">
+                  Don't send messages to anyone
+                </label>
+              </div>
+      
             </div>
+          </fieldset>
       
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-no">
-                No
-              </label>
-            </div>
-      
-          </div>
-          </div>
-        </fieldset>
+        </div>        </fieldset>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>

@@ -5,8 +5,6 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
-module.exports = router;
-
 // RSV routes //
 
 router.get(/nhsNumberRadio/, function (req, res) {
@@ -151,3 +149,73 @@ router.get(/jointBooking/, function (req, res) {
         res.redirect('nhs-no-radio');
         }
     });
+
+    router.get(/addPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('nhs-no-radio2');
+            }
+        else {
+            res.redirect('appt-postcode');
+            }
+        });
+
+        router.post(/jointConfirmationMessages/, function (req, res) {
+            var messages = req.session.data['messages']
+            if (messages.includes("jean")) {
+                res.redirect('contact-details-1');
+                }
+            else if (messages.includes("roger")) {
+                res.redirect('contact-details-2');
+                }
+            else {
+                res.redirect('contact-no');
+                }
+            });
+        
+            router.get(/jointAreYouSure/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('booking-complete');
+                    }
+                else {
+                    res.redirect('confirmation-messages');
+                    }
+                });
+
+        router.get(/jointNhsNumberRadio/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('nhs-no2');
+                }
+            else {
+                res.redirect('name2');
+                }
+            });
+
+            router.get(/pregnantJointBooking/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('nhs-no-radio');
+                    }
+                else {
+                    res.redirect('pregnant/nhs-no-radio');
+                    }
+                });
+
+                router.get(/rsvJointBookingPregnant/, function (req, res) {
+                    if (req.query.radioGroup === "yes" ) {
+                        res.redirect('add-person');
+                        }
+                    else {
+                        res.redirect('ineligible-pregnancy');
+                        }
+                    });
+
+                    router.get(/pregnantCoAdmin/, function (req, res) {
+                        if (req.query.radioGroup === "yes" ) {
+                            res.redirect('co-admin/appt-postcode');
+                            }
+                        else {
+                            res.redirect('appt-postcode');
+                            }
+                        });
+                        
+                        
+module.exports = router;

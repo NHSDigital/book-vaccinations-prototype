@@ -45,67 +45,49 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="choose-time" method="get" class="form">
+        <form action="jointNhsNumberRadio" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose a time range
+            <h1 class="nhsuk-heading-xl">
+                Do you know their NHS number?
               </h1>
           </legend>
 
-          <p>Booking for:</p>
-          <ul class="nhsuk-list  nhsuk-list--bullet">
-            <li>Jean Davidson</li>
-            <li>Roger Davidson</li>
+          <div class="nhsuk-hint" id="nhs-number-hint">
+          <p>Your NHS number is a 10 digit number, like 485 777 3456.</p>
+          <p>You can find it:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>on any letter the NHS has sent you</li>
+            <li>on a prescription</li>
+            <li>by logging in to a GP practice online service</li>
+            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
           </ul>
-    
-          <p>{{data['pharmacy']}}</p>
-
-
-          <p class="nhsuk-body-l">Available time ranges</p>
-      
-
+        </div>
         <div class="nhsuk-form-group">
-            
           <div class="nhsuk-radios">
-        <p class="nhsuk-u-font-weight-bold">AM</p>
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="8to9">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                8am to 9am
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
+                Yes, I know my NHS number
               </label>
             </div>
-            <br>
-            <p class="nhsuk-u-font-weight-bold">PM</p>
-
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="2to3">
-              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                2pm to 3pm
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
+                No, enter my name and postcode instead
               </label>
             </div>
-
-            <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="time-range-radio" name="radioGroup" type="radio" value="6to7">
-                <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                  6pm to 7pm
-                </label>
-              </div>
       
           </div>
           </div>
         </fieldset>
-
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue and choose appointment time
+          Continue
         </button>
     </form>
-
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different site
-      </a>
-
       
       </div>
       <!-- End of content -->
