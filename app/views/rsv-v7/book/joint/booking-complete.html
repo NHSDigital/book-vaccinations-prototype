@@ -47,7 +47,7 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-xl">
-                Your appointment
+                Your appointments
               </h1>
 
           <div class="nhsuk-card nhsuk-card--feature" style="color: #005eb8; border-color: #005eb8; border-width: 3px;">
@@ -65,13 +65,11 @@ Book vaccinations prototype
 
             <hr>
             <h3 class="nhsuk-heading-l">
-                Your appointment details
+                Appointment details
               </h3>
 
 
-            <div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
-                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                    <h5 class="nhsuk-heading-xs">
                         Site location
                       </h5>
 
@@ -87,27 +85,46 @@ Book vaccinations prototype
                         
 
                         <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Date and time
+                            Date
                           </h5>
     
                         <p class="nhsuk-card__description">
                           {{data['date']}} at {{data['time']}}
                         </p>
     
+                        <br>
                 
-                        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Vaccination type
-                          </h5>
-    
-                        <p class="nhsuk-card__description">
-                            RSV (Respiratory syncytial virus)
-                        </p>
+                        <table class="nhsuk-table">
+                          <thead role="rowgroup" class="nhsuk-table__head">
+                            <tr role="row">
+                              <th role="columnheader" class="" scope="col">
+                                Name
+                              </th>
+                              <th role="columnheader" class="" scope="col">
+                               Time
+                              </th>
+                              <th role="columnheader" class="" scope="col">
+                                Vaccination type
+                                </th>
+                              </tr>
+                          </thead>
+                          <tbody class="nhsuk-table__body">
+                            <caption class="nhsuk-table__caption">Booked for</caption>
+                            <tr role="row" class="nhsuk-table__row">
+                              <td class="nhsuk-table__cell">Jean Davidson</td>
+                              <td class="nhsuk-table__cell ">8:45am</td>
+                              <td class="nhsuk-table__cell ">RSV (Respiratory syncytial virus)</td>
+                            </tr>
+                            <tr role="row" class="nhsuk-table__row">
+                              <td class="nhsuk-table__cell">Roger Davidson</td>
+                              <td class="nhsuk-table__cell ">8:50am</td>
+                              <td class="nhsuk-table__cell ">RSV (Respiratory syncytial virus)</td>
+                            </tr>
+                          </tbody>
+                        </table>        
+              
 
-                  </div>
-        
-            </div>        
 
-            <hr>
 
             <div class="nhsuk-card nhsuk-card--feature">
                 <div class="nhsuk-card__content">
