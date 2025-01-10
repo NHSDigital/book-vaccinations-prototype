@@ -159,18 +159,6 @@ router.get(/jointBooking/, function (req, res) {
             }
         });
 
-        router.post(/jointConfirmationMessages/, function (req, res) {
-            var messages = req.session.data['messages']
-            if (messages.includes("jean")) {
-                res.redirect('contact-details-1');
-                }
-            else if (messages.includes("roger")) {
-                res.redirect('contact-details-2');
-                }
-            else {
-                res.redirect('contact-no');
-                }
-            });
         
             router.get(/jointAreYouSure/, function (req, res) {
                 if (req.query.radioGroup === "yes" ) {
@@ -216,6 +204,28 @@ router.get(/jointBooking/, function (req, res) {
                             res.redirect('appt-postcode');
                             }
                         });
+                        
+    
+                        router.get(/chooseFirstSlot/, function (req, res) {
+                            if (req.query.time === "8am" ) {
+                                res.redirect('second-slot-8am');
+                                }
+                            else if (req.query.time === "8:10am" ) {
+                                res.redirect('second-slot-810am');
+                                }
+                            else if (req.query.time === "8:20am" ) {
+                                res.redirect('second-slot-820am');
+                                }
+                            else if (req.query.time === "8:10am" ) {
+                                res.redirect('second-slot-830am');
+                                }
+                            else if (req.query.time === "8:10am" ) {
+                                res.redirect('second-slot-840am');
+                                }
+                            else {
+                                res.redirect('second-slot-850am');
+                                }
+                            });
                         
                         
 module.exports = router;

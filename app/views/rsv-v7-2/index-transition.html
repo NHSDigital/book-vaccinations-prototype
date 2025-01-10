@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv-2.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -47,21 +47,11 @@ Book vaccinations prototype
         <li>cancel your appointment</li>
       </ul>
 
+      <p>Currently you can only book appointments at pharmacies in parts of the East of England.</p>
 
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="text">
-            Important
-          </span>
-        </h3>
-        <p>Currently, you can only book appointments at pharmacies in parts of the East of England.</p>
-        <p>This service is currently open to:
-          <ul>
-            <li>older adults aged 75 to 79</li>
-            <li>Pregnant people over 28 weeks</li>
-          </ul>
-        </p>
-      </div>
+      <h3>Getting a vaccination at a GP surgery</h3>
+
+      <p>You can also get an RSV vaccination at a GP surgery. You will need to wait to be invited by your GP if you are eligible.</p>
 
       <h2>
         How it works
@@ -71,7 +61,7 @@ Book vaccinations prototype
 
       <p>You'll need the booking reference number we sent you to change or cancel your appointment.</p>
       
-      <a class="nhsuk-button" href="joint-booking">
+      <a class="nhsuk-button" href="nhs-no-radio">
         Book a pharmacy appointment
       </a>
       <br>
@@ -79,10 +69,6 @@ Book vaccinations prototype
       <a class="nhsuk-button nhsuk-button--secondary" href="../manage/ref-no">
         View, cancel or change an existing appointment
       </a>
-      <h3>Getting an appointment at a GP surgery</h3>
-
-      <p>You can also get an RSV vaccination at a GP surgery. You will need to wait to be invited by your GP if you are eligible.</p>
-
 
       <h2>
         More information
