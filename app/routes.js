@@ -226,6 +226,27 @@ router.get(/jointBooking/, function (req, res) {
                                 res.redirect('second-slot-850am');
                                 }
                             });
-                        
-                        
+
+                            router.get(/chooseFirstSlot/, function (req, res) {
+                                if (req.query.hour === "8" ) {
+                                    res.redirect('second-slot-8am');
+                                    }
+                                else if (req.query.hour === "8:10am" ) {
+                                    res.redirect('second-slot-810am');
+                                    }
+                                else if (req.query.hour === "8:20am" ) {
+                                    res.redirect('second-slot-820am');
+                                    }
+                                else if (req.query.time === "8:30am" ) {
+                                    res.redirect('second-slot-830am');
+                                    }
+                                else if (req.query.time === "8:40am" ) {
+                                    res.redirect('second-slot-840am');
+                                    }
+                                else {
+                                    res.redirect('second-slot-850am');
+                                    }
+                                });
+    
+
 module.exports = router;
