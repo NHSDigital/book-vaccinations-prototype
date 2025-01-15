@@ -45,32 +45,51 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="select-appt" method="get" class="form">
+        <form action="booking-complete" method="get" class="form">
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Enter a landline
+              </h1>
+          </legend>
 
-            </fieldset>
-          
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Important
+              </span>
+            </h3>
+            <p>If you only leave a landline, we cannot send you confirmation or reminder messages.  If the site needs to cancel your appointment, they may use this number to call you.</p>
           </div>
 
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Landline including area code
+            </label>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              For example, 0113 496 0845 or +44 207946 0310
+            </div>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm landline including area code
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
+          Complete booking
+        </button>
+    </form>
+
+
+
+      
       </div>
       <!-- End of content -->
 

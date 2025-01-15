@@ -45,32 +45,65 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="select-appt" method="get" class="form">
+        <form action="booking-complete" method="get" class="form">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Enter contact details for Roger Davidson
+              </h1>
+          </legend>
+
+            <h2 class="nhsuk-heading-s">
+                Email address (optional)
+              </h2>
+        
+              <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Email address
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm email address
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+
+        <h2 class="nhsuk-heading-s">
+            Mobile number (optional)
+          </h2>
 
         <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
+            <label class="nhsuk-label" for="email">
+              Mobile number
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
           
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
-
-            </fieldset>
-          
-          </div>
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm mobile number
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
-    
+        </button>
+    </form>
+
+    <p class="nhsuk-body">If you do not have a mobile number or email address</p>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
+        Continue to enter landline
+      </a>
+
+      
       </div>
       <!-- End of content -->
 

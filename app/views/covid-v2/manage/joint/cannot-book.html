@@ -35,7 +35,6 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -45,32 +44,52 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="select-appt" method="get" class="form">
+
+      <form action="choose-appt" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
+                  You are not able to book an appointment
                 </h1>
               </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+
+              <p class="nhsuk-body">This may be because:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>you do not need a vaccine</li>
+                <li>you have an existing booking which would need to be cancelled first</li>
+              </ul>
 
             </fieldset>
           
           </div>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
     
+        <a class="nhsuk-button" href="index">
+            Back to start
+          </a>
+    </form>
+    
+    <div class="nhsuk-card nhsuk-card--feature">
+        <div class="nhsuk-card__content">
+            <h5 class="nhsuk-card__heading nhsuk-heading-l">
+                Help us improve our website
+              </h5>
+
+            <p class="nhsuk-card__description">
+                Can you answer some questions about your visit today?
+            </p>
+
+            <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                <a href="#">
+                Take our survey
+                
+                </a>
+                </p>
+          </div>
+
+    </div>        
+
       </div>
       <!-- End of content -->
 

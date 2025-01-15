@@ -35,7 +35,6 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -45,23 +44,16 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="select-appt" method="get" class="form">
+
+      <form action="appt-postcode" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
+                  You can now choose an appointment
                 </h1>
               </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
 
             </fieldset>
           

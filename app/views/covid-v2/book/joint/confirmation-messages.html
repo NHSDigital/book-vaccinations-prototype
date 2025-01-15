@@ -45,32 +45,47 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="select-appt" method="get" class="form">
+      <form action="confirmationMessages" method="get" class="form">
 
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1>
+                Can we send you confirmation, reminder and cancellation messages?
+              </h1>
+          </legend>
+
+          <div class="nhsuk-hint" id="nhs-number-hint">
+          <p>We will only contact you to send:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>a confirmation and reminder message with a booking reference number</li>
+            <li>a cancellation message if the appointment needs to be changed</li>
+          </ul>
+        </div>
         <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-yes">
+                Yes
               </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
-
-            </fieldset>
-          
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-no">
+                No
+              </label>
+            </div>
+      
           </div>
-
+          </div>
+        </fieldset>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
-    
+        </button>
+    </form>
+      
       </div>
       <!-- End of content -->
 

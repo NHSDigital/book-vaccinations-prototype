@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,13 +45,13 @@ Book vaccinations prototype
       </div>
 
 
-      <form action="manageJointAppointment" method="get" class="form">
+      <form action="manage-appt" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What would you like to do with your appointments?
+                  Which appointment do you want to change or cancel?
                 </h1>
               </legend>
 
@@ -112,32 +112,29 @@ Book vaccinations prototype
                       <td class="nhsuk-table__cell ">COVID-19</td>
                     </tr>
                   </tbody>
-                </table>        
-    <div class="nhsuk-radios">
-      
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="change">
-                  <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-change">
-                    View other available appointments
-                  </label>
+                </table>     
+                
+                <div class="nhsuk-hint" id="example-hint">
+                  Select at least one appointment to change or cancel.
                 </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="cancel">
-                  <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-cancel">
-                    Cancel my appointment
-                  </label>
-                </div>
+                <div class="nhsuk-checkboxes">
 
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="home">
-                    <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-home">
-                      Go back to start
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="jean">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                      Jean Davidson
                     </label>
                   </div>
-  
-              </div>
-    
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="jean">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      Roger Davidson
+                    </label>
+                  </div>
+          
+          
+                </div>    
             </fieldset>
           
           </div>

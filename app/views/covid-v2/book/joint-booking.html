@@ -45,32 +45,45 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="select-appt" method="get" class="form">
+        <form action="jointBooking" method="get" class="form">
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-xl">
+                Are you booking for more than one person?
+              </h1>
+          </legend>
 
-            </fieldset>
-          
+
+          <div class="nhsuk-hint" id="contact-hint">
+            You can book for two people.
           </div>
 
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
+                Yes, I want to book for two people
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
+                No, I want to book for one person
+              </label>
+            </div>
+      
+          </div>
+          </div>
+        </fieldset>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
-    
+        </button>
+    </form>
+      
       </div>
       <!-- End of content -->
 

@@ -295,4 +295,25 @@ router.get(/jointBooking/, function (req, res) {
                                                     res.redirect('../manage-appt');
                                                     }
                                                 });
+
+// Covid v2 - joint booking routes //
+
+router.get(/jointImmuneSystem/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('add-person');
+        }
+    });
+
+    router.get(/twoJointImmuneSystem/, function (req, res) {
+        if (req.query.radioGroup === "no" ) {
+            res.redirect('cannot-book');
+            }
+        else {
+            res.redirect('add-person2');
+            }
+        });
+    
 module.exports = router;

@@ -44,33 +44,43 @@ Book vaccinations prototype
           </svg>
           Back</a>
       </div>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-xl">
+                You can book an appointment for these people
+              </h1>
+          </legend>
 
-      <form action="select-appt" method="get" class="form">
-
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
-              </div>
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  NHS Number
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Date of birth
+                  </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Jean Davidson</td>
+                <td class="nhsuk-table__cell ">999 123 4567</td>
+                <td class="nhsuk-table__cell ">4 March 1948</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Roger Davidson</td>
+                <td class="nhsuk-table__cell ">999 123 4345</td>
+                <td class="nhsuk-table__cell ">9 July 1945</td>
+              </tr>
+            </tbody>
+          </table>        
           
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
 
-            </fieldset>
-          
-          </div>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
+          <a class="nhsuk-button" href="appt-postcode">Continue</a>
       </div>
       <!-- End of content -->
 
