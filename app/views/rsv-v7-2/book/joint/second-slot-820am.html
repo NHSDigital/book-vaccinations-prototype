@@ -58,7 +58,33 @@ Book vaccinations prototype
           <p>{{data['pharmacy']}}</p>
 
 
-          <p class="nhsuk-body-l">Available appointment times for {{data['date']}}</p>
+          <p class="nhsuk-body-l">Available appointment times for <span class="nhsuk-u-font-weight-bold"> {{data['date']}}</span></p>
+
+          <h3 class="nhsuk-heading-m">Times chosen</h3>
+          
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Jean Smith
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['hour']}}{{data['time']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> name</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+          
+          </dl>
+
       
           <div class="nhsuk-hint" id="contact-hint">
             Select the second appointment slot for your joint booking
@@ -68,16 +94,16 @@ Book vaccinations prototype
             
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value="8:10am">
+              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value=":10am">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:10am
+                {{data['hour']}}:10am
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value="8:30am">
+              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value=":30am">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:30am
+                {{data['hour']}}:30am
               </label>
             </div>
             

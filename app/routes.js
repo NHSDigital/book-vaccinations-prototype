@@ -155,7 +155,7 @@ router.get(/jointBooking/, function (req, res) {
             res.redirect('nhs-no-radio2');
             }
         else {
-            res.redirect('appt-postcode');
+            res.redirect('../appt-postcode');
             }
         });
 
@@ -165,7 +165,7 @@ router.get(/jointBooking/, function (req, res) {
                     res.redirect('booking-complete');
                     }
                 else {
-                    res.redirect('confirmation-messages');
+                    res.redirect('contact-details');
                     }
                 });
 
@@ -206,47 +206,93 @@ router.get(/jointBooking/, function (req, res) {
                         });
                         
     
-                        router.get(/chooseFirstSlot/, function (req, res) {
-                            if (req.query.time === "8am" ) {
-                                res.redirect('second-slot-8am');
-                                }
-                            else if (req.query.time === "8:10am" ) {
-                                res.redirect('second-slot-810am');
-                                }
-                            else if (req.query.time === "8:20am" ) {
-                                res.redirect('second-slot-820am');
-                                }
-                            else if (req.query.time === "8:10am" ) {
-                                res.redirect('second-slot-830am');
-                                }
-                            else if (req.query.time === "8:10am" ) {
-                                res.redirect('second-slot-840am');
-                                }
-                            else {
-                                res.redirect('second-slot-850am');
-                                }
-                            });
 
                             router.get(/chooseFirstSlot/, function (req, res) {
-                                if (req.query.hour === "8" ) {
+                                if (req.query.time === "am" ) {
                                     res.redirect('second-slot-8am');
                                     }
-                                else if (req.query.hour === "8:10am" ) {
+                                else if (req.query.time === ":10am" ) {
                                     res.redirect('second-slot-810am');
                                     }
-                                else if (req.query.hour === "8:20am" ) {
+                                else if (req.query.time === ":20am" ) {
                                     res.redirect('second-slot-820am');
                                     }
-                                else if (req.query.time === "8:30am" ) {
+                                else if (req.query.time === ":30am" ) {
                                     res.redirect('second-slot-830am');
                                     }
-                                else if (req.query.time === "8:40am" ) {
+                                else if (req.query.time === ":40am" ) {
                                     res.redirect('second-slot-840am');
                                     }
-                                else {
+                                else if (req.query.time === ":50am" ) {
                                     res.redirect('second-slot-850am');
                                     }
                                 });
+
+                                router.get(/choosePmSlot/, function (req, res) {
+                                    if (req.query.time === "pm" ) {
+                                        res.redirect('second-slot-pm');
+                                        }
+                                    else if (req.query.time === ":10pm" ) {
+                                        res.redirect('second-slot-10pm');
+                                        }
+                                    else if (req.query.time === ":20pm" ) {
+                                        res.redirect('second-slot-20pm');
+                                        }
+                                    else if (req.query.time === ":30pm" ) {
+                                        res.redirect('second-slot-30pm');
+                                        }
+                                    else if (req.query.time === ":40pm" ) {
+                                        res.redirect('second-slot-40pm');
+                                        }
+                                    else if (req.query.time === ":50pm" ) {
+                                        res.redirect('second-slot-50pm');
+                                        }
+                                    });
+    
     
 
+                                router.get(/chooseHour/, function (req, res) {
+                                    if (req.query.hour === "8" ) {
+                                        res.redirect('choose-time-am');
+                                        }
+                                    else if (req.query.hour === "9" ) {
+                                        res.redirect('choose-time-am');
+                                        }
+                                    else if (req.query.hour === "10" ) {
+                                        res.redirect('choose-time-am');
+                                        }
+                                    else {
+                                        res.redirect('choose-time-pm');
+                                        }
+                                    });
+
+                                    router.get(/manageJointAppointment/, function (req, res) {
+                                        if (req.query.radioGroup === "change" ) {
+                                            res.redirect('joint/appt-postcode');
+                                            }
+                                        else if (req.query.radioGroup === "cancel" ) {
+                                            res.redirect('joint/cancel-sure');
+                                            }
+                                        else {
+                                                res.redirect('index');
+                                                }
+                                        });
+        
+                                        router.get(/confirmJointChange/, function (req, res) {
+                                            if (req.query.radioGroup === "yes" ) {
+                                                res.redirect('confirmation-messages');
+                                                }
+                                            else {
+                                                res.redirect('../manage-appt');
+                                                }
+                                            });
+
+                                            router.get(/cancelJointAppointment/, function (req, res) {
+                                                if (req.query.radioGroup === "yes" ) {
+                                                    res.redirect('appt-cancelled');
+                                                    }
+                                                else {
+                                                    res.redirect('../manage-appt');
+                                                    }
+                                                });
 module.exports = router;

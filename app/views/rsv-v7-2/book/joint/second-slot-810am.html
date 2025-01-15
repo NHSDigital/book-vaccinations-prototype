@@ -58,9 +58,9 @@ Book vaccinations prototype
           <p>{{data['pharmacy']}}</p>
 
 
-          <p class="nhsuk-body-l">Available appointment times for {{data['date']}}</p>
+          <p class="nhsuk-body-l">Available appointment times for <span class="nhsuk-u-font-weight-bold"> {{data['date']}}</span></p>
 
-          <h3 class="nhsuk-heading-m">Slots chosen</h3>
+          <h3 class="nhsuk-heading-m">Times chosen</h3>
           
           <dl class="nhsuk-summary-list">
 
@@ -69,7 +69,7 @@ Book vaccinations prototype
                 Jean Smith
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['time']}}
+                {{data['hour']}}{{data['time']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -87,23 +87,23 @@ Book vaccinations prototype
 
       
           <div class="nhsuk-hint" id="contact-hint">
-            Select the second appointment slot for your joint booking
+            Select the second appointment time for your joint booking
           </div>
 
         <div class="nhsuk-form-group">
             
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value="8am">
+              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value="am">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8am
+                {{data['hour']}}am
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value="8:20am">
+              <input class="nhsuk-radios__input" id="appt-time-radio" name="time-2" type="radio" value=":20am">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
-                8:20am
+                {{data['hour']}}:20am
               </label>
             </div>
             

@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
+{% extends 'layout-rsv-2.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -46,9 +46,9 @@ Book vaccinations prototype
       </div>-->
 
 
-            <h1 class="nhsuk-heading-xl">
+            <!--<h1 class="nhsuk-heading-xl">
                 Your appointments
-              </h1>
+              </h1>-->
 
               <div class="govuk-panel govuk-panel--confirmation">
                 <h1 class="govuk-panel__title">
@@ -62,7 +62,7 @@ Book vaccinations prototype
                 <div class="nhsuk-inset-text">
                   <span class="nhsuk-u-visually-hidden">Information: </span>
                 
-                  <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  you'll need it to view or cancel your appointment.</p>
+                  <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  You'll need it to view or cancel your appointment.</p>
                 </div>
             <hr>
             <h3 class="nhsuk-heading-l">
@@ -77,8 +77,8 @@ Book vaccinations prototype
                       <p>{{data['pharmacy']}}</p>
 
 
-                    <p class="nhsuk-body">
-                        <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
+                      <p class="nhsuk-u-padding-top-0">
+                        <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
                         Map and directions (opens in Google maps)
                         <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
                         </a>
@@ -90,7 +90,7 @@ Book vaccinations prototype
                           </h5>
     
                         <p class="nhsuk-card__description">
-                          {{data['date']}} at {{data['time']}}
+                          {{data['date']}}
                         </p>
     
                         <br>
@@ -113,7 +113,7 @@ Book vaccinations prototype
                             <caption class="nhsuk-table__caption">Booked for</caption>
                             <tr role="row" class="nhsuk-table__row">
                               <td class="nhsuk-table__cell">Jean Davidson</td>
-                              <td class="nhsuk-table__cell ">8:45am</td>
+                              <td class="nhsuk-table__cell ">8:40am</td>
                               <td class="nhsuk-table__cell ">RSV (Respiratory syncytial virus)</td>
                             </tr>
                             <tr role="row" class="nhsuk-table__row">
