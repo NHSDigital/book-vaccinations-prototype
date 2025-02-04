@@ -268,10 +268,10 @@ router.get(/jointBooking/, function (req, res) {
 
                                     router.get(/manageJointAppointment/, function (req, res) {
                                         if (req.query.radioGroup === "change" ) {
-                                            res.redirect('joint/appt-postcode');
+                                            res.redirect('appt-postcode');
                                             }
                                         else if (req.query.radioGroup === "cancel" ) {
-                                            res.redirect('joint/cancel-sure');
+                                            res.redirect('cancel-sure');
                                             }
                                         else {
                                                 res.redirect('index');
@@ -316,4 +316,32 @@ router.get(/jointImmuneSystem/, function (req, res) {
             }
         });
     
+        router.get(/noMatchJointBooking/, function (req, res) {
+            if (req.query.radioGroup === "nhsnumber" ) {
+                res.redirect('book/joint/nhs-no2');
+                }
+            else if (req.query.radioGroup === "name" ) {
+                res.redirect('book/joint/name2');
+                }
+            else if (req.query.radioGroup === "single" ) {
+                    res.redirect('book/appt-postcode');
+                    }
+             else {
+                    res.redirect('book/index');
+                    }
+            });
+
+            router.get(/jointIneligible/, function (req, res) {
+                if (req.query.radioGroup === "joint" ) {
+                    res.redirect('book/joint/nhs-no-radio2');
+                    }
+                else if (req.query.radioGroup === "single" ) {
+                        res.redirect('book/appt-postcode');
+                        }
+                else {
+                    res.redirect('book/index');
+                    }
+                });
+        
+
 module.exports = router;

@@ -45,7 +45,7 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="choose-time-range" method="get" class="form">
+      <form action="choose-time-range" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -53,17 +53,26 @@ Book vaccinations prototype
                 Choose a date
               </h1>
           </legend>
+
+
           <p>{{data['pharmacy']}}</p>
 
+    
+
+          <!--<div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+          
+            <p>It's better to have your RSV vaccination on a different day to your flu and COVID-19 vaccinations.  please book your RSV appointment for a different day.</p>
+          </div>-->
 
           <p class="nhsuk-body-l">Next 5 available days</p>
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday 9 September">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday 27 January">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                Monday 9 September
+                Monday 27 January
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -72,9 +81,9 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday 10 September">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday 28 January">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Tuesday 10 September
+                Tuesday 28 January
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -83,9 +92,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday 11 September">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday 29 January">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Wednesday 11 September
+                Wednesday 29 January
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -94,9 +103,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday 12 September">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday 30 January">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Thursday 12 September
+                Thursday 30 January
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -105,9 +114,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday 13 September">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday 31 January">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Friday 13 September
+                Friday 31 January
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -140,8 +149,8 @@ Book vaccinations prototype
     </form>
 
     <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-      Choose a different site
-    </a>
+        Choose a different site
+      </a>
 
       
       </div>
