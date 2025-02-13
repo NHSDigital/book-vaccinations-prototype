@@ -1,0 +1,524 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Monday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Tuesday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Wednesday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Thursday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Friday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Saturday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Sunday</h2></div>
+      </div>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+      <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+        <div class="nhsuk-card__content" style="padding: 16px;">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+            <a class="nhsuk-link" href="#">26</a>      
+          </h3>
+          <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+        </div>
+      </div>
+      </li>
+      <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+        <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+        <div class="nhsuk-card__content" style="padding: 16px;">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+            <a class="nhsuk-link" href="#">27</a>      
+          </h3>
+          <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+        </div>
+      </div>
+      </li>
+      <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+        <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+        <div class="nhsuk-card__content" style="padding: 16px;">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+            <a class="nhsuk-link" href="#">28</a>      
+          </h3>
+          <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+        </div>
+      </div>
+      </li>
+      <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+        <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+        <div class="nhsuk-card__content" style="padding: 16px;">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+            <a class="nhsuk-link" href="#">29</a>      
+          </h3>
+          <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+        </div>
+      </div>
+      </li>
+      <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+        <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+        <div class="nhsuk-card__content" style="padding: 16px;">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+            <a class="nhsuk-link" href="#">30</a>      
+          </h3>
+          <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+        </div>
+      </div>
+      </li>
+      <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+        <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+        <div class="nhsuk-card__content" style="padding: 16px;">
+          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+            <a class="nhsuk-link" href="#">31</a>      
+          </h3>
+          <p style="color: #aeb7bd;">No availability</p>
+        </div>
+      </div>
+      </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                  <div class="nhsuk-card" style="margin-bottom: 0;">
+                    <div class="nhsuk-card__content" style="padding: 16px;">
+                      <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                        <a class="nhsuk-link" href="#">1</a>      
+                      </h3>
+                      <p>No availability</p>
+                    </div>
+                  </div>
+                  </li>
+                        
+      </ul>
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+          <div class="nhsuk-card" style="margin-bottom: 0;">
+            <div class="nhsuk-card__content" style="padding: 16px;">
+              <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-link" href="#">2</a>      
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+            </div>
+          </div>
+          </li>
+          <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+            <div class="nhsuk-card" style="margin-bottom: 0;">
+              <div class="nhsuk-card__content" style="padding: 16px;">
+                <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-link" href="#">3</a>      
+                </h3>    
+                <p>3 Sessions<br>275 booked<br>25 free</p>
+              </div>
+            </div>
+            </li>
+            <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+              <div class="nhsuk-card" style="margin-bottom: 0;">
+                <div class="nhsuk-card__content" style="padding: 16px;">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                    <a class="nhsuk-link" href="#">4</a>      
+                  </h3>
+                  <p>3 Sessions<br>275 booked<br>25 free</p>
+       
+                </div>
+              </div>
+              </li>
+              <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                <div class="nhsuk-card" style="margin-bottom: 0;">
+                  <div class="nhsuk-card__content" style="padding: 16px;">
+                    <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-link" href="#">5</a>      
+                    </h3>
+                    <p>3 Sessions<br>275 booked<br>25 free</p>
+         
+                  </div>
+                </div>
+                </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                  <div class="nhsuk-card" style="margin-bottom: 0;">
+                    <div class="nhsuk-card__content" style="padding: 16px;">
+                      <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                        <a class="nhsuk-link" href="#">6</a>      
+                      </h3>
+                      <p>3 Sessions<br>275 booked<br>25 free</p>
+          
+                    </div>
+                  </div>
+                  </li>
+                  <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                    <div class="nhsuk-card" style="margin-bottom: 0;">
+                      <div class="nhsuk-card__content" style="padding: 16px;">
+                        <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                          <a class="nhsuk-link" href="#">7</a>      
+                        </h3>
+                        <p>No availability</p>
+             
+                      </div>
+                    </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                      <div class="nhsuk-card" style="margin-bottom: 0;">
+                        <div class="nhsuk-card__content" style="padding: 16px;">
+                          <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                            <a class="nhsuk-link" href="#">8</a>      
+                          </h3>
+                          <p>No availability</p>
+               
+                        </div>
+                      </div>
+                      </li>
+          
+      </ul>
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+          <div class="nhsuk-card" style="margin-bottom: 0;">
+            <div class="nhsuk-card__content" style="padding: 16px;">
+              <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-link" href="#">9</a>      
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+
+            </div>
+          </div>
+          </li>
+          <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+            <div class="nhsuk-card" style="margin-bottom: 0;">
+              <div class="nhsuk-card__content" style="padding: 16px;">
+                <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-link" href="#">10</a>      
+                </h3>
+                <p>3 Sessions<br>275 booked<br>25 free</p>
+
+              </div>
+            </div>
+            </li>
+            <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+              <div class="nhsuk-card" style="margin-bottom: 0;">
+                <div class="nhsuk-card__content" style="padding: 16px;">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                    <a class="nhsuk-link" href="#">11</a>      
+                  </h3>
+                  <p>3 Sessions<br>275 booked<br>25 free</p>
+
+                </div>
+              </div>
+              </li>
+              <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                <div class="nhsuk-card" style="margin-bottom: 0;">
+                  <div class="nhsuk-card__content" style="padding: 16px;">
+                    <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-link" href="#">12</a>      
+                    </h3>
+                    <p>3 Sessions<br>275 booked<br>25 free</p>
+
+                  </div>
+                </div>
+                </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                  <div class="nhsuk-card" style="margin-bottom: 0;">
+                    <div class="nhsuk-card__content" style="padding: 16px;">
+                      <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                        <a class="nhsuk-link" href="#">13</a>      
+                      </h3>
+                      <p>3 Sessions<br>275 booked<br>25 free</p>
+
+                    </div>
+                  </div>
+                  </li>
+                  <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                    <div class="nhsuk-card" style="margin-bottom: 0;">
+                      <div class="nhsuk-card__content" style="padding: 16px;">
+                        <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                          <a class="nhsuk-link" href="#">14</a>      
+                        </h3>
+                        <p>No availability</p>
+
+                      </div>
+                    </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                      <div class="nhsuk-card" style="margin-bottom: 0;">
+                        <div class="nhsuk-card__content" style="padding: 16px;">
+                          <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                            <a class="nhsuk-link" href="#">15</a>      
+                          </h3>
+                          <p>No availability</p>
+
+                        </div>
+                      </div>
+                      </li>
+          
+      </ul>
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+          <div class="nhsuk-card" style="margin-bottom: 0;">
+            <div class="nhsuk-card__content" style="padding: 16px;">
+              <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-link" href="#">16</a>      
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+
+            </div>
+          </div>
+          </li>
+          <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+            <div class="nhsuk-card" style="margin-bottom: 0;">
+              <div class="nhsuk-card__content" style="padding: 16px;">
+                <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-link" href="#">17</a>      
+                </h3>
+                <p>3 Sessions<br>275 booked<br>25 free</p>
+
+              </div>
+            </div>
+            </li>
+            <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+              <div class="nhsuk-card" style="margin-bottom: 0;">
+                <div class="nhsuk-card__content" style="padding: 16px;">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                    <a class="nhsuk-link" href="#">18</a>      
+                  </h3>
+                  <p>3 Sessions<br>275 booked<br>25 free</p>
+
+                </div>
+              </div>
+              </li>
+              <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                <div class="nhsuk-card" style="margin-bottom: 0;">
+                  <div class="nhsuk-card__content" style="padding: 16px;">
+                    <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-link" href="#">19</a>      
+                    </h3>
+                    <p>3 Sessions<br>275 booked<br>25 free</p>
+
+                  </div>
+                </div>
+                </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                  <div class="nhsuk-card" style="margin-bottom: 0;">
+                    <div class="nhsuk-card__content" style="padding: 16px;">
+                      <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                        <a class="nhsuk-link" href="#">20</a>      
+                      </h3>
+                      <p>3 Sessions<br>275 booked<br>25 free</p>
+    
+                    </div>
+                  </div>
+                  </li>
+                  <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                    <div class="nhsuk-card" style="margin-bottom: 0;">
+                      <div class="nhsuk-card__content" style="padding: 16px;">
+                        <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                          <a class="nhsuk-link" href="#">21</a>      
+                        </h3>
+                        <p>No availability</p>
+       
+                      </div>
+                    </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                      <div class="nhsuk-card" style="margin-bottom: 0;">
+                        <div class="nhsuk-card__content" style="padding: 16px;">
+                          <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                            <a class="nhsuk-link" href="#">22</a>      
+                          </h3>
+                          <p>No availability</p>
+         
+                        </div>
+                      </div>
+                      </li>
+          
+      </ul>
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+          <div class="nhsuk-card" style="margin-bottom: 0;">
+            <div class="nhsuk-card__content" style="padding: 16px;">
+              <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-link" href="#">23</a>      
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+
+            </div>
+          </div>
+          </li>
+          <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+            <div class="nhsuk-card" style="margin-bottom: 0;">
+              <div class="nhsuk-card__content" style="padding: 16px;">
+                <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-link" href="#">24</a>      
+                </h3>
+                <p>3 Sessions<br>275 booked<br>25 free</p>
+  
+              </div>
+            </div>
+            </li>
+            <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+              <div class="nhsuk-card" style="margin-bottom: 0;">
+                <div class="nhsuk-card__content" style="padding: 16px;">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                    <a class="nhsuk-link" href="#">25</a>      
+                  </h3>
+                  <p>3 Sessions<br>275 booked<br>25 free</p>
+    
+                </div>
+              </div>
+              </li>
+              <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                <div class="nhsuk-card" style="margin-bottom: 0;">
+                  <div class="nhsuk-card__content" style="padding: 16px;">
+                    <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                      <a class="nhsuk-link" href="#">26</a>      
+                    </h3>
+                    <p>3 Sessions<br>275 booked<br>25 free</p>
+      
+                  </div>
+                </div>
+                </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                  <div class="nhsuk-card" style="margin-bottom: 0;">
+                    <div class="nhsuk-card__content" style="padding: 16px;">
+                      <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                        <a class="nhsuk-link" href="#">27</a>      
+                      </h3>
+                      <p>3 Sessions<br>275 booked<br>25 free</p>
+         
+                    </div>
+                  </div>
+                  </li>
+                  <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                    <div class="nhsuk-card" style="margin-bottom: 0;">
+                      <div class="nhsuk-card__content" style="padding: 16px;">
+                        <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                          <a class="nhsuk-link" href="#">28</a>      
+                        </h3>
+                        <p>No availability</p>
+            
+                      </div>
+                    </div>
+                    </li>
+                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                      <div class="nhsuk-card" style="margin-bottom: 0;">
+                        <div class="nhsuk-card__content" style="padding: 16px;">
+                          <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                            <a class="nhsuk-link" href="#">29</a>      
+                          </h3>
+                          <p>No availability</p>
+              
+                        </div>
+                      </div>
+                      </li>
+          
+      </ul>
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+          <div class="nhsuk-card" style="margin-bottom: 0;">
+            <div class="nhsuk-card__content" style="padding: 16px;">
+              <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-link" href="#">30</a>      
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+
+            </div>
+          </div>
+          </li>
+          <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+            <div class="nhsuk-card" style="margin-bottom: 0;">
+              <div class="nhsuk-card__content" style="padding: 16px;">
+                <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                  <a class="nhsuk-link" href="#">31</a>      
+                </h3>
+                <p>3 Sessions<br>275 booked<br>25 free</p>
+
+              </div>
+            </div>
+            </li>
+            <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+              <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+                <div class="nhsuk-card__content" style="padding: 16px;">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+                    <a class="nhsuk-link" href="#">1</a>      
+                  </h3>
+                  <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+                </div>
+              </div>
+                      </li>
+              <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+                  <div class="nhsuk-card__content" style="padding: 16px;">
+                    <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+                      <a class="nhsuk-link" href="#">2</a>      
+                    </h3>
+                    <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+                  </div>
+                </div>
+                          </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                  <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+                    <div class="nhsuk-card__content" style="padding: 16px;">
+                      <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+                        <a class="nhsuk-link" href="#">3</a>      
+                      </h3>
+                      <p style="color: #aeb7bd;">3 Sessions<br>275 booked<br>25 free</p>
+                    </div>
+                  </div>
+                              </li>
+                  <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                    <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+                      <div class="nhsuk-card__content" style="padding: 16px;">
+                        <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+                          <a class="nhsuk-link" href="#">4</a>      
+                        </h3>
+                        <p style="color: #aeb7bd;">No availability</p>
+                      </div>
+                    </div>
+                                  </li>
+                    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%;">
+                      <div class="nhsuk-card" style="margin-bottom: 0; background-color: #f0f4f5;">
+                        <div class="nhsuk-card__content" style="padding: 16px;">
+                          <h3 class="nhsuk-card__heading nhsuk-heading-xs" style="color: #aeb7bd;">
+                            <a class="nhsuk-link" href="#">5</a>      
+                          </h3>
+                          <p style="color: #aeb7bd;">No availability</p>
+                        </div>
+                      </div>
+                                      </li>
+          
+      </ul>
+
+
+      <!-- Change the page title here -->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
