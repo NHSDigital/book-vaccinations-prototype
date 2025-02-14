@@ -1,0 +1,66 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Monday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Tuesday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Wednesday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Thursday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Friday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Saturday</h2></div>
+        <div class="nhsuk-grid-column-one-quarter" style="width: 14%; padding-left: 0;"><h2 class="nhsuk-heading-xs" style="margin-bottom: 8px;">Sunday</h2></div>
+      </div>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group" style="margin-bottom: 0;">
+        
+        <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item" style="padding: 0; width: 14%; height: 100%;">
+          <div class="nhsuk-card" style="margin-bottom: 0;">
+            <div class="nhsuk-card__content" style="padding: 16px;">
+              <h3 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-link" href="#">2</a>      
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+            </div>
+          </div>
+          </li>
+          
+      </ul>
+
+
+      <!-- Change the page title here -->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
