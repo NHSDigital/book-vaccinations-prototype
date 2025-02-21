@@ -344,4 +344,16 @@ router.get(/jointImmuneSystem/, function (req, res) {
                 });
         
 
+ // A/W 25/26 routes //
+
+ router.get(/newAreYouSure/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('cya');
+        }
+    else {
+        res.redirect('contact-details');
+        }
+    });
+
+
 module.exports = router;
