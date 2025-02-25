@@ -355,5 +355,14 @@ router.get(/jointImmuneSystem/, function (req, res) {
         }
     });
 
+    router.get(/proxyBooker/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('nhs-no-radio');
+            }
+        else {
+            res.redirect('proxy/nhs-no-radio');
+            }
+        });
+    
 
 module.exports = router;
