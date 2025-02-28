@@ -364,5 +364,13 @@ router.get(/jointImmuneSystem/, function (req, res) {
             }
         });
     
-
+        router.get(/springImmuneSystem/, function (req, res) {
+            if (req.query.radioGroup === "no" ) {
+                res.redirect('cannot-book');
+                }
+            else {
+                res.redirect('choose-appt');
+                }
+            });
+        
 module.exports = router;
