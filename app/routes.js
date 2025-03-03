@@ -155,7 +155,7 @@ router.get(/jointBooking/, function (req, res) {
             res.redirect('nhs-no-radio2');
             }
         else {
-            res.redirect('../appt-postcode');
+            res.redirect('../choose-appt');
             }
         });
 
