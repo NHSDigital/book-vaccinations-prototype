@@ -1,0 +1,57 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">What is the national booking service?</h1>
+      <p class="app-document-header__metadata"><time datetime="2025-02-21T00:00:00.000Z">3 March 2025</time></p>
+
+      <div class="app-prose-scope">
+        <h2>Vision</h2>
+        <p>The national booking service (NBS) will ensure everyone in England who needs a vaccination can book an appointment securely, quickly and easily</p>
+        <p>The aim is to make it easier for citizens to find and book appointments.</p>
+
+        <h2>Our Hypothesis</h2>
+        <p>We believe that citizens need the flexibility to book and manage appointments themselves or have someone do it for them. Therefore, a digital booking system with the ability to search, book, amend, or cancel is required, either directly by the user or a proxy (friend, relative, relative, or contact centre agent) </p>
+            
+
+
+          
+</div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

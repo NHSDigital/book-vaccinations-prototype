@@ -1,0 +1,79 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-back-link">
+
+  <a class="nhsuk-back-link__link" href="design-history">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">Enabling Joint bookings for up to 2 people</h1>
+      <p class="app-document-header__metadata"><time datetime="2025-02-21T00:00:00.000Z">3 March 2025</time></p>
+
+      <div class="app-prose-scope">
+        <p>Based on feedback from NBS public users, and requirements for expansion to the service to drive increased uptake of vaccines, we explored options for enabling booking for 2 people for spring 2025.</p>
+
+        <h2 id="what-we-did" tabindex="-1" class="govuk-heading-l">What we did</h2>
+        <p>We re-visited old design work where joint bookings had previously been looked at, and created a new journey, with consideration given to the eventual need to accommodate further expansion, including:
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>group bookings, for up to 5 people</li>
+                <li>co-administration of vaccines during joint and group bookings</li>
+            </ul>
+        </p>
+
+        <p>We created a journey which would allow users to:
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>choose between the single and joint booking journey</li>
+                <li>easily add extra people to a booking</li>
+                <li>choose adjacent appointment slots for each person</li>
+                <li>Manage each appointment in a single booking independently</li>
+            </ul>
+        </p>
+        <p>We engaged with the dev and test teams on both NBS and Manage Your Appointments (MYA) teams, to ensure the solution would be technically feasible from both teams perspective.</p>
+
+
+<h2>Findings</h2>
+
+</div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
