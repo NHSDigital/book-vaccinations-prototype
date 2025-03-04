@@ -459,8 +459,9 @@ a:hover {
 
 .nhsuk-calendar-header {
   width: 14%;
-  padding-left: 0;
-  margin-bottom: 8px;
+  padding-left: 16px;
+  margin-bottom: 0px;
+  border: 1px solid #d8dde0;
 }
 
 .nhsuk-calendar-header__content {
@@ -581,4 +582,52 @@ a:hover {
     white-space: nowrap;
     width: 1px
   }
+}
+
+.nhsuk-capacity-bar-full {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  -webkit-appearance: none;
+  background-color: #005eb8;
+  border: 2px solid transparent;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 8px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+}
+
+.nhsuk-capacity-bar-empty {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  -webkit-appearance: none;
+  background-color: #d8dde0;
+  border: 2px solid transparent;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-sizing: border-box;
+  color: #212b32;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0;
+  margin-left: -6px;
+  margin-right: 0;
+  padding: 8px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
 }
