@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -33,73 +33,87 @@
 
       <div class="nhsuk-calendar-week">
         <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Monday</h2></div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Tuesday</h2></div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Wednesday</h2></div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Thursday</h2></div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Friday</h2></div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Saturday</h2></div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Sunday</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Monday 17</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Tuesday 18</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Wednesday 19</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Thursday 20</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Friday 21</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Saturday 22</h2></div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-calendar-header"><h2 class="nhsuk-calendar-header__content nhsuk-heading-xs">Sunday 23</h2></div>
         </div>
   
-
-        <ul class="nhsuk-grid-column-one-quarter nhsuk-calendar-group">
-          <li class="nhsuk-calendar-group__item">
-            <div class="nhsuk-calendar-day">
+        <ul class="nhsuk-grid-row nhsuk-calendar-group">
+        
+          <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+        <div class="nhsuk-calendar-day nhsuk-calendar-day">
+          <div class="nhsuk-calendar-day__content">
+            <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+            </h3>
+            <p>3 Sessions<br>275 booked<br>25 free</p>
+          </div>
+        </div>
+        </li>
+        <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+          <div class="nhsuk-calendar-day nhsuk-calendar-day">
+            <div class="nhsuk-calendar-day__content">
+              <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+              </h3>
+              <p>3 Sessions<br>275 booked<br>25 free</p>
+            </div>
+          </div>
+          </li>
+          <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+            <div class="nhsuk-calendar-day nhsuk-calendar-day">
+              <div class="nhsuk-calendar-day__content">
+                <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+                </h3>
+                <p>3 Sessions<br>275 booked<br>25 free</p>
+              </div>
+            </div>
+            </li>
+            <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+              <div class="nhsuk-calendar-day nhsuk-calendar-day">
                 <div class="nhsuk-calendar-day__content">
                   <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#">26</a>      
                   </h3>
                   <p>3 Sessions<br>275 booked<br>25 free</p>
                 </div>
-            </div>
-            </li>
-
-        </ul>
-        <ul class="nhsuk-grid-column-one-quarter nhsuk-calendar-group">
-          <li class="nhsuk-calendar-group__item">
-            <div class="nhsuk-calendar-day">
-                <div class="nhsuk-calendar-day__content">
-                  <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#">26</a>      
-                  </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
+              </div>
+              </li>
+              <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+                <div class="nhsuk-calendar-day nhsuk-calendar-day">
+                  <div class="nhsuk-calendar-day__content">
+                    <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+                    </h3>
+                    <p>3 Sessions<br>275 booked<br>25 free</p>
+                  </div>
                 </div>
-            </div>
-            </li>
-
+                </li>
+                <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+                  <div class="nhsuk-calendar-day nhsuk-calendar-day">
+                    <div class="nhsuk-calendar-day__content">
+                      <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+                      </h3>
+                      <p>3 Sessions<br>275 booked<br>25 free</p>
+                    </div>
+                  </div>
+                  </li>
+                  <li class="nhsuk-grid-column-one-quarter nhsuk-calendar-group__item">
+                    <div class="nhsuk-calendar-day nhsuk-calendar-day">
+                      <div class="nhsuk-calendar-day__content">
+                        <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
+                        </h3>
+                        <p>3 Sessions<br>275 booked<br>25 free</p>
+                      </div>
+                    </div>
+                    </li>
+                                                        
+                          
         </ul>
-        <ul class="nhsuk-grid-column-one-quarter nhsuk-calendar-group">
-          <li class="nhsuk-calendar-group__item">
-            <div class="nhsuk-calendar-day">
-                <div class="nhsuk-calendar-day__content">
-                  <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#">26</a>      
-                  </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
-                </div>
-            </div>
-            </li>
+  
 
-        </ul>
-        <ul class="nhsuk-grid-column-one-quarter nhsuk-calendar-group">
-          <li class="nhsuk-calendar-group__item">
-            <div class="nhsuk-calendar-day">
-                <div class="nhsuk-calendar-day__content">
-                  <h3 class="nhsuk-calendar__heading nhsuk-heading-xs">
-                    <a class="nhsuk-link" href="#">26</a>      
-                  </h3>
-                  <p>3 Sessions<br>275 booked<br>25 free</p>
-                </div>
-            </div>
-            </li>
-
-        </ul>
 
         </div>
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Save and continue
-        </button>
       <!-- Change the page title here -->
 
       <!-- End of content -->
