@@ -45,7 +45,7 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="postcode2" method="get" class="form">
+      <form action="add-person2" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -58,7 +58,7 @@ Book vaccinations prototype
                 For example, 15 3 1984
               </div>
           
-              <div class="nhsuk-date-input" id="example">
+              <div class="nhsuk-date-input" id="p1">
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
                     <label class="nhsuk-label nhsuk-date-input__label" for="p2-day">
@@ -72,12 +72,12 @@ Book vaccinations prototype
                     <label class="nhsuk-label nhsuk-date-input__label" for="p2-month">
                       Month
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="p2-month" name="p2-month" type="text" inputmode="numeric">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p2-month" min="1" max="12" required>
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="p2-year">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="p1-year">
                       Year
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="p2-year" name="p2-year" type="text" inputmode="numeric">
@@ -88,13 +88,42 @@ Book vaccinations prototype
           
           </div>
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" onclick="saveMonth()">
           Continue
-        </button>    </form>
+        </button>    
+      </form>
     
+      <script>
+        const months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        function saveMonth() {
+            let monthNumber = document.getElementById("p2-month").value;
+            if (monthNumber >= 1 && monthNumber <= 12) {
+                localStorage.setItem("monthNumber", monthNumber);
+                displayStoredMonth();
+            } else {
+                alert("Please enter a valid number between 1 and 12.");
+            }
+        }
+
+        function displayStoredMonth() {
+            let storedMonthNumber = localStorage.getItem("monthNumber");
+            if (storedMonthNumber) {
+                document.getElementById("storedMonth").innerText = 
+                    "Stored Month: " + months[storedMonthNumber - 1];
+            }
+        }
+
+        // Display stored month on page load
+        displayStoredMonth();
+    </script>
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+  
 {% endblock %}

@@ -478,5 +478,8 @@ router.get(/jointImmuneSystem/, function (req, res) {
                 res.redirect('choose-appt');
                 }
             });
+
+
+
         
 module.exports = router;

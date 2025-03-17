@@ -45,7 +45,7 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="postcode" method="get" class="form">
+      <form action="pregnant" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -58,7 +58,7 @@ Book vaccinations prototype
                 For example, 15 3 1984
               </div>
           
-              <div class="nhsuk-date-input" id="example">
+              <div class="nhsuk-date-input" id="p1">
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
                     <label class="nhsuk-label nhsuk-date-input__label" for="p1-day">
@@ -72,7 +72,7 @@ Book vaccinations prototype
                     <label class="nhsuk-label nhsuk-date-input__label" for="p1-month">
                       Month
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="p1-month" name="p1-month" type="text" inputmode="numeric">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p1-month" min="1" max="12" required>
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -88,13 +88,42 @@ Book vaccinations prototype
           
           </div>
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" onclick="saveMonth()">
           Continue
-        </button>    </form>
+        </button>    
+      </form>
     
+      <script>
+        const months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        function saveMonth() {
+            let monthNumber = document.getElementById("p1-month").value;
+            if (monthNumber >= 1 && monthNumber <= 12) {
+                localStorage.setItem("monthNumber", monthNumber);
+                displayStoredMonth();
+            } else {
+                alert("Please enter a valid number between 1 and 12.");
+            }
+        }
+
+        function displayStoredMonth() {
+            let storedMonthNumber = localStorage.getItem("monthNumber");
+            if (storedMonthNumber) {
+                document.getElementById("storedMonth").innerText = 
+                    "Stored Month: " + months[storedMonthNumber - 1];
+            }
+        }
+
+        // Display stored month on page load
+        displayStoredMonth();
+    </script>
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+  
 {% endblock %}

@@ -54,8 +54,8 @@ Book vaccinations prototype
           <p>People with these dates of birth have been added to this booking:
 
             <ul class="nhsuk-list nhsuk-list--bullet">
-              <li>{{data['p1-day']}} {{data['p1-month']}} {{data['p1-year']}}</li>
-              <li>{{data['p2-day']}} {{data['p2-month']}} {{data['p2-year']}}</li>
+              <li>{{data['p1-day']}} <span id="monthName"></span> {{data['p1-year']}}</li>
+              <li>{{data['p2-day']}} <span id="secondMonthName"></span> {{data['p2-year']}}</li>
           </ul></p>
 
           <!--<table class="nhsuk-table">
@@ -90,7 +90,37 @@ Book vaccinations prototype
           <a class="nhsuk-button" href="appt-postcode">Continue</a>
       </div>
       <!-- End of content -->
+      <script>
+        const months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+  
+        function displayStoredMonth() {
+            let storedMonthNumber = localStorage.getItem("monthNumber");
+            if (storedMonthNumber) {
+                document.getElementById("monthName").innerText = 
+                     months[storedMonthNumber - 1];
+            } else {
+                document.getElementById("monthName").innerText = "No month stored.";
+            }
+        }
+  
+        displayStoredMonth();
 
+        function displaySecondMonth() {
+            let storedMonthNumber = localStorage.getItem("secondMonthNumber");
+            if (storedMonthNumber) {
+                document.getElementById("secondMonthName").innerText = 
+                     months[storedMonthNumber - 1];
+            } else {
+                document.getElementById("secondMonthName").innerText = "No month stored.";
+            }
+        }
+  
+        displaySecondMonth();
+    </script>
+  
     </div>
   </div>
 {% endblock %}
