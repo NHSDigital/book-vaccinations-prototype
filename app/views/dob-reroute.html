@@ -1,0 +1,119 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h2>What is your date of birth?</h2>
+
+        <div class="nhsuk-date-input">
+            
+            <div class="nhsuk-date-input__item">
+                <label class="nhsuk-label nhsuk-date-input__label" for="dayInput">Day:</label>
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="dayInput">
+        </div>
+    
+        <div class="nhsuk-date-input__item">
+        <label class="nhsuk-label nhsuk-date-input__label" for="monthInput">Month:</label>
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="text" id="monthInput">
+    </div>
+    
+    <div class="nhsuk-date-input__item">
+        <label class="nhsuk-label nhsuk-date-input__label" for="yearInput">Year:</label>
+        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" type="text" id="yearInput">
+        </div>
+    </div>
+    <br>
+        <button class="nhsuk-button" onclick="checkAgeAndRedirect()">Verify</button>
+    </div>
+  </div>
+
+  <script>
+    
+    function checkAgeAndRedirect() {
+    let day = document.getElementById("dayInput").value;
+    let month = document.getElementById("monthInput").value;
+    let year = document.getElementById("yearInput").value;
+
+    if (!day || !month || !year) {
+        alert("Please enter a valid date of birth.");
+        return;
+    }
+
+    // Convert inputs to numbers
+    day = parseInt(day, 10);
+    month = parseInt(month, 10);
+    year = parseInt(year, 10);
+
+    let currentYear = new Date().getFullYear();
+    if (
+        isNaN(day) || isNaN(month) || isNaN(year) ||
+        day < 1 || day > 31 || month < 1 || month > 12 || 
+        year < currentYear - 120 || year > currentYear
+    ) {
+        alert("Please enter a valid date.");
+        return;
+    }
+
+    let dob = new Date(year, month - 1, day); // JS months are 0-indexed
+    let today = new Date();
+
+    let age = today.getFullYear() - dob.getFullYear();
+    let monthDiff = today.getMonth() - dob.getMonth();
+    let dayDiff = today.getDate() - dob.getDate();
+
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+    }
+
+    // Convert month number to month name
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    let monthName = monthNames[month - 1];
+
+    // Format DOB as "15 March 2000"
+    let formattedDOB = `${day} ${monthName} ${year}`;
+
+    // Store in localStorage
+    localStorage.setItem("dob", formattedDOB);
+    localStorage.setItem("age", age);
+
+    // Redirect based on age
+    if ((age >= 2 && age <= 3) || (age >= 75 && age <= 80)) {
+        window.location.href = "can-book";
+    } else {
+        window.location.href = "pregnant";
+    }
+}  
+  
+  </script>
+{% endblock %}

@@ -237,12 +237,21 @@ router.get(/eligibleFlu/, function (req, res) {
 
 router.get(/rsvPregnant/, function (req, res) {
     if (req.query.radioGroup === "yes" ) {
-        res.redirect('choose-appt');
+        res.redirect('add-person');
         }
     else {
         res.redirect('../ineligible-pregnancy');
         }
     });
+
+    router.get(/jointPregnant/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('add-person2');
+            }
+        else {
+            res.redirect('../ineligible-pregnancy');
+            }
+        });
 
 
 // RSV V-7 - joint booking routes //

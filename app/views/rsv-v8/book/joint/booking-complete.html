@@ -84,12 +84,12 @@ Book vaccinations prototype
                           <tbody class="nhsuk-table__body">
                             <tr role="row" class="nhsuk-table__row">
                               <td class="nhsuk-table__cell">1583033</td>
-                              <td class="nhsuk-table__cell">{{data['p1-day']}} <span id="monthName"></span> {{data['p1-year']}}</td>
+                              <td class="nhsuk-table__cell"><span id="dobDisplay1"></span></td>
                               <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
                             </tr>
                             <tr role="row" class="nhsuk-table__row">
                               <td class="nhsuk-table__cell">1583034</td>
-                              <td class="nhsuk-table__cell">{{data['p2-day']}} <span id="secondMonthName"></span> {{data['p2-year']}}</td>
+                              <td class="nhsuk-table__cell"><span id="dobDisplay2"></span></td>
                               <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
                             </tr>
                           </tbody>
@@ -155,34 +155,26 @@ Book vaccinations prototype
       </div>
       <!-- End of content -->
       <script>
-        const months = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-  
-        function displayStoredMonth() {
-            let storedMonthNumber = localStorage.getItem("monthNumber");
-            if (storedMonthNumber) {
-                document.getElementById("monthName").innerText = 
-                     months[storedMonthNumber - 1];
-            } else {
-                document.getElementById("monthName").innerText = "No month stored.";
-            }
-        }
-  
-        displayStoredMonth();
 
-        function displaySecondMonth() {
-            let storedMonthNumber = localStorage.getItem("secondMonthNumber");
-            if (storedMonthNumber) {
-                document.getElementById("secondMonthName").innerText = 
-                     months[storedMonthNumber - 1];
-            } else {
-                document.getElementById("secondMonthName").innerText = "No month stored.";
-            }
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+          let dob = localStorage.getItem("dob1");
+          let age = localStorage.getItem("age1");
   
-        displaySecondMonth();
+          if (dob) {
+              document.getElementById("dobDisplay1").textContent = `${dob}`;
+              document.getElementById("ageDisplay1").textContent = `Your age: ${age}`;
+          }
+      });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let dob = localStorage.getItem("dob2");
+            let age = localStorage.getItem("age2");
+    
+            if (dob) {
+                document.getElementById("dobDisplay2").textContent = `${dob}`;
+                document.getElementById("ageDisplay2").textContent = `Your age: ${age}`;
+            }
+        });
     </script>
 
     </div>

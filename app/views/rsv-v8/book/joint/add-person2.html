@@ -54,8 +54,8 @@ Book vaccinations prototype
           <p>People with these dates of birth have been added to this booking:
 
             <ul class="nhsuk-list nhsuk-list--bullet">
-              <li>{{data['p1-day']}} <span id="monthName"></span> {{data['p1-year']}}</li>
-              <li>{{data['p2-day']}} <span id="secondMonthName"></span> {{data['p2-year']}}</li>
+              <li><span id="dobDisplay1"></span></li>
+              <li><span id="dobDisplay2"></span></li>
           </ul></p>
 
           <!--<table class="nhsuk-table">
@@ -91,36 +91,28 @@ Book vaccinations prototype
       </div>
       <!-- End of content -->
       <script>
-        const months = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-  
-        function displayStoredMonth() {
-            let storedMonthNumber = localStorage.getItem("monthNumber");
-            if (storedMonthNumber) {
-                document.getElementById("monthName").innerText = 
-                     months[storedMonthNumber - 1];
-            } else {
-                document.getElementById("monthName").innerText = "No month stored.";
-            }
-        }
-  
-        displayStoredMonth();
 
-        function displaySecondMonth() {
-            let storedMonthNumber = localStorage.getItem("secondMonthNumber");
-            if (storedMonthNumber) {
-                document.getElementById("secondMonthName").innerText = 
-                     months[storedMonthNumber - 1];
-            } else {
-                document.getElementById("secondMonthName").innerText = "No month stored.";
+document.addEventListener("DOMContentLoaded", function () {
+          let dob = localStorage.getItem("dob1");
+          let age = localStorage.getItem("age1");
+  
+          if (dob) {
+              document.getElementById("dobDisplay1").textContent = `${dob}`;
+              document.getElementById("ageDisplay1").textContent = `Your age: ${age}`;
+          }
+      });
+      
+        document.addEventListener("DOMContentLoaded", function () {
+            let dob = localStorage.getItem("dob2");
+            let age = localStorage.getItem("age2");
+    
+            if (dob) {
+                document.getElementById("dobDisplay2").textContent = `${dob}`;
+                document.getElementById("ageDisplay2").textContent = `Your age: ${age}`;
             }
-        }
-  
-        displaySecondMonth();
+        });
     </script>
-  
+    
     </div>
   </div>
 {% endblock %}

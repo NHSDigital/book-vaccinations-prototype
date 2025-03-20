@@ -56,7 +56,7 @@ Book vaccinations prototype
           
 
            
-          <p>Person with the date of birth of {{data['p1-day']}} <span id="monthName"></span> {{data['p1-year']}} has been added to this booking</p>
+          <p>Person with the date of birth of <span id="dobDisplay1"></span> has been added to this booking</p>
 
           <!--<table class="nhsuk-table">
             <thead role="rowgroup" class="nhsuk-table__head">
@@ -121,24 +121,17 @@ Book vaccinations prototype
     </form>
 
     <script>
-      const months = [
-          "January", "February", "March", "April", "May", "June",
-          "July", "August", "September", "October", "November", "December"
-      ];
-
-      function displayStoredMonth() {
-          let storedMonthNumber = localStorage.getItem("monthNumber");
-          if (storedMonthNumber) {
-              document.getElementById("monthName").innerText = 
-                   months[storedMonthNumber - 1];
-          } else {
-              document.getElementById("monthName").innerText = "No month stored.";
+      document.addEventListener("DOMContentLoaded", function () {
+          let dob = localStorage.getItem("dob1");
+          let age = localStorage.getItem("age1");
+  
+          if (dob) {
+              document.getElementById("dobDisplay1").textContent = `${dob}`;
+              document.getElementById("ageDisplay1").textContent = `Your age: ${age}`;
           }
-      }
-
-      displayStoredMonth();
+      });
   </script>
-      
+        
       </div>
       <!-- End of content -->
 
