@@ -1,0 +1,210 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-back-link">
+
+            <a class="nhsuk-back-link__link" href="javascript:history.back()">
+              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+              </svg>
+              Back</a>
+          </div>
+    
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Choose a pharmacy to book an appointment
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p>These places meet the access needs:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>{{data['accessibility']}}</li>
+      </ul>
+      <p>
+          <a href="access-needs">Change access needs</a>
+      </p>
+
+      <hr>
+
+        <div>
+<div>
+    <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>2.6 miles away</p>
+    <form action="choose-date" method="get" class="form">
+   
+    <h2>Barrow Pharmacy</h2>
+    
+    <p id="address_2" class="nhsuk-list nhsuk-u-margin-bottom-2">
+      <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+  POST OFFICE, HIGH STREET, BARROW UPON HUMBER, NORTH LINCOLNSHIRE, DN19 7AA
+</p>                
+<p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+  <a id="map_link_2" href="https://www.google.com/maps/dir/?api=1&amp;origin=53.680877362274934%2c-0.44305182107425606&amp;destination=POST+OFFICE%2c+HIGH+STREET%2c+BARROW+UPON+HUMBER%2c+NORTH+LINCOLNSHIRE%2c+DN19+7AA&amp;t=m" rel="noreferrer noopener" class="maplink">
+      Get directions <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+      (opens in Google Maps)
+  </a>
+</p>        <br>
+    
+        <p id="phone_2" class="nhsuk-list nhsuk-u-margin-bottom-2">
+          <span class="nhsuk-u-visually-hidden">Phone number for this organisation is &nbsp;</span>
+      01469535002
+  </p>    
+    <strong class="nhsuk-tag nhsuk-tag--white">
+        Car parking
+      </strong>
+
+      <strong class="nhsuk-tag nhsuk-tag--white">
+Step free access      </strong>
+
+      <strong class="nhsuk-tag nhsuk-tag--white">
+Wheelchair access      </strong>
+    
+      <br><br>
+                
+        
+    
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-action-link">
+              <button class="nhsuk-action-link__link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Barrow Pharmacy - OST OFFICE, HIGH STREET, BARROW UPON HUMBER, NORTH LINCOLNSHIRE, DN19 7AA">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+                <a>Choose Barrow Pharmacy</a>
+              </button>
+          </div>   
+    </div>
+        </div>
+    <hr>
+
+    <div>
+        <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>3 miles away</p>
+        
+        <h2>Cohens Chemist</h2>
+        
+        <p id="address_4" class="nhsuk-list nhsuk-u-margin-bottom-2">
+          <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+      THE HESSLE GRANGE PCC, 11 HULL ROAD, HESSLE, HU13 9LZ
+  </p>
+
+  <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+    <a id="map_link_4" href="https://www.google.com/maps/dir/?api=1&amp;origin=53.680877362274934%2c-0.44305182107425606&amp;destination=THE+HESSLE+GRANGE+PCC%2c+11+HULL+ROAD%2c+HESSLE%2c+HU13+9LZ&amp;t=m" rel="noreferrer noopener" class="maplink">
+        Get directions <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+        (opens in Google Maps)
+    </a>
+</p>            <br>
+        
+<p id="phone_4" class="nhsuk-list nhsuk-u-margin-bottom-2">
+        <span class="nhsuk-u-visually-hidden">Phone number for this organisation is &nbsp;</span>
+    01482647611
+</p>        
+        <strong class="nhsuk-tag nhsuk-tag--white">
+            Car parking
+          </strong>
+        
+          <strong class="nhsuk-tag nhsuk-tag--white">
+            Disabled parking
+          </strong>
+
+          <strong class="nhsuk-tag nhsuk-tag--white">
+            Step-free access
+          </strong>
+
+          <strong class="nhsuk-tag nhsuk-tag--white">
+            Wheelchair access
+          </strong>
+
+
+          <br><br>
+                    
+            
+        
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-action-link">
+                  <button class="nhsuk-action-link__link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Cohens Chemist - THE HESSLE GRANGE PCC, 11 HULL ROAD, HESSLE, HU13 9LZ">
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                  </svg>
+                    <a>Choose Cohens Chemist</a>
+                  </button>
+              </div>   
+        </div>        </div>
+
+        <p id="distance_5" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>3.6 miles away</p><form action="choose-date" method="get" class="form">
+  
+  <h2>Hessle Pharmacy</h2>
+
+  <p id="address_5" class="nhsuk-list nhsuk-u-margin-bottom-2">
+    <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+225 BOOTHFERRY ROAD, HESSLE, HUMBERSIDE, HU13 9BB
+</p>
+
+<p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+  <a id="map_link_5" href="https://www.google.com/maps/dir/?api=1&amp;origin=53.680877362274934%2c-0.44305182107425606&amp;destination=225+BOOTHFERRY+ROAD%2c+HESSLE%2c+HUMBERSIDE%2c+HU13+9BB&amp;t=m" rel="noreferrer noopener" class="maplink">
+      Get directions <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+      (opens in Google Maps)
+  </a>
+</p>    <br>
+
+    <p id="phone_5" class="nhsuk-list nhsuk-u-margin-bottom-2">
+      <span class="nhsuk-u-visually-hidden">Phone number for this organisation is &nbsp;</span>
+  01482642226
+</p>
+<strong class="nhsuk-tag nhsuk-tag--white">
+  Car parking
+</strong>
+
+  <br><br>
+            
+    
+  <div class="nhsuk-form-group">
+    <div class="nhsuk-action-link">
+          <button class="nhsuk-action-link__link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Hessle Pharmacy - 225 BOOTHFERRY ROAD, HESSLE, HUMBERSIDE, HU13 9BB">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+            <a>Choose Hessle Pharmacy</a>
+          </button>
+      </div>   
+</div>
+</div>
+<hr>
+
+        </form>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
