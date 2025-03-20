@@ -41,4 +41,16 @@
     </div>
   </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let dob = localStorage.getItem("dob");
+        let age = localStorage.getItem("age");
+
+        if (dob) {
+            document.getElementById("dobDisplay").textContent = `${dob}`;
+            document.getElementById("ageDisplay").textContent = `Your age: ${age}`;
+        }
+    });
+</script>
+
 {% endblock %}
