@@ -23,7 +23,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Book a vaccination",
+        "name": "Manage your appointments",
         "href": "/"
       },
       "showNav": "false",
@@ -35,31 +35,18 @@
 <!-- Edit the footer -->
 <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-<footer role="contentinfo">
-  <div class="nhsuk-footer-container">
-    <div class="nhsuk-width-container">
-      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-      <div class="nhsuk-footer">
-
-        <ul class="nhsuk-footer__list">
-          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-            <a class="nhsuk-footer__list-item-link" href="/">Home</a>
-          </li>
-          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-            <a class="nhsuk-footer__list-item-link" href="https://design-history.prevention-services.nhs.uk/">Design History</a>
-          </li>
-          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-            <a class="nhsuk-footer__list-item-link" href="v5/site-selector">MYA Demo Journey</a>
-          </li>
-        </ul>
-        <div>
-          <p class="nhsuk-footer__copyright">© NHS England</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</footer>
+  {{ footer({
+    "links": [
+      {
+        "URL": "/",
+        "label": "Home"
+      },
+      {
+        "URL": "/page-example",
+        "label": "Example page"
+      }
+    ]
+  })}}
 {% endblock %}
 
 {% block bodyEnd %}

@@ -490,5 +490,16 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
 
 
+// MYA routes //
+
+router.get(/addSessionType/, function (req, res) {
+    if (req.query.radioGroup === "Repeat" ) {
+        res.redirect('availability-date-range');
+    }
+    else {
+        res.redirect('session-date');
+    }
+});
+
         
 module.exports = router;
