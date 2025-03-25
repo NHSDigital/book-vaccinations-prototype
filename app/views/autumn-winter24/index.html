@@ -1,0 +1,71 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Autumn/winter 2024 work
+      </h1>
+
+
+          <h2 class="nhsuk-heading-l">MECC messages - December 2024</h2>
+
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="autumn-winter24/covid/book/booking-complete2" class="nhsuk-link">Covid</a></li>
+            <li><a href="autumn-winter24/flu/book/booking-complete2" class="nhsuk-link">Flu</a></li>
+            </ul>
+    
+            <h2 class="nhsuk-heading-l">MYA transition pages RSV - November 24</h2>
+    
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="autumn-winter24/rsv-v6/mya-transition-date" class="nhsuk-link">Date selection</a></li>
+            <li><a href="autumn-winter24/rsv-v6/index-transition" class="nhsuk-link">Start page</a></li>
+            </ul>
+    
+    
+          <h2 class="nhsuk-heading-l">Confirmation pages - August 24</h2>
+    
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li><a href="autumn-winter24/rsv-v6/book/booking-complete" class="nhsuk-link">RSV</a></li>
+            <li><a href="autumn-winter24/covid/book/booking-complete" class="nhsuk-link">COVID-19</a></li>
+            <li><a href="autumn-winter24/flu/book/booking-complete" class="nhsuk-link">Flu</a></li>
+            </ul>    
+      <hr>
+
+      <hr>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
