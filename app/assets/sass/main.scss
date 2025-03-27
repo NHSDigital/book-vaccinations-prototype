@@ -1005,3 +1005,33 @@ a:hover {
 .x-govuk-secondary-navigation__list-item--current .x-govuk-secondary-navigation__link:visited {
   color: #212b32;
 }
+
+// declaration //
+
+.nhsuk-tip {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #005eb8;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  padding-top: 50px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  color: #212b32;
+}
+
+.nhsuk-tip:before {
+  content: "HINT";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  background: #005eb8;
+  color: white;
+}

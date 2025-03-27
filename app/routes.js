@@ -463,7 +463,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
  router.get(/newAreYouSure/, function (req, res) {
     if (req.query.radioGroup === "yes" ) {
-        res.redirect('cya');
+        res.redirect('cya-no');
         }
     else {
         res.redirect('contact-details');
@@ -487,6 +487,15 @@ router.get(/jointImmuneSystem/, function (req, res) {
                 res.redirect('choose-appt');
                 }
             });
+
+            router.get(/newNhsNumberRadio/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('nhs-no');
+                    }
+                else {
+                    res.redirect('postcode');
+                    }
+                });
 
 
 
