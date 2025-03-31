@@ -32,14 +32,29 @@ Book vaccinations prototype
     <div class="nhsuk-grid-column-two-thirds">
       <h1>We found 2 places that match '{{data['location-input']}}'</h1>
       <p>Choose one of the following:</p>
+
+      <form action="access-needs-2" method="get" class="form">
+
       <ul class="nhsuk-list">
-                  <li>
-                      <a href="access-needs" id="result-0" class="link">Leeds, Kent, ME17</a>
-                  </li>
-                  <li>
-                      <a href="access-needs" id="result-1" class="link">Leeds, Yorkshire and the Humber, LS1</a>
-                  </li>
-      </ul>
+        <li>
+                  <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping">
+                    <a>Epping, Essex, CM16</a>
+                  </button> 
+                </li>
+        <li>
+          <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping Green">
+            <a>Epping Green, Essex, CM16</a></button>
+        </li>
+        <li>
+          <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping Upland">
+            <a>Epping Upland, Essex, CM16</a></button>
+        </li>
+        <li>
+          <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping Green">
+            <a>Epping Green, Hertfordshire, SG13</a></button>
+        </li>
+      </ul>      
+      
       <p>
           <a href="appt-postcode">
               None of these - try another town, city or postcode
