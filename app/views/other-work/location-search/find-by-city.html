@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Book vaccinations prototype
+Book vaccinations prototype
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -28,25 +28,23 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-
-      <!-- Change the page title here -->
-      <h1 class="nhsuk-heading-xl">
-        Other work
-      </h1>
-    
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="location-search/appt-postcode" class="nhsuk-link">Location search - enhanced</a></li>
-        <li><a href="location-search/appt-postcode-ac" class="nhsuk-link">Location search - autocomplete</a></li>
-      <li><a href="mya-v5/site-selector" class="nhsuk-link">MYA demo (March 25)</a></li>
-      <li><a href="dob-reroute" class="nhsuk-link">date of birth validation and routing</a></li>
-      <li><a href="calendar-comp" class="nhsuk-link">Calendar (MYA)</a></li>
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1>We found 2 places that match '{{data['location-input']}}'</h1>
+      <p>Choose one of the following:</p>
+      <ul class="nhsuk-list">
+                  <li>
+                      <a href="access-needs" id="result-0" class="link">Leeds, Kent, ME17</a>
+                  </li>
+                  <li>
+                      <a href="access-needs" id="result-1" class="link">Leeds, Yorkshire and the Humber, LS1</a>
+                  </li>
       </ul>
-
-      <!-- End of content -->
-
-    </div>
-  </div>
+      <p>
+          <a href="appt-postcode">
+              None of these - try another town, city or postcode
+          </a>
+      </p>
+  
+  </div>  </div>
 {% endblock %}

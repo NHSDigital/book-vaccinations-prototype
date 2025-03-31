@@ -1,0 +1,241 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-flu.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+    
+{% block head %}
+<!-- Include the accessible-autocomplete CSS from CDN -->
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back</a>
+      </div>
+
+      <form action="access-needs" method="get" class="form">
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Find a site
+                </h1>
+              </legend>
+          
+              <label class="nhsuk-label" for="locationInput">
+                Enter a town, city or postcode in England
+              </label>
+              
+              <div class="autocomplete-container">
+                <input type="text" id="autocompleteInput" class="autocomplete-input nhsuk-input nhsuk-input--width-20" name="location-input">
+                <ul id="autocompleteList" class="autocomplete-list"></ul>
+            </div>
+            </fieldset>
+            <br><br>
+         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>  
+
+           </form>
+    
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+{% block bodyEnd %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("autocompleteInput");
+        const suggestionBox = document.getElementById("autocompleteList");
+
+        // Static dataset (Expand as needed)
+        const locationData = [
+    "Abbey Wood", "Abingdon", "Accrington", "Altrincham", "Amersham", "Andover", 
+    "Ashford", "Aylesbury", "Basingstoke", "Bath", "Bedford", "Bexley", "Blackburn", 
+    "Blackpool", "Bournemouth", "Bradford", "Bracknell", "Brighton", "Bristol", 
+    "Burnley", "Bury", "Cambridge", "Canterbury", "Carlisle", "Chester", "Chichester", 
+    "Coventry", "Crewe", "Croydon", "Darlington", "Dartford", "Doncaster", "Dover", 
+    "Durham", "Eastbourne", "Exeter", "Fareham", "Felixstowe", "Fleetwood", "Gateshead", 
+    "Gloucester", "Grimsby", "Guildford", "Halifax", "Harlow", "Harrogate", "Hastings", 
+    "Hereford", "High Wycombe", "Hull", "Ilford", "Ipswich", "Kingston upon Thames", 
+    "Leeds", "Leicester", "Lichfield", "Lincoln", "Liverpool", "London", "Luton", 
+    "Maidstone", "Manchester", "Mansfield", "Newcastle upon Tyne", "Newport", "Norwich", 
+    "Nottingham", "Oxford", "Peterborough", "Plymouth", "Portsmouth", "Preston", "Reading", 
+    "Redditch", "Rochdale", "Rotherham", "Shrewsbury", "Slough", "Southampton", 
+    "Southend-on-Sea", "St Albans", "St Helens", "Stoke-on-Trent", "Sunderland", "Swansea", 
+    "Swindon", "Teesside", "Telford", "Tonbridge", "Torquay", "Warrington", "Watford", 
+    "Wigan", "Woking", "Worcester", "York",
+    "AL1", "AL2", "AL3", "AL4", "AL5", "AL6", "AL7", "AL8", "AL9", 
+    "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9", 
+    "BA1", "BA2", "BA3", "BA4", "BA5", "BA6", "BA7", "BA8", "BA9", 
+    "BB1", "BB2", "BB3", "BB4", "BB5", "BB6", "BB7", "BB8", "BB9", 
+    "BD1", "BD2", "BD3", "BD4", "BD5", "BD6", "BD7", "BD8", "BD9", 
+    "BH1", "BH2", "BH3", "BH4", "BH5", "BH6", "BH7", "BH8", "BH9", 
+    "BL1", "BL2", "BL3", "BL4", "BL5", "BL6", "BL7", "BL8", "BL9", 
+    "BN1", "BN2", "BN3", "BN4", "BN5", "BN6", "BN7", "BN8", "BN9", 
+    "BR1", "BR2", "BR3", "BR4", "BR5", "BR6", "BR7", "BR8", "BR9", 
+    "BS1", "BS2", "BS3", "BS4", "BS5", "BS6", "BS7", "BS8", "BS9", 
+    "CA1", "CA2", "CA3", "CA4", "CA5", "CA6", "CA7", "CA8", "CA9", 
+    "CB1", "CB2", "CB3", "CB4", "CB5", "CB6", "CB7", "CB8", "CB9", 
+    "CH1", "CH2", "CH3", "CH4",
+    "CM1", "CM2", "CM3", "CM4", "CM5", "CM6", "CM7", "CM8", "CM9", 
+    "CO1", "CO2", "CO3", "CO4", "CO5", "CO6", "CO7", "CO8", "CO9", 
+    "CR0", "CR1", "CR2", "CR3", "CR4", "CR5", "CR6", "CR7", "CR8", 
+    "CS1", "CS2", "CT1", "CT2", "CT3", "CT4", "CT5", "CT6", "CT7", 
+    "CT8", "CT9", "CV1", "CV2", "CV3", "CV4", "CV5", "CV6", "CV7", 
+    "CV8", "CV9", "CW1", "CW2", "CW3", "CW4", "CW5", "CW6", "CW7", 
+    "DY1", "DY2", "DY3", "DY4", "DY5", "DY6", "DY7", "DY8", "DY9", 
+    "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9", 
+    "EC1", "EC2", "EC3", "EC4", 
+    "EX1", "EX2", "EX3", "EX4", "EX5", "EX6", "EX7", "EX8", "EX9", 
+    "GL1", "GL2", "GL3", "GL4", "GL5", "GL6", "GL7", "GL8", "GL9", 
+    "GU1", "GU2", "GU3", "GU4", "GU5", "GU6", "GU7", "GU8", "GU9", 
+    "HA1", "HA2", "HA3", "HA4", "HA5", "HA6", "HA7", "HA8", 
+    "HD1", "HD2", "HD3", "HD4", "HD5", "HD6", "HD7", "HD8", "HD9", 
+    "HG1", "HG2", "HG3", "HG4", "HG5", "HG6", "HG7", "HG8", "HG9", 
+    "HP1", "HP2", "HP3", "HP4", "HP5", "HP6", "HP7", "HP8", "HP9", 
+    "HR1", "HR2", "HR3", "HR4", "HR5", "HR6", "HR7", "HR8", "HR9", 
+    "HU1", "HU2", "HU3", "HU4", "HU5", "HU6", "HU7", "HU8", "HU9", 
+    "HX1", "HX2", "HX3", "HX4", "HX5", "HX6", "HX7", "HX8", "HX9", 
+    "IG1", "IG2", "IG3", "IG4", "IG5", "IG6", "IG7", "IG8", "IG9", 
+    "IP1", "IP2", "IP3", "IP4", "IP5", "IP6", "IP7", "IP8", "IP9", 
+    "KT1", "KT2", "KT3", "KT4", "KT5", "KT6", "KT7", "KT8", "KT9", 
+    "LA1", "LA2", "LA3", "LA4", "LA5", "LA6", "LA7", "LA8", "LA9", 
+    "LE1", "LE2", "LE3", "LE4", "LE5", "LE6", "LE7", "LE8", "LE9", 
+    "LN1", "LN2", "LN3", "LN4", "LN5", "LN6", "LN7", "LN8", 
+    "LS1", "LS2", "LS3", "LS4", "LS5", "LS6", "LS7", "LS8", "LS9", 
+    "LU1", "LU2", "LU3", "LU4", "LU5", "LU6", "LU7", "LU8", "LU9", 
+    "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", 
+    "ME1", "ME2", "ME3", "ME4", "ME5", "ME6", "ME7", "ME8", "ME9", 
+    "MK1", "MK2", "MK3", "MK4", "MK5", "MK6", "MK7", "MK8", "MK9", 
+    "N1", "N2", "N3", "N4", "N5", "N6", "N7", "N8", "N9", 
+    "NE1", "NE2", "NE3", "NE4", "NE5", "NE6", "NE7", "NE8", "NE9", 
+    "NG1", "NG2", "NG3", "NG4", "NG5", "NG6", "NG7", "NG8", "NG9", 
+    "NH1", "NH2", 
+    "NN1", "NN2", "NN3", "NN4", "NN5", "NN6", "NN7", "NN8", "NN9", 
+    "NR1", "NR2", "NR3", "NR4", "NR5", "NR6", "NR7", "NR8", "NR9", 
+    "NW1", "NW2", "NW3", "NW4", "NW5", "NW6", "NW7", "NW8", "NW9", 
+    "OL1", "OL2", "OL3", "OL4", "OL5", "OL6", "OL7", "OL8", 
+    "OX1", "OX2", "OX3", "OX4", "OX5", "OX6", "OX7", "OX8", "OX9", 
+    "PE1", "PE2", "PE3", "PE4", "PE5", "PE6", "PE7", "PE8", "PE9", 
+    "PL1", "PL2", "PL3", "PL4", "PL5", "PL6", "PL7", "PL8", "PL9", 
+    "PR1", "PR2", "PR3", "PR4", "PR5", "PR6", "PR7", "PR8", "PR9", 
+    "RG1", "RG2", "RG3", "RG4", "RG5", "RG6", "RG7", "RG8", "RG9", 
+    "RH1", "RH2", "RH3", "RH4", "RH5", "RH6", "RH7", "RH8", "RH9", 
+    "RM1", "RM2", "RM3", "RM4", "RM5", "RM6", "RM7", "RM8", "RM9", 
+    "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", 
+    "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7", "SE8", "SE9", 
+    "SG1", "SG2", "SG3", "SG4", "SG5", "SG6", "SG7", "SG8", "SG9"        ];
+
+        let selectedIndex = -1; // Track keyboard selection
+
+        input.addEventListener("input", function () {
+            let query = input.value.trim().toLowerCase();
+            if (query.length < 2) {
+                suggestionBox.innerHTML = ""; // Clear if input is too short
+                suggestionBox.style.display = 'none'; // Hide the suggestion box
+                return;
+            }
+
+            // Filter dataset for matches
+            let suggestions = locationData.filter(item => item.toLowerCase().includes(query));
+
+            // Display suggestions
+            suggestionBox.innerHTML = suggestions.length
+                ? suggestions.map((item, index) => 
+                    `<li class="autocomplete-item" data-index="${index}">${item}</li>`).join("")
+                : `<li class="no-results">No matches found</li>`;
+
+            // Show the suggestion box
+            suggestionBox.style.display = suggestions.length > 0 ? 'block' : 'none';
+
+            // Reset selection index for keyboard navigation
+            selectedIndex = -1;
+
+            // Click event for each suggestion
+            document.querySelectorAll(".autocomplete-item").forEach((option, index) => {
+                option.addEventListener("click", function () {
+                    input.value = this.textContent;
+                    suggestionBox.innerHTML = ""; // Hide suggestions
+                    suggestionBox.style.display = 'none'; // Hide the suggestion box
+                });
+
+                option.addEventListener("mouseover", () => {
+                    selectedIndex = index; // Update selected index on hover
+                });
+            });
+        });
+
+        // Handle keyboard navigation (Arrow Down, Arrow Up, Enter)
+        input.addEventListener("keydown", function (event) {
+            let options = document.querySelectorAll(".autocomplete-item");
+
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                selectedIndex = (selectedIndex + 1) % options.length;
+            } else if (event.key === "ArrowUp") {
+                event.preventDefault();
+                selectedIndex = (selectedIndex - 1 + options.length) % options.length;
+            } else if (event.key === "Enter" && selectedIndex >= 0) {
+                event.preventDefault();
+                input.value = options[selectedIndex].textContent;
+                suggestionBox.innerHTML = ""; // Hide suggestions
+                suggestionBox.style.display = 'none'; // Hide the suggestion box
+            }
+
+            // Highlight the selected option
+            options.forEach((option, index) => {
+                option.classList.toggle("selected", index === selectedIndex);
+            });
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!input.contains(event.target) && !suggestionBox.contains(event.target)) {
+                suggestionBox.innerHTML = "";
+                suggestionBox.style.display = 'none'; // Hide the suggestion box
+            }
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1035,3 +1035,50 @@ a:hover {
   background: #005eb8;
   color: white;
 }
+
+// auto complete display //
+
+        .autocomplete-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Suggestions dropdown */
+        .autocomplete-list {
+          background-color: #fff;
+          border: 2px solid #0b0c0c;
+          border-top: 0;
+          color: #0b0c0c;
+          margin: 0;
+          max-height: 342px;
+          overflow-x: hidden;
+          padding: 0;
+          display: none;
+          width: calc(100% - 4px)
+        }
+
+        .autocomplete-list li:first-of-type {
+          border-top-width: 0;
+      }
+        .autocomplete-list li {
+          border-bottom: solid #b1b4b6;
+          border-width: 1px 0;
+          cursor: pointer;
+          display: block;
+          position: relative;
+          font-size: 19px;
+          line-height: 1.31579;
+          padding: 5px;
+      }
+
+        .autocomplete-list li:hover,
+        .autocomplete-list .selected {
+            background: #f0f0f0;
+        }
+
+        .no-results {
+            color: #888;
+            padding: 10px;
+            font-style: italic;
+        }
