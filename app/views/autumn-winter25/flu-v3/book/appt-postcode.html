@@ -51,14 +51,14 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Enter a postcode near where you'd like the appointment
+                  Find a site near where you'd like the appointment
                 </h1>
               </legend>
           
-              <label class="nhsuk-label" for="postcode">
-                Enter a postcode
+              <label class="nhsuk-label" for="locationInput">
+                Enter a town, city or postcode in England
               </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+              <input class="nhsuk-input nhsuk-input--width-20" id="locationInput" name="location-input" type="text">            
 
             </fieldset>
           
@@ -73,4 +73,25 @@ Book vaccinations prototype
 
     </div>
   </div>
-{% endblock %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".form");
+        const input = document.getElementById("locationInput");
+    
+        form.addEventListener("submit", function (event) {
+            let location = input.value.trim(); // Store input in a variable
+            const postcodePattern = /^[A-Z]{1,2}\d{1,2}[A-Z]?\s?\d?[A-Z]{0,2}$/i;
+    
+            // Change form action dynamically before submitting
+            if (postcodePattern.test(location)) {
+                form.action = `access-needs-2`; // Backend will handle {{ data['location-input'] }}
+            } else {
+                form.action = `find-by-city`; // Backend will handle {{ data['location-input'] }}
+            }
+    
+            // Form now submits normally, and data is available on the server-side
+        });
+    });
+    </script>
+        {% endblock %}
