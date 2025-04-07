@@ -51,7 +51,7 @@ Book vaccinations prototype
                 Check your booking details
               </h1>
 
-              <!--<h2 class="nhsuk-heading-m">Personal details</h2>
+              <h2 class="nhsuk-heading-m">Booked for</h2>
 
               <table class="nhsuk-table">
                 <thead role="rowgroup" class="nhsuk-table__head">
@@ -60,47 +60,17 @@ Book vaccinations prototype
                       Name
                     </th>
                     <th role="columnheader" class="" scope="col">
-                      NHS Number
-                    </th>
-                    <th role="columnheader" class="" scope="col">
                         Date of birth
                       </th>
                     </tr>
                 </thead>
                 <tbody class="nhsuk-table__body">
                   <tr role="row" class="nhsuk-table__row">
-                    <td class="nhsuk-table__cell">Jean Davidson</td>
-                    <td class="nhsuk-table__cell ">999 123 4567</td>
-                    <td class="nhsuk-table__cell ">4 March 1948</td>
+                    <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
+                    <td class="nhsuk-table__cell "><span id="dobDisplay"></span></td>
                   </tr>
                 </tbody>
               </table>
-              
-              <h2 class="nhsuk-heading-m">Booked for</h2>
-              <dl class="nhsuk-summary-list">
-    
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Name
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Jean Davidson
-                  </dd>
-              
-                  <dd class="nhsuk-summary-list__actions">
-              
-                    <a href="appt-postcode">
-                      Change<span class="nhsuk-u-visually-hidden"> who this appointment is booked for</span>
-                    </a>
-              
-                  </dd>
-              
-                </div>
-    
-              </dl>-->       
-    
-    
-              <!--<p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>-->
 
               <h2 class="nhsuk-heading-m">Appointment details</h2>
           <dl class="nhsuk-summary-list">
@@ -270,6 +240,17 @@ Book vaccinations prototype
       
       </div>
       <!-- End of content -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let dob = localStorage.getItem("dob");
+            let age = localStorage.getItem("age");
+    
+            if (dob) {
+                document.getElementById("dobDisplay").textContent = `${dob}`;
+                document.getElementById("ageDisplay").textContent = `Your age: ${age}`;
+            }
+        });
+    </script>
 
     </div>
   </div>
