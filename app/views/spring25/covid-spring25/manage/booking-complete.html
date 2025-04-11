@@ -86,40 +86,24 @@ Book vaccinations prototype
                       <br>
                                         
 
-                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                          Date
-                        </h5>
-  
-                      <p class="nhsuk-card__description">
-                        {{data['date']}}
-                      </p>
-  
-                      <br>
-              
-                      <table class="nhsuk-table">
-                        <thead role="rowgroup" class="nhsuk-table__head">
-                          <tr role="row">
-                            <th role="columnheader" class="" scope="col">
-                              Name
-                            </th>
-                            <th role="columnheader" class="" scope="col">
-                             Time
-                            </th>
-                            <th role="columnheader" class="" scope="col">
-                              Vaccination type
-                              </th>
-                            </tr>
-                        </thead>
-                        <tbody class="nhsuk-table__body">
-                          <caption class="nhsuk-table__caption">Booked for</caption>
-                          <tr role="row" class="nhsuk-table__row">
-                            <td class="nhsuk-table__cell">Jean Davidson</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
-                            <td class="nhsuk-table__cell ">COVID-19</td>
-                          </tr>
-                        </tbody>
-                      </table>        
+                      <h5 class="nhsuk-heading-xs">
+                        Date
+                      </h5>
+      
+                    <p>
+                      {{data['date']}} at {{data['hour']}}{{data['time']}}
+                    </p>
+      
+                    <br>
             
+                  <h5 class="nhsuk-heading-xs">
+                    Vaccination type
+                  </h5>
+      
+                <p >
+                  COVID-19
+                </p>  <br><br>          
+                  
 
 
 

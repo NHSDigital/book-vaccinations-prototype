@@ -54,9 +54,10 @@ Book vaccinations prototype
       </div>
 
 
-            <h1 class="nhsuk-heading-xl">
-                Do you want to book this appointment?
-              </h1>
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+        Do you want to book this appointment?
+              </h1></legend>
 
 
             <hr>
@@ -80,44 +81,23 @@ Book vaccinations prototype
                 </p>
                                     
 
-                <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                    Date
-                  </h5>
+                <h5 class="nhsuk-heading-xs">
+                  Date
+                </h5>
 
-                <p class="nhsuk-card__description">
-                  {{data['date']}}
-                </p>
+              <p>
+                {{data['date']}} at {{data['hour']}}{{data['time']}}
+              </p>
 
-                <br>
-        
-                <table class="nhsuk-table">
-                  <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-                      <th role="columnheader" class="" scope="col">
-                        Name
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                       Time
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                        Vaccination type
-                        </th>
-                      </tr>
-                  </thead>
-                  <tbody class="nhsuk-table__body">
-                    <caption class="nhsuk-table__caption">Booked for</caption>
-                    <tr role="row" class="nhsuk-table__row">
-                      <td class="nhsuk-table__cell">Jean Davidson</td>
-                      <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
-                      <td class="nhsuk-table__cell ">COVID-19</td>
-                    </tr>
-                    <!--<tr role="row" class="nhsuk-table__row">
-                      <td class="nhsuk-table__cell">Roger Davidson</td>
-                      <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
-                      <td class="nhsuk-table__cell ">COVID-19</td>
-                    </tr>-->
-                  </tbody>
-                </table>        
+              <br>
+      
+            <h5 class="nhsuk-heading-xs">
+              Vaccination type
+            </h5>
+
+          <p >
+            COVID-19
+          </p>  <br><br>          
 
             <h2 class="nhsuk-heading-l">
                 Existing appointment
@@ -128,7 +108,7 @@ Book vaccinations prototype
                 Site location
               </h5>
 
-              <p class="nhsuk-card__description">
+              <p>
                 Integration Test Site<br>
                 Site Address
             </p>
@@ -141,44 +121,23 @@ Book vaccinations prototype
                 </p>
                                     
 
-                <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                    Date
-                  </h5>
+                <h5 class="nhsuk-heading-xs">
+                  Date
+                </h5>
 
-                <p class="nhsuk-card__description">
-                  Saturday 25 January
-                </p>
+              <p>
+                {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }} at 10:30am
+              </p>
 
-                <br>
-        
-                <table class="nhsuk-table">
-                  <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-                      <th role="columnheader" class="" scope="col">
-                        Name
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                       Time
-                      </th>
-                      <th role="columnheader" class="" scope="col">
-                        Vaccination type
-                        </th>
-                      </tr>
-                  </thead>
-                  <tbody class="nhsuk-table__body">
-                    <caption class="nhsuk-table__caption">Booked for</caption>
-                    <tr role="row" class="nhsuk-table__row">
-                      <td class="nhsuk-table__cell">Jean Davidson</td>
-                      <td class="nhsuk-table__cell ">10am</td>
-                      <td class="nhsuk-table__cell ">COVID-19</td>
-                    </tr>
-                    <!--<tr role="row" class="nhsuk-table__row">
-                      <td class="nhsuk-table__cell">Roger Davidson</td>
-                      <td class="nhsuk-table__cell ">10:10am</td>
-                      <td class="nhsuk-table__cell ">COVID-19</td>
-                    </tr>-->
-                  </tbody>
-                </table>        
+              <br>
+      
+            <h5 class="nhsuk-heading-xs">
+              Vaccination type
+            </h5>
+
+          <p>
+            COVID-19
+          </p>  <br><br>          
 
             <form action="confirmJointChange" method="get" class="form">
 

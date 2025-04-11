@@ -1082,3 +1082,27 @@ a:hover {
             padding: 10px;
             font-style: italic;
         }
+
+        
+// Fieldset heading correct size //
+
+.nhsuk-fieldset__legend--l {
+  font-weight: 600;
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 1.22222;
+  margin-bottom: 16px;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-fieldset__legend--l {
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.16667;
+  }
+}
+@media print {
+  .nhsuk-fieldset__legend--l {
+    font-size: 20pt;
+    line-height: 1.2;
+  }
+}
