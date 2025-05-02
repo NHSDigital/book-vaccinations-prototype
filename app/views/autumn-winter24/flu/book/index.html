@@ -106,37 +106,12 @@ Book vaccinations prototype
         <li><a href="#">Booking your child's vaccination appointment</a></li>
       </ul>      
 
-      <h3 class="nhsuk-heading-m">
-        More in <a class="nhsuk-link" style="text-decoration: underline;">Pharmacies</a>
-      </h3>
-
-      <h4>About pharmacies</h4>
-
-      <p><a href="#" style="text-decoration: underline;">how pharmacies can help</a></p>
-
-      <p><a href="#" style="text-decoration: underline;">Get help with newly prescribed medicines</a></p>
-
-      <h4>Find pharmacies offering certain services</h4>
-
-      <p><a href="#" style="text-decoration: underline;">Find a pharmacy that offers the contraceptive pill without a prescription</a></p>
-
-      <p><a href="#" style="text-decoration: underline;">Find a pharmacy that offers free blood pressure checks</a></p>
-
-      <p><a href="#" style="text-decoration: underline;">Find a pharmacy that offers free flu vaccination</a></p>
-
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-      
-        <p>Book or manage a free flu vaccination at a pharmacy</p>
-      </div>
-
-      <p><a href="#" style="text-decoration: underline;">Find a pharmacy that offers free COVID-19 lateral flow tests</a></p>
 
       <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-0">
-        Page last reviewed: 15 December 2023<br>
-        Next review due: 14 October 2025
+        Page last reviewed: {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'day': -8}) }}<br>
+        Next review due: 1 {{ date({month: 'long', year: 'numeric'}, {'month': +3}) }}
       </p>
-      <!-- End of content -->
+            <!-- End of content -->
 
     </div>
   </div>
