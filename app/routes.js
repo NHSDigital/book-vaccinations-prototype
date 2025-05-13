@@ -463,7 +463,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
  router.get(/newAreYouSure/, function (req, res) {
     if (req.query.radioGroup === "yes" ) {
-        res.redirect('cya-no');
+        res.redirect('booking-complete');
         }
     else {
         res.redirect('contact-details');
