@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
-router.get('*', function (req, res, next) {
+router.get('/{*splat}', function (req, res, next) {
     // These functions are available on all pages in the prototype.
     // To use call the function inside curly brackets, for example {{ example_function() }}
   
