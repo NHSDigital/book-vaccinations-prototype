@@ -1,6 +1,7 @@
 {
   "name": "nhsuk-prototype-kit",
   "version": "6.0.0",
+  "version": "6.0.0",
   "description": "Rapidly create HTML prototypes of NHS websites and services.",
   "main": "app.js",
   "scripts": {
@@ -44,6 +45,7 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-import": "^2.31.0",
     "jest": "^29.7.0"
   },
