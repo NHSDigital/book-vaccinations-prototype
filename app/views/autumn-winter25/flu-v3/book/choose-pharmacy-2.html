@@ -41,13 +41,13 @@ Book vaccinations prototype
     
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-l">
-        Sites near {{data['location']}}
+        Sites near {{data['location-input']}}
       </h1>
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <p>These places meet the access needs:</p>
+      <p class="nhsuk-body-l">[number] places meet the access needs:</p>
       <ul class="nhsuk-list nhsuk-list--bullet">
         <li>{{data['accessibility']}}</li>
       </ul>

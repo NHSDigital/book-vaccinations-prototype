@@ -497,6 +497,14 @@ router.get(/jointImmuneSystem/, function (req, res) {
                     }
                 });
 
+                        router.get(/proxyDetailsNoMatch/, function (req, res) {
+            if (req.query.radioGroup === "nhsnumber" ) {
+                res.redirect('book/name');
+                }
+            else {
+                    res.redirect('book/index');
+                    }
+            });
 
 
 // MYA routes //

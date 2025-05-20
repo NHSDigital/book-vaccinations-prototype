@@ -28,118 +28,139 @@ Book vaccinations prototype
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <!-- Change the page title here -->
+    <!-- Change the page title here -->
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-     <!-- <div class="nhsuk-back-link">
+   <!-- <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-          </svg>
-          Back</a>
-      </div>-->
-
-
-            <h1 class="nhsuk-heading-xl">
-                Your appointment
-              </h1>
-
-          <div class="nhsuk-card nhsuk-card--feature" style="color: #005eb8; border-color: #005eb8; border-width: 3px;">
-                <div class="nhsuk-card__content">
-                    <h3 class="nhsuk-card__heading nhsuk-heading-l">
-                      Booking complete
-                    </h3>
-            
-                    <p class="nhsuk-card__description nhsuk-u-font-size-22">Your reference number <span  class="nhsuk-u-font-weight-bold">1583033</span></p>
-
-                    <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  you'll need it to view or cancel your appointment.</p>
-                  </div>
-        
-            </div>
-
-            <hr>
-            <h3 class="nhsuk-heading-l">
-                Your appointment details
-              </h3>
+      <a class="nhsuk-back-link__link" href="javascript:history.back()">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Back</a>
+    </div>-->
 
 
-            <div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
-                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                        Site location
-                      </h5>
 
-                      <p>{{data['pharmacy']}}</p>
+              <div class="nhsuk-panel">
+                <h1 class="nhsuk-panel__title">
+                  Booking complete
+                  </h1>
+  
+                <div class="nhsuk-panel__body">
+                Your reference number<br><strong>1583033</strong>
+                </div>
+              </div>
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+              
+                <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  You'll need it to view or cancel your appointment.</p>
+              </div>
+          <hr>
+          <h3 class="nhsuk-heading-l">
+              Appointment details
+            </h3>
+
+                      <!--<table class="nhsuk-table">
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                          <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                              Reference number
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                              Date of birth
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                             Time
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                          <tr role="row" class="nhsuk-table__row">
+                            <td class="nhsuk-table__cell">1583033</td>
+                            <td class="nhsuk-table__cell">4 March 1948</td>
+                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
+                          </tr>
+                          <tr role="row" class="nhsuk-table__row">
+                            <td class="nhsuk-table__cell">1583034</td>
+                            <td class="nhsuk-table__cell">6 May 1945</td>
+                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
+                          </tr>
+                        </tbody>
+                      </table>-->        
+
+                  <h5 class="nhsuk-heading-xs">
+                      Site location
+                    </h5>
+
+                    <p>{{data['pharmacy']}}</p>
 
 
-                    <p class="nhsuk-body">
-                        <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
-                        Map and directions (opens in Google maps)
-                        <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                        </a>
-                        </p>
-                        
+                    <p class="nhsuk-u-padding-top-0">
+                      <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                      Map and directions (opens in Google maps)
+                      <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                      </a>
+                      </p>
+                                          
 
-                        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Date and time
-                          </h5>
-    
-                        <p class="nhsuk-card__description">
-                          {{data['date']}} at {{data['time']}}
-                        </p>
-    
-                
-                        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Vaccination type
-                          </h5>
-    
-                        <p class="nhsuk-card__description">
-                            Flu
+                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                          Date
+                        </h5>
+  
+                      <p class="nhsuk-card__description">
+                        {{data['date']}} at {{data['hour']}}{{data['time']}}
+                      </p>
 
-                        </p>
-
-                  </div>
-        
-            </div>        
-
-            <hr>
-
-            <div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
-                    <h5 class="nhsuk-card__heading nhsuk-heading-m">
-                        Help us improve our website
+                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                        Vaccination type
                       </h5>
 
                     <p class="nhsuk-card__description">
-                        Can you answer some questions about your visit today?
+                      Flu
                     </p>
 
-                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
-                        <a href="#">
-                        Take our survey
-                        
-                        </a>
-                        </p>
-                  </div>
-        
-            </div>  
+                      <br>
+              
             
-            <h5 class="nhsuk-heading-m">More ways to feel your best this autumn and winter</h5>
-
-            <p class="nhsuk-body">Find over 100 healthy and easy-to-follow recipes to try out this autumn and winter.</p>
-
-            <p class="nhsuk-body"><a href="https://www.nhs.uk/healthier-families/recipes/" class="nhsuk-link">Visit the Healthier Families website</a></p>
 
 
-      </div>
-      <!-- End of content -->
 
+                  <h5 class="nhsuk-card__heading nhsuk-heading-m">
+                      Help us improve our website
+                    </h5>
+
+                  <p>
+                      Can you answer some questions about your visit today?
+                  </p>
+
+                  <p>
+                      <a href="#">
+                      Take our survey
+                      
+                      </a>
+                      </p>
+
+
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <img class="nhsuk-card__img" src="/images/AdobeStock_996610811_2.jpeg" alt="">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                <a class="nhsuk-card__link" href="https://www.nhs.uk/healthier-families/recipes/">Visit the Healthier Families website</a>
+              </h2>
+              <p class="nhsuk-card__description">Find over 100 healthy and easy-to-follow recipes to help you feel your best this winter.</p>
+          
+            </div>
+          </div>
     </div>
+    <!-- End of content -->
+
   </div>
+</div>
 {% endblock %}

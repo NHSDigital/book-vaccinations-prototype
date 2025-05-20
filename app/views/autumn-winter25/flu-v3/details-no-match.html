@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -46,19 +46,54 @@ Book vaccinations prototype
       </div>-->
 
 
-            <h1 class="nhsuk-heading-xl">
-                The appointment has been cancelled
+
+            <h1 class="nhsuk-heading-l">
+                We cannot find any details matching this person
               </h1>
 
-              <a class="nhsuk-button" href="index
-              ">
-                Go back to start
-              </a>
+            <p class="nhsuk-body">This may be because:</p>
+
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>their details have not been entered correctly</li>
+              <li>you have spelt the name differently to the name that is registered with their GP surgery</li>
+              </ul>
         
 
-            <div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
-                    <h5 class="nhsuk-card__heading nhsuk-heading-l">
+              <form action="proxyDetailsNoMatch" method="get" class="form">
+
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+        
+        
+        
+                    <div class="nhsuk-radios">
+              
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="nhsnumber">
+                          <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-change">
+                            Try again
+                          </label>
+                        </div>
+                  
+        
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="home">
+                            <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-home">
+                              Go back to start
+                            </label>
+                          </div>
+          
+                      </div>
+            
+                    </fieldset>
+                  
+                  </div>
+        
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                  Continue
+                </button>    </form>
+        
+                    <h5 class="nhsuk-card__heading nhsuk-heading-m">
                         Help us improve our website
                       </h5>
 
@@ -72,9 +107,6 @@ Book vaccinations prototype
                         
                         </a>
                         </p>
-                  </div>
-        
-            </div>        
 
       </div>
       <!-- End of content -->

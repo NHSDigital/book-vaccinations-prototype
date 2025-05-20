@@ -29,7 +29,7 @@ Book vaccinations prototype
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
 
@@ -45,61 +45,136 @@ Book vaccinations prototype
       </div>
 
 
-      <form action="manageAppointment" method="get" class="form">
+      <form action="manageJointAppointment" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What would you like to do with your appointment?
+                  What would you like to do with this appointment?
                 </h1>
               </legend>
 
-              <h3 class="nhsuk-heading-m">
-                Your appointment details
-              </h3>
+              <h2 class="nhsuk-heading-m">Booked for</h2>
+              <table class="nhsuk-table">
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date of birth
+                      </th>
+                    </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}} </td>
+                    <td class="nhsuk-table__cell "><span id="dobDisplay">15 September 1946</span></td>
+                  </tr>
+                </tbody>
+              </table>
 
+              <h2 class="nhsuk-heading-m">Appointment details</h2>
 
-            <div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
-                    <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                        Site location
-                      </h5>
+<dl class="nhsuk-summary-list">
 
-                    <p class="nhsuk-card__description">
-                        Integration Test Site<br>
-                        Site Address
-                    </p>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Vaccination type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Flu
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="appt-postcode">
+                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
-                    <p class="nhsuk-body">
-                        <a id="map_link_0" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.98320727160315%2c-1.7218005902406597&amp;destination=3+TYNE+VIEW%2c+LEMINGTON%2c+NEWCASTLE+UPON+TYNE%2c+TYNE+%26+WEAR%2c+NE15+8DE&amp;t=m" rel="noreferrer" class="maplink">
-                        Map and directions (opens in Google maps)
-                        <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                        </a>
-                        </p>
-                        
+            <!--<div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Access needs
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Accessible toilet available</br>
+                  Braille translation service
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="appt-postcode">
+                    Change<span class="nhsuk-u-visually-hidden"> Access needs for anyone attending the appointment</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Site location
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
-                        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Date and time
-                          </h5>
-    
-                        <p class="nhsuk-card__description">
-                            Thursday 18 September at 10:15am
-                        </p>
-    
-                
-                        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                            Vaccination type
-                          </h5>
-    
-                        <p class="nhsuk-card__description">
-                            Flu
-                        </p>
-
-                  </div>
-        
-            </div>        
-            <div class="nhsuk-radios">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'day': +3}) }}
+                </dd>
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+            
+                </dd>-->
+            
+              </div>
+  
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Time
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  10:15am
+                </dd>
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-time-range">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment time</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->
+  
+          
+          </div></dl>    
+          
+          
+          <div class="nhsuk-radios">
       
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="change">
@@ -111,7 +186,7 @@ Book vaccinations prototype
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="cancel">
                   <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-cancel">
-                    Cancel my appointment
+                    Cancel the appointment
                   </label>
                 </div>
 
@@ -132,8 +207,7 @@ Book vaccinations prototype
           Continue
         </button>    </form>
     
-      </div>
-      <!-- End of content -->
+      </div>      <!-- End of content -->
 
     </div>
   </div>

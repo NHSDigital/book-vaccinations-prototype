@@ -49,12 +49,12 @@ Book vaccinations prototype
 
           <div class="nhsuk-form-group">
             <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--xl" for="nhs-number">
-                What is your NHS number?
+              <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
+                What is {{data['first-name']}} {{data['last-name']}}'s NHS number?
               </label>
             </h1>
             <div class="nhsuk-hint" id="nhs-number-hint">
-              Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, <span class="nhsuk-u-nowrap">485 777 3456</span>.
+              An NHS number is a 10 digit number that you find on any letter the NHS has sent. For example, 485 777 3456.
             </div>
             <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
           </div>
