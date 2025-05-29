@@ -518,5 +518,14 @@ router.get(/addSessionType/, function (req, res) {
     }
 });
 
+router.get(/contactMethod/, function (req, res) {
+    if (req.query.checkboxGroup === "phone" ) {
+        res.redirect('landline');
+    }
+    else {
+        res.redirect('cya');
+    }
+});
+
         
 module.exports = router;
