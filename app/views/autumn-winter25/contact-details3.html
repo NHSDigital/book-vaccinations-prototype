@@ -146,9 +146,8 @@ Book vaccinations prototype
     const email = emailInput.value.trim();
     const mobile = mobileInput.value.trim();
     const noContactSelected = noContactCheckbox.checked;
-    let showInset = false;
 
-    // If 'I do not have' is checked, hide everything
+    // Hide everything if 'no contact' is selected
     if (noContactSelected) {
       insetText.style.display = "none";
       emailHint.style.display = "none";
@@ -158,8 +157,10 @@ Book vaccinations prototype
       return;
     }
 
-    // Email
-    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    let showInset = false;
+
+    // Show and update email section if user has typed anything
+    if (email.length > 0) {
       emailHint.style.display = "block";
       emailDisplay.textContent = email;
       showInset = true;
@@ -168,8 +169,8 @@ Book vaccinations prototype
       emailDisplay.textContent = "";
     }
 
-    // Mobile
-    if (mobile && /^\d{10,}$/.test(mobile)) {
+    // Show and update mobile section if user has typed anything
+    if (mobile.length > 0) {
       textHint.style.display = "block";
       mobileDisplay.textContent = mobile;
       showInset = true;
@@ -178,11 +179,10 @@ Book vaccinations prototype
       mobileDisplay.textContent = "";
     }
 
-    // Show or hide inset container
     insetText.style.display = showInset ? "block" : "none";
   }
 
-  // Attach listeners
+  // Event listeners for live updating
   emailInput.addEventListener("input", updateInsetText);
   mobileInput.addEventListener("input", updateInsetText);
   noContactCheckbox.addEventListener("change", updateInsetText);
