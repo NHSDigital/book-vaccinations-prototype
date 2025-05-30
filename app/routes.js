@@ -506,6 +506,26 @@ router.get(/jointImmuneSystem/, function (req, res) {
                     }
             });
 
+            router.get(/contactMethod/, function (req, res) {
+    if (req.query.checkboxGroup === "phone" ) {
+        res.redirect('landline');
+    }
+    else {
+        res.redirect('cya');
+    }
+});
+
+    router.get(/confirmPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('flu-v3/book/co-admin');
+            }
+        else {
+            res.redirect('flu-v3/book/name');
+            }
+        });
+
+            
+
 
 // MYA routes //
 
@@ -518,14 +538,6 @@ router.get(/addSessionType/, function (req, res) {
     }
 });
 
-router.get(/contactMethod/, function (req, res) {
-    if (req.query.checkboxGroup === "phone" ) {
-        res.redirect('landline');
-    }
-    else {
-        res.redirect('cya');
-    }
-});
 
         
 module.exports = router;
