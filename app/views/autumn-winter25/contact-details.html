@@ -45,10 +45,9 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="cya" method="get" class="form">
+        <form action="contactMethod" method="get" class="form">
 
 
-  <div class="nhsuk-form-group">
 
     <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -59,11 +58,12 @@ Book vaccinations prototype
       <div class="nhsuk-hint" id="contact-hint">
         Enter contact details for the person you want to be notified.<br><br>Select all options that are relevant to you.
       </div>
-      <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+        <div class="nhsuk-form-group">
+<div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="contact-1" name="contact" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-1">
+          <input class="nhsuk-checkboxes__input" id="contact-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-email">
             Email
           </label>
         </div>
@@ -73,38 +73,44 @@ Book vaccinations prototype
               Email address
             </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
           </div>
-
         </div>
 
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+          <input class="nhsuk-checkboxes__input" id="contact-2" name="checkboxOption" type="checkbox" value="text" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
             Text message
           </label>
         </div>
-        <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+        <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-2">
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="mobile">
               Mobile phone number
             </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
           </div>
+      </div>
 
+
+        <div class="nhsuk-checkboxes__divider">or</div>
+
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="contact-3" name="checkboxOption" type="checkbox" value="landline" data-checkbox-exclusive data-checkbox-exclusive-group="checkboxOption">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-phone">
+            I do not have a mobile or email
+          </label>
         </div>
+
+  </div>
+
       </div>
     </fieldset>
-  </div>
+
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
     </form>
-
-    <h3 class="nhsuk-heading-xs">If you do not have a mobile number or email address</h3>
-
-    <a class="nhsuk-button nhsuk-button--secondary" href="flu-v3/book/landline">
-        Continue to enter landline
-      </a>
 
       
       </div>

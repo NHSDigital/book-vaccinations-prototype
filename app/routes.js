@@ -507,7 +507,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
             });
 
             router.get(/contactMethod/, function (req, res) {
-    if (req.query.checkboxGroup === "phone" ) {
+    if (req.query.contactOption === "landline" ) {
         res.redirect('landline');
     }
     else {
