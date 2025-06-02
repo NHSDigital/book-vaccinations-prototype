@@ -506,14 +506,26 @@ router.get(/jointImmuneSystem/, function (req, res) {
                     }
             });
 
-            router.get(/contactMethod/, function (req, res) {
-    if (req.query.contactOption === "landline" ) {
-        res.redirect('landline');
+            
+
+
+// Answering type of authentication method
+
+  router.post('/apply/contact-method', (req, res) => {
+    const data = req.session.data
+    const checkboxOption = req.session.data.checkboxOption
+    let nextPage
+
+    if (req.session.data.checkboxOption.includes('landline')) {
+      nextPage = '/autumn-winter25/landline'
+    } else {
+      nextPage = '/autumn-winter25/cya'
     }
-    else {
-        res.redirect('cya');
-    }
-});
+
+    res.redirect(nextPage)
+  })
+
+
 
     router.get(/confirmPerson/, function (req, res) {
         if (req.query.radioGroup === "yes" ) {
