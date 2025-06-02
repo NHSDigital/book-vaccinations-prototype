@@ -509,7 +509,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
             
 
 
-// Answering type of authentication method
+// routing for contact method
 
   router.post('/apply/contact-method', (req, res) => {
     const data = req.session.data

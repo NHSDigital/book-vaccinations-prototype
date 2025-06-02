@@ -71,7 +71,11 @@ Book vaccinations prototype
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="email">
               Email address
-            </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+            </label>
+            <div class="nhsuk-hint" id="contact-hint">
+        We'll use this to send email reminders
+      </div>
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
           </div>
         </div>
 
@@ -79,14 +83,18 @@ Book vaccinations prototype
         <div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="text" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
-            Text message
+            Mobile
           </label>
         </div>
         <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-2">
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="mobile">
               Mobile phone number
-            </label> <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+            </label> 
+            <div class="nhsuk-hint" id="contact-hint">
+        We'll use this to send text reminders
+      </div>
+      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
           </div>
       </div>
 
@@ -97,7 +105,7 @@ Book vaccinations prototype
         <div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="landline" data-checkbox-exclusive data-checkbox-exclusive-group="checkboxOption">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-phone">
-            I do not have a mobile or email
+            I do not have an email or mobile
           </label>
         </div>
 
