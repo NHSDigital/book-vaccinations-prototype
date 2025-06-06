@@ -529,7 +529,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
     router.get(/confirmPerson/, function (req, res) {
         if (req.query.radioGroup === "yes" ) {
-            res.redirect('flu-v3/book/co-admin');
+            res.redirect('flu-v3/book/choose-appt');
             }
         else {
             res.redirect('flu-v3/book/name');
