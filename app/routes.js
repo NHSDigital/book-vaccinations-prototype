@@ -237,7 +237,7 @@ router.get(/eligibleFlu/, function (req, res) {
 
 router.get(/rsvPregnant/, function (req, res) {
     if (req.query.radioGroup === "yes" ) {
-        res.redirect('add-person');
+        res.redirect('choose-appt');
         }
     else {
         res.redirect('../ineligible-pregnancy');
@@ -511,7 +511,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
 // routing for contact method
 
-  router.post('/apply/contact-method', (req, res) => {
+  router.post('/apply/covid-contact-method', (req, res) => {
     const data = req.session.data
     const checkboxOption = req.session.data.checkboxOption
     let nextPage
@@ -519,7 +519,21 @@ router.get(/jointImmuneSystem/, function (req, res) {
     if (req.session.data.checkboxOption.includes('landline')) {
       nextPage = '/autumn-winter25/landline'
     } else {
-      nextPage = '/autumn-winter25/cya'
+      nextPage = '/autumn-winter25/cya-contact'
+    }
+
+    res.redirect(nextPage)
+  })
+  
+  router.post('/apply/contact-method-rsv', (req, res) => {
+    const data = req.session.data
+    const checkboxOption = req.session.data.checkboxOption
+    let nextPage
+
+    if (req.session.data.checkboxOption.includes('landline')) {
+      nextPage = '/autumn-winter25/rsv-aw25/book/landline'
+    } else {
+      nextPage = '/autumn-winter25/rsv-aw25/book/cya-contact'
     }
 
     res.redirect(nextPage)
