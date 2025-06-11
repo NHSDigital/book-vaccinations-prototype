@@ -45,12 +45,12 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="nhsNumberRadio" method="get" class="form">
+        <form action="newNhsNumberRadio" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Do you know your NHS number?
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+                Do you know {{data['first-name']}} {{data['last-name']}}'s NHS number?
               </h1>
           </legend>
 
@@ -70,14 +70,14 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know my NHS number
+                Yes, I know their NHS number
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter my name and postcode instead
+                No, enter their postcode and date of birth instead
               </label>
             </div>
       

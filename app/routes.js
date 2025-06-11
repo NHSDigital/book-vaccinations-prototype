@@ -525,7 +525,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
     res.redirect(nextPage)
   })
   
-  router.post('/apply/contact-method-rsv', (req, res) => {
+  router.post('/contact-method-rsv', (req, res) => {
     const data = req.session.data
     const checkboxOption = req.session.data.checkboxOption
     let nextPage
@@ -534,6 +534,20 @@ router.get(/jointImmuneSystem/, function (req, res) {
       nextPage = '/autumn-winter25/rsv-aw25/book/landline'
     } else {
       nextPage = '/autumn-winter25/rsv-aw25/book/cya-contact'
+    }
+
+    res.redirect(nextPage)
+  })
+
+    router.post('/manage-contact-method-rsv', (req, res) => {
+    const data = req.session.data
+    const checkboxOption = req.session.data.checkboxOption
+    let nextPage
+
+    if (req.session.data.checkboxOption.includes('landline')) {
+      nextPage = '/autumn-winter25/rsv-aw25/manage/landline'
+    } else {
+      nextPage = '/autumn-winter25/rsv-aw25/manage/cya-contact'
     }
 
     res.redirect(nextPage)

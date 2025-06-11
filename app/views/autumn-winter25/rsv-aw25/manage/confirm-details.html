@@ -35,7 +35,6 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -45,40 +44,88 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="nhs-no-radio" method="get" class="form">
+
+    <form onsubmit="event.preventDefault(); checkAgeAndRedirect();"  class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Who is this appointment for?
+                  Are these the correct details for {{data['first-name']}} {{data['last-name']}}?
                 </h1>
               </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the exact name that is registered with their GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="first-name">
-                First name
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text" required>            
+          <dl class="nhsuk-summary-list">
 
-              <label class="nhsuk-label" for="last-name">
-                Last name
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  NHS number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  999 123 4567
+                </dd>            
+              </div>
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span id="dob-display"></span>
+              </dd>          
+            </div>
+
+  
+  
+          
+          </dl>   
+          
+                  <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="person-radio-yes">
+                Yes, continue
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="last-name" type="text" required>            
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="person-radio-no">
+                No, enter the details again
+              </label>
+            </div>
+      
+          </div>
+          </div>
+
 
             </fieldset>
           
           </div>
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
+<button class="nhsuk-button" id="continue-btn">Continue</button>    </form>
     
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+
+<script>
+  // Display stored DOB on page load
+  document.getElementById("dob-display").innerText = localStorage.getItem("dob1") || 'Unknown';
+
+  document.getElementById("continue-btn").addEventListener('click', function () {
+    const age = parseInt(localStorage.getItem("age1"), 10);
+    if (!isNaN(age) && age < 75) {
+      window.location.href = "pregnant";
+    } else {
+      // If 75 or older, do nothing or redirect somewhere else if needed
+      window.location.href = "choose-appt";
+    }
+  });
+</script>
+
 {% endblock %}
