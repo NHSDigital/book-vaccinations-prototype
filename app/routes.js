@@ -564,6 +564,15 @@ router.get(/jointImmuneSystem/, function (req, res) {
             }
         });
 
+
+            router.get(/twoDoseFlu/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('choose-appt');
+            }
+        else {
+            res.redirect('second-dose-ko');
+            }
+        });
             
 
 
