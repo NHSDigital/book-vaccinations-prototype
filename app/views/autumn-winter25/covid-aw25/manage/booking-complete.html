@@ -58,7 +58,6 @@ Book vaccinations prototype
     
     </div>
 
-
               <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
               
@@ -77,35 +76,42 @@ Book vaccinations prototype
                     <p>{{data['pharmacy']}}</p>
 
 
-                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                    <p class="nhsuk-u-padding-top-0">
                       <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
                       Map and directions (opens in Google maps)
                       <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
                       </a>
                       </p>
+                                          
+
+                      <h5>
+                          Date
+                        </h5>
+  
+                      <p>
+                        {{data['date']}} at {{data['hour']}}{{data['time']}}
+                      </p>
+  
                       <br>
-                                        
+              
+                    <h5>
+                      Vaccination type
+                    </h5>
 
-                      <h5 class="nhsuk-heading-xs">
-                        Date
-                      </h5>
-      
-                    <p>
-                      {{data['date']}} at {{data['hour']}}{{data['time']}}
-                    </p>
-      
-                    <br>
-            
-                  <h5 class="nhsuk-heading-xs">
-                    Vaccination type
-                  </h5>
-      
-                <p >
-                  COVID-19
-                </p>  <br><br>          
-                  
+                  <p>
+                    COVID-19
+                  </p>   
+                  <br>         
 
-
+                  <div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Go back to the start to book another COVID-19 appointment</span>
+  </a>
+</div>
 
                       <h2 class="nhsuk-heading-m">Help us improve our website</h2>
                       <p>Can you answer some questions about your visit today?</p>
@@ -124,7 +130,6 @@ Book vaccinations prototype
           </div>
           </div>
           </div>
-
 
     </div>
     <!-- End of content -->

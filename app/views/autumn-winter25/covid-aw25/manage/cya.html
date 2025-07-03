@@ -29,12 +29,13 @@ Book vaccinations prototype
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -44,18 +45,14 @@ Book vaccinations prototype
           Back</a>
       </div>
 
+        <form action="booking-complete" method="get" class="form">
 
-      <form action="manageJointAppointment" method="get" class="form">
+            <h1 class="nhsuk-heading-l">
+                Check your booking details
+              </h1>
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What would you like to do with this appointment?
-                </h1>
-              </legend>
+              <!--<h2 class="nhsuk-heading-m">Booked for</h2>
 
-              <h2 class="nhsuk-heading-m">Booked for</h2>
               <table class="nhsuk-table">
                 <thead role="rowgroup" class="nhsuk-table__head">
                   <tr role="row">
@@ -69,22 +66,25 @@ Book vaccinations prototype
                 </thead>
                 <tbody class="nhsuk-table__body">
                   <tr role="row" class="nhsuk-table__row">
-                    <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}} </td>
-                    <td class="nhsuk-table__cell "><span id="dobDisplay">15 September 1946</span></td>
+                    <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
+                    <td class="nhsuk-table__cell "><span id="dobDisplay"></span></td>
                   </tr>
                 </tbody>
               </table>
+              
+    
+    
+              <p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>-->
 
               <h2 class="nhsuk-heading-m">Appointment details</h2>
-
-<dl class="nhsuk-summary-list">
+          <dl class="nhsuk-summary-list">
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Vaccination type
+                Postcode near appointment
               </dt>
               <dd class="nhsuk-summary-list__value">
-                COVID-19
+                N16 6AB
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">
@@ -97,7 +97,7 @@ Book vaccinations prototype
           
             </div>
 
-            <!--<div class="nhsuk-summary-list__row">
+            <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Access needs
                 </dt>
@@ -106,15 +106,15 @@ Book vaccinations prototype
                   Braille translation service
                 </dd>
             
-                <dd class="nhsuk-summary-list__actions">
+                <!--<dd class="nhsuk-summary-list__actions">
             
                   <a href="appt-postcode">
                     Change<span class="nhsuk-u-visually-hidden"> Access needs for anyone attending the appointment</span>
                   </a>
             
-                </dd>
+                </dd>-->
             
-              </div>-->
+              </div>
   
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -139,7 +139,7 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'day': +3}) }}
+                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}
                 </dd>
             
                 <!--<dd class="nhsuk-summary-list__actions">
@@ -157,7 +157,7 @@ Book vaccinations prototype
                   Time
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  10:15am
+                  10am
                 </dd>
             
                 <!--<dd class="nhsuk-summary-list__actions">
@@ -171,44 +171,98 @@ Book vaccinations prototype
               </div>-->
   
           
-          </div></dl>    
-          
-          
-          <div class="nhsuk-radios">
-      
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="change">
-                  <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-change">
-                    View other available appointments
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="cancel">
-                  <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-cancel">
-                    Cancel the appointment
-                  </label>
-                </div>
+          </dl>       
 
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="home">
-                    <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-home">
-                      Go back to start
-                    </label>
-                  </div>
-  
-              </div>
-    
-            </fieldset>
+          <h2 class="nhsuk-heading-m">Contact details</h2>
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Can we send confirmation and reminders?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Yes
+              </dd>
           
-          </div>
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="appt-postcode">
+                  Change<span class="nhsuk-u-visually-hidden"> if we can send you confirmation and reminder messages</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Mobile number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  07123 456 789
+                </dd>
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                  <a href="appt-postcode">
+                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                  </a>
+            
+                </dd>-->
+            
+              </div>
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                fake.email@email.com
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
+
+  
+  
+          
+          </dl>       
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
-      </div>      <!-- End of content -->
+          Complete booking
+        </button>
 
+        <a class="nhsuk-button nhsuk-button--secondary" href="book/appt-postcode">
+          Change my appointment
+        </a>
+  
+    </form>
+
+
+
+      
+      </div>
+      <!-- End of content -->
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let dob = localStorage.getItem("dob");
+            let age = localStorage.getItem("age");
+    
+            if (dob) {
+                document.getElementById("dobDisplay").textContent = `${dob}`;
+                document.getElementById("ageDisplay").textContent = `Your age: ${age}`;
+            }
+        });
+    </script>
+    
     </div>
   </div>
 {% endblock %}

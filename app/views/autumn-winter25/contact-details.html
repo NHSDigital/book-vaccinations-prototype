@@ -45,7 +45,7 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="/apply/covid-contact-method" method="post" class="form">
+        <form class="form">
 
 
 
@@ -115,9 +115,9 @@ Book vaccinations prototype
     </fieldset>
 
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
+<button class="nhsuk-button" type="submit" onclick="handleContactFormSubmission(event)">
+  Continue
+</button>
     </form>
 
       
@@ -126,4 +126,27 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+  <script>
+  function handleContactFormSubmission(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const emailCheckbox = document.getElementById('checkboxOption-1');
+    const textCheckbox = document.getElementById('checkboxOption-2');
+    const landlineCheckbox = document.getElementById('checkboxOption-3');
+
+    const selectedEmail = emailCheckbox.checked;
+    const selectedText = textCheckbox.checked;
+    const selectedLandline = landlineCheckbox.checked;
+
+    // Logic to determine the redirection
+    if ((selectedEmail || selectedText) && !selectedLandline) {
+      window.location.href = 'cya-contact'; // Redirect to cya page
+    } else if (selectedLandline && !selectedEmail && !selectedText) {
+      window.location.href = 'landline'; // Redirect to landline page
+    } else {
+      alert("Please select a valid combination of contact methods.");
+    }
+  }
+</script>
 {% endblock %}

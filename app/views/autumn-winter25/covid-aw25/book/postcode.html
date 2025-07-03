@@ -45,17 +45,17 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="eligible-covid" method="get" class="form">
+      <form action="dob-2" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
+                  What is {{data['first-name']}} {{data['last-name']}}'s postcode?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
+                Enter the postcode that is currently registered with the GP surgery.
               </div>
           
               <label class="nhsuk-label" for="postcode">
