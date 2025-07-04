@@ -511,10 +511,10 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
     router.get(/confirmPerson/, function (req, res) {
         if (req.query.radioGroup === "yes" ) {
-            res.redirect('flu-v3/book/choose-appt');
+            res.redirect('choose-appt');
             }
         else {
-            res.redirect('flu-v3/book/name');
+            res.redirect('name');
             }
         });
 
@@ -528,6 +528,15 @@ router.get(/jointImmuneSystem/, function (req, res) {
             }
         });
             
+
+            router.get(/proxyEligible/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('check-person');
+            }
+        else {
+            res.redirect('cannot-book');
+            }
+        });
 
 
 // MYA routes //
