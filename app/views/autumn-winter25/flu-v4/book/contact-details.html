@@ -45,67 +45,80 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="booking-complete" method="get" class="form">
+        <form class="form">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-                Enter contact details
-              </h1>
-          </legend>
 
-          <div class="nhsuk-hint" id="contact-hint">
-            Enter contact details for the person you want to be notified.
-          </div>
 
-            <h2 class="nhsuk-heading-m">
-                Email address (optional)
-              </h2>
-        
-              <div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          How would you prefer to be contacted?
+        </h1>
+      </legend>
+      <div class="nhsuk-hint" id="contact-hint">
+        Enter contact details for the person you want to be notified.<br><br>Select all options that are relevant to you.
+      </div>
+        <div class="nhsuk-form-group">
+<div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-email">
+            Email
+          </label>
+        </div>
+        <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-1">
+          <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="email">
               Email address
             </label>
-            <input class="nhsuk-input" id="email" name="email" type="text">
-          </div> 
-          
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="confirm-email">
-              Confirm email address
-            </label>
-            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
-          </div> 
-        </fieldset>
+            <div class="nhsuk-hint" id="contact-hint">
+        We'll use this to send email reminders
+      </div>
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+          </div>
+        </div>
 
-        <h2 class="nhsuk-heading-m">
-            Mobile number (optional)
-          </h2>
 
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="email">
-              Mobile number
-            </label>
-            <input class="nhsuk-input" id="email" name="email" type="text">
-          </div> 
-          
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="text" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
+            Mobile
+          </label>
+        </div>
+        <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-2">
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="confirm-email">
-              Confirm mobile number
-            </label>
-            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
-          </div> 
-        </fieldset>
-        
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
+            <label class="nhsuk-label" for="mobile">
+              Mobile phone number
+            </label> 
+            <div class="nhsuk-hint" id="contact-hint">
+        We'll use this to send text reminders
+      </div>
+      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+          </div>
+      </div>
+
+
+        <div class="nhsuk-checkboxes__divider">or</div>
+
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="landline" data-checkbox-exclusive data-checkbox-exclusive-group="checkboxOption">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-phone">
+            I do not have an email or mobile
+          </label>
+        </div>
+
+  </div>
+
+      </div>
+    </fieldset>
+
+
+<button class="nhsuk-button" type="submit" onclick="handleContactFormSubmission(event)">
+  Continue
+</button>
     </form>
-
-    <h3 class="nhsuk-heading-xs">If you do not have a mobile number or email address</h3>
-
-    <a class="nhsuk-button nhsuk-button--secondary" href="landline">
-        Continue to enter landline
-      </a>
 
       
       </div>
@@ -113,4 +126,27 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+  <script>
+  function handleContactFormSubmission(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const emailCheckbox = document.getElementById('checkboxOption-1');
+    const textCheckbox = document.getElementById('checkboxOption-2');
+    const landlineCheckbox = document.getElementById('checkboxOption-3');
+
+    const selectedEmail = emailCheckbox.checked;
+    const selectedText = textCheckbox.checked;
+    const selectedLandline = landlineCheckbox.checked;
+
+    // Logic to determine the redirection
+    if ((selectedEmail || selectedText) && !selectedLandline) {
+      window.location.href = 'cya-contact'; // Redirect to cya page
+    } else if (selectedLandline && !selectedEmail && !selectedText) {
+      window.location.href = 'landline'; // Redirect to landline page
+    } else {
+      alert("Please select a valid combination of contact methods.");
+    }
+  }
+</script>
 {% endblock %}
