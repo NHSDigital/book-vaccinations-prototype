@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -55,15 +55,20 @@ Book vaccinations prototype
           </legend>
           <p>{{data['pharmacy']}}</p>
 
+          <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+
+  <p>Appointments are available from 1 October onwards.</p>
+</div>
 
           <p class="nhsuk-body-l">Next 8 available days</p>
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 27 August" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 15 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                Wednesday, 27 August
+                Wednesday, 15 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -72,9 +77,9 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 28 Augus" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 16 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Thursday, 28 August
+                Thursday, 16 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -83,9 +88,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 29 August" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 17 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Friday, 29 August
+                Friday, 17 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -94,9 +99,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday, 1 September" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday, 20 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Monday, 1 September
+                Monday, 20 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -105,9 +110,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday, 2 September" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday, 21 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Tuesday, 2 September
+                Tuesday, 21 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -116,9 +121,9 @@ Book vaccinations prototype
             </div>
 
                         <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 3 September" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 22 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
-                Wednesday, 3 September
+                Wednesday, 22 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -127,9 +132,9 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 4 September" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 23 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Thursday, 4 September
+                Thursday, 23 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -138,9 +143,9 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 5 September" required>
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 24 October">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
-                Friday, 5 September
+                Friday, 24 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
                 AM - Available <br>
@@ -205,7 +210,7 @@ Book vaccinations prototype
     </form>
 
     <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different pharmacy
+        Choose a different site
       </a>
 
       
