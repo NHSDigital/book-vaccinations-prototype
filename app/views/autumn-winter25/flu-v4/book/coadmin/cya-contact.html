@@ -45,50 +45,81 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-        <form action="confirmationMessages" method="get" class="form">
+        <form action="booking-complete" method="get" class="form">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-            Can we send you confirmation, reminder and cancellation messages?
+            <h1 class="nhsuk-heading-l">
+                Check your contact details
               </h1>
-          </legend>
 
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>We will only contact you to send:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>a confirmation and reminder message with a booking reference number</li>
-            <li>a cancellation message if the appointment needs to be changed</li>
-          </ul>
-        </div>
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-yes">
-                Yes
-              </label>
+          <dl class="nhsuk-summary-list">
+
+
+                        <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p><span id="email-display"></span></p>
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="contact-details">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                </a>
+          
+              </dd>
+          
             </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="confirmation-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="confirmation-radio-no">
-                No
-              </label>
-            </div>
-      
-          </div>
-          </div>
-        </fieldset>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Mobile number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <span id="mobile-display">Loading...</span>
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                <a href="contact-details">
+                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+  
+
+  
+  
+          
+          </dl>       
+
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
+
+  
     </form>
+
+
+
       
       </div>
       <!-- End of content -->
 
+    
     </div>
   </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const email = decodeURIComponent(params.get('email') || '');
+      const mobile = decodeURIComponent(params.get('mobile') || '');
+
+      document.getElementById('email-display').textContent = email || 'Not provided';
+      document.getElementById('mobile-display').textContent = mobile || 'Not provided';
+    });
+  </script>
 {% endblock %}
