@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -35,7 +35,6 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
       <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
@@ -45,42 +44,25 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="coAdmin" method="get" class="form">
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you also want to book a free NHS flu vaccination?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                In addition to a Flu vaccine, you can book a COVID-19 vaccination to take place in the same appointment.
-              </div>
-          
-              <div class="nhsuk-radios">
+        <form action="dob" method="get" class="form">
 
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes, book a Flu and COVID-19 vaccination in the same appointment
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No, only book a COVID-19 vaccination
-                  </label>
-                </div>
-            </fieldset>
-          
+          <div class="nhsuk-form-group">
+            <h1 class="nhsuk-label-wrapper">
+              <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
+                What is your NHS number?
+              </label>
+            </h1>
+            <div class="nhsuk-hint" id="nhs-number-hint">
+              Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, <span class="nhsuk-u-nowrap">485 777 3456</span>.
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
           </div>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
+  
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Continue
+          </button>    </form>
+      
       </div>
       <!-- End of content -->
 

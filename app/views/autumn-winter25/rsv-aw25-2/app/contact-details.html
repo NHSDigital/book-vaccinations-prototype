@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,42 +45,65 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="coAdmin" method="get" class="form">
+        <form action="booking-complete" method="get" class="form">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Enter contact details
+              </h1>
+          </legend>
+
+            <h2 class="nhsuk-heading-s">
+                Email address (optional)
+              </h2>
+        
+              <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="email">
+              Email address
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm email address
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+
+        <h2 class="nhsuk-heading-s">
+            Mobile number (optional)
+          </h2>
 
         <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you also want to book a free NHS flu vaccination?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                In addition to a Flu vaccine, you can book a COVID-19 vaccination to take place in the same appointment.
-              </div>
+            <label class="nhsuk-label" for="email">
+              Mobile number
+            </label>
+            <input class="nhsuk-input" id="email" name="email" type="text">
+          </div> 
           
-              <div class="nhsuk-radios">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes, book a Flu and COVID-19 vaccination in the same appointment
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No, only book a COVID-19 vaccination
-                  </label>
-                </div>
-            </fieldset>
-          
-          </div>
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="confirm-email">
+              Confirm mobile number
+            </label>
+            <input class="nhsuk-input" id="confirm-email" name="confirm-email" type="text">
+          </div> 
+        </fieldset>
+        
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
-    
+        </button>
+    </form>
+
+    <p class="nhsuk-body">If you do not have a mobile number or email address</p>
+
+    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
+        Continue to enter landline
+      </a>
+
+      
       </div>
       <!-- End of content -->
 

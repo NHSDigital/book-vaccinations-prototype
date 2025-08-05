@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -44,46 +44,49 @@ Book vaccinations prototype
           </svg>
           Back</a>
       </div>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-l">
+                You can book an appointment for these people
+              </h1>
+          </legend>
 
-      <form action="coAdmin" method="get" class="form">
-
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you also want to book a free NHS flu vaccination?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                In addition to a Flu vaccine, you can book a COVID-19 vaccination to take place in the same appointment.
-              </div>
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Date of birth
+                  </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
+                <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{{data['first-name2']}} {{data['last-name2']}}</td>
+                <td class="nhsuk-table__cell "><span id="dob-display2"></span></td>
+              </tr>
+            </tbody>
+          </table>        
           
-              <div class="nhsuk-radios">
 
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes, book a Flu and COVID-19 vaccination in the same appointment
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No, only book a COVID-19 vaccination
-                  </label>
-                </div>
-            </fieldset>
-          
-          </div>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
+          <a class="nhsuk-button" href="appt-postcode">Continue</a>
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+
+  <script>
+  // Display stored DOB on page load
+  document.getElementById("dob-display").innerText = localStorage.getItem("dob1") || 'Unknown';
+  document.getElementById("dob-display2").innerText = localStorage.getItem("dob2") || 'Unknown';
+
+</script>
+
 {% endblock %}

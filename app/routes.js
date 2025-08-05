@@ -551,5 +551,34 @@ router.get(/addSessionType/, function (req, res) {
 });
 
 
+// updated joint booking routes //
+
+router.get(/proxyJointBooking/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('joint/name');
+        }
+    else {
+        res.redirect('name');
+        }
+    });
+
+        router.get(/addProxyPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('name2');
+            }
+        else {
+            res.redirect('../choose-appt');
+            }
+        });
+
+                router.get(/jointProxyNhsNumberRadio/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('nhs-no2');
+                }
+            else {
+                res.redirect('postcode2');
+                }
+            });
+
         
 module.exports = router;

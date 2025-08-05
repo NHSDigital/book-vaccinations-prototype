@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,34 +45,45 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="coAdmin" method="get" class="form">
+      <form action="choose-appt" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Do you also want to book a free NHS flu vaccination?
+                  What is your date of birth?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                In addition to a Flu vaccine, you can book a COVID-19 vaccination to take place in the same appointment.
+                For example, 15 3 1984
               </div>
           
-              <div class="nhsuk-radios">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes, book a Flu and COVID-19 vaccination in the same appointment
-                  </label>
+              <div class="nhsuk-date-input" id="example">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" inputmode="numeric">
+                  </div>
                 </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No, only book a COVID-19 vaccination
-                  </label>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" inputmode="numeric">
+                  </div>
                 </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
             </fieldset>
           
           </div>

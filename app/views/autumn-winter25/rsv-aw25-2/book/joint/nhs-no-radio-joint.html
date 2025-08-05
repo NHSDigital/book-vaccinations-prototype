@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -45,42 +45,50 @@ Book vaccinations prototype
           Back</a>
       </div>
 
-      <form action="coAdmin" method="get" class="form">
+        <form action="jointProxyNhsNumberRadio" method="get" class="form">
 
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+                Do you know {{data['first-name2']}} {{data['last-name2']}}'s NHS number?
+              </h1>
+          </legend>
+
+          <div class="nhsuk-hint" id="nhs-number-hint">
+          <p>Your NHS number is a 10 digit number, like 485 777 3456.</p>
+          <p>You can find it:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>on any letter the NHS has sent you</li>
+            <li>on a prescription</li>
+            <li>by logging in to a GP practice online service</li>
+            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
+          </ul>
+        </div>
         <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  Do you also want to book a free NHS flu vaccination?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                In addition to a Flu vaccine, you can book a COVID-19 vaccination to take place in the same appointment.
-              </div>
-          
-              <div class="nhsuk-radios">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes, book a Flu and COVID-19 vaccination in the same appointment
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No, only book a COVID-19 vaccination
-                  </label>
-                </div>
-            </fieldset>
-          
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
+                Yes, I know their NHS number
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
+                No, enter their postcode and date of birth instead
+              </label>
+            </div>
+      
           </div>
-
+          </div>
+        </fieldset>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
-    
+        </button>
+    </form>
+      
       </div>
       <!-- End of content -->
 
