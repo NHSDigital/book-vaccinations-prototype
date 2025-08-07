@@ -48,7 +48,7 @@ Book vaccinations prototype
         <form action="confirmation-messages" method="get" class="form">
 
             <h1 class="nhsuk-heading-l">
-                Check appointment details
+                Check the details of your appointments
               </h1>
 
               <!--<h2 class="nhsuk-heading-m">Booked for</h2>
@@ -74,15 +74,15 @@ Book vaccinations prototype
               
     
     
-              <!--<p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>-->
+              <!--<p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>
 
-                            <h2 class="nhsuk-heading-m">Appointment details</h2>
+                            <h2 class="nhsuk-heading-m">Appointment details</h2>-->
 
           <dl class="nhsuk-summary-list">
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Vaccination type
+                Vaccine type
               </dt>
               <dd class="nhsuk-summary-list__value">
                 RSV (respiratory syncytial virus)
@@ -155,10 +155,10 @@ Book vaccinations prototype
   
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Times
+                  Appointment 1
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                   {{data['hour']}}{{data['time']}} and {{data['hour']}}{{data['time-2']}}
+                   {{data['first-name']}} {{data['last-name']}}<br>{{data['hour']}}{{data['time']}}
                 </dd>
             
                 <!--<dd class="nhsuk-summary-list__actions">
@@ -167,10 +167,29 @@ Book vaccinations prototype
                     Change<span class="nhsuk-u-visually-hidden"> appointment time</span>
                   </a>
             
+                </dd>-->
+            
+              </div>
+
+                            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Appointment 2
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                   {{data['first-name2']}} {{data['last-name2']}}<br>{{data['hour']}}{{data['time-2']}}
                 </dd>
             
-              </div>-->
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-time-range">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment time</span>
+                  </a>
+            
+                </dd>-->
+            
+              </div>
   
+              
           
           </dl>       
 
@@ -180,7 +199,7 @@ Book vaccinations prototype
         </button>
 
         <a class="nhsuk-button nhsuk-button--secondary" href="choose-date">
-          Change the appointment
+          Change the appointments
         </a>
   
     </form>
