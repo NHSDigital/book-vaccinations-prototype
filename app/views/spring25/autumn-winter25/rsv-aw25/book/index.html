@@ -1,0 +1,121 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Book, change or cancel an RSV (respiratory syncytial virus) vaccination at a pharmacy
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p>Use this service to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>book a vaccination appointment at a pharmacy</li>
+        <li>check your existing appointment details</li>
+        <li>change your appointment</li>
+        <li>cancel your appointment</li>
+      </ul>
+
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            Important
+          </span>
+        </h3>
+        <p>Currently, you can only book online appointments at pharmacies in some areas of Essex, Leicestershire, Suffolk, the West Midlands and the North West.</p>
+        <p>You can currently use this service if either:
+          <ul>
+            <li>you’re aged 75-79</li>
+            <li>you turned 80 on or after 1 September 2024 (you’re eligible for the free RSV vaccine until 25 August 2025)</li>
+            <li>you’re pregnant (over 28 weeks)</li>
+          </ul>
+        </p>
+
+        <p>More sites will offer RSV vaccinations soon. If you cannot find an appointment in your area, please contact your GP surgery.</p>
+      </div>
+
+
+
+      <h2>
+        How it works
+      </h2>
+
+      <p>The service will check if you need a vaccine before you book.</p>
+
+      <p>You'll need the booking reference number we sent you to change or cancel your appointment.</p>
+      
+      <a class="nhsuk-button" href="name">
+        Book a pharmacy appointment
+      </a>
+      <br>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="../manage/ref-no">
+        View, cancel or change an existing appointment
+      </a>
+      <h2>Getting an appointment at a GP surgery</h2>
+
+      <p>You can also get an RSV vaccination at a GP surgery.</p>
+
+      <p>Your GP surgery may contact you about getting the RSV vaccine.  This may be by letter, text, phone call or email.  You do not need to wait to be contacted before booking your vaccination.</p>
+
+      <h2>Find a pharmacy walk-in service</h2>
+
+      <p>Some community pharmacies offer RSV vaccine walk-in appointments.</p>
+
+      <ul>
+        <li>
+          <a class="nhsuk-link" href="#">Suffolk and North East Essex</a></li>
+          <li><a class="nhsuk-link" href="#">Mid and South East Essex</a>
+        </li></ul>
+
+
+      <h2>
+        More information
+      </h2>
+
+      <p>
+          <a href="#">Find out more about RSV (respiratory syncytial virus)</a>
+      </p>
+
+      <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-0">
+        Page last reviewed: {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'day': -8}) }}<br>
+        Next review due: 1 {{ date({month: 'long', year: 'numeric'}, {'month': +3}) }}
+      </p>
+      
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

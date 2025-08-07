@@ -1,0 +1,85 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Book or cancel an RSV (respiratory syncytial virus) vaccination at a pharmacy
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p>Use this service to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>book a vaccination appointment at a pharmacy</li>
+        <li>check your existing appointment details</li>
+        <li>change your appointment</li>
+        <li>cancel your appointment</li>
+      </ul>
+
+      <p>Currently you can only book appointments at pharmacies in parts of the East of England.</p>
+
+      <h3>Getting a vaccination at a GP surgery</h3>
+
+      <p>You can also get an RSV vaccination at a GP surgery. You will need to wait to be invited by your GP if you are eligible.</p>
+
+      <h2>
+        How it works
+      </h2>
+
+      <p>The service will check if you need a vaccine before you book.</p>
+
+      <p>You'll need the booking reference number we sent you to change or cancel your appointment.</p>
+      
+      <a class="nhsuk-button" href="nhs-no-radio">
+        Book a pharmacy appointment
+      </a>
+      <br>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="../manage/ref-no">
+        View, cancel or change an existing appointment
+      </a>
+
+      <h2>
+        More information
+      </h2>
+
+      <p>
+          <a href="#">read more about RSV (respiratory syncytial virus)</a>
+      </p>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
