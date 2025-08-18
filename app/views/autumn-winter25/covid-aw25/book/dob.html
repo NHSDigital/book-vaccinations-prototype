@@ -109,26 +109,25 @@ Book vaccinations prototype
   let year = document.getElementById("p1-year").value;
 
   if (!day || !month || !year) {
-      alert("Please enter a valid date of birth.");
-      return;
+    alert("Please enter a valid date of birth.");
+    return;
   }
 
-  // Convert inputs to numbers
   day = parseInt(day, 10);
   month = parseInt(month, 10);
   year = parseInt(year, 10);
 
   let currentYear = new Date().getFullYear();
   if (
-      isNaN(day) || isNaN(month) || isNaN(year) ||
-      day < 1 || day > 31 || month < 1 || month > 12 || 
-      year < currentYear - 120 || year > currentYear
+    isNaN(day) || isNaN(month) || isNaN(year) ||
+    day < 1 || day > 31 || month < 1 || month > 12 ||
+    year < currentYear - 120 || year > currentYear
   ) {
-      alert("Please enter a valid date.");
-      return;
+    alert("Please enter a valid date.");
+    return;
   }
 
-  let dob = new Date(year, month - 1, day); // JS months are 0-indexed
+  let dob = new Date(year, month - 1, day);
   let today = new Date();
 
   let age = today.getFullYear() - dob.getFullYear();
@@ -136,30 +135,23 @@ Book vaccinations prototype
   let dayDiff = today.getDate() - dob.getDate();
 
   if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-      age--;
+    age--;
   }
 
-  // Convert month number to month name
   let monthNames = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
   ];
   let monthName = monthNames[month - 1];
-
-  // Format DOB as "15 March 2000"
   let formattedDOB = `${day} ${monthName} ${year}`;
 
-  // Store in localStorage
+  // Store data in localStorage
   localStorage.setItem("dob1", formattedDOB);
   localStorage.setItem("age1", age);
 
-  // Redirect based on age
-  if ((age >= 65 && age <= 120)) {
-      window.location.href = "check-person";
-  } else {
-      window.location.href = "eligible-covid";
-  }
-}  
+  // Redirect to confirmation page (decision made later)
+  window.location.href = "confirm-details";
+}
 
 </script>
 {% endblock %}

@@ -531,7 +531,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
             router.get(/proxyEligible/, function (req, res) {
         if (req.query.radioGroup === "yes" ) {
-            res.redirect('check-person');
+            res.redirect('choose-appt');
             }
         else {
             res.redirect('cannot-book');

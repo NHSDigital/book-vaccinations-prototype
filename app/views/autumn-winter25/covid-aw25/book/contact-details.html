@@ -81,7 +81,7 @@ Book vaccinations prototype
 
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="text" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="mobile" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
             Mobile
           </label>
@@ -127,26 +127,34 @@ Book vaccinations prototype
     </div>
   </div>
 
-  <script>
-  function handleContactFormSubmission(event) {
-    event.preventDefault(); // Prevent default form submission
+<script>
+    function handleContactFormSubmission(event) {
+      event.preventDefault();
 
-    const emailCheckbox = document.getElementById('checkboxOption-1');
-    const textCheckbox = document.getElementById('checkboxOption-2');
-    const landlineCheckbox = document.getElementById('checkboxOption-3');
+      // Checkbox states
+      const emailChecked = document.getElementById('checkboxOption-1').checked;
+      const mobileChecked = document.getElementById('checkboxOption-2').checked;
+      const landlineChecked = document.getElementById('checkboxOption-3').checked;
 
-    const selectedEmail = emailCheckbox.checked;
-    const selectedText = textCheckbox.checked;
-    const selectedLandline = landlineCheckbox.checked;
+      // Input values
+      const emailValue = document.getElementById('email').value.trim();
+      const mobileValue = document.getElementById('mobile').value.trim();
 
-    // Logic to determine the redirection
-    if ((selectedEmail || selectedText) && !selectedLandline) {
-      window.location.href = 'cya-contact'; // Redirect to cya page
-    } else if (selectedLandline && !selectedEmail && !selectedText) {
-      window.location.href = 'landline'; // Redirect to landline page
-    } else {
-      alert("Please select a valid combination of contact methods.");
+      if ((emailChecked || mobileChecked) && !landlineChecked) {
+        // Build URL parameters
+        const params = new URLSearchParams();
+        if (emailChecked && emailValue) {
+          params.append('email', encodeURIComponent(emailValue));
+        }
+        if (mobileChecked && mobileValue) {
+          params.append('mobile', encodeURIComponent(mobileValue));
+        }
+
+        window.location.href = `cya-contact?${params.toString()}`;
+      } else if (landlineChecked && !emailChecked && !mobileChecked) {
+        window.location.href = 'landline';
+      } else {
+        alert('Please select valid contact options and enter details if needed.');
+      }
     }
-  }
-</script>
-{% endblock %}
+  </script>{% endblock %}
