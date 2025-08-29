@@ -120,7 +120,7 @@ Book vaccinations prototype
   document.getElementById("continue-btn").addEventListener('click', function () {
     const age = parseInt(localStorage.getItem("age1"), 10);
     if (!isNaN(age) && age < 75) {
-      window.location.href = "add-person";
+      window.location.href = "pregnant";
     } else {
       // If 75 or older, do nothing or redirect somewhere else if needed
       window.location.href = "add-person";
