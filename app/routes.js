@@ -246,6 +246,15 @@ router.get(/rsvPregnant/, function (req, res) {
 
     router.get(/jointPregnant/, function (req, res) {
         if (req.query.radioGroup === "yes" ) {
+            res.redirect('add-person');
+            }
+        else {
+            res.redirect('../ineligible-pregnancy');
+            }
+        });
+
+            router.get(/jointTwoPregnant/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
             res.redirect('add-person2');
             }
         else {
