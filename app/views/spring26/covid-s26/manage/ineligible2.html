@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -47,66 +47,20 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-xl">
-                This person cannot book an appointment
+                You cannot book an appointment for [name]
               </h1>
 
               <p class="nhsuk-body">This may be because:</p>
 
               <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>they are not aged 75 to 79 (currently only people in this age range can book online)</li>
-                <li>they are not more than 28 weeks pregnant</li>
                 <li>they do not need a vaccine</li>
                 <li>they have an existing booking that would need to be cancelled first</li>
                   </ul>  
-  
-              <p class="nhsuk-body">If they are pregnant, they can get the RSV vaccination after 28 weeks.</p>
-  
-            <p class="nhsuk-body">You can only book online appointments at pharmacies in some areas of Essex, Leicestershire, Suffolk, the West Midlands and the North West.</p>
+    
+                  <a class="nhsuk-button" href="book/index">Go back to start</a>
   
   
-                  <form action="jointIneligible" method="get" class="form">
 
-                  <div class="nhsuk-form-group">
-                      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-          
-          
-          
-                      <div class="nhsuk-radios">
-                
-                          <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="joint">
-                            <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-change">
-                              Add a different person
-                            </label>
-                          </div>
-                    
-                          <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="single">
-                            <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-cancel">
-                              Just book for one person
-                            </label>
-                          </div>
-
-                          <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="start">
-                            <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-cancel">
-                             Go back to start
-                            </label>
-                          </div>
-
-            
-                        </div>
-              
-                      </fieldset>
-                    
-                    </div>
-          
-                  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                    Continue
-                  </button>    </form>
-  
-            <!--<div class="nhsuk-card nhsuk-card--feature">
-                <div class="nhsuk-card__content">
                     <h5 class="nhsuk-card__heading nhsuk-heading-m">
                         Help us improve our website
                       </h5>
@@ -121,9 +75,7 @@ Book vaccinations prototype
                         
                         </a>
                         </p>
-                  </div>
-        
-            </div>-->  
+
 
       </div>
       <!-- End of content -->

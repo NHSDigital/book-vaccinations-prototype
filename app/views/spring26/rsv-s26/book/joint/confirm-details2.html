@@ -1,0 +1,131 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back</a>
+      </div>
+
+
+    <form onsubmit="event.preventDefault(); checkAgeAndRedirect();"  class="form">
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Are these the correct details for {{data['first-name2']}} {{data['last-name2']}}?
+                </h1>
+              </legend>
+          <dl class="nhsuk-summary-list">
+
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  NHS number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  999 123 4567
+                </dd>            
+              </div>
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span id="dob-display2"></span>
+              </dd>          
+            </div>
+
+  
+  
+          
+          </dl>   
+          
+                  <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="person-radio-yes">
+                Yes, continue
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="person-radio-no">
+                No, enter the details again
+              </label>
+            </div>
+      
+          </div>
+          </div>
+
+
+            </fieldset>
+          
+          </div>
+
+<button class="nhsuk-button" id="continue-btn">Continue</button>    </form>
+    
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+
+<script>
+  // Display stored DOB on page load
+  document.getElementById("dob-display2").innerText = localStorage.getItem("dob2") || 'Unknown';
+
+  document.getElementById("continue-btn").addEventListener('click', function () {
+    const age = parseInt(localStorage.getItem("age1"), 10);
+    if (!isNaN(age) && age < 75) {
+      window.location.href = "pregnant2";
+    } else {
+      // If 75 or older, do nothing or redirect somewhere else if needed
+      window.location.href = "add-person2";
+    }
+  });
+</script>
+
+{% endblock %}
