@@ -1107,3 +1107,93 @@ a:hover {
   }
 }
 
+/* ==========================================================================
+  #NHS APP TAG
+  ========================================================================== */
+.nhsapp-tag {
+  background-color: #d2e1ef;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #01407d;
+  display: inline-block;
+  padding: 3px 9px;
+}
+.nhsapp-tag {
+  font-weight: 400;
+}
+.nhsapp-tag {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+@media (min-width: 40.0625em) {
+  .nhsapp-tag {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
+@media print {
+  .nhsapp-tag {
+    font-size: 12pt;
+    line-height: 1.25;
+  }
+}
+@media (min-width: 40.0625em) {
+  .nhsapp-tag {
+    line-height: 1.4285em;
+  }
+}
+
+/* Colour variants
+    ========================================================================== */
+.nhsapp-tag--white {
+  background-color: #ffffff;
+  border-color: #d8dde0;
+  color: #212b32;
+}
+
+.nhsapp-tag--grey {
+  background-color: #e6e2e2;
+  color: #303e4f;
+}
+
+.nhsapp-tag--green {
+  background-color: #c9e6d8;
+  color: #03501d;
+}
+
+.nhsapp-tag--aqua-green {
+  background-color: #cce7e6;
+  color: #004642;
+}
+
+.nhsapp-tag--blue {
+  background-color: #d2e1ef;
+  color: #01407d;
+}
+
+.nhsapp-tag--purple {
+  background-color: #d9d7eb;
+  color: #532d8b;
+}
+
+.nhsapp-tag--pink {
+  background-color: #efd3e3;
+  color: #57133a;
+}
+
+.nhsapp-tag--red {
+  background-color: #f8d9d9;
+  color: #7e0d04;
+}
+
+.nhsapp-tag--orange {
+  background-color: #fae1bc;
+  color: #533c00;
+}
+
+.nhsapp-tag--yellow {
+  background-color: #eee8a7;
+  color: #5b4701;
+}
