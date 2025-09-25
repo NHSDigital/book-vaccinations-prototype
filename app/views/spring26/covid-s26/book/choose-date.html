@@ -18,6 +18,7 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,14 +37,6 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <div class="nhsuk-back-link">
-
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-          </svg>
-          Back</a>
-      </div>
 
       <form action="choose-time-range" method="get" class="form">
 
@@ -71,8 +64,7 @@ Book vaccinations prototype
                 Wednesday, 1 October <!--{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +1}) }}-->
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning - Available <br>
-                Afternoon - Available
+                Morning and afternoon appointments available
               </div>
             </div>
       
@@ -82,7 +74,7 @@ Book vaccinations prototype
                 Thursday, 2 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available
+                Morning appointments available
               </div>
             </div>
 
@@ -92,7 +84,7 @@ Book vaccinations prototype
                 Friday, 3 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available
+                Morning appointments available
               </div>
             </div>
 
@@ -102,7 +94,7 @@ Book vaccinations prototype
                 Monday, 6 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available
+                Morning appointments available
               </div>
             </div>
 
@@ -112,8 +104,7 @@ Book vaccinations prototype
                 Tuesday, 7 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available <br>
-                Afternoon available
+                Morning and afternoon appointments available
               </div>
             </div>
 
@@ -123,7 +114,7 @@ Book vaccinations prototype
                 Wednesday, 8 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Afternoon available
+                Afternoon appointments available
               </div>
             </div>
       
@@ -133,8 +124,7 @@ Book vaccinations prototype
                 Thursday, 9 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available <br>
-                Afternoon available
+                Morning and afternoon appointments available
               </div>
             </div>
 
@@ -144,7 +134,7 @@ Book vaccinations prototype
                 Friday, 10 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available
+                Morning appointments available
               </div>
             </div>
 
@@ -154,8 +144,7 @@ Book vaccinations prototype
                 Monday, 13 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available <br>
-                Afternoon available
+                Morning and afternoon appointments available
               </div>
             </div>
 
@@ -165,7 +154,7 @@ Book vaccinations prototype
                 Tuesday, 14 October
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Afternoon available
+                Afternoon appointments available
               </div>
             </div>
 

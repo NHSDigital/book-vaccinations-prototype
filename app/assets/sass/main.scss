@@ -1,5 +1,5 @@
 // Import NHS.UK frontend library
-@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+@import "nhsuk-frontend/dist/nhsuk";
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
@@ -588,7 +588,6 @@ a:hover {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 28px;
-  -webkit-appearance: none;
   background-color: #005eb8;
   border: 2px solid transparent;
   border-top-left-radius: 4px;
@@ -612,7 +611,6 @@ a:hover {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 28px;
-  -webkit-appearance: none;
   background-color: #d8dde0;
   border: 2px solid transparent;
   border-top-right-radius: 4px;

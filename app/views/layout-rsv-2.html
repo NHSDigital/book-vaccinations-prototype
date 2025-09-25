@@ -10,7 +10,6 @@
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block head %}
   <link href="/css/main.css" rel="stylesheet">
-  <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 {% endblock %}
 
 <!-- Set the page title -->
@@ -23,11 +22,9 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Book an RSV vaccination",
+        "text": "Book an RSV vaccination",
         "href": "/"
-      },
-      "showNav": "false",
-      "showSearch": "false"
+      }
     })
   }}
 {% endblock %}
@@ -35,17 +32,19 @@
 <!-- Edit the footer -->
 <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-  {{ footer({
-    "links": [
+    {{ footer({
+meta: {
+    items: [
       {
-        "URL": "/",
-        "label": "Home"
-      },
+        href: "/",
+        text: "Home"
+      }.
       {
-        "URL": "../../../rsv-v7-2/book/joint/choose-pharmacy",
-        "label": "Joint bookings RSV V2"
+        href: "../../../rsv-v7-2/book/joint/choose-pharmacy",
+        text: "Joint bookings RSV V2"
       }
     ]
+  }
   })}}
 {% endblock %}
 
