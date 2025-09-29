@@ -589,5 +589,18 @@ router.get(/proxyJointBooking/, function (req, res) {
                 }
             });
 
+
+        router.get(/pdsFailJointBooking/, function (req, res) {
+            if (req.query.radioGroup === "tryagain" ) {
+                res.redirect('book/joint/name2');
+                }
+            else if (req.query.radioGroup === "single" ) {
+                    res.redirect('book/choose-appt');
+                    }
+             else {
+                    res.redirect('book/index');
+                    }
+            });
+
         
 module.exports = router;
