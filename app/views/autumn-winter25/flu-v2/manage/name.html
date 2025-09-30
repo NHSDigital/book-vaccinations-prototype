@@ -18,6 +18,7 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,37 +37,29 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <div class="nhsuk-back-link">
-
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-          </svg>
-          Back</a>
-      </div>
 
       <form action="dob-2" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <h1 class="nhsuk-label-wrapper">
-                <label class="nhsuk-label nhsuk-label--xl" for="nhs-number">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+                <h1 class="nhsuk-fieldset__heading">
                   What is the name you booked with?
-                </label>
-              </h1>
-                <div class="nhsuk-hint" id="example-hint">
+                </h1>
+              </legend>
+              <div class="nhsuk-hint" id="example-hint">
                 Enter the exact name that is registered with the GP surgery.
               </div>
           
               <label class="nhsuk-label" for="first-name">
                 First name
               </label>
-              <input class="nhsuk-input" id="first-name" name="first-name" type="text">            
+              <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">            
 
               <label class="nhsuk-label" for="last-name">
                 Last name
               </label>
-              <input class="nhsuk-input" id="last-name" name="last-name" type="text">            
+              <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="last-name" type="text">            
 
             </fieldset>
           

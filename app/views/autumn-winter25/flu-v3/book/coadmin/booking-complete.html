@@ -47,119 +47,158 @@ Book vaccinations prototype
 
 
 
-              <div class="nhsuk-panel">
-                <h1 class="nhsuk-panel__title">
-                  Booking complete
-                  </h1>
-  
-                <div class="nhsuk-panel__body">
-                Reference number<br><strong>1583033</strong>
-                </div>
-              </div>
+    <div class="nhsuk-panel">
+      <h1 class="nhsuk-panel__title">
+        Booking complete
+      </h1>
+    
+      <div class="nhsuk-panel__body">
+        Your reference number<br><strong>1583033</strong>
+      </div>
+    
+    </div>
 
               <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
               
-                <p class="nhsuk-card__description">Make a note of the booking reference number if you haven't entered an email or mobile number.  You'll need it to view or cancel the appointment.</p>
+                <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  You'll need it to view or cancel your appointment.</p>
               </div>
           <hr>
           <h3 class="nhsuk-heading-l">
               Appointment details
             </h3>
 
-                      <!--<table class="nhsuk-table">
-                        <thead role="rowgroup" class="nhsuk-table__head">
-                          <tr role="row">
-                            <th role="columnheader" class="" scope="col">
-                              Reference number
-                            </th>
-                            <th role="columnheader" class="" scope="col">
-                              Date of birth
-                            </th>
-                            <th role="columnheader" class="" scope="col">
-                             Time
-                            </th>
-                            </tr>
-                        </thead>
-                        <tbody class="nhsuk-table__body">
-                          <tr role="row" class="nhsuk-table__row">
-                            <td class="nhsuk-table__cell">1583033</td>
-                            <td class="nhsuk-table__cell">4 March 1948</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
-                          </tr>
-                          <tr role="row" class="nhsuk-table__row">
-                            <td class="nhsuk-table__cell">1583034</td>
-                            <td class="nhsuk-table__cell">6 May 1945</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
-                          </tr>
-                        </tbody>
-                      </table>-->        
 
-                  <h5 class="nhsuk-heading-xs">
-                      Site location
-                    </h5>
+          <dl class="nhsuk-summary-list">
 
-                    <p>{{data['pharmacy']}}</p>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Vaccination type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Flu and COVID-19
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="appt-postcode">
+                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
-
-                    <p class="nhsuk-u-padding-top-0">
-                      <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-                      Map and directions (opens in Google maps)
-                      <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                      </a>
-                      </p>
-                                          
-
-                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                          Date
-                        </h5>
-  
-                      <p class="nhsuk-card__description">
-                        {{data['date']}} at {{data['hour']}}{{data['time']}}
-                      </p>
-
-                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                        Vaccination type
-                      </h5>
-
-                    <p class="nhsuk-card__description">
-                      Flu and Covid-19
-                    </p>
-
-                      <br>
-              
+            <!--<div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Access needs
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Accessible toilet available</br>
+                  Braille translation service
+                </dd>
             
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="appt-postcode">
+                    Change<span class="nhsuk-u-visually-hidden"> Access needs for anyone attending the appointment</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Site location
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+               {{data['pharmacy']}}
+                   <br><a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+    Map and directions (opens in Google maps)
+    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+    </a>
 
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['date']}} at {{data['hour']}}{{data['time']}}
+                </dd>
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+  
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Time
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  
+                </dd>-->
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-time-range">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment time</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->
+  
+          
+          </dl>       
+                  <br>         
 
-         
-                  <h5 class="nhsuk-card__heading nhsuk-heading-m">
-                      Help us improve our website
-                    </h5>
+                  <div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="index">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Book, change or cancel another flu appointment</span>
+  </a>
+</div>
 
-                  <p class="nhsuk-card__description">
-                      Can you answer some questions about your visit today?
-                  </p>
-
-                  <p>
-                      <a href="#">
-                      Take our survey
-                      
-                      </a>
-                      </p>
-       
-
-
+                      <h2 class="nhsuk-heading-m">Help us improve our website</h2>
+                      <p>Can you answer some questions about your visit today?</p>
+                      <p><a href="#" class="nhsuk-link">Take our survey</a> (takes 30 seconds)</p>
+        
           <div class="nhsuk-card nhsuk-card--clickable">
-            <img class="nhsuk-card__img" src="/images/AdobeStock_996610811_2.jpeg" alt="">
-            <div class="nhsuk-card__content">
+            <div class="nhsuk-grid-row"> 
+              <div class="nhsuk-grid-column-one-half">
+              <img class="nhsuk-card__img" src="/images/AdobeStock_996610811_2.jpeg" alt="">
+            </div> 
+            <div class="nhsuk-grid-column-one-half" style="padding-top: 32px;">
               <h2 class="nhsuk-card__heading nhsuk-heading-m">
                 <a class="nhsuk-card__link" href="https://www.nhs.uk/healthier-families/recipes/">Visit the Healthier Families website</a>
               </h2>
-              <p class="nhsuk-card__description">Find over 100 healthy and easy-to-follow recipes to help you feel your best this winter.</p>
-          
-            </div>
+              <p class="nhsuk-card__description" style="padding-right: 32px; padding-bottom: 16px;">Find over 100 healthy and easy-to-follow recipes to help you feel your best this winter.</p>
           </div>
+          </div>
+          </div>
+
     </div>
     <!-- End of content -->
 

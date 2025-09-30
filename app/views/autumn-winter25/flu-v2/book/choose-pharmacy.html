@@ -18,6 +18,7 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -30,14 +31,6 @@ Book vaccinations prototype
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-back-link">
-
-            <a class="nhsuk-back-link__link" href="javascript:history.back()">
-              <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-              </svg>
-              Back</a>
-          </div>
     
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-xl">
@@ -95,15 +88,13 @@ Book vaccinations prototype
             
     
   <div class="nhsuk-form-group">
-    <div class="nhsuk-action-link">
-          <button class="nhsuk-action-link__link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
+          <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
           <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
           </svg>
             <a>Choose Benjamin Chemist</a>
           </button>
-      </div>   
 </div>
 </div>
 <hr>
@@ -138,15 +129,13 @@ Book vaccinations prototype
         
     
       <div class="nhsuk-form-group">
-        <div class="nhsuk-action-link">
-              <button class="nhsuk-action-link__link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Green Light Pharmacy, 170-172 Stamford Hill, London, N16 6QXD">
+              <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Green Light Pharmacy, 170-172 Stamford Hill, London, N16 6QXD">
               <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                 <path d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
               </svg>
                 <a>Choose Green Light Pharmacy</a>
               </button>
-          </div>   
     </div>
         </div>
     <hr>
@@ -186,16 +175,15 @@ Book vaccinations prototype
             
         
           <div class="nhsuk-form-group">
-            <div class="nhsuk-action-link">
-                  <button class="nhsuk-action-link__link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Asvacare Limited - Clapton, 97, Upper Clapton road, Clapton, London, E59BU">
+                  <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Asvacare Limited - Clapton, 97, Upper Clapton road, Clapton, London, E59BU">
                   <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                     <path d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
                   </svg>
                     <a>Choose Asvacare Limited - Clapton</a>
                   </button>
-              </div>   
-        </div>        </div>
+        </div>        
+      </div>
         </form>
       <!-- End of content -->
 
