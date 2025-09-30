@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -35,34 +35,59 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <div class="nhsuk-back-link">
+
+     <!-- <div class="nhsuk-back-link">
 
         <a class="nhsuk-back-link__link" href="javascript:history.back()">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
           Back</a>
-      </div>
+      </div>-->
 
 
-        <form action="dob-joint" method="get" class="form">
+            <h1 class="nhsuk-heading-xl">
+                You cannot book an appointment for [name]
+              </h1>
 
-          <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--xl" for="nhs-number">
-                What is their NHS number?
-              </label>
-            </h1>
-            <div class="nhsuk-hint" id="nhs-number-hint">
-              An NHS number is a 10 digit number that can be found on any letter the NHS has sent. For example, <span class="nhsuk-u-nowrap">485 777 3456</span>.
-            </div>
-            <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
-          </div>
-  
-          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Continue
-          </button>    </form>
-      
+
+
+        
+            
+
+            <p class="nhsuk-body">This may be because:</p>
+
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>they are not aged 75-79</li>
+              <li>they are not more than 28 weeks pregnant</li>
+              <li>they do not need a vaccine</li>
+              <li>they have an existing booking that would need to be cancelled first</li>
+                </ul>  
+
+            <p class="nhsuk-body">If you are pregnant, you can get the RSV vaccination after 28 weeks.</p>
+
+            <p class="nhsuk-body">You can only book online appointments at pharmacies in some areas of Essex, Leicestershire, Suffolk, the West Midlands and the North West.</p>
+
+
+            <a class="nhsuk-button" href="book/index">
+                Back to start
+              </a>        
+
+                    <h5 class="nhsuk-card__heading nhsuk-heading-m">
+                        Help us improve our website
+                      </h5>
+
+                    <p class="nhsuk-card__description">
+                        Can you answer some questions about your visit today?
+                    </p>
+
+                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                        <a href="#">
+                        Take our survey
+                        
+                        </a>
+                        </p>
+
       </div>
       <!-- End of content -->
 

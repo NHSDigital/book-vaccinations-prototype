@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -18,6 +18,7 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,48 +37,59 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-          </svg>
-          Back</a>
-      </div>
-
-        <form action="jointNhsNumberRadio" method="get" class="form">
+        <form action="addProxyPerson" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-heading-xl">
-                Do you know their NHS number?
+            <h1 class="nhsuk-heading-l">
+                You have already added this person to your booking
               </h1>
           </legend>
 
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-          <p>It can be found:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>on any letter the NHS has sent</li>
-            <li>on a prescription</li>
-            <li>by logging in to a GP practice online service</li>
-            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
-          </ul>
-        </div>
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios">
+            <div class="nhsuk-hint" id="duplicate-hint">
+                Check who you've already added to your booking
+            </div>
+
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Date of birth
+                  </th>
+                </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Jean Davidson</td>
+                <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
+              </tr>
+            </tbody>
+          </table>        
+          
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                        <h1 class="nhsuk-fieldset__heading">
+                Do you want to add another person to your booking?
+              </h1>
+                      </legend>
+
+          <div class="nhsuk-form-group">
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know their NHS number
+                Yes, add another person
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter their name and postcode instead
+                No, continue without adding anyone else
               </label>
             </div>
       
@@ -94,4 +106,11 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+  <script>
+  // Display stored DOB on page load
+  document.getElementById("dob-display").innerText = localStorage.getItem("dob1") || 'Unknown';
+
+</script>
+
 {% endblock %}

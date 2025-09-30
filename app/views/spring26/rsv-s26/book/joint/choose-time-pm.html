@@ -49,9 +49,9 @@ Book vaccinations prototype
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
+            <h1>
                 Choose an appointment time for {{data['first-name']}} {{data['last-name']}}
-              </h1>
+            </h1>
           </legend>
 
     
@@ -60,6 +60,9 @@ Book vaccinations prototype
 
           <p class="nhsuk-body-l">Available appointment times for <span class="nhsuk-u-font-weight-bold"> {{data['date']}}</span></p>
       
+          <div class="nhsuk-hint" id="contact-hint">
+            Select the first appointment slot for your joint booking
+          </div>
 
         <div class="nhsuk-form-group">
             
