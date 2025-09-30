@@ -57,7 +57,7 @@ Book vaccinations prototype
                   <label class="nhsuk-label nhsuk-date-input__label" for="p1-day">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="p1-day" name="p1-day" type="text" inputmode="numeric" value="1">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="p1-day" name="p1-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -65,7 +65,7 @@ Book vaccinations prototype
                   <label class="nhsuk-label nhsuk-date-input__label" for="p1-month">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p1-month" min="1" max="12" required value="8">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p1-month" min="1" max="12" required>
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -73,7 +73,7 @@ Book vaccinations prototype
                   <label class="nhsuk-label nhsuk-date-input__label" for="p1-year">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="p1-year" name="p1-year" type="text" inputmode="numeric" value="1948">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="p1-year" name="p1-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -102,25 +102,26 @@ Book vaccinations prototype
   let year = document.getElementById("p1-year").value;
 
   if (!day || !month || !year) {
-    alert("Please enter a valid date of birth.");
-    return;
+      alert("Please enter a valid date of birth.");
+      return;
   }
 
+  // Convert inputs to numbers
   day = parseInt(day, 10);
   month = parseInt(month, 10);
   year = parseInt(year, 10);
 
   let currentYear = new Date().getFullYear();
   if (
-    isNaN(day) || isNaN(month) || isNaN(year) ||
-    day < 1 || day > 31 || month < 1 || month > 12 ||
-    year < currentYear - 120 || year > currentYear
+      isNaN(day) || isNaN(month) || isNaN(year) ||
+      day < 1 || day > 31 || month < 1 || month > 12 || 
+      year < currentYear - 120 || year > currentYear
   ) {
-    alert("Please enter a valid date.");
-    return;
+      alert("Please enter a valid date.");
+      return;
   }
 
-  let dob = new Date(year, month - 1, day);
+  let dob = new Date(year, month - 1, day); // JS months are 0-indexed
   let today = new Date();
 
   let age = today.getFullYear() - dob.getFullYear();
@@ -128,23 +129,30 @@ Book vaccinations prototype
   let dayDiff = today.getDate() - dob.getDate();
 
   if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-    age--;
+      age--;
   }
 
+  // Convert month number to month name
   let monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
   ];
   let monthName = monthNames[month - 1];
+
+  // Format DOB as "15 March 2000"
   let formattedDOB = `${day} ${monthName} ${year}`;
 
-  // Store data in localStorage
+  // Store in localStorage
   localStorage.setItem("dob1", formattedDOB);
   localStorage.setItem("age1", age);
 
-  // Redirect to confirmation page (decision made later)
-  window.location.href = "confirm-details";
-}
+  // Redirect based on age
+  if ((age >= 2 && age <= 17) || (age >= 65 && age <= 120)) {
+      window.location.href = "manage-appt";
+  } else {
+      window.location.href = "manage-appt";
+  }
+}  
 
 </script>
 {% endblock %}

@@ -38,42 +38,48 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="newNhsNumberRadio" method="get" class="form">
+        <form action="eligibleFlu" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-                Do you know {{data['first-name']}} {{data['last-name']}}'s NHS number?
-              </h1>
+              Is {{data['first-name']}} {{data['last-name']}} able to get a free flu vaccine?
+                          </h1>
           </legend>
 
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-          <p>You can find it:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>on any letter the NHS has sent someone</li>
-            <li>on a prescription</li>
-            <li>by logging in to a GP practice online service</li>
-            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
-          </ul>
-        </div>
+          <p class="nhsuk-body">As they're under 65, they're only able to get a free flu vaccine if they:          </p>
+          
+<ul class="nhsuk-list nhsuk-list--bullet">
+  <li>have a serious long-term health condition</li>
+  <li>are having treatment or medication which means you are at increased risk</li>
+  <li>are pregnant</li>
+  <li>are in long-term residential care</li>
+  <li>receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if you get sick</li>
+  <li>live with or are in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)</li>
+  <li>a frontline health or social care worker (if your workplace doesn't offer an occupational health scheme)</li>
+</ul>
+
+<p class="nhsuk-body">They might be asked some questions at the pharmacy to check they're eligible for a free flu vaccine.</p>
+
+
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes" checked="true">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know their NHS number
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
+                Yes, they're eligible for a free flu vaccine
               </label>
             </div>
       
+
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter their postcode and date of birth instead
-              </label>
-            </div>
-      
+                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
+                  No, they are not eligible
+                </label>
+              </div>
+  
           </div>
           </div>
         </fieldset>

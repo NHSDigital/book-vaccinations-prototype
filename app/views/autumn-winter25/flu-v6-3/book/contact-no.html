@@ -38,45 +38,43 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="newNhsNumberRadio" method="get" class="form">
+
+        <form action="newAreYouSure" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend">
-            <h1 class="nhsuk-heading-l">
-                Do you know {{data['first-name']}} {{data['last-name']}}'s NHS number?
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Are you sure?
               </h1>
           </legend>
-
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-          <p>You can find it:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>on any letter the NHS has sent someone</li>
-            <li>on a prescription</li>
-            <li>by logging in to a GP practice online service</li>
-            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
-          </ul>
-        </div>
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios" data-module="nhsuk-radios">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes" checked="true">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know their NHS number
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter their postcode and date of birth instead
-              </label>
-            </div>
-      
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+               Important
+              </span>
+            </h3>
+            <p>If you do not provide contact details, we will not be able to let you know if your appointment has been cancelled.</p>
           </div>
+
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="are-you-sure-1" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-1">
+                Yes, I understand I will not recieve confirmation, reminder or cancellation messages
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="are-you-sure-2" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-2">
+                No, I want to receive confirmation, reminder and cancellation messages
+              </label>
+            </div>
+      
           </div>
         </fieldset>
+        <br><br>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>

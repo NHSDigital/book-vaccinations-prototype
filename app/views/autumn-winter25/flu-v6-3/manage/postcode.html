@@ -38,24 +38,32 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="dob" method="get" class="form">
+      <form action="dob-2" method="get" class="form">
 
-          <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is {{data['first-name']}} {{data['last-name']}}'s NHS number?
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  What is {{data['first-name']}} {{data['last-name']}}'s postcode?
+                </h1>
+              </legend>
+              <div class="nhsuk-hint" id="example-hint">
+                Enter the postcode that is currently registered with the GP surgery.
+              </div>
+          
+              <label class="nhsuk-label" for="postcode">
+                Postcode
               </label>
-            </h1>
-            <div class="nhsuk-hint" id="nhs-number-hint">
-              An NHS number is a 10 digit number that you find on any letter the NHS has sent. For example, 485 777 3456.
-            </div>
-            <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric" value="999 123 4567">
+              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+
+            </fieldset>
+          
           </div>
-  
-          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Continue
-          </button>    </form>
-      
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>    </form>
+    
       </div>
       <!-- End of content -->
 

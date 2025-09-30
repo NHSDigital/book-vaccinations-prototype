@@ -38,23 +38,23 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="dob-2" method="get" class="form">
+      <form action="choose-appt" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is {{data['first-name']}} {{data['last-name']}}'s postcode?
+                  Things you can bring on the day to show that you need a vaccine
                 </h1>
               </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with the GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text" value="AB1 2CD">            
+
+              <p class="nhsuk-body">It can help to bring one of these things on the day:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>a hospital letter that describes the condition or treatment causing you to have a weakened immune system</li>
+                <li>a prescription or a medicine box with your name and date showing when the medicine was prescribed - this must be for the condition or treatment causing you to have a weakened immune system.</li>
+                <li>a letter from a GP or hopsital specialist asking you to get a vaccine for people with a weakened immune system</li>
+              </ul>
+              <p class="nhsuk-body">If you do not have a suitable letter, prescription or medicine box, you may still be able to recieve your vaccination by talking to someone at the appointment.</p>
 
             </fieldset>
           
@@ -62,7 +62,12 @@ Book vaccinations prototype
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
+        </button>   <br>
+    
+        <a class="nhsuk-button nhsuk-button--secondary" href="immune-system">
+            Change my previous answer
+          </a>
+    </form>
     
       </div>
       <!-- End of content -->

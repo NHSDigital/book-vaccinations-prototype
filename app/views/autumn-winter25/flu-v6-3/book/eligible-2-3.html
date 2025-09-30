@@ -38,42 +38,45 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="newNhsNumberRadio" method="get" class="form">
+        <form action="twoDoseFlu" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-                Do you know {{data['first-name']}} {{data['last-name']}}'s NHS number?
-              </h1>
+              Does {{data['first-name']}} {{data['last-name']}} need to get their flu vaccination in 2 doses?
+                          </h1>
           </legend>
 
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-          <p>You can find it:</p>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>on any letter the NHS has sent someone</li>
-            <li>on a prescription</li>
-            <li>by logging in to a GP practice online service</li>
-            <li>by using the <a href="#" class="nhsuk-link">find your NHS number</a> service (link opens in a new tab)</li>
-          </ul>
-        </div>
+          <p class="nhsuk-body">{{data['first-name']}} {{data['last-name']}} will need 2 doses if they:          </p>
+          
+<ul class="nhsuk-list nhsuk-list--bullet">
+  <li>are in a clinical risk group or</li>
+  <li>live with someone with a weakened immune system</li>
+</ul>
+
+<p class="nhsuk-body">The 2 doses need to be at least 4 weeks apart.</p>
+
+<p class="nhsuk-body"><a href="https://www.nhs.uk/vaccinations/child-flu-vaccine/" target="_blank">Find out more about the child flu vaccination</a> (opens in a new tab)</p>
+
+
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes" checked="true">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know their NHS number
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
+                Yes, they need 2 doses
               </label>
             </div>
       
+
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter their postcode and date of birth instead
-              </label>
-            </div>
-      
+                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
+                  No, they only need 1 dose
+                </label>
+              </div>
+  
           </div>
           </div>
         </fieldset>

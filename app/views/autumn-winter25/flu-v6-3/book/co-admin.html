@@ -38,24 +38,48 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="dob-2" method="get" class="form">
+      <form action="coAdmin" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is {{data['first-name']}} {{data['last-name']}}'s postcode?
+                  Do you also want to book a COVID-19 vaccination?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with the GP surgery.
+                In addition to a flu vaccine, you can book a COVID-19 vaccination to take place in the same appointment.
               </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text" value="AB1 2CD">            
 
+              <div class="nhsuk-warning-callout">
+  <h3 class="nhsuk-warning-callout__label"> <span role="text">
+      Important
+    </span> </h3>
+  <p>To get a COVID-19 vaccination, they must meet one of the criteria below:
+
+    <ul>
+      <li>they are aged 75 or over (or they will be 75 on or before 31 January 2026)</li>
+      <li>they have a weakened immune system (immunosuppressed)</li>
+      <li>they are in a long-stay residential care home for older adults</li>
+    </ul>
+  </p>
+</div>
+          
+              <div class="nhsuk-radios" data-module="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    Yes, book a flu and COVID-19 vaccination in the same appointment
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    No, only book a flu vaccination
+                  </label>
+                </div>
             </fieldset>
           
           </div>

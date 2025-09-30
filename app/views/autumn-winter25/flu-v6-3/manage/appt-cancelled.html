@@ -18,7 +18,6 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -38,24 +37,36 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="dob" method="get" class="form">
+            <h1 class="nhsuk-heading-xl">
+                The appointment has been cancelled
+              </h1>
 
-          <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is {{data['first-name']}} {{data['last-name']}}'s NHS number?
-              </label>
-            </h1>
-            <div class="nhsuk-hint" id="nhs-number-hint">
-              An NHS number is a 10 digit number that you find on any letter the NHS has sent. For example, 485 777 3456.
-            </div>
-            <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric" value="999 123 4567">
-          </div>
-  
-          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Continue
-          </button>    </form>
-      
+              <a class="nhsuk-button" href="index
+              ">
+                Go back to start
+              </a>
+        
+
+            <div class="nhsuk-card nhsuk-card--feature">
+                <div class="nhsuk-card__content">
+                    <h5 class="nhsuk-card__heading nhsuk-heading-l">
+                        Help us improve our website
+                      </h5>
+
+                    <p class="nhsuk-card__description">
+                        Can you answer some questions about your visit today?
+                    </p>
+
+                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                        <a href="#">
+                        Take our survey
+                        
+                        </a>
+                        </p>
+                  </div>
+        
+            </div>        
+
       </div>
       <!-- End of content -->
 

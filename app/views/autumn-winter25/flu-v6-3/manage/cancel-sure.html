@@ -38,23 +38,38 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="dob" method="get" class="form">
+        <form action="cancelAppointment" method="get" class="form">
 
-          <div class="nhsuk-form-group">
-            <h1 class="nhsuk-label-wrapper">
-              <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is {{data['first-name']}} {{data['last-name']}}'s NHS number?
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Are you sure you want to cancel the appointment?
+              </h1>
+          </legend>
+
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="are-you-sure-1" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-1">
+                Yes
               </label>
-            </h1>
-            <div class="nhsuk-hint" id="nhs-number-hint">
-              An NHS number is a 10 digit number that you find on any letter the NHS has sent. For example, 485 777 3456.
             </div>
-            <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric" value="999 123 4567">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="are-you-sure-2" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-2">
+                No
+              </label>
+            </div>
+      
           </div>
-  
-          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Continue
-          </button>    </form>
+        </fieldset>
+        <br><br>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+    </form>
       
       </div>
       <!-- End of content -->
