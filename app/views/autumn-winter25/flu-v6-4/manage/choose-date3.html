@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -54,54 +54,62 @@ Book vaccinations prototype
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 1 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +21}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +21}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning and afternoon available
+                AM - Available <br>
+                PM - Available
               </div>
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 2 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +22}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +22}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Morning available
+                AM - Available <br>
+                PM - Unavailable
               </div>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 3 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +23}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +23}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Afternoon available
+                AM - Available <br>
+                PM - Unavailable
               </div>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday, 6 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +24}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +24}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Afternoon available
+                AM - Available <br>
+                PM - Unavailable
               </div>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday, 7 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +25}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +25}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                Afternoon available
+                AM - Available <br>
+                PM - Unavailable
               </div>
             </div>
+
+
+
           </div>
           </div>
         </fieldset>
