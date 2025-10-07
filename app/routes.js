@@ -385,6 +385,9 @@ router.get(/jointBooking/, function (req, res) {
                                     else if (req.query.hour === "10" ) {
                                         res.redirect('choose-time-am');
                                         }
+                                    else if (req.query.hour === "12" ) {
+                                        res.redirect('choose-time-12');
+                                        }
                                     else {
                                         res.redirect('choose-time-pm');
                                         }
