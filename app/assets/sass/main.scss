@@ -1207,7 +1207,8 @@ a:hover {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
-  white-space: inherit;
+  cursor: pointer;
+  display: inline;
 }
 
 @media (min-width: 40.0625em) {
