@@ -1195,3 +1195,26 @@ a:hover {
   background-color: #eee8a7;
   color: #5b4701;
 }
+
+// Button styled as link //
+
+.nhsuk-link-button {
+  border: 0;
+  padding: 0;
+  background-color: #f0f4f5;
+  color: #005eb8;
+  text-decoration: underline;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: inherit;
+}
+
+@media (min-width: 40.0625em) {
+    .nhsuk-link-button {
+        font-size: 19px;
+        font-size: 1.1875rem;
+        line-height: 1.47368;
+    }
+}
+
