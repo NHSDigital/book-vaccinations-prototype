@@ -605,5 +605,25 @@ router.get(/proxyJointBooking/, function (req, res) {
                     }
             });
 
-        
+
+// Joint bookings with Co-admin routes //
+
+router.get(/jointEligible/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('co-admin');
+                }
+            else {
+                res.redirect('../ineligible-joint');
+                }
+            });
+
+            router.get(/jointSecondEligible/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('co-admin2');
+                }
+            else {
+                res.redirect('../ineligible-joint2');
+                }
+            });
+
 module.exports = router;

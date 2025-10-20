@@ -1,0 +1,101 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-covid.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+        <form action="jointEligible" method="get" class="form">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-fieldset__legend--l">
+                Is {{data['first-name']}} {{data['last-name']}} able to get a COVID-19 vaccine?
+              </h1>
+          </legend>
+
+          <p class="nhsuk-body">As they're under 75 they might be able to get a COVID-19 vaccination if they:</p>
+
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>have a weakened immune system (immunosuppressed)</li>
+            <!--<li>are having treatment or medication that means you are at increased risk</li>
+            <li>are pregnant</li>-->
+            <li>are in a long-stay residential care home for older adults</li>
+            <!--<li>are a frontline health and social care worker or staff working in care homes for older adults</li>-->
+          </ul>
+
+          <p class="nhsuk-body">They might be asked some questions at the pharmacy to check they're eligible for a COVID-19 vaccination.</p>
+
+          <p class="nhsuk-body">If you are not sure, you can <a href="#" class="nhsuk-link">read more about who is eligible for a COVID-19 vaccine</a></p>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
+                Yes, they're eligible for a COVID-19 vaccine
+              </label>
+            </div>
+      
+            <!--<div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="notsure">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-notsure">
+                I'm not sure, I'd like to check at the appointment
+              </label>
+            </div>-->
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
+                  No, they are not eligible
+                </label>
+              </div>
+  
+          </div>
+          </div>
+        </fieldset>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+    </form>
+      
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
