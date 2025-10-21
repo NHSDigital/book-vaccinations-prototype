@@ -38,48 +38,36 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="coAdmin" method="get" class="form">
+      <form action="name" method="get" class="form">
 
-        <div class="nhsuk-form-group">
+                  <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="nhsuk-error-summary">
+            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="nhsuk-error-summary__body">
+              <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+                <li> <a href="#first-name">Enter a reference number in the correct format</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <div class="nhsuk-form-group nhsuk-form-group--error">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Do you want to book a COVID-19 vaccine in the same appointment?
+                  What is your booking reference number?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                If you want to book the vaccines separately, you can book a COVID-19 vaccine after you finish booking the flu vaccine.
+                You can find this in the confirmation email or text we sent. For example, 12-34-567890
               </div>
+              <span class="nhsuk-error-message" id="dob-day-error-error">
+      <span class="nhsuk-u-visually-hidden">Error:</span> Enter a reference number in the correct format
+    </span>
+              <input class="nhsuk-input nhsuk-input--error" id="ref-no" name="ref-no" type="text">            
 
-              <div class="nhsuk-warning-callout">
-  <h3 class="nhsuk-warning-callout__label"> <span role="text">
-      Important
-    </span> </h3>
-  <p>To get a COVID-19 vaccination, they must meet one of the criteria below:
 
-    <ul>
-      <li>they are aged 75 or over (or they will be 75 on or before 31 January 2026)</li>
-      <li>they have a weakened immune system (immunosuppressed)</li>
-      <li>they are in a long-stay residential care home for older adults</li>
-    </ul>
-  </p>
-</div>
-          
-              <div class="nhsuk-radios" data-module="nhsuk-radios">
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes, book a flu and COVID-19 vaccination in the same appointment
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No, only book a flu vaccination
-                  </label>
-                </div>
             </fieldset>
           
           </div>
