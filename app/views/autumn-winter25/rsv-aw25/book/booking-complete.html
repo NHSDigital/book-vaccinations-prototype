@@ -95,38 +95,80 @@ Book vaccinations prototype
                         </tbody>
                       </table>-->        
 
-                  <h5 class="nhsuk-heading-xs">
-                      Site location
-                    </h5>
+      <dl class="nhsuk-summary-list">
 
-                    <p>{{data['pharmacy']}}</p>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Vaccine type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                RSV (respiratory syncytial virus)
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="appt-postcode">
+                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Site location
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['pharmacy']}} <br>
+                <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                  Map and directions (opens in Google maps)
+                  <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span></a>
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
-                    <p class="nhsuk-u-padding-top-0">
-                      <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-                      Map and directions (opens in Google maps)
-                      <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                      </a>
-                      </p>
-                                          
-
-                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                          Date
-                        </h5>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['date']}} at {{data['hour']}}{{data['time']}}
+                </dd>
+            
+              </div>
   
-                      <p class="nhsuk-card__description">
-                        {{data['date']}} at {{data['hour']}}{{data['time']}}
-                      </p>
+              <!--<div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Appointment 1
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                   {{data['first-name']}} {{data['last-name']}}<br>{{data['hour']}}{{data['time']}}
+                </dd>
+            
+              </div>
 
-                      <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                        Vaccination type
-                      </h5>
-
-                    <p class="nhsuk-card__description">
-                      RSV (Respiratory syncytial virus)
-                    </p>
-
-                      <br>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Appointment 2
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                   {{data['first-name2']}} {{data['last-name2']}}<br>{{data['hour']}}{{data['time-2']}}
+                </dd>
+            
+              </div>-->
+  
+              
+          
+      </dl>       
               
             
 
