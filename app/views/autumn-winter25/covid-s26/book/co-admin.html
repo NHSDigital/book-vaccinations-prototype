@@ -38,7 +38,7 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="coAdmin" method="get" class="form">
+      <form action="appt-postcode" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -54,14 +54,14 @@ Book vaccinations prototype
               <div class="nhsuk-radios" data-module="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="radioGroup" type="radio" value="yes">
+                  <input class="nhsuk-radios__input" id="example-1" name="vaccine" type="radio" value="COVID-19 and flu">
                   <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                     Yes, book a COVID-19 and flu vaccination in the same appointment
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="radioGroup" type="radio" value="no">
+                  <input class="nhsuk-radios__input" id="example-2" name="vaccine" type="radio" value="COVID-19">
                   <label class="nhsuk-label nhsuk-radios__label" for="example-2">
                     No, only book a COVID-19 vaccination
                   </label>
@@ -72,11 +72,25 @@ Book vaccinations prototype
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
+        </button>    
+      </form>
     
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (event) {
+    const selected = document.querySelector('input[name="vaccine"]:checked');
+    if (selected) {
+      localStorage.setItem("vaccineChoice", selected.value);
+    }
+  });
+});
+</script>
 {% endblock %}

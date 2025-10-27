@@ -54,7 +54,7 @@ Book vaccinations prototype
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 1 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +21}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +21}) }}
               </label>
@@ -64,7 +64,7 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 2 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +22}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +22}) }}
               </label>
@@ -74,7 +74,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 3 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +23}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +23}) }}
               </label>
@@ -84,7 +84,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday, 6 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +24}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +24}) }}
               </label>
@@ -94,7 +94,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday, 7 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +25}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +25}) }}
               </label>

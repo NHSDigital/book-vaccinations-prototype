@@ -49,6 +49,12 @@ Book vaccinations prototype
           <a href="access-needs">Change access needs</a>
       </p>
 
+      <div id="flu-inset" class="nhsuk-inset-text" style="display:none;">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Appointment type: <span id="vaccine-display"></span></p>
+        <p><a href="#" id="change-to-covid">Book a COVID-19 only appointment</a>.</p>
+      </div>
+      
       <hr>
 <div>
 <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
@@ -225,4 +231,54 @@ Book vaccinations prototype
 
     </div>
   </div>
-{% endblock %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function initVaccineChoice(options = {}) {
+    const insetId = options.insetId || "flu-inset";
+    const linkId = options.linkId || "change-to-covid";
+    const displayId = options.displayId || "vaccine-display";
+
+    const inset = document.getElementById(insetId);
+    const changeLink = document.getElementById(linkId);
+    const displaySpan = document.getElementById(displayId);
+
+    // Get stored value
+    let vaccineChoice = localStorage.getItem("vaccineChoice");
+
+    // If no value exists or blank, default to "COVID-19"
+    if (!vaccineChoice || vaccineChoice.trim() === "") {
+      vaccineChoice = "COVID-19";
+      localStorage.setItem("vaccineChoice", vaccineChoice);
+    }
+
+    // Show inset only if vaccineChoice is "COVID-19 and flu"
+    if (inset) {
+      inset.style.display = (vaccineChoice === "COVID-19 and flu") ? "block" : "none";
+    }
+
+    // Handle link click to switch to "COVID-19" and hide inset
+    if (inset && changeLink) {
+      changeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        vaccineChoice = "COVID-19";
+        localStorage.setItem("vaccineChoice", vaccineChoice);
+        inset.style.display = "none";
+        // Update display if on the same page
+        if (displaySpan) {
+          displaySpan.textContent = vaccineChoice;
+        }
+      });
+    }
+
+    // Display vaccine choice anywhere on page
+    if (displaySpan) {
+      displaySpan.textContent = vaccineChoice;
+    }
+  }
+
+  // Initialize with default IDs
+  initVaccineChoice();
+});
+</script>
+  {% endblock %}

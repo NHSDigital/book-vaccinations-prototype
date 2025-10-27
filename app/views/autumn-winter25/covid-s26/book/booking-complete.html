@@ -75,7 +75,7 @@ Book vaccinations prototype
                 Vaccine type
               </dt>
               <dd class="nhsuk-summary-list__value">
-                COVID-19
+                <span id="vaccine-display"></span>
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">
@@ -152,7 +152,7 @@ Book vaccinations prototype
     <span class="nhsuk-action-link__text">Book another COVID-19 appointment</span>
   </a>
 
-    <a class="nhsuk-action-link" href="index">
+    <a class="nhsuk-action-link" href="index" id="flu-inset" style="display:none;">
     <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
       <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z" />
     </svg>
@@ -182,4 +182,28 @@ Book vaccinations prototype
 
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const inset = document.getElementById("flu-inset");
+  const vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  // Show action link only if Single Jab was chosen
+  if (vaccineChoice === "COVID-19") {
+    inset.style.display = "block";
+  }
+});
+</script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const vaccineDisplay = document.getElementById("vaccine-display");
+  const vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  if (vaccineChoice) {
+    vaccineDisplay.textContent = vaccineChoice;
+  } else {
+    vaccineDisplay.textContent = "No vaccine selected";
+  }
+});
+</script>
 {% endblock %}

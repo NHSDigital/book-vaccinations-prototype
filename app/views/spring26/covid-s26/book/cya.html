@@ -78,7 +78,7 @@ Book vaccinations prototype
                 Vaccination type
               </dt>
               <dd class="nhsuk-summary-list__value">
-                COVID-19
+                <span id="vaccine-display"></span>
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">
@@ -198,4 +198,18 @@ Book vaccinations prototype
     
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  // Always ensure a valid value
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
+    vaccineChoice = "COVID-19";
+    localStorage.setItem("vaccineChoice", vaccineChoice);
+  }
+
+  document.getElementById("vaccine-display").textContent = vaccineChoice;
+});
+</script>
 {% endblock %}
