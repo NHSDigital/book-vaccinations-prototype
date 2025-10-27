@@ -143,7 +143,7 @@ Book vaccinations prototype
           params.append('mobile', encodeURIComponent(mobileValue));
         }
 
-        window.location.href = `cya-contact?${params.toString()}`;
+        window.location.href = `cya?${params.toString()}`;
       } else if (landlineChecked && !emailChecked && !mobileChecked) {
         window.location.href = 'landline';
       } else {

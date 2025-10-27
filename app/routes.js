@@ -123,7 +123,7 @@ router.get(/nhsNumberRadio/, function (req, res) {
     });
 
     router.get(/confirmationMessages/, function (req, res) {
-        if (req.query.radioGroup === "yes" ) {
+        if (req.query.confirmationRadio === "Yes" ) {
             res.redirect('contact-details');
             }
         else {
@@ -132,7 +132,7 @@ router.get(/nhsNumberRadio/, function (req, res) {
         });
 
         router.get(/areYouSure/, function (req, res) {
-            if (req.query.radioGroup === "yes" ) {
+            if (req.query.radioGroup === "Yes" ) {
                 res.redirect('booking-complete');
                 }
             else {
@@ -625,5 +625,15 @@ router.get(/jointEligible/, function (req, res) {
                 res.redirect('../ineligible-joint2');
                 }
             });
+
+        router.get(/contactAreYouSure/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('cya-no');
+                }
+            else {
+                res.redirect('contact-details');
+                }
+            });
+            
 
 module.exports = router;
