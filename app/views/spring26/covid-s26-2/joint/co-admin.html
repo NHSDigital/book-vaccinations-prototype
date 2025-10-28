@@ -79,4 +79,17 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (event) {
+    const selected = document.querySelector('input[name="vaccine"]:checked');
+    if (selected) {
+      localStorage.setItem("vaccineChoice", selected.value);
+    }
+  });
+});
+</script>
 {% endblock %}

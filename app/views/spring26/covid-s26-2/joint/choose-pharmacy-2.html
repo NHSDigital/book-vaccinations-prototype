@@ -48,36 +48,40 @@ Book vaccinations prototype
           <a href="access-needs">Change access needs</a>
       </p>
 
-            <div id="flu-inset" class="nhsuk-inset-text" style="display: none;">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>{{data['first-name']}} {{data['last-name']}}: {{data['vaccine']}}<br>
-            {{data['first-name2']}} {{data['last-name2']}}: {{data['vaccine2']}}</span>
-          </p>
-        <p>If you can't find a vaccination site near you, you can <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.</p>
-      </div>
+<div id="combined-flu-inset" class="nhsuk-inset-text" style="display: none;">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>
+    {{data['first-name']}} {{data['last-name']}}: <span id="vaccine1-text">{{data['vaccine']}}</span><br>
+    {{data['first-name2']}} {{data['last-name2']}}: <span id="vaccine2-text">{{data['vaccine2']}}</span>
+  </p>
+  <p>
+    If you can't find a vaccination site near you, you can 
+    <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.
+  </p>
+</div>
 
 
       <hr>
 
         <div>
-<p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
-<form action="choose-date" method="get" class="form">
+      <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
+  <form action="choose-date" method="get" class="form">
   
-  <h2>Benjamin Chemist</h2>
+      <h2>Benjamin Chemist</h2>
 
-<p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
-<span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
-190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
-</p>
+        <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
+        <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+        190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
+        </p>
             
-<p><span class="nhsuk-u-visually-hidden">Phone number:</span>
-02072542696
-</p>
+        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+          02072542696
+        </p>
 
-<p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
-    <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-    Get directions (opens in Google maps)
-    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+          <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+          Get directions (opens in Google maps)
+          <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
     </a>
     </p>
 
@@ -187,4 +191,61 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Load saved vaccine values from localStorage or default to empty
+  let vaccine1 = localStorage.getItem("vaccine1") || "";
+  let vaccine2 = localStorage.getItem("vaccine2") || "";
+
+  const insetDiv = document.getElementById("combined-flu-inset");
+  const vaccine1Text = document.getElementById("vaccine1-text");
+  const vaccine2Text = document.getElementById("vaccine2-text");
+
+  // Function to update display and visibility
+  function updateDisplay() {
+    vaccine1Text.textContent = vaccine1 || "Not selected";
+    vaccine2Text.textContent = vaccine2 || "Not selected";
+
+    if (vaccine1 === "COVID-19 and flu" || vaccine2 === "COVID-19 and flu") {
+      insetDiv.style.display = "block";
+    } else {
+      insetDiv.style.display = "none";
+    }
+  }
+
+  // Save values to localStorage
+  function saveValues() {
+    localStorage.setItem("vaccine1", vaccine1);
+    localStorage.setItem("vaccine2", vaccine2);
+  }
+
+  // Handle "look for COVID-19 only appointments" link
+  document.getElementById("change-to-covid").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    vaccine1 = "COVID-19";
+    vaccine2 = "COVID-19";
+
+    saveValues();
+    updateDisplay();
+  });
+
+  // Optional: example for dynamically setting values (e.g., dropdowns)
+  // document.getElementById("vaccine1-select").addEventListener("change", function(e) {
+  //   vaccine1 = e.target.value;
+  //   saveValues();
+  //   updateDisplay();
+  // });
+  // document.getElementById("vaccine2-select").addEventListener("change", function(e) {
+  //   vaccine2 = e.target.value;
+  //   saveValues();
+  //   updateDisplay();
+  // });
+
+  // Initial display update
+  updateDisplay();
+});
+</script>
+
 {% endblock %}
