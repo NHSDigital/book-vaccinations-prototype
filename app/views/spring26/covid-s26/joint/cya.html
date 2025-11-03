@@ -220,24 +220,20 @@ Book vaccinations prototype
     });
   </script>
 
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  let vaccineChoice = localStorage.getItem("vaccineChoice");
-  let vaccineChoice2 = localStorage.getItem("vaccineChoice2");
-  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  function displaySavedVaccines() {
+    // Pull values from localStorage
+    const vaccine1 = localStorage.getItem("vaccine1") || "Not selected";
+    const vaccine2 = localStorage.getItem("vaccine2") || "Not selected";
 
-  // Always ensure a valid value
-  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
-    vaccineChoice = "COVID-19";
-    localStorage.setItem("vaccineChoice", vaccineChoice);
-  }
-    if (!vaccineChoice2 || vaccineChoice2.trim() === "" || vaccineChoice2 === "COVID-19 and flu-hidden") {
-    vaccineChoice2 = "COVID-19";
-    localStorage.setItem("vaccineChoice2", vaccineChoice2);
+    // Update the visible text
+    document.getElementById("vaccine1-display").textContent = vaccine1;
+    document.getElementById("vaccine2-display").textContent = vaccine2;
   }
 
-  document.getElementById("vaccine1-display").textContent = vaccineChoice;
-  document.getElementById("vaccine2-display").textContent = vaccineChoice2;
+  // Run the function
+  displaySavedVaccines();
 });
 </script>
 
