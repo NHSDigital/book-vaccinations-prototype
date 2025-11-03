@@ -18,6 +18,7 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -36,19 +37,11 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-          </svg>
-          Back</a>
-      </div>
-
-        <form action="booking-complete" method="get" class="form">
+        <form action="confirmation-messages" method="get" class="form">
 
             <h1 class="nhsuk-heading-l">
-                Check your booking details
+                Check appointment details
               </h1>
 
               <!--<h2 class="nhsuk-heading-m">Booked for</h2>
@@ -70,21 +63,21 @@ Book vaccinations prototype
                     <td class="nhsuk-table__cell "><span id="dobDisplay"></span></td>
                   </tr>
                 </tbody>
-              </table>
+              </table>-->
               
     
     
-              <p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>-->
+              <!--<p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>-->
 
-              <h2 class="nhsuk-heading-m">Appointment details</h2>
+
           <dl class="nhsuk-summary-list">
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Postcode near appointment
+                Vaccination type
               </dt>
               <dd class="nhsuk-summary-list__value">
-                N16 6AB
+                <span id="vaccine-display"></span>
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">
@@ -97,7 +90,7 @@ Book vaccinations prototype
           
             </div>
 
-            <div class="nhsuk-summary-list__row">
+            <!--<div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Access needs
                 </dt>
@@ -106,22 +99,22 @@ Book vaccinations prototype
                   Braille translation service
                 </dd>
             
-                <!--<dd class="nhsuk-summary-list__actions">
+                <dd class="nhsuk-summary-list__actions">
             
                   <a href="appt-postcode">
                     Change<span class="nhsuk-u-visually-hidden"> Access needs for anyone attending the appointment</span>
                   </a>
             
-                </dd>-->
+                </dd>
             
-              </div>
+              </div>-->
   
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Site location
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
+                {{data['pharmacy']}}
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">
@@ -139,7 +132,7 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}
+                  {{data['date']}}
                 </dd>
             
                 <!--<dd class="nhsuk-summary-list__actions">
@@ -157,7 +150,7 @@ Book vaccinations prototype
                   Time
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  10am
+                  {{data['hour']}}{{data['time']}}
                 </dd>
             
                 <!--<dd class="nhsuk-summary-list__actions">
@@ -173,74 +166,13 @@ Book vaccinations prototype
           
           </dl>       
 
-          <h2 class="nhsuk-heading-m">Contact details</h2>
-          <dl class="nhsuk-summary-list">
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Can we send confirmation and reminders?
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Yes
-              </dd>
-          
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="appt-postcode">
-                  Change<span class="nhsuk-u-visually-hidden"> if we can send you confirmation and reminder messages</span>
-                </a>
-          
-              </dd>-->
-          
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Mobile number
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  07123 456 789
-                </dd>
-            
-                <!--<dd class="nhsuk-summary-list__actions">
-            
-                  <a href="appt-postcode">
-                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
-                  </a>
-            
-                </dd>-->
-            
-              </div>
-  
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Email address
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                fake.email@email.com
-              </dd>
-          
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
-                </a>
-          
-              </dd>-->
-          
-            </div>
-
-  
-  
-          
-          </dl>       
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Complete booking
+          Continue
         </button>
 
-        <a class="nhsuk-button nhsuk-button--secondary" href="book/appt-postcode">
-          Change my appointment
+        <a class="nhsuk-button nhsuk-button--secondary" href="choose-date">
+          Change the appointment
         </a>
   
     </form>
@@ -251,7 +183,11 @@ Book vaccinations prototype
       </div>
       <!-- End of content -->
 
-      <script>
+    
+    </div>
+  </div>
+
+        <script>
         document.addEventListener("DOMContentLoaded", function () {
             let dob = localStorage.getItem("dob");
             let age = localStorage.getItem("age");
@@ -265,4 +201,19 @@ Book vaccinations prototype
     
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  // Always ensure a valid value
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
+    vaccineChoice = "COVID-19";
+    localStorage.setItem("vaccineChoice", vaccineChoice);
+  }
+
+  document.getElementById("vaccine-display").textContent = vaccineChoice;
+});
+</script>
+
 {% endblock %}
