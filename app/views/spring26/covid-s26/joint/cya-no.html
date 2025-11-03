@@ -53,7 +53,7 @@ Book vaccinations prototype
                 <th role="columnheader" class="" scope="col">
                     Appointment
                   </th>
-                <th role="columnheader" class="" scope="col">
+                <th role="columnheader" class="" scope="col" style="text-align: right;">
                     Action
                   </th>
                 </tr>
@@ -61,12 +61,12 @@ Book vaccinations prototype
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Jean Davidson</td>
                 <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine1-display"></span></td>
-                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a> </td>
+                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a> </td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine2-display"></span></td>
-                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a></td>
+                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine2-display"></span></td>
+                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a></td>
               </tr>
             </tbody>
           </table>        
@@ -122,7 +122,7 @@ Book vaccinations prototype
                 Can we send confirmation and reminder messages?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['confirmationRadio']}}
+                No
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -205,20 +205,25 @@ Book vaccinations prototype
 
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  function displaySavedVaccines() {
-    // Pull values from localStorage
-    const vaccine1 = localStorage.getItem("vaccine1") || "Not selected";
-    const vaccine2 = localStorage.getItem("vaccine2") || "Not selected";
 
-    // Update the visible text
-    document.getElementById("vaccine1-display").textContent = vaccine1;
-    document.getElementById("vaccine2-display").textContent = vaccine2;
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let vaccineChoice = localStorage.getItem("vaccineChoice");
+  let vaccineChoice2 = localStorage.getItem("vaccineChoice2");
+  
+
+  // Always ensure a valid value
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
+    vaccineChoice = "COVID-19";
+    localStorage.setItem("vaccineChoice", vaccineChoice);
+  }
+    if (!vaccineChoice2 || vaccineChoice2.trim() === "" || vaccineChoice2 === "COVID-19 and flu-hidden") {
+    vaccineChoice2 = "COVID-19";
+    localStorage.setItem("vaccineChoice2", vaccineChoice2);
   }
 
-  // Run the function
-  displaySavedVaccines();
+  document.getElementById("vaccine1-display").textContent = vaccineChoice;
+  document.getElementById("vaccine2-display").textContent = vaccineChoice2;
 });
 </script>
 

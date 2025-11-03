@@ -44,7 +44,7 @@ Book vaccinations prototype
                 Check your booking details
               </h1>
 
-                                      <table class="nhsuk-table">
+           <table class="nhsuk-table">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
                 <th role="columnheader" class="" scope="col">
@@ -60,13 +60,13 @@ Book vaccinations prototype
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Jean Davidson</td>
-                <td class="nhsuk-table__cell">10:20am<br><span id="vaccine1-text">{{data['vaccine']}}</span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a> </td>
+                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine1-display"></span></td>
+                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a> </td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell ">10:30am<br><span id="vaccine2-text">{{data['vaccine2']}}</span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a></td>
+                <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine2-display"></span></td>
+                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a></td>
               </tr>
             </tbody>
           </table>        
@@ -122,7 +122,7 @@ Book vaccinations prototype
                 Can we send confirmation and reminder messages?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['radioGroup']}}
+                Yes
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -219,5 +219,27 @@ Book vaccinations prototype
       document.getElementById('mobile-display').textContent = mobile || 'Not provided';
     });
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  let vaccineChoice = localStorage.getItem("vaccineChoice");
+  let vaccineChoice2 = localStorage.getItem("vaccineChoice2");
+  
+
+  // Always ensure a valid value
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
+    vaccineChoice = "COVID-19";
+    localStorage.setItem("vaccineChoice", vaccineChoice);
+  }
+    if (!vaccineChoice2 || vaccineChoice2.trim() === "" || vaccineChoice2 === "COVID-19 and flu-hidden") {
+    vaccineChoice2 = "COVID-19";
+    localStorage.setItem("vaccineChoice2", vaccineChoice2);
+  }
+
+  document.getElementById("vaccine1-display").textContent = vaccineChoice;
+  document.getElementById("vaccine2-display").textContent = vaccineChoice2;
+});
+</script>
+
 
 {% endblock %}
