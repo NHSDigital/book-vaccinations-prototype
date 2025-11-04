@@ -634,6 +634,62 @@ router.get(/jointEligible/, function (req, res) {
                 res.redirect('contact-details');
                 }
             });
-            
 
+
+// integrated web/app journey routes //
+
+                router.get(/newProxyBooker/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('name');
+            }
+        else {
+            res.redirect('proxy-name');
+            }
+        });
+
+        
+            router.get(/newEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('co-admin');
+        }
+    });
+
+                router.get(/newProxyEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('proxy-cannot-book');
+        }
+    else {
+        res.redirect('proxy-co-admin');
+        }
+    });
+
+                router.get(/secondEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book2');
+        }
+    else {
+        res.redirect('co-admin2');
+        }
+    });
+
+        router.get(/addSecondPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('joint/name2');
+            }
+        else {
+            res.redirect('appt-postcode');
+            }
+        });
+
+                    router.get(/newProxyNhsNumberRadio/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('proxy-nhs-no');
+                    }
+                else {
+                    res.redirect('proxy-dob2');
+                    }
+                });
 module.exports = router;
