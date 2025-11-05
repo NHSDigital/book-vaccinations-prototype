@@ -689,7 +689,7 @@ router.get(/jointEligible/, function (req, res) {
                     res.redirect('proxy-nhs-no');
                     }
                 else {
-                    res.redirect('proxy-dob2');
+                    res.redirect('proxy-postcode');
                     }
                 });
 module.exports = router;

@@ -53,7 +53,7 @@ Book vaccinations prototype
                   </h1>
   
                 <div class="nhsuk-panel__body">
-                Your reference number<br><strong>1583033</strong>
+                Your reference number<br><strong>43-61-1583033</strong>
                 </div>
               </div>
 
@@ -63,76 +63,40 @@ Book vaccinations prototype
                 <p class="nhsuk-card__description">Make a note of your booking reference number if you haven't entered an email or mobile number.  You'll need it to view or cancel your appointment.</p>
               </div>
           <hr>
-          <h3 class="nhsuk-heading-l">
-              Appointment details
-            </h3>
+        
+          <h2 class="nhsuk-heading-m">Booking details</h2>
 
-                      <!--<table class="nhsuk-table">
-                        <thead role="rowgroup" class="nhsuk-table__head">
-                          <tr role="row">
-                            <th role="columnheader" class="" scope="col">
-                              Reference number
-                            </th>
-                            <th role="columnheader" class="" scope="col">
-                              Date of birth
-                            </th>
-                            <th role="columnheader" class="" scope="col">
-                             Time
-                            </th>
-                            </tr>
-                        </thead>
-                        <tbody class="nhsuk-table__body">
-                          <tr role="row" class="nhsuk-table__row">
-                            <td class="nhsuk-table__cell">1583033</td>
-                            <td class="nhsuk-table__cell">4 March 1948</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
-                          </tr>
-                          <tr role="row" class="nhsuk-table__row">
-                            <td class="nhsuk-table__cell">1583034</td>
-                            <td class="nhsuk-table__cell">6 May 1945</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
-                          </tr>
-                        </tbody>
-                      </table>-->        
+          <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Appointment
+                  </th>
+                </tr>
+            </thead><tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Jean Davidson</td>
+                <td class="nhsuk-table__cell">12pm (midday)<br><span id="vaccine1-display">Flu</span></td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Roger Davidson</td>
+                <td class="nhsuk-table__cell ">12<br><span id="vaccine2-display">Flu</span></td>
+              </tr>
+            </tbody>
+          </table>
 
-      <dl class="nhsuk-summary-list">
-
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Vaccine type
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                <span id="vaccine-display"></span>
-              </dd>
-          
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="appt-postcode">
-                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
-                </a>
-          
-              </dd>-->
-          
-            </div>
-
+          <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Site location
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['pharmacy']}} <br>
-                <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-                  Map and directions (opens in Google maps)
-                  <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span></a>
+                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
               </dd>
           
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
-                </a>
-          
-              </dd>-->
           
             </div>
 
@@ -141,43 +105,22 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['date']}} at {{data['hour']}}{{data['time']}}
+                  Tuesday, 7 October
                 </dd>
             
-              </div>
-  
-              <!--<div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Appointment 1
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                   {{data['first-name']}} {{data['last-name']}}<br>{{data['hour']}}{{data['time']}}
-                </dd>
             
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Appointment 2
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                   {{data['first-name2']}} {{data['last-name2']}}<br>{{data['hour']}}{{data['time-2']}}
-                </dd>
-            
-              </div>-->
-  
-              
+              </div>  
           
-      </dl>       
+          </dl>
                       <br>
               
-  <a class="nhsuk-action-link" href="index">
+  <!--<a class="nhsuk-action-link" href="index">
     <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
       <path d="M0 0h24v24H0z" fill="none"></path>
       <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
     </svg>
     <span class="nhsuk-action-link__text">Book another flu appointment</span>
-  </a>
+  </a>-->
 
       <a class="nhsuk-action-link" href="../../covid-aw25-2/index" id="flu-inset" style="display:none;">
     <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">

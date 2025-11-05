@@ -40,169 +40,119 @@ Book vaccinations prototype
 
         <form action="booking-complete" method="get" class="form">
 
-            <h1 class="nhsuk-heading-l">
+            <h1 class="nhsuk-heading-xl">
                 Check your booking details
               </h1>
 
-              <h2 class="nhsuk-heading-m">Booked for</h2>
+                                      <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Appointment
+                  </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                  </th>
+                </tr>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Jean Davidson</td>
+                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine1-display"></span></td>
+                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a> </td>
+              </tr>
+              <!--<tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Roger Davidson</td>
+                <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine2-display"></span></td>
+                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a></td>
+              </tr>-->
+            </tbody>
+          </table>        
 
-              <table class="nhsuk-table">
-                <thead role="rowgroup" class="nhsuk-table__head">
-                  <tr role="row">
-                    <th role="columnheader" class="" scope="col">
-                      Name
-                    </th>
-                    <th role="columnheader" class="" scope="col">
-                        Date of birth
-                      </th>
-                    </tr>
-                </thead>
-                <tbody class="nhsuk-table__body">
-                  <tr role="row" class="nhsuk-table__row">
-                    <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
-                    <td class="nhsuk-table__cell "><span id="dobDisplay"></span></td>
-                  </tr>
-                </tbody>
-              </table>
-
+    
+    
               <h2 class="nhsuk-heading-m">Appointment details</h2>
-              <dl class="nhsuk-summary-list">
-
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Postcode near appointment
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    N16 6AB
-                  </dd>
-              
-                  <!--<dd class="nhsuk-summary-list__actions">
-              
-                    <a href="appt-postcode">
-                      Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
-                    </a>
-              
-                  </dd>-->
-              
-                </div>
-    
-                <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Access needs
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      None
-                    </dd>
-                
-                    <!--<dd class="nhsuk-summary-list__actions">
-                
-                      <a href="appt-postcode">
-                        Change<span class="nhsuk-u-visually-hidden"> Access needs for anyone attending the appointment</span>
-                      </a>
-                
-                    </dd>-->
-                
-                  </div>
-      
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Site location
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
-                  </dd>
-              
-                  <!--<dd class="nhsuk-summary-list__actions">
-              
-                    <a href="#">
-                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
-                    </a>
-              
-                  </dd>-->
-              
-                </div>
-    
-                <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Date
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      {{data['date']}}
-                    </dd>
-                
-                    <!--<dd class="nhsuk-summary-list__actions">
-                
-                      <a href="choose-date">
-                        Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
-                      </a>
-                
-                    </dd>-->
-                
-                  </div>
-      
-                  <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">
-                      Time
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">
-                      {{data['hour']}}{{data['time']}}
-                    </dd>
-                
-                    <!--<dd class="nhsuk-summary-list__actions">
-                
-                      <a href="choose-time-range">
-                        Change<span class="nhsuk-u-visually-hidden"> appointment time</span>
-                      </a>
-                
-                    </dd>
-                
-                  </div>-->
-      
-              
-              </dl>       
-
-          <h2 class="nhsuk-heading-m">Contact details</h2>
-          <dl class="nhsuk-summary-list">
-
+          <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Can we send confirmation and reminders?
+                Site location
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Yes
-              </dd>
-          
-          
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Landline number
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  01234 567 890
-                </dd>
-            
-            
-              </div>
-  
-            <!--<div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Email address
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                fake.email@email.com
+                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
           
                 <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['date']}}
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+            
+                </dd>
+            
+              </div>  
+          
+          </dl>       
+
+          <h2 class="nhsuk-heading-m">Contact details</h2>
+          <dl class="nhsuk-summary-list">
+
+
+             <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Can we send confirmation and reminder messages?
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Yes
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="confirmation-messages">
                   Change<span class="nhsuk-u-visually-hidden"> email address</span>
                 </a>
           
               </dd>
           
-            </div>-->
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Landline
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['landline']}}
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                <a href="landline">
+                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+  
 
   
   
@@ -212,11 +162,6 @@ Book vaccinations prototype
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Complete booking
         </button>
-
-        <a class="nhsuk-button nhsuk-button--secondary" href="appt-postcode">
-          Change my appointment
-        </a>
-
     </form>
 
 
@@ -224,6 +169,7 @@ Book vaccinations prototype
       
       </div>
       <!-- End of content -->
+
       <script>
         document.addEventListener("DOMContentLoaded", function () {
             let dob = localStorage.getItem("dob");
@@ -235,7 +181,43 @@ Book vaccinations prototype
             }
         });
     </script>
-
+    
     </div>
   </div>
+  <script>
+  // Display stored DOB on page load
+  document.getElementById("dob-display").innerText = localStorage.getItem("dob1") || 'Unknown';
+  document.getElementById("dob-display2").innerText = localStorage.getItem("dob2") || 'Unknown';
+
+</script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const email = decodeURIComponent(params.get('email') || '');
+      const mobile = decodeURIComponent(params.get('mobile') || '');
+
+      document.getElementById('email-display').textContent = email || 'Not provided';
+      document.getElementById('mobile-display').textContent = mobile || 'Not provided';
+    });
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  function displaySavedVaccines() {
+    // Pull values from localStorage
+    const vaccine1 = localStorage.getItem("vaccine1") || "Not selected";
+    const vaccine2 = localStorage.getItem("vaccine2") || "Not selected";
+
+    // Update the visible text
+    document.getElementById("vaccine1-display").textContent = vaccine1;
+    document.getElementById("vaccine2-display").textContent = vaccine2;
+  }
+
+  // Run the function
+  displaySavedVaccines();
+});
+</script>
+
+
 {% endblock %}
