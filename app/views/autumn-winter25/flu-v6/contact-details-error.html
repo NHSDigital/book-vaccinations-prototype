@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -42,6 +42,7 @@ Book vaccinations prototype
 
 
 
+        <div class="nhsuk-form-group nhsuk-form-group--error">
     <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
@@ -51,11 +52,13 @@ Book vaccinations prototype
       <div class="nhsuk-hint" id="contact-hint">
         Enter contact details for the person you want to be notified.<br><br>Select all options that are relevant to you.
       </div>
-        <div class="nhsuk-form-group">
 <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional" data-module="nhsuk-checkboxes">
+              <span class="nhsuk-error-message" id="dob-day-error-error">
+      <span class="nhsuk-u-visually-hidden">Error:</span> There might be a mistake in the last part of your email address. Make sure it's right before you continue
+    </span>
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="true" data-checkbox-exclusive-group="checkboxOption" checked="yes">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-email">
             Email
           </label>
@@ -68,7 +71,7 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send email reminders
       </div>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" value="example@hotnail.com">
           </div>
         </div>
 
@@ -143,7 +146,7 @@ Book vaccinations prototype
           params.append('mobile', encodeURIComponent(mobileValue));
         }
 
-        window.location.href = `cya?${params.toString()}`;
+        window.location.href = `cya-contact?${params.toString()}`;
       } else if (landlineChecked && !emailChecked && !mobileChecked) {
         window.location.href = 'landline';
       } else {

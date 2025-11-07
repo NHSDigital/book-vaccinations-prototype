@@ -60,12 +60,12 @@ Book vaccinations prototype
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Jean Davidson</td>
-                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine1-display"></span></td>
+                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine-display-1"></span></td>
                 <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a> </td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine2-display"></span></td>
+                <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine-display-2"></span></td>
                 <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a></td>
               </tr>
             </tbody>
@@ -203,21 +203,18 @@ Book vaccinations prototype
   </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  function displaySavedVaccines() {
-    // Pull values from localStorage
-    const vaccine1 = localStorage.getItem("vaccine1") || "Not selected";
-    const vaccine2 = localStorage.getItem("vaccine2") || "Not selected";
+document.addEventListener("DOMContentLoaded", function () {
+  const display1 = document.getElementById("vaccine-display-1");
+  const display2 = document.getElementById("vaccine-display-2");
 
-    // Update the visible text
-    document.getElementById("vaccine1-display").textContent = vaccine1;
-    document.getElementById("vaccine2-display").textContent = vaccine2;
-  }
+  // Retrieve stored vaccine values
+  const vaccineChoice1 = localStorage.getItem("vaccineChoice1") || "COVID-19";
+  const vaccineChoice2 = localStorage.getItem("vaccineChoice2") || "COVID-19";
 
-  // Run the function
-  displaySavedVaccines();
+  // Display the saved values
+  if (display1) display1.textContent = vaccineChoice1;
+  if (display2) display2.textContent = vaccineChoice2;
 });
 </script>
-
 
 {% endblock %}

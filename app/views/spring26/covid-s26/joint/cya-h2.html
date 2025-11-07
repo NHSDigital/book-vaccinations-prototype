@@ -41,10 +41,10 @@ Book vaccinations prototype
         <form action="booking-complete" method="get" class="form">
 
             <h1 class="nhsuk-heading-xl">
-                Check your booking details
+                Check your booking
               </h1>
 
-                                      <table class="nhsuk-table">
+           <!--<table class="nhsuk-table">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
                 <th role="columnheader" class="" scope="col">
@@ -61,23 +61,68 @@ Book vaccinations prototype
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Jean Davidson</td>
                 <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine-display-1"></span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a> </td>
+                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a> </td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine-display-2"></span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a></td>
+                <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine-display-2"></span></td>
+                <td class="nhsuk-table__cell"><a class="nhsuk-link" href="#">Change time</a></td>
               </tr>
             </tbody>
-          </table>        
+          </table>-->
 
-    
-    
-              <h2 class="nhsuk-heading-m">Appointment details</h2>
+                        <h2 class="nhsuk-heading-m">Jean Davidson</h2>
+
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Site location
+               <span id="vaccine-display-1"></span>
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['hour']}}{{data['time']}}<br>
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change time<span class="nhsuk-u-visually-hidden"> for Jean Davidson</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+            </dl>
+
+            
+          <h2 class="nhsuk-heading-m">Roger Davidson</h2>
+            <dl class="nhsuk-summary-list">  
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  <span id="vaccine-display-2"></span>
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{data['hour']}}{{data['time-2']}}<br>
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-date">
+                  Change time<span class="nhsuk-u-visually-hidden"> for Roger Davidson</span>
+                  </a>
+            
+                </dd>
+            
+              </div>  
+          
+          </dl>       
+
+    
+    
+              <h2 class="nhsuk-heading-m">Your Appointment</h2>
+          <dl class="nhsuk-summary-list">  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Site
               </dt>
               <dd class="nhsuk-summary-list__value">
                 Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
@@ -119,10 +164,10 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Can we send confirmation and reminder messages?
+                Send reminder messages?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                No
+                Yes, send reminder messages
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -135,9 +180,9 @@ Book vaccinations prototype
           
             </div>
 
-            <!--<div class="nhsuk-summary-list__row">
+            <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Email address
+                Email
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <p><span id="email-display"></span></p>
@@ -155,7 +200,7 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Mobile number
+                  Mobile
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   <span id="mobile-display"></span>
@@ -169,8 +214,12 @@ Book vaccinations prototype
             
                 </dd>
             
-              </div>-->
+              </div>
   
+
+  
+  
+          
           </dl>       
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -205,6 +254,16 @@ Book vaccinations prototype
 
 </script>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const email = decodeURIComponent(params.get('email') || '');
+      const mobile = decodeURIComponent(params.get('mobile') || '');
+
+      document.getElementById('email-display').textContent = email || 'Not provided';
+      document.getElementById('mobile-display').textContent = mobile || 'Not provided';
+    });
+  </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -220,4 +279,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (display2) display2.textContent = vaccineChoice2;
 });
 </script>
+
+
 {% endblock %}

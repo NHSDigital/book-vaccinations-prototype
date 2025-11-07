@@ -44,7 +44,7 @@ Book vaccinations prototype
                 Check your booking details
               </h1>
 
-                                      <table class="nhsuk-table">
+                                      <table class="nhsuk-table-responsive">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
                 <th role="columnheader" class="" scope="col">
@@ -59,19 +59,35 @@ Book vaccinations prototype
                 </tr>
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Jean Davidson</td>
-                <td class="nhsuk-table__cell">10:20am<br><span id="vaccine1-text">{{data['vaccine']}}</span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a> </td>
+                <td class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name</span>
+                  Jean Davidson</td>
+                <td class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Appointment</span>
+                  10:20am
+                  <br>
+                  Flu and COVID-19
+                </td>
+                <td class="nhsuk-table__cell" style="text-align: right;">
+                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Action</span>
+                  <a class="nhsuk-link" href="#">Change time</a> </td>
               </tr>
-              <!--<tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell ">10:30am<br><span id="vaccine2-text">{{data['vaccine2']}}</span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a></td>
-              </tr>-->
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name</span>
+                  Roger Davidson</td>
+                <td class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Appointment</span>
+                  10:30am
+                  <br>
+                  Flu
+                </td>
+                <td class="nhsuk-table__cell" style="text-align: right;">
+                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Action</span>
+                  <a class="nhsuk-link" href="#">Change time</a> </td>
+              </tr>
             </tbody>
           </table>        
-
-    
     
               <h2 class="nhsuk-heading-m">Appointment details</h2>
           <dl class="nhsuk-summary-list">  
@@ -98,7 +114,7 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['date']}}
+                  Friday 14 November
                 </dd>
             
                 <dd class="nhsuk-summary-list__actions">

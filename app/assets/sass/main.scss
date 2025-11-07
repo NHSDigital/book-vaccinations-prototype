@@ -1390,3 +1390,71 @@ a:hover {
     align-items: center;
     justify-content: center;
 }
+
+
+// summary card //
+
+.app-summary-card {
+  border: 1px solid #d8dde0;
+  background-color: #ffffff;
+}
+.app-summary-card {
+  margin-bottom: 24px;
+}
+@media (min-width: 40.0625em) {
+  .app-summary-card {
+    margin-bottom: 32px;
+  }
+}
+.app-summary-card__title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: #f0f4f5;
+}
+.app-summary-card__title-wrapper {
+  padding: 8px;
+}
+@media (min-width: 40.0625em) {
+  .app-summary-card__title-wrapper {
+    padding: 16px;
+  }
+}
+.app-summary-card__content {
+  padding: 8px;
+}
+@media (min-width: 40.0625em) {
+  .app-summary-card__content {
+    padding: 16px;
+  }
+}
+.app-summary-card__content > .nhsuk-summary-list {
+  margin-bottom: 0;
+}
+.app-summary-card__content > .nhsuk-summary-list .nhsuk-summary-list__row:last-child {
+  border-bottom: none;
+}
+.app-summary-card__content > .nhsuk-table {
+  margin-bottom: 0;
+}
+.app-summary-card__title, .app-summary-card__action {
+  margin: 0;
+}
+.app-summary-card__title, .app-summary-card__action {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media (min-width: 40.0625em) {
+  .app-summary-card__title, .app-summary-card__action {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+  }
+}
+@media print {
+  .app-summary-card__title, .app-summary-card__action {
+    font-size: 13pt;
+    line-height: 1.25;
+  }
+}

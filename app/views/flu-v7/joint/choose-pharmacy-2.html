@@ -48,15 +48,17 @@ Book vaccinations prototype
           <a href="access-needs">Change access needs</a>
       </p>
 
-<div id="combined-flu-inset" class="nhsuk-inset-text" style="display: none;">
+<div id="co-admin-inset" class="nhsuk-inset-text" style="display: none;">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>
-    {{data['first-name']}} {{data['last-name']}}: <span id="vaccine1-text"></span><br>
-    {{data['first-name2']}} {{data['last-name2']}}: <span id="vaccine2-text"></span>
+    {{data['first-name']}} {{data['last-name']}}:
+    <span id="vaccine-display-1"></span><br>
+    {{data['first-name2']}} {{data['last-name2']}}:
+    <span id="vaccine-display-2"></span><br>
   </p>
   <p>
-    If you can't find a vaccination site near you, you can 
-    <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.
+    If you can't find a vaccination site near you, you can
+    <a href="#" id="change-to-single">look for flu only appointments</a>.
   </p>
 </div>
 
@@ -193,63 +195,58 @@ Book vaccinations prototype
   </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Load vaccine values from localStorage if available, otherwise use template data
-    let vaccine1 = localStorage.getItem("vaccine1") || "{{data['vaccine']}}";
-    let vaccine2 = localStorage.getItem("vaccine2") || "{{data['vaccine2']}}";
+document.addEventListener("DOMContentLoaded", function () {
+  function initVaccineChoice(options = {}) {
+    const insetId = options.insetId || "co-admin-inset";
+    const linkId = options.linkId || "change-to-single";
+    const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
 
-    const insetDiv = document.getElementById("combined-flu-inset");
-    const vaccine1Text = document.getElementById("vaccine1-text");
-    const vaccine2Text = document.getElementById("vaccine2-text");
+    const inset = document.getElementById(insetId);
+    const changeLink = document.getElementById(linkId);
+    const displaySpans = displayIds.map(id => document.getElementById(id));
 
-    // Update the visible text on page load
-    vaccine1Text.textContent = vaccine1;
-    vaccine2Text.textContent = vaccine2;
+    // Retrieve stored vaccine values for both people
+    let vaccineChoices = [
+      localStorage.getItem("vaccineChoice1"),
+      localStorage.getItem("vaccineChoice2")
+    ];
 
-    function updateInsetVisibility() {
-      if (vaccine1 === "COVID-19 and flu" || vaccine2 === "COVID-19 and flu") {
-        insetDiv.style.display = "block";
-      } else {
-        insetDiv.style.display = "none";
-      }
-    }
+    // Default any missing or blank values to "COVID-19"
+    vaccineChoices = vaccineChoices.map(choice =>
+      !choice || choice.trim() === "" ? "Flu" : choice
+    );
 
-    // Initial visibility check
-    updateInsetVisibility();
+    // Store defaults if needed
+    localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+    localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
 
-    // Function to save vaccine values to localStorage
-    function saveVaccineValues() {
-      localStorage.setItem("vaccine1", vaccine1);
-      localStorage.setItem("vaccine2", vaccine2);
-    }
+    // Determine if inset should be visible (if either includes flu)
+    const showInset = vaccineChoices.some(choice => choice.includes("COVID-19"));
+    if (inset) inset.style.display = showInset ? "block" : "none";
 
-    // Handle "look for COVID-19 only appointments" link
-    document.getElementById("change-to-covid").addEventListener("click", function(e) {
-      e.preventDefault();
-
-      // Update JS variables
-      vaccine1 = "COVID-19";
-      vaccine2 = "COVID-19";
-
-      // Update visible text
-      vaccine1Text.textContent = vaccine1;
-      vaccine2Text.textContent = vaccine2;
-
-      // Hide the inset
-      updateInsetVisibility();
-
-      // Save updated values
-      saveVaccineValues();
+    // Update displayed vaccine choices
+    displaySpans.forEach((span, i) => {
+      if (span) span.textContent = vaccineChoices[i];
     });
 
-    // Optional: Save values automatically if you have dropdowns or inputs
-    // Example:
-    // document.getElementById("vaccine1-input").addEventListener("change", function(e) {
-    //   vaccine1 = e.target.value;
-    //   saveVaccineValues();
-    //   updateInsetVisibility();
-    // });
-  });
-</script>
+    // Handle link click → switch both to COVID-19 only
+    if (inset && changeLink) {
+      changeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        vaccineChoices = ["Flu", "Flu"];
+        localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+        localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+        inset.style.display = "none";
 
+        displaySpans.forEach((span, i) => {
+          if (span) span.textContent = vaccineChoices[i];
+        });
+      });
+    }
+  }
+
+  // Initialize with default IDs
+  initVaccineChoice();
+});
+</script>
 {% endblock %}

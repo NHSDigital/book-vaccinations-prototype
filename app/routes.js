@@ -123,7 +123,7 @@ router.get(/nhsNumberRadio/, function (req, res) {
     });
 
     router.get(/confirmationMessages/, function (req, res) {
-        if (req.query.confirmationRadio === "Yes" ) {
+        if (req.query.radioGroup === "Yes" ) {
             res.redirect('contact-details');
             }
         else {
