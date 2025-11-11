@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Retrieve stored vaccine values for both people
     let vaccineChoices = [
-      localStorage.getItem("vaccineChoice1"),
+      localStorage.getItem("vaccineChoice"),
       localStorage.getItem("vaccineChoice2")
     ];
 
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     // Store defaults if needed
-    localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+    localStorage.setItem("vaccineChoice", vaccineChoices[0]);
     localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
 
     // Determine if inset should be visible (if either includes flu)
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
       changeLink.addEventListener("click", function (e) {
         e.preventDefault();
         vaccineChoices = ["COVID-19", "COVID-19"];
-        localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+        localStorage.setItem("vaccineChoice", vaccineChoices[0]);
         localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
         inset.style.display = "none";
 

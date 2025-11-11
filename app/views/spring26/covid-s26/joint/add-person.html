@@ -116,51 +116,45 @@ Book vaccinations prototype
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   function initVaccineChoice(options = {}) {
-    const insetId = options.insetId || "co-admin-inset";
-    const linkId = options.linkId || "change-to-single";
-    const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
+    const insetId = options.insetId || "flu-inset";
+    const linkId = options.linkId || "change-to-covid";
+    const displayId = options.displayId || "vaccine-display-1";
 
     const inset = document.getElementById(insetId);
     const changeLink = document.getElementById(linkId);
-    const displaySpans = displayIds.map(id => document.getElementById(id));
+    const displaySpan = document.getElementById(displayId);
 
-    // Retrieve stored vaccine values for both people
-    let vaccineChoices = [
-      localStorage.getItem("vaccineChoice1"),
-      localStorage.getItem("vaccineChoice2")
-    ];
+    // Get stored value
+    let vaccineChoice = localStorage.getItem("vaccineChoice");
 
-    // Default any missing or blank values to "COVID-19"
-    vaccineChoices = vaccineChoices.map(choice =>
-      !choice || choice.trim() === "" ? "COVID-19" : choice
-    );
+    // If no value exists or blank, default to "COVID-19"
+    if (!vaccineChoice || vaccineChoice.trim() === "") {
+      vaccineChoice = "COVID-19";
+      localStorage.setItem("vaccineChoice", vaccineChoice);
+    }
 
-    // Store defaults if needed
-    localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
-    localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+    // Show inset only if vaccineChoice is "COVID-19 and flu"
+    if (inset) {
+      inset.style.display = (vaccineChoice === "COVID-19 and flu") ? "block" : "none";
+    }
 
-    // Determine if inset should be visible (if either includes flu)
-    const showInset = vaccineChoices.some(choice => choice.includes("flu"));
-    if (inset) inset.style.display = showInset ? "block" : "none";
-
-    // Update displayed vaccine choices
-    displaySpans.forEach((span, i) => {
-      if (span) span.textContent = vaccineChoices[i];
-    });
-
-    // Handle link click → switch both to COVID-19 only
+    // Handle link click to switch to "COVID-19" and hide inset
     if (inset && changeLink) {
       changeLink.addEventListener("click", function (e) {
         e.preventDefault();
-        vaccineChoices = ["COVID-19", "COVID-19"];
-        localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
-        localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+        vaccineChoice = "COVID-19";
+        localStorage.setItem("vaccineChoice", vaccineChoice);
         inset.style.display = "none";
-
-        displaySpans.forEach((span, i) => {
-          if (span) span.textContent = vaccineChoices[i];
-        });
+        // Update display if on the same page
+        if (displaySpan) {
+          displaySpan.textContent = vaccineChoice;
+        }
       });
+    }
+
+    // Display vaccine choice anywhere on page
+    if (displaySpan) {
+      displaySpan.textContent = vaccineChoice;
     }
   }
 
