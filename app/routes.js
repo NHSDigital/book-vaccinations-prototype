@@ -605,6 +605,25 @@ router.get(/proxyJointBooking/, function (req, res) {
                     }
             });
 
+// multi cohort JB NO CO-ADMIN routes //
+
+router.get(/springJointEligible/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('add-person');
+                }
+            else {
+                res.redirect('../ineligible-joint');
+                }
+            });
+
+            router.get(/springJointSecondEligible/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('add-person2');
+                }
+            else {
+                res.redirect('../ineligible-joint2');
+                }
+            });
 
 // Joint bookings with Co-admin routes //
 

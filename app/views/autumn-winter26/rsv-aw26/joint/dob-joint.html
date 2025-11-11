@@ -1,0 +1,149 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <!-- Change the page title here -->
+
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+    <form onsubmit="event.preventDefault(); checkAgeAndRedirect();"  class="form">
+
+      <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+              <h1 class="nhsuk-fieldset__heading">
+                What is {{data['first-name2']}} {{data['last-name2']}}'s date of birth?
+              </h1>
+            </legend>
+            <div class="nhsuk-hint" id="example-hint">
+              For example, 15 3 1984
+            </div>
+        
+            <div class="nhsuk-date-input" id="p1">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="p1-day">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="p1-day" name="p1-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="p1-month">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p1-month" min="1" max="12" required>
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="p1-year">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="p1-year" name="p1-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        
+        </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" onclick="saveMonth()">
+        Continue
+      </button>    
+    </form>
+  
+
+  
+    </div>
+    <!-- End of content -->
+
+  </div>
+</div>
+
+<script>
+  
+function checkAgeAndRedirect() {
+  let day = document.getElementById("p1-day").value;
+  let month = document.getElementById("p1-month").value;
+  let year = document.getElementById("p1-year").value;
+
+  if (!day || !month || !year) {
+    alert("Please enter a valid date of birth.");
+    return;
+  }
+
+  day = parseInt(day, 10);
+  month = parseInt(month, 10);
+  year = parseInt(year, 10);
+
+  let currentYear = new Date().getFullYear();
+  if (
+    isNaN(day) || isNaN(month) || isNaN(year) ||
+    day < 1 || day > 31 || month < 1 || month > 12 ||
+    year < currentYear - 120 || year > currentYear
+  ) {
+    alert("Please enter a valid date.");
+    return;
+  }
+
+  let dob = new Date(year, month - 1, day);
+  let today = new Date();
+  let age = today.getFullYear() - dob.getFullYear();
+  let monthDiff = today.getMonth() - dob.getMonth();
+  let dayDiff = today.getDate() - dob.getDate();
+
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age--;
+  }
+
+  let monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  let monthName = monthNames[month - 1];
+  let formattedDOB = `${day} ${monthName} ${year}`;
+
+ // Store DOB and age
+  localStorage.setItem("dob2", formattedDOB);
+  localStorage.setItem("age2", age);
+
+  // Redirect immediately to confirm-details.html
+  window.location.href = "confirm-details2";
+}
+
+</script>
+{% endblock %}
