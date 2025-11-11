@@ -41,55 +41,50 @@ Book vaccinations prototype
         <form action="booking-complete" method="get" class="form">
 
             <h1 class="nhsuk-heading-xl">
-                Check your booking details
+                Check your booking
               </h1>
 
-                                      <table class="nhsuk-table-responsive">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Name
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Appointment
-                  </th>
-                <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Action
-                  </th>
-                </tr>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name</span>
-                  Jean Davidson</td>
-                <td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Appointment</span>
-                  10:20am
-                  <br>
-                  Flu and COVID-19
-                </td>
-                <td class="nhsuk-table__cell" style="text-align: right;">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Action</span>
-                  <a class="nhsuk-link" href="#">Change time</a> </td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name</span>
-                  Roger Davidson</td>
-                <td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Appointment</span>
-                  10:30am
-                  <br>
-                  Flu
-                </td>
-                <td class="nhsuk-table__cell" style="text-align: right;">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Action</span>
-                  <a class="nhsuk-link" href="#">Change time</a> </td>
-              </tr>
-            </tbody>
-          </table>        
+                    <dl class="nhsuk-summary-list">  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Jean Davidson
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span id="vaccine-display"></span> <br> {{data['hour']}}{{data['time']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change time<span class="nhsuk-u-visually-hidden"> for Jean Davidson</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+
+            <!--<div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Roger Davidson
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <span id="vaccine-display-2"></span> <br> {{data['hour']}}{{data['time-2']}}
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-date">
+                  Change time<span class="nhsuk-u-visually-hidden"> for Roger Davidson</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->  
+          
+          </dl>       
+
     
-              <h2 class="nhsuk-heading-m">Appointment details</h2>
+              <h2 class="nhsuk-heading-m">Your Appointment</h2>
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -135,10 +130,10 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Can we send confirmation and reminder messages?
+                Send reminder messages?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['radioGroup']}}
+                Yes, send reminder messages
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -153,7 +148,7 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Email address
+                Email
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <p><span id="email-display"></span></p>
@@ -171,7 +166,7 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  Mobile number
+                  Mobile
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   <span id="mobile-display"></span>
@@ -236,4 +231,17 @@ Book vaccinations prototype
     });
   </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  // Always ensure a valid value
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
+    vaccineChoice = "COVID-19";
+    localStorage.setItem("vaccineChoice", vaccineChoice);
+  }
+
+  document.getElementById("vaccine-display").textContent = vaccineChoice;
+});
+</script>
 {% endblock %}

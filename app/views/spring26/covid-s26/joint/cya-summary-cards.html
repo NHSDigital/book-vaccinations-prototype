@@ -96,19 +96,27 @@ Book vaccinations prototype
       <div class="app-summary-card">
         <div class="app-summary-card__title-wrapper">
           <h2 class="app-summary-card__title">Location and date</h2>
-          <a class="app-summary-card__action" href="#">Change<span class="nhsuk-u-visually-hidden"> appointment times</span></a>
         </div>
         <div class="app-summary-card__content">
           <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Site</dt>
               <dd class="nhsuk-summary-list__value">Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD</dd>
+              <dt class="nhsuk-summary-list__actions">                  
+                <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+                </dt>
             </div>
             
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Date</dt>
               <dd class="nhsuk-summary-list__value">{{data['date']}}</dd>
-            </div>
+              <dt class="nhsuk-summary-list__actions">                  
+                <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+                </dt>            </div>
             
           </dl>
         </div>
@@ -117,23 +125,34 @@ Book vaccinations prototype
             <div class="app-summary-card">
         <div class="app-summary-card__title-wrapper">
           <h2 class="app-summary-card__title">Contact preferences</h2>
-          <a class="app-summary-card__action" href="#">Change<span class="nhsuk-u-visually-hidden"> appointment times</span></a>
         </div>
         <div class="app-summary-card__content">
           <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Send reminder messages?</dt>
               <dd class="nhsuk-summary-list__value">Yes, send reminder messages</dd>
-            </div>
+              <dt class="nhsuk-summary-list__actions">                  
+                <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+                </dt>            </div>
             
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Email</dt>
               <dd class="nhsuk-summary-list__value"><span id="email-display"></span></dd>
-            </div>
+              <dt class="nhsuk-summary-list__actions">                  
+                <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+                </dt>            </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">Mobile</dt>
               <dd class="nhsuk-summary-list__value"><span id="mobile-display"></span></dd>
-            </div>
+              <dt class="nhsuk-summary-list__actions">                  
+                <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+                </dt>            </div>
             
           </dl>
         </div>

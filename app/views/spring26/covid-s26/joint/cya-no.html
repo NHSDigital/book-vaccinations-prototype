@@ -41,43 +41,55 @@ Book vaccinations prototype
         <form action="booking-complete" method="get" class="form">
 
             <h1 class="nhsuk-heading-xl">
-                Check your booking details
+                Check your booking
               </h1>
 
-                                      <table class="nhsuk-table">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Name
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Appointment
-                  </th>
-                <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Action
-                  </th>
-                </tr>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Jean Davidson</td>
-                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine-display-1"></span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a> </td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time-2']}}<br><span id="vaccine-display-2"></span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a></td>
-              </tr>
-            </tbody>
-          </table>        
-
-    
-    
-              <h2 class="nhsuk-heading-m">Appointment details</h2>
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Site location
+                Jean Davidson
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <span id="vaccine-display-1"></span> <br> {{data['hour']}}{{data['time']}}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change time<span class="nhsuk-u-visually-hidden"> for Jean Davidson</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Roger Davidson
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <span id="vaccine-display-2"></span> <br> {{data['hour']}}{{data['time-2']}}
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="choose-date">
+                  Change time<span class="nhsuk-u-visually-hidden"> for Roger Davidson</span>
+                  </a>
+            
+                </dd>
+            
+              </div>  
+          
+          </dl>       
+
+    
+    
+              <h2 class="nhsuk-heading-m">Your appointment</h2>
+          <dl class="nhsuk-summary-list">  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Site
               </dt>
               <dd class="nhsuk-summary-list__value">
                 Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
@@ -119,10 +131,10 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Can we send confirmation and reminder messages?
+                Send reminder messages?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                No
+                No, do not send reminder messages
               </dd>
           
               <dd class="nhsuk-summary-list__actions">

@@ -44,7 +44,6 @@ Book vaccinations prototype
                 Check your booking
               </h1>
 
-          
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -64,7 +63,7 @@ Book vaccinations prototype
           
             </div>
 
-            <div class="nhsuk-summary-list__row">
+            <!--<div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Roger Davidson
                 </dt>
@@ -80,7 +79,7 @@ Book vaccinations prototype
             
                 </dd>
             
-              </div>  
+              </div>-->  
           
           </dl>       
 
@@ -135,7 +134,7 @@ Book vaccinations prototype
                 Send reminder messages?
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Yes, send reminder messages
+                No, do not send reminder messages
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
@@ -148,23 +147,42 @@ Book vaccinations prototype
           
             </div>
 
-            <div class="nhsuk-summary-list__row">
+            <!--<div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Landline
+                Email address
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['Landline']}}
+                <p><span id="email-display"></span></p>
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
           
-                <a href="landline">
-                  Change<span class="nhsuk-u-visually-hidden"> landline</span>
+                <a href="contact-details">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
                 </a>
           
               </dd>
           
-            </div>          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Mobile number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <span id="mobile-display"></span>
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+            
+                <a href="contact-details">
+                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->
+  
           </dl>       
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -199,16 +217,6 @@ Book vaccinations prototype
 
 </script>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const email = decodeURIComponent(params.get('email') || '');
-      const mobile = decodeURIComponent(params.get('mobile') || '');
-
-      document.getElementById('email-display').textContent = email || 'Not provided';
-      document.getElementById('mobile-display').textContent = mobile || 'Not provided';
-    });
-  </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -224,6 +232,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (display2) display2.textContent = vaccineChoice2;
 });
 </script>
-
-
 {% endblock %}

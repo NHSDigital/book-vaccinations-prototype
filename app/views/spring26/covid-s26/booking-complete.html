@@ -68,44 +68,29 @@ Book vaccinations prototype
               Appointment details
             </h3>
 
-                      <dl class="nhsuk-summary-list">
-
+          <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Vaccine type
+                Jean Davidson
               </dt>
               <dd class="nhsuk-summary-list__value">
-                RSV (respiratory syncytial virus)
+                {{data['hour']}}{{data['time']}}<br><span id="vaccine-display"></span>
               </dd>
           
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="appt-postcode">
-                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
-                </a>
-          
-              </dd>-->
           
             </div>
-
+           
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Site location
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['pharmacy']}} <br>
+                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD <br>
                 <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
     Map and directions (opens in Google maps)
     <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span></a>
               </dd>
           
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
-                </a>
-          
-              </dd>-->
           
             </div>
 
@@ -114,32 +99,11 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['date']}} at {{data['hour']}}{{data['time']}}
+                  {{data['date']}}
                 </dd>
             
-              </div>
-  
-              <!--<div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Appointment 1
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                   {{data['first-name']}} {{data['last-name']}}<br>{{data['hour']}}{{data['time']}}
-                </dd>
             
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Appointment 2
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                   {{data['first-name2']}} {{data['last-name2']}}<br>{{data['hour']}}{{data['time-2']}}
-                </dd>
-            
-              </div>-->
-  
-              
+              </div>  
           
           </dl>       
 
@@ -178,18 +142,18 @@ Book vaccinations prototype
                   </p>-->  
                   <br>         
 
-  <a class="nhsuk-action-link" href="index">
+  <!--<a class="nhsuk-action-link" href="index">
     <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
       <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z" />
     </svg>
     <span class="nhsuk-action-link__text">Book, change or cancel another COVID-19 appointment</span>
-  </a>
+  </a>-->
 
-    <a class="nhsuk-action-link" href="index">
+      <a class="nhsuk-action-link" href="../../covid-aw25-2/index" id="flu-inset" style="display:none;">
     <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
       <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z" />
     </svg>
-    <span class="nhsuk-action-link__text">Book a free NHS flu vaccination at a pharmacy</span>
+    <span class="nhsuk-action-link__text">Book a free NHS flu vaccine</span>
   </a>
 
                       <h2 class="nhsuk-heading-m">Help us improve our website</h2>
@@ -216,3 +180,28 @@ Book vaccinations prototype
   </div>
 </div>
 {% endblock %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const inset = document.getElementById("flu-inset");
+  const vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  // Show action link only if Single Jab was chosen
+  if (vaccineChoice === "Flu") {
+    inset.style.display = "block";
+  }
+});
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const vaccineDisplay = document.getElementById("vaccine-display");
+  const vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  if (vaccineChoice) {
+    vaccineDisplay.textContent = vaccineChoice;
+  } else {
+    vaccineDisplay.textContent = "No vaccine selected";
+  }
+});
+</script>
