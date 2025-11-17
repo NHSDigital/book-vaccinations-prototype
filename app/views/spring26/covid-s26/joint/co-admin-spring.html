@@ -54,14 +54,14 @@ Book vaccinations prototype
               <div class="nhsuk-radios" data-module="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="vaccine" type="radio" value="COVID-19 and RSV">
+                  <input class="nhsuk-radios__input" id="example-1" name="vaccine1" type="radio" value="COVID-19 and RSV">
                   <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                     Yes, book a COVID-19 and RSV vaccination in the same appointment
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="vaccine" type="radio" value="COVID-19">
+                  <input class="nhsuk-radios__input" id="example-2" name="vaccine1" type="radio" value="COVID-19">
                   <label class="nhsuk-label nhsuk-radios__label" for="example-2">
                     No, only book a COVID-19 vaccination
                   </label>
@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
 
   form.addEventListener("submit", function (event) {
-    const selected = document.querySelector('input[name="vaccine"]:checked');
+    const selected = document.querySelector('input[name="vaccine1"]:checked');
     if (selected) {
-      localStorage.setItem("vaccineChoice", selected.value);
+      localStorage.setItem("vaccineChoice1", selected.value);
     }
   });
 });
