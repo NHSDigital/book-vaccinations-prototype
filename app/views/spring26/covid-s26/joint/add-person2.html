@@ -59,14 +59,14 @@ Book vaccinations prototype
                 </tr>
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
+                <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
-                <td class="nhsuk-table__cell "><span id="vaccine-display-1"></span></td>
+                <td class="nhsuk-table__cell ">{{data['vaccine']}}</td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{data['first-name2']}} {{data['last-name2']}}</td>
+                <td class="nhsuk-table__cell">{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display2"></span></td>
-                <td class="nhsuk-table__cell "><span id="vaccine-display-2"></span></td>
+                <td class="nhsuk-table__cell ">{{data['vaccine2']}}</td>
               </tr>
             </tbody>
           </table>        
@@ -86,61 +86,6 @@ Book vaccinations prototype
 
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  function initVaccineChoice(options = {}) {
-    const insetId = options.insetId || "co-admin-inset";
-    const linkId = options.linkId || "change-to-single";
-    const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
-
-    const inset = document.getElementById(insetId);
-    const changeLink = document.getElementById(linkId);
-    const displaySpans = displayIds.map(id => document.getElementById(id));
-
-    // Retrieve stored vaccine values for both people
-    let vaccineChoices = [
-      localStorage.getItem("vaccineChoice"),
-      localStorage.getItem("vaccineChoice2")
-    ];
-
-    // Default any missing or blank values to "COVID-19"
-    vaccineChoices = vaccineChoices.map(choice =>
-      !choice || choice.trim() === "" ? "COVID-19" : choice
-    );
-
-    // Store defaults if needed
-    localStorage.setItem("vaccineChoice", vaccineChoices[0]);
-    localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
-
-    // Determine if inset should be visible (if either includes flu)
-    const showInset = vaccineChoices.some(choice => choice.includes("flu"));
-    if (inset) inset.style.display = showInset ? "block" : "none";
-
-    // Update displayed vaccine choices
-    displaySpans.forEach((span, i) => {
-      if (span) span.textContent = vaccineChoices[i];
-    });
-
-    // Handle link click → switch both to COVID-19 only
-    if (inset && changeLink) {
-      changeLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        vaccineChoices = ["COVID-19", "COVID-19"];
-        localStorage.setItem("vaccineChoice", vaccineChoices[0]);
-        localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
-        inset.style.display = "none";
-
-        displaySpans.forEach((span, i) => {
-          if (span) span.textContent = vaccineChoices[i];
-        });
-      });
-    }
-  }
-
-  // Initialize with default IDs
-  initVaccineChoice();
-});
-</script>
 
 
 {% endblock %}

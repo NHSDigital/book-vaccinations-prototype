@@ -45,7 +45,7 @@ Book vaccinations prototype
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is {{data['first-name']}} {{data['last-name']}}'s date of birth?
+                What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s date of birth?
               </h1>
             </legend>
             <div class="nhsuk-hint" id="example-hint">

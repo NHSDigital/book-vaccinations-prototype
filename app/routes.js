@@ -496,7 +496,7 @@ router.get(/jointImmuneSystem/, function (req, res) {
                 res.redirect('cannot-book');
                 }
             else {
-                res.redirect('choose-appt');
+                res.redirect('co-admin-spring');
                 }
             });
 
@@ -609,7 +609,7 @@ router.get(/proxyJointBooking/, function (req, res) {
 
 router.get(/springJointEligible/, function (req, res) {
             if (req.query.radioGroup === "yes" ) {
-                res.redirect('add-person');
+                res.redirect('co-admin-spring');
                 }
             else {
                 res.redirect('../ineligible-joint');
@@ -618,7 +618,7 @@ router.get(/springJointEligible/, function (req, res) {
 
             router.get(/springJointSecondEligible/, function (req, res) {
             if (req.query.radioGroup === "yes" ) {
-                res.redirect('add-person2');
+                res.redirect('co-admin-spring2');
                 }
             else {
                 res.redirect('../ineligible-joint2');
@@ -711,4 +711,17 @@ router.get(/jointEligible/, function (req, res) {
                     res.redirect('proxy-postcode');
                     }
                 });
+
+
+// Spring 26 routes //
+
+        router.get(/contactNo/, function (req, res) {
+            if (req.query.radioGroup === "No" ) {
+                res.redirect('contact-details');
+                }
+            else {
+                res.redirect('cya-no');
+                }
+            });
+
 module.exports = router;

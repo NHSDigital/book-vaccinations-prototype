@@ -47,7 +47,7 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-xl">
-                You cannot book an appointment for [name]
+                You cannot book an appointment for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </h1>
 
               <p class="nhsuk-body">This may be because:</p>

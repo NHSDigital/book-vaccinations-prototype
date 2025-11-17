@@ -48,12 +48,12 @@ Book vaccinations prototype
           <a href="access-needs">Change access needs</a>
       </p>
 
-<div id="co-admin-inset" class="nhsuk-inset-text" style="display: none;">
+      <div id="coadmin-inset" class="nhsuk-inset-text" style="display: none;">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>
-    {{data['first-name']}} {{data['last-name']}}:
+    {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}:
     <span id="vaccine-display-1"></span><br>
-    {{data['first-name2']}} {{data['last-name2']}}:
+    {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}:
     <span id="vaccine-display-2"></span><br>
   </p>
   <p>
@@ -61,6 +61,9 @@ Book vaccinations prototype
     <a href="#" id="change-to-single">look for COVID-19 only appointments</a>.
   </p>
 </div>
+
+
+
 
 
       <hr>
@@ -197,7 +200,7 @@ Book vaccinations prototype
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   function initVaccineChoice(options = {}) {
-    const insetId = options.insetId || "co-admin-inset";
+    const insetId = options.insetId || "coadmin-inset";
     const linkId = options.linkId || "change-to-single";
     const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
 
@@ -211,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.getItem("vaccineChoice2")
     ];
 
-    // Default any missing or blank values to "COVID-19"
+    // Default any missing or blank values to "single"
     vaccineChoices = vaccineChoices.map(choice =>
       !choice || choice.trim() === "" ? "COVID-19" : choice
     );
@@ -220,8 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
     localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
 
-    // Determine if inset should be visible (if either includes flu)
-    const showInset = vaccineChoices.some(choice => choice.includes("flu"));
+    // Determine if inset should be visible (if either includes co-admin)
+    const showInset = vaccineChoices.some(choice => choice.includes("RSV"));
     if (inset) inset.style.display = showInset ? "block" : "none";
 
     // Update displayed vaccine choices
@@ -229,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (span) span.textContent = vaccineChoices[i];
     });
 
-    // Handle link click → switch both to COVID-19 only
+    // Handle link click → switch both to single only
     if (inset && changeLink) {
       changeLink.addEventListener("click", function (e) {
         e.preventDefault();

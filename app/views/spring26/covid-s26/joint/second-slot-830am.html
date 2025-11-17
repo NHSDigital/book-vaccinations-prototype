@@ -43,7 +43,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-                Choose an appointment time for {{data['first-name2']}} {{data['last-name2']}}
+                Choose an appointment time for {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}
               </h1>
           </legend>
 
@@ -58,7 +58,7 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Jean Davidson
+                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
                 {{data['hour']}}{{data['time']}}
