@@ -48,6 +48,15 @@ Book vaccinations prototype
           </legend>
           <p>{{data['pharmacy']}}</p>
 
+                      <div id="flu-inset" class="nhsuk-inset-text" style="display: none;">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>{{data['first-name']}} {{data['last-name']}}: {{data['vaccine']}}<br>
+            {{data['first-name2']}} {{data['last-name2']}}: {{data['vaccine2']}}</span>
+          </p>
+        <p>If you can't find a vaccination site near you, you can <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.</p>
+      </div>
+
+
 
           <p class="nhsuk-body-l">Next 10 available days</p>
         <div class="nhsuk-form-group">

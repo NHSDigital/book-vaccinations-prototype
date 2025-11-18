@@ -38,16 +38,34 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="appt-postcode" method="get" class="form">
+      <form action="add-person" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  You can now choose an appointment
+                  Do you want to book a COVID-19 vaccine for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} in the same appointment?                
                 </h1>
               </legend>
+              <div class="nhsuk-hint" id="example-hint">
+                If you want to book the vaccines separately, you can use the RSV booking service to book a RSV vaccination appointment for another day.
+              </div>
+          
+              <div class="nhsuk-radios" data-module="nhsuk-radios">
 
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="vaccine1" type="radio" value="RSV and COVID-19">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    Yes, book a COVID-19 and RSV vaccination in the same appointment
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="vaccine1" type="radio" value="RSV">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    No, only book a COVID-19 vaccination
+                  </label>
+                </div>
             </fieldset>
           
           </div>
@@ -61,4 +79,17 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (event) {
+    const selected = document.querySelector('input[name="vaccine1"]:checked');
+    if (selected) {
+      localStorage.setItem("vaccineChoice1", selected.value);
+    }
+  });
+});
+</script>
 {% endblock %}

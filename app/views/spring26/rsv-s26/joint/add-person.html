@@ -56,12 +56,16 @@ Book vaccinations prototype
                 <th role="columnheader" class="" scope="col">
                     Date of birth
                   </th>
+                <th role="columnheader" class="" scope="col">
+                    Vaccine type
+                  </th>
                 </tr>
             </thead>
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
+                <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
+                <td class="nhsuk-table__cell ">{{ data['vaccine']}}</td>
               </tr>
             </tbody>
           </table>        
@@ -108,5 +112,6 @@ Book vaccinations prototype
   document.getElementById("dob-display").innerText = localStorage.getItem("dob1") || 'Unknown';
 
 </script>
+
 
 {% endblock %}

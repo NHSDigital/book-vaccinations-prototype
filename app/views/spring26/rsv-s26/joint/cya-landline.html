@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -44,26 +44,27 @@ Book vaccinations prototype
                 Check your booking
               </h1>
 
-                    <dl class="nhsuk-summary-list">  
+          
+          <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
+                Jean Davidson
               </dt>
               <dd class="nhsuk-summary-list__value">
-                <span id="vaccine-display"></span> <br> {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
+                <span id="vaccine-display-1"></span> <br> {{data['hour']}}{{data['time']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
           
                 <a href="#">
-                  Change time<span class="nhsuk-u-visually-hidden"> for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</span>
+                  Change time<span class="nhsuk-u-visually-hidden"> for Jean Davidson</span>
                 </a>
           
               </dd>
           
             </div>
 
-            <!--<div class="nhsuk-summary-list__row">
+            <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                   Roger Davidson
                 </dt>
@@ -79,16 +80,17 @@ Book vaccinations prototype
             
                 </dd>
             
-              </div>-->  
+              </div>  
           
           </dl>       
 
     
-              <h2 class="nhsuk-heading-m">Your Appointment</h2>
+    
+              <h2 class="nhsuk-heading-m">Your appointment</h2>
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Site location
+                Site
               </dt>
               <dd class="nhsuk-summary-list__value">
                 Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
@@ -109,7 +111,7 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  Friday 14 November
+                  {{data['date']}}
                 </dd>
             
                 <dd class="nhsuk-summary-list__actions">
@@ -148,44 +150,21 @@ Book vaccinations prototype
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Email
+                Landline
               </dt>
               <dd class="nhsuk-summary-list__value">
-                <p><span id="email-display"></span></p>
+                {{data['Landline']}}
               </dd>
           
               <dd class="nhsuk-summary-list__actions">
           
-                <a href="contact-details">
-                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                <a href="landline">
+                  Change<span class="nhsuk-u-visually-hidden"> landline</span>
                 </a>
           
               </dd>
           
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Mobile
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  <span id="mobile-display"></span>
-                </dd>
-            
-                <dd class="nhsuk-summary-list__actions">
-            
-                <a href="contact-details">
-                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
-                  </a>
-            
-                </dd>
-            
-              </div>
-  
-
-  
-  
-          
+            </div>          
           </dl>       
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -233,15 +212,18 @@ Book vaccinations prototype
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  let vaccineChoice = localStorage.getItem("vaccineChoice");
+  const display1 = document.getElementById("vaccine-display-1");
+  const display2 = document.getElementById("vaccine-display-2");
 
-  // Always ensure a valid value
-  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and flu-hidden") {
-    vaccineChoice = "RSV";
-    localStorage.setItem("vaccineChoice", vaccineChoice);
-  }
+  // Retrieve stored vaccine values
+  const vaccineChoice1 = localStorage.getItem("vaccineChoice1") || "COVID-19";
+  const vaccineChoice2 = localStorage.getItem("vaccineChoice2") || "COVID-19";
 
-  document.getElementById("vaccine-display").textContent = vaccineChoice;
+  // Display the saved values
+  if (display1) display1.textContent = vaccineChoice1;
+  if (display2) display2.textContent = vaccineChoice2;
 });
 </script>
+
+
 {% endblock %}

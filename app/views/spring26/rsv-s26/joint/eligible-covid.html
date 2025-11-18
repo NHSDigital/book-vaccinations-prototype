@@ -38,30 +38,50 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="jointTwoPregnant" method="get" class="form">
-
-              <h1>is {{data['first-name2']}} {{data['last-name2']}} over 28 weeks pregnant?
-              </h1>
-
-              <p class="nhsuk-body">Because they're not the right age to get the RSV vaccine, they can get the vaccine if they're over 28 weeks pregnant.</p>
+        <form action="springJointEligible" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-fieldset__legend--l">
+                Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} able to get a COVID-19 vaccine?
+              </h1>
+          </legend>
+
+          <p class="nhsuk-body">As they're under 75 they might be able to get a COVID-19 vaccination if they:</p>
+
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>have a weakened immune system (immunosuppressed)</li>
+            <!--<li>are having treatment or medication that means you are at increased risk</li>
+            <li>are pregnant</li>-->
+            <li>are in a long-stay residential care home for older adults</li>
+            <!--<li>are a frontline health and social care worker or staff working in care homes for older adults</li>-->
+          </ul>
+
+          <p class="nhsuk-body">They might be asked some questions at the vaccination site to check they're eligible for a COVID-19 vaccination.</p>
+
+          <p class="nhsuk-body">If you are not sure, you can <a href="#" class="nhsuk-link">read more about who is eligible for a COVID-19 vaccine</a></p>
+
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, they over 28 weeks pregnant
+                Yes, they're eligible for a COVID-19 vaccine
               </label>
             </div>
       
+            <!--<div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="notsure">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-notsure">
+                I'm not sure, I'd like to check at the appointment
+              </label>
+            </div>-->
 
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, they are not over 28 weeks pregnant
+                  No, they are not eligible
                 </label>
               </div>
   

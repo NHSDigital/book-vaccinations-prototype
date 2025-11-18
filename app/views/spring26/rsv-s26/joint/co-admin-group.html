@@ -38,24 +38,47 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="dob-2" method="get" class="form">
+      <form action="appt-postcode" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s postcode?
+                  Do you want to book free NHS flu vaccines for these people?                
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with the GP surgery.
+                If you want to book the vaccines separately, you can use the NHS flu booking service to book a flu vaccination appointment for another day.
               </div>
           
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+      <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="accessibility-1" name="accessibility" type="checkbox" value="Accessible toilet" data-checkbox-exclusive-group="accessibility-list">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-1">
+                    {{data['first-name']}} {{data['last-name']}}
+                  </label>
+                </div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="accessibility-2" name="accessibility" type="checkbox" value="Braille translation service" data-checkbox-exclusive-group="accessibility-list">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="accessibility-2">
+                    {{data['first-name2']}} {{data['last-name2']}}
+                  </label>
+                </div>
+        
 
+        
+                <div class="nhsuk-checkboxes__divider">or</div>
+        
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="accessibility-10" name="accessibility" type="checkbox" value="No access needs" data-checkbox-exclusive data-checkbox-exclusive-group="accessibility-list">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="accessibility-10">
+                    Book COVID-19 only for everyone
+                  </label>
+                </div>
+        
+              </div>
             </fieldset>
           
           </div>

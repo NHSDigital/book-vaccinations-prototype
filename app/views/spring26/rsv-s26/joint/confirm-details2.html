@@ -111,12 +111,12 @@ Book vaccinations prototype
   document.getElementById("dob-display2").innerText = localStorage.getItem("dob2") || 'Unknown';
 
   document.getElementById("continue-btn").addEventListener('click', function () {
-    const age = parseInt(localStorage.getItem("age1"), 10);
+    const age = parseInt(localStorage.getItem("age2"), 10);
     if (!isNaN(age) && age < 75) {
-      window.location.href = "pregnant2";
+      window.location.href = "eligible-covid2";
     } else {
       // If 75 or older, do nothing or redirect somewhere else if needed
-      window.location.href = "add-person2";
+      window.location.href = "co-admin2";
     }
   });
 </script>

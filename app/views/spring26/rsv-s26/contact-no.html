@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -38,8 +38,7 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-
-        <form action="areYouSure" method="get" class="form">
+        <form action="contactNo" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -56,18 +55,18 @@ Book vaccinations prototype
             <p>If you do not provide contact details, we will not be able to let you know if your appointment has been cancelled.</p>
           </div>
 
-          <div class="nhsuk-radios" data-module="nhsuk-radios">
+          <div class="nhsuk-radios">
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="are-you-sure-1" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-1">
+              <input class="nhsuk-radios__input" id="radioGroup1" name="radioGroup" type="radio" value="Yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="radioGroup1">
                 Yes, I understand I will not recieve confirmation, reminder or cancellation messages
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="are-you-sure-2" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-2">
+              <input class="nhsuk-radios__input" id="radioGroup2" name="radioGroup" type="radio" value="No">
+              <label class="nhsuk-label nhsuk-radios__label" for="radioGroup2">
                 No, I want to receive confirmation, reminder and cancellation messages
               </label>
             </div>

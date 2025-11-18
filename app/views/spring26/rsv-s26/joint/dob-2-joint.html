@@ -44,7 +44,7 @@ Book vaccinations prototype
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is {{data['first-name2']}} {{data['last-name2']}}'s date of birth?
+                What is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}'s date of birth?
               </h1>
             </legend>
             <div class="nhsuk-hint" id="example-hint">
@@ -148,9 +148,9 @@ Book vaccinations prototype
 
   // Redirect based on age
   if ((age >= 75 && age <= 120)) {
-      window.location.href = "add-person2";
+      window.location.href = "co-admin2";
   } else {
-      window.location.href = "pregnant2";
+      window.location.href = "self-referral-2";
   }
 }  
 

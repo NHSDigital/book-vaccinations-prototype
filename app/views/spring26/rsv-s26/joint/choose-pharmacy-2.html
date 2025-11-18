@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -48,27 +48,45 @@ Book vaccinations prototype
           <a href="access-needs">Change access needs</a>
       </p>
 
+      <div id="coadmin-inset" class="nhsuk-inset-text" style="display: none;">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>
+    {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}:
+    <span id="vaccine-display-1"></span><br>
+    {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}:
+    <span id="vaccine-display-2"></span><br>
+  </p>
+  <p>
+    If you can't find a vaccination site near you, you can
+    <a href="#" id="change-to-single">look for COVID-19 only appointments</a>.
+  </p>
+</div>
+
+
+
+
+
       <hr>
 
         <div>
-<p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
-<form action="choose-date" method="get" class="form">
+      <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
+  <form action="choose-date" method="get" class="form">
   
-  <h2>Benjamin Chemist</h2>
+      <h2>Benjamin Chemist</h2>
 
-<p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
-<span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
-190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
-</p>
+        <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
+        <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+        190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
+        </p>
             
-<p><span class="nhsuk-u-visually-hidden">Phone number:</span>
-02072542696
-</p>
+        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+          02072542696
+        </p>
 
-<p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
-    <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-    Get directions (opens in Google maps)
-    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+          <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+          Get directions (opens in Google maps)
+          <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
     </a>
     </p>
 
@@ -178,4 +196,60 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function initVaccineChoice(options = {}) {
+    const insetId = options.insetId || "coadmin-inset";
+    const linkId = options.linkId || "change-to-single";
+    const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
+
+    const inset = document.getElementById(insetId);
+    const changeLink = document.getElementById(linkId);
+    const displaySpans = displayIds.map(id => document.getElementById(id));
+
+    // Retrieve stored vaccine values for both people
+    let vaccineChoices = [
+      localStorage.getItem("vaccineChoice1"),
+      localStorage.getItem("vaccineChoice2")
+    ];
+
+    // Default any missing or blank values to "single"
+    vaccineChoices = vaccineChoices.map(choice =>
+      !choice || choice.trim() === "" ? "RSV" : choice
+    );
+
+    // Store defaults if needed
+    localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+    localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+
+    // Determine if inset should be visible (if either includes co-admin)
+    const showInset = vaccineChoices.some(choice => choice.includes("COVID-19"));
+    if (inset) inset.style.display = showInset ? "block" : "none";
+
+    // Update displayed vaccine choices
+    displaySpans.forEach((span, i) => {
+      if (span) span.textContent = vaccineChoices[i];
+    });
+
+    // Handle link click → switch both to single only
+    if (inset && changeLink) {
+      changeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        vaccineChoices = ["RSV", "RSV"];
+        localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+        localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+        inset.style.display = "none";
+
+        displaySpans.forEach((span, i) => {
+          if (span) span.textContent = vaccineChoices[i];
+        });
+      });
+    }
+  }
+
+  // Initialize with default IDs
+  initVaccineChoice();
+});
+</script>
 {% endblock %}
