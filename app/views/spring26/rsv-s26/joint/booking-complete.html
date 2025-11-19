@@ -36,17 +36,6 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-     <!-- <div class="nhsuk-back-link">
-
-        <a class="nhsuk-back-link__link" href="javascript:history.back()">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-          </svg>
-          Back</a>
-      </div>-->
-
-
-
       <div class="nhsuk-panel">
         <h1 class="nhsuk-panel__title">
           Booking complete
@@ -55,8 +44,8 @@ Book vaccinations prototype
 
         <div class="nhsuk-panel__body">
         Your reference numbers
-        <br>Jean Davidson - <strong>43-61-1583033</strong>
-        <br>Roger Davidson - <strong>43-61-1583034</strong>
+        <br>{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} - <strong>43-61-1583033</strong>
+        <br>{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }} - <strong>43-61-1583034</strong>
         </div>
       </div>
 
@@ -72,20 +61,20 @@ Book vaccinations prototype
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Jean Davidson
+                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['hour']}}{{data['time']}}<br><span id="vaccine-display-1"></span>
+                {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display-1"></span>
               </dd>
           
           
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Roger Davidson
+                {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['hour']}}{{data['time-2']}}<br><span id="vaccine-display-2"></span>
+                {{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}<br><span id="vaccine-display-2"></span>
               </dd>
           
           

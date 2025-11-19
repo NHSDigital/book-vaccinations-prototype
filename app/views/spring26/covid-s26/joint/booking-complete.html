@@ -72,20 +72,20 @@ Book vaccinations prototype
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Jean Davidson
+                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['hour']}}{{data['time']}}<br><span id="vaccine-display-1"></span>
+                {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display-1"></span>
               </dd>
           
           
             </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Roger Davidson
+                {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['hour']}}{{data['time-2']}}<br><span id="vaccine-display-2"></span>
+                {{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}<br><span id="vaccine-display-2"></span>
               </dd>
           
           

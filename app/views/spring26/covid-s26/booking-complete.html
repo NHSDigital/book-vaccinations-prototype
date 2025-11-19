@@ -53,7 +53,7 @@ Book vaccinations prototype
       </h1>
     
       <div class="nhsuk-panel__body">
-        Your reference number<br><strong>1583033</strong>
+        Your reference number<br><strong>49-28-1583033</strong>
       </div>
     
     </div>
@@ -71,10 +71,10 @@ Book vaccinations prototype
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-                Jean Davidson
+                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['hour']}}{{data['time']}}<br><span id="vaccine-display"></span>
+                {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display"></span>
               </dd>
           
           
