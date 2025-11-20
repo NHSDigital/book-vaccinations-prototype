@@ -113,7 +113,7 @@ Book vaccinations prototype
   document.getElementById("continue-btn").addEventListener('click', function () {
     const age = parseInt(localStorage.getItem("age1"), 10);
     if (!isNaN(age) && age < 75) {
-      window.location.href = "eligible-covid";
+      window.location.href = "self-referral";
     } else {
       // If 75 or older, do nothing or redirect somewhere else if needed
       window.location.href = "co-admin";

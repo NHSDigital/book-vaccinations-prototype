@@ -38,32 +38,44 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="dob-2" method="get" class="form">
+        <form action="rsvJointSelfReferral" method="get" class="form">
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s postcode?
-                </h1>
+              is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }} over 28 weeks pregnant?
+              </h1>
               </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with the GP surgery.
-              </div>
+
+              <p class="nhsuk-body">Because they're not the right age to get the RSV vaccine, they can get the vaccine if they're over 28 weeks pregnant.</p>
+
           
-              <label class="nhsuk-label" for="postcode">
-                Postcode
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
+                Yes, they're over 28 weeks pregnant
               </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+            </div>
+      
 
-            </fieldset>
-          
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
+                  No, they're not over 28 weeks pregnant
+                </label>
+              </div>
+  
           </div>
-
+          </div>
+        </fieldset>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
-        </button>    </form>
-    
+        </button>
+    </form>
+      
       </div>
       <!-- End of content -->
 

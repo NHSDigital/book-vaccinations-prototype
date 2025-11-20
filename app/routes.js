@@ -724,4 +724,25 @@ router.get(/jointEligible/, function (req, res) {
                 }
             });
 
+
+router.get(/rsvSelfReferral/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('co-admin');
+        }
+    else {
+        res.redirect('ineligible-pregnancy');
+        }
+    });
+
+
+    
+router.get(/rsvJointSelfReferral/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('co-admin2');
+        }
+    else {
+        res.redirect('ineligible-pregnancy2');
+        }
+    });
+
 module.exports = router;
