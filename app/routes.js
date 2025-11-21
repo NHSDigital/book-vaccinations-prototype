@@ -625,6 +625,26 @@ router.get(/springJointEligible/, function (req, res) {
                 }
             });
 
+// Joint bookings WITHOUT Co-admin routes //
+
+router.get(/firstJointEligible/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('add-person');
+                }
+            else {
+                res.redirect('../ineligible-joint1');
+                }
+            });
+
+router.get(/jointSecondEligible/, function (req, res) {
+            if (req.query.radioGroup === "yes" ) {
+                res.redirect('add-person2');
+                }
+            else {
+                res.redirect('../ineligible-joint2');
+                }
+            });
+
 // Joint bookings with Co-admin routes //
 
 router.get(/jointEligible/, function (req, res) {
