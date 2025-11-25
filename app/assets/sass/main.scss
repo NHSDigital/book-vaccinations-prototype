@@ -1480,3 +1480,42 @@ a:hover {
     border: 1px solid #000000; 
     box-shadow: 10px 10px 	#d8dde0;
 }
+
+// text bubble //
+
+.speech-bubble {
+    position: relative;
+    background: #e5e5ea;
+    border-radius: .4em;
+}
+
+.speech-bubble {
+    width: 260px;
+    padding: 60px 20px;
+    margin: 1em 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 200%;
+    text-shadow: 0 -.05em .1em rgba(0, 0, 0, .3);
+}
+
+hgroup {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 95%;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-right-color: #e5e5ea;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -3px;
+	margin-left: -6px;
+}

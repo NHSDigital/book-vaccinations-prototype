@@ -1,0 +1,91 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<style>
+   .speech-bubble {
+	position: relative;
+	background: #e5e5ea;
+	border-radius: 25px;
+    margin: 30px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 97%;
+	width: 0;
+	height: 0;
+	border: 19px solid transparent;
+	border-right-color: #e5e5ea;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -9.5px;
+	margin-left: -19px;
+} 
+
+.fix{
+    position:fixed;
+    bottom:0px;
+}
+</style>
+<!-- Extends the layout from /views/layout.html -->
+ 
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+        <img src="/images/text-header.png" style="width: 100%;">
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+
+        <br>
+        <hgroup class="speech-bubble">
+        <p class="nhsuk-body" style="font-family: Frutiger W01, arial, sans-serif; font-size: 1rem; line-height: 1.5; padding: 30px;">
+            You can book a free NHS respiratory syncytial virus (RSV) vaccine because of your age. 
+            Find a pharmacy offering RSV vaccines at <a href="https://www.nhs.uk/find-rsv">www.nhs.uk/find-rsv</a> or contact your GP surgery.  
+            RSV affects the airways and lungs and can make it dififcult to breathe.  
+            It can lead to pneumonia and other life-threatening conditions.  
+            Your age group has a higher risk of getting seriously ill. 
+            Just 1 dose gives most people good protection for a few years. 
+            If you are 80, your last chnace to get the RSV vaccine is 31 August 2025. 
+            Read more: <a href="www.nhs.uk/rsv-vaccine">www.nhs.uk/rsv-vaccine</a>. 
+            For other formats: <a href="www.england.nhs.uk/rsv-invites">www.england.nhs.uk/rsv-invites</a>
+        </p>
+        
+        </hgroup>        
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <!-- End of content -->
+
+    </div>
+
+            <img src="/images/text-footer.png" style="width: 100%;" class="fix">
+
+  </div>
+{% endblock %}
