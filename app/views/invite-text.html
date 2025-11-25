@@ -1,0 +1,66 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Text invite
+      </h1>
+
+<div class="nhsuk-phone-card">
+  <div class="nhsuk-card__content">
+    </h5>
+
+
+     <p>You can book a free NHS respiratory syncytial virus (RSV) vaccine because of your age. 
+        Find a pharmacy offering RSV vaccines at <a href="www.nhs.uk/find-rsv">www.nhs.uk/find-rsv</a> or contact your GP surgery.  
+        RSV affects the airways and lungs and can make it dififcult to breathe.  
+        It can lead to pneumonia and other life-threatening conditions.  
+        Your age group has a higher risk of getting seriously ill. 
+        Just 1 dose gives most people good protection for a few years. 
+        If you are 80, your last chnace to get the RSV vaccine is 31 August 2025. 
+        Read more: <a href="www.nhs.uk/rsv-vaccine">www.nhs.uk/rsv-vaccine</a>. 
+        For other formats: <a href="www.england.nhs.uk/rsv-invites">www.england.nhs.uk/rsv-invites</a>
+    </p>
+
+    
+  </div>
+</div>
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

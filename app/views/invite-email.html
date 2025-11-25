@@ -1,0 +1,97 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Email invite
+      </h1>
+
+<div class="nhsuk-invite-card">
+  <div class="nhsuk-card__content">
+    <h5 class="nhsuk-card__heading"> Subject: Booking your NHS respiratory syncytial virus (RSV) vaccine
+    </h3>
+
+    <p>Dear ((fullName)), </p>
+
+    <p>You can book a free NHS RSV vaccine because of your age. </p>
+
+    <p>RSV is a virus that affects the airways and lungs and can make it difficult to breathe. Your age group has a higher risk of getting seriously ill from RSV infection.</p>
+
+    <h5>How to get your RSV vaccine</h5>
+
+    <p>You can get your RSV vaccine in one of the following ways:
+
+    <ul>
+        <li>Book a pharmacy appointment at <span class="nhsuk-u-font-weight-bold">www.nhs.uk/book-rsv</span></li>
+        <li>Find a pharmacy walk-in site at <span class="nhsuk-u-font-weight-bold">www.nhs.uk/rsv-walk-in</span></li>
+        <li>Contact your GP surgery</li>
+    </ul>
+    </p>
+
+    <p>If your GP surgery cannot book you in now, please ask when they will have more RSV appointments. </p>
+
+    <p>If you are aged 80 years, your last chance to get the RSV vaccine is <span class="nhsuk-u-font-weight-bold">31 August 2025</span>.</p>
+
+    <h5>Why the NHS is offering the RSV vaccine</h5>
+
+    <p>RSV infections occur all year round and can be hard to avoid. Every year, thousands of older adults need hospital care for RSV, and some of them die. RSV infection can cause shortness of breath and lead to pneumonia and other life-threatening conditions. </p>
+
+    <p>Having the RSV vaccine reduces your risk of severe symptoms. Just <span class="nhsuk-u-font-weight-bold">1 dose</span> gives most people good protection for a few years.</p>
+
+    <h5>More information</h5>
+
+    <p>The RSV vaccine is different to the COVID-19 and flu vaccines. Each vaccine protects you against different respiratory infections. It’s important you have these vaccines when you are offered them. You can read more at <span class="nhsuk-u-font-weight-bold">www.nhs.uk/rsv-vaccine</span>.</p>
+
+    <p>For a guide to the RSV vaccine for older adults, go to <span class="nhsuk-u-font-weight-bold">www.gov.uk/rsv-vaccine</span>. For information in easy read and other languages and formats, go to <span class="nhsuk-u-font-weight-bold">www.england.nhs.uk/rsv-invites</span>.</p>
+
+    <h5>Other NHS vaccines for people aged under 80</h5>
+
+    <p>If you haven't already, you can also get free NHS pneumococcal and shingles vaccines. Contact your GP surgery if you missed either vaccine. For details, go to <span class="nhsuk-u-font-weight-bold">www.nhs.uk/vaccinations</span>.</p>
+
+    <p>Yours sincerely,</p>
+
+    <p>NHS England Vaccination Team</p>
+
+    <p><span class="nhsuk-u-font-weight-bold">Data Protection</span>: NHS England is responsible for processing your personal data. This is for the purpose of national vaccination programmes. To find out more, you can access our privacy notice at <span class="nhsuk-u-font-weight-bold">www.england.nhs.uk/contact-us/privacy-notice</span>.</p>
+    
+  </div>
+</div>
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

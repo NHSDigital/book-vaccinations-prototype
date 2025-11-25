@@ -1458,3 +1458,25 @@ a:hover {
     line-height: 1.25;
   }
 }
+
+// invite styles //
+
+.nhsuk-phone-card {
+    background-color: #fff;
+    position: relative;
+    width: 390px;
+    border-bottom: 80px solid #000000; 
+    border-top: 40px solid #000000; 
+    border-left: 20px solid #000000; 
+    border-right: 20px solid #000000; 
+    box-shadow: 10px 10px 	#d8dde0;
+    border-radius: 25px;
+}
+
+.nhsuk-invite-card {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    border: 1px solid #000000; 
+    box-shadow: 10px 10px 	#d8dde0;
+}
