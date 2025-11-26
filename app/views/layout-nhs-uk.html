@@ -21,45 +21,76 @@
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-  {{ header({
-    "service": {
-        "name": "Book a vaccination",
-        "href": "/"
+{% from "header/macro.njk" import header %}
+
+{{ header({
+  logo: {
+    href: "/",
+    ariaLabel: ""
+  },
+  service: {
+    text: "",
+    href: "#"
+  },
+  search: {
+    placeholder: "Search",
+    visuallyHiddenLabel: "Search the NHS digital service manual"
+  },
+  navigation: {
+    items: [
+      {
+        text: "Health A to Z",
+        href: "#"
       },
-      "showNav": "false",
-      "showSearch": "false"
-    })
-  }}
+      {
+        text: "NHS Services",
+        href: "#"
+      },
+      {
+        text: "Live Well",
+        href: "#"
+      },
+      {
+        text: "Mental health",
+        href: "#"
+      },
+      {
+        text: "Care and support",
+        href: "#"
+      },
+      {
+        text: "Pregnancy",
+        href: "#"
+      }
+    ]
+  }
+}) }}
 {% endblock %}
 
 <!-- Edit the footer -->
 <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-<footer role="contentinfo">
-  <div class="nhsuk-footer-container">
-    <div class="nhsuk-width-container">
-      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-      <div class="nhsuk-footer">
 
-        <ul class="nhsuk-footer__list">
-          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-            <a class="nhsuk-footer__list-item-link" href="/">Home</a>
-          </li>
-          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-            <a class="nhsuk-footer__list-item-link" href="https://design-history.prevention-services.nhs.uk/">Design History</a>
-          </li>
-          <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-            <a class="nhsuk-footer__list-item-link" href="other-work/index">Useful stuff</a>
-          </li>
-        </ul>
-        <div>
-          <p class="nhsuk-footer__copyright">© NHS England</p>
-        </div>
-      </div>
+{% from "footer/macro.njk" import footer %}
 
-    </div>
-  </div>
-</footer>
+{{ footer({
+  meta: {
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "https://design-history.prevention-services.nhs.uk/",
+        text: "Design history"
+      },
+      {
+        href: "other-work/index",
+        text: "Useful stuff"
+      }
+    ]
+  }
+}) }}
 {% endblock %}
 
 {% block bodyEnd %}
