@@ -747,18 +747,25 @@ router.get(/jointEligible/, function (req, res) {
 
 router.get(/rsvSelfReferral/, function (req, res) {
     if (req.query.radioGroup === "yes" ) {
-        res.redirect('co-admin');
+        res.redirect('choose-appt');
         }
     else {
         res.redirect('ineligible-pregnancy');
         }
     });
 
-
+router.get(/rsvFirstSelfReferral/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('add-person');
+        }
+    else {
+        res.redirect('ineligible-pregnancy');
+        }
+    });
     
 router.get(/rsvJointSelfReferral/, function (req, res) {
     if (req.query.radioGroup === "yes" ) {
-        res.redirect('co-admin2');
+        res.redirect('add-person2');
         }
     else {
         res.redirect('ineligible-pregnancy2');

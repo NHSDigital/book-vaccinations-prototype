@@ -48,13 +48,19 @@ Book vaccinations prototype
           </legend>
           <p>{{data['pharmacy']}}</p>
 
-                                <div id="flu-inset" class="nhsuk-inset-text" style="display: none;">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>{{data['first-name']}} {{data['last-name']}}: {{data['vaccine']}}<br>
-            {{data['first-name2']}} {{data['last-name2']}}: {{data['vaccine2']}}</span>
-          </p>
-        <p>If you can't find a vaccination site near you, you can <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.</p>
-      </div>
+                               <div id="coadmin-inset" class="nhsuk-inset-text" style="display: none;">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>
+    {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}:
+    <span id="vaccine-display-1"></span><br>
+    {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}:
+    <span id="vaccine-display-2"></span><br>
+  </p>
+  <p>
+    If you can't find a vaccination site near you, you can
+    <a href="#" id="change-to-single">look for RSV only appointments</a>.
+  </p>
+</div>
 
 
 
@@ -68,8 +74,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +11}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Available
+                Morning and afternoon available
               </div>
             </div>
       
@@ -79,8 +84,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +12}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -90,8 +94,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +13}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -101,8 +104,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +14}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -112,8 +114,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +15}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -123,8 +124,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +16}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Available
+                Morning and afternoon available
               </div>
             </div>
       
@@ -134,8 +134,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +17}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -145,8 +144,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +18}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -156,8 +154,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +19}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -167,8 +164,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +20}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -216,4 +212,61 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  function initVaccineChoice(options = {}) {
+    const insetId = options.insetId || "coadmin-inset";
+    const linkId = options.linkId || "change-to-single";
+    const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
+
+    const inset = document.getElementById(insetId);
+    const changeLink = document.getElementById(linkId);
+    const displaySpans = displayIds.map(id => document.getElementById(id));
+
+    // Retrieve stored vaccine values for both people
+    let vaccineChoices = [
+      localStorage.getItem("vaccineChoice1"),
+      localStorage.getItem("vaccineChoice2")
+    ];
+
+    // Default any missing or blank values to "single"
+    vaccineChoices = vaccineChoices.map(choice =>
+      !choice || choice.trim() === "" ? "RSV" : choice
+    );
+
+    // Store defaults if needed
+    localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+    localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+
+    // Determine if inset should be visible (if either includes co-admin)
+    const showInset = vaccineChoices.some(choice => choice.includes("COVID-19"));
+    if (inset) inset.style.display = showInset ? "block" : "none";
+
+    // Update displayed vaccine choices
+    displaySpans.forEach((span, i) => {
+      if (span) span.textContent = vaccineChoices[i];
+    });
+
+    // Handle link click → switch both to single only
+    if (inset && changeLink) {
+      changeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        vaccineChoices = ["RSV", "RSV"];
+        localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
+        localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
+        inset.style.display = "none";
+
+        displaySpans.forEach((span, i) => {
+          if (span) span.textContent = vaccineChoices[i];
+        });
+      });
+    }
+  }
+
+  // Initialize with default IDs
+  initVaccineChoice();
+});
+</script>
+
 {% endblock %}
