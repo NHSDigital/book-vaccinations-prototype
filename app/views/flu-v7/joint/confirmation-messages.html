@@ -38,42 +38,42 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="contactNo" method="get" class="form">
+        <form action="confirmationMessages" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-                Are you sure?
+                Can we send you confirmation, reminder and cancellation messages?
               </h1>
           </legend>
-          <div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">
-              <span role="text">
-               Important
-              </span>
-            </h3>
-            <p>If you do not provide contact details, we will not be able to let you know if your appointment has been cancelled.</p>
+
+          <div class="nhsuk-hint" id="nhs-number-hint">
+          <p>We will only contact you to send:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>a confirmation and reminder message with a booking reference number</li>
+            <li>a cancellation message if the appointment needs to be changed</li>
+          </ul>
+        </div>
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="radioGroup" name="radioGroup" type="radio" value="Yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="radioGroup-yes">
+                Yes
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="radioGroup" name="radioGroup" type="radio" value="No">
+              <label class="nhsuk-label nhsuk-radios__label" for="radioGroup-no">
+                No
+              </label>
+            </div>
+      
           </div>
-
-          <div class="nhsuk-radios">
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="radioGroup1" name="radioGroup" type="radio" value="Yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="radioGroup1">
-                Yes, I understand I will not receive confirmation, reminder or cancellation messages
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="radioGroup2" name="radioGroup" type="radio" value="No">
-              <label class="nhsuk-label nhsuk-radios__label" for="radioGroup2">
-                No, I want to receive confirmation, reminder and cancellation messages
-              </label>
-            </div>
-      
           </div>
         </fieldset>
-        <br><br>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>
