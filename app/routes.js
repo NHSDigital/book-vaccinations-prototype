@@ -132,11 +132,11 @@ router.get(/nhsNumberRadio/, function (req, res) {
         });
 
         router.get(/areYouSure/, function (req, res) {
-            if (req.query.radioGroup === "Yes" ) {
-                res.redirect('booking-complete');
+            if (req.query.radioGroup === "No" ) {
+                res.redirect('contact-details');
                 }
             else {
-                res.redirect('contact-details');
+                res.redirect('booking-complete');
                 }
             });
 
@@ -666,11 +666,11 @@ router.get(/jointEligible/, function (req, res) {
             });
 
         router.get(/contactAreYouSure/, function (req, res) {
-            if (req.query.radioGroup === "yes" ) {
-                res.redirect('cya-no');
+            if (req.query.radioGroup === "no" ) {
+                res.redirect('contact-details');
                 }
             else {
-                res.redirect('contact-details');
+                res.redirect('cya-no');
                 }
             });
 

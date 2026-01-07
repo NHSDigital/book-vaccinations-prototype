@@ -1,0 +1,77 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-covid.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <form action="choose-appt" method="get" class="form">
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Things you can bring on the day to show that you need a vaccine
+                </h1>
+              </legend>
+
+              <p class="nhsuk-body">It can help to bring one of these things on the day:</p>
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>a hospital letter that describes the condition or treatment causing you to have a weakened immune system</li>
+                <li>a prescription or a medicine box with your name and date showing when the medicine was prescribed - this must be for the condition or treatment causing you to have a weakened immune system.</li>
+                <li>a letter from a GP or hopsital specialist asking you to get a vaccine for people with a weakened immune system</li>
+              </ul>
+              <p class="nhsuk-body">If you do not have a suitable letter, prescription or medicine box, you may still be able to recieve your vaccination by talking to someone at the appointment.</p>
+
+            </fieldset>
+          
+          </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>   <br>
+    
+        <a class="nhsuk-button nhsuk-button--secondary" href="immune-system">
+            Change my previous answer
+          </a>
+    </form>
+    
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
