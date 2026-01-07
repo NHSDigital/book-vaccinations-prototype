@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -40,7 +41,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                You can book an appointment for these people
+                You can book appointments for these people
               </h1>
           </legend>
 
@@ -59,12 +60,12 @@ Book vaccinations prototype
                 </tr>
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
+                <td class="nhsuk-table__cell">{{data['first-name']}} {{data['last-name']}}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
-                <td class="nhsuk-table__cell ">{{data['vaccine1']}}</td>
+                <td class="nhsuk-table__cell ">{{data['vaccine']}}</td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}</td>
+                <td class="nhsuk-table__cell">{{data['first-name2']}} {{data['last-name2']}}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display2"></span></td>
                 <td class="nhsuk-table__cell ">{{data['vaccine2']}}</td>
               </tr>
@@ -85,7 +86,5 @@ Book vaccinations prototype
   document.getElementById("dob-display2").innerText = localStorage.getItem("dob2") || 'Unknown';
 
 </script>
-
-
 
 {% endblock %}

@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -38,7 +39,7 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="/manage-contact-method-rsv" method="post" class="form">
+        <form class="form">
 
 
 
@@ -74,7 +75,7 @@ Book vaccinations prototype
 
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="text" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="mobile" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
             Mobile
           </label>
@@ -108,9 +109,9 @@ Book vaccinations prototype
     </fieldset>
 
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
+<button class="nhsuk-button" type="submit" onclick="handleContactFormSubmission(event)">
+  Continue
+</button>
     </form>
 
       
@@ -119,4 +120,35 @@ Book vaccinations prototype
 
     </div>
   </div>
-{% endblock %}
+
+<script>
+    function handleContactFormSubmission(event) {
+      event.preventDefault();
+
+      // Checkbox states
+      const emailChecked = document.getElementById('checkboxOption-1').checked;
+      const mobileChecked = document.getElementById('checkboxOption-2').checked;
+      const landlineChecked = document.getElementById('checkboxOption-3').checked;
+
+      // Input values
+      const emailValue = document.getElementById('email').value.trim();
+      const mobileValue = document.getElementById('mobile').value.trim();
+
+      if ((emailChecked || mobileChecked) && !landlineChecked) {
+        // Build URL parameters
+        const params = new URLSearchParams();
+        if (emailChecked && emailValue) {
+          params.append('email', encodeURIComponent(emailValue));
+        }
+        if (mobileChecked && mobileValue) {
+          params.append('mobile', encodeURIComponent(mobileValue));
+        }
+
+        window.location.href = `cya-contact?${params.toString()}`;
+      } else if (landlineChecked && !emailChecked && !mobileChecked) {
+        window.location.href = 'landline';
+      } else {
+        alert('Please select valid contact options and enter details if needed.');
+      }
+    }
+  </script>{% endblock %}

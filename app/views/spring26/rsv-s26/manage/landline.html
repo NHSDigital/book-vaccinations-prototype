@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -41,7 +42,7 @@ Book vaccinations prototype
         <form action="booking-complete" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
                 Enter a landline
               </h1>
@@ -62,7 +63,7 @@ Book vaccinations prototype
               Landline including area code
             </label>
             <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              For example, 0113 496 0845
+              For example, 0113 496 0845 or +44 207946 0310
             </div>
             <input class="nhsuk-input" id="email" name="email" type="text">
           </div> 
@@ -76,7 +77,7 @@ Book vaccinations prototype
         </fieldset>
         
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Complete booking
+          Continue
         </button>
     </form>
 

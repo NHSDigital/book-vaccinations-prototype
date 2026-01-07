@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -18,12 +19,12 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding page content -->
@@ -43,7 +44,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1>
-                Choose an appointment time
+                Choose an appointment time for {{data['first-name']}} {{data['last-name']}}
               </h1>
           </legend>
           <p>{{data['pharmacy']}}</p>

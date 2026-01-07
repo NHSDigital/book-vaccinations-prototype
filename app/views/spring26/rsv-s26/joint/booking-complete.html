@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -36,6 +37,17 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
+     <!-- <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Back</a>
+      </div>-->
+
+
+
       <div class="nhsuk-panel">
         <h1 class="nhsuk-panel__title">
           Booking complete
@@ -44,8 +56,8 @@ Book vaccinations prototype
 
         <div class="nhsuk-panel__body">
         Your reference numbers
-        <br>{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} - <strong>43-61-1583033</strong>
-        <br>{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }} - <strong>43-61-1583034</strong>
+        <br>Jean Davidson - <strong>43-61-1583033</strong>
+        <br>Roger Davidson - <strong>43-61-1583034</strong>
         </div>
       </div>
 
@@ -56,38 +68,37 @@ Book vaccinations prototype
                 </div>
             <hr>
               <h2 class="nhsuk-heading-m">Booking details</h2>
-            
+           <table class="nhsuk-table">
+            <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Appointment
+                  </th>
+                </tr>
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
+                <td class="nhsuk-table__cell">{{data['hour']}}{{data['time']}}<br><span id="vaccine-display-1"></span></td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Doe') }}</td>
+                <td class="nhsuk-table__cell">{{data['hour'] | default('10') }}{{data['time-2'] | default(':30am')}}<br><span id="vaccine-display-2"></span></td>
+              </tr>
+            </tbody>
+          </table>        
+
+    
     
           <dl class="nhsuk-summary-list">  
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display-1"></span>
-              </dd>
-          
-          
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}<br><span id="vaccine-display-2"></span>
-              </dd>
-          
-          
-            </div>
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Site location
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD <br>
-                <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-    Map and directions (opens in Google maps)
-    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span></a>
+                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
               </dd>
           
           
@@ -108,54 +119,28 @@ Book vaccinations prototype
               
 
 
-      <a class="nhsuk-action-link" href="../../covid-aw25-2/index" id="flu-inset" style="display:none;">
-    <svg class="nhsuk-icon nhsuk-icon--arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
-      <path d="M12 2a10 10 0 0 0-10 9h11.7l-4-4a1 1 0 0 1 1.5-1.4l5.6 5.7a1 1 0 0 1 0 1.4l-5.6 5.7a1 1 0 0 1-1.5 0 1 1 0 0 1 0-1.4l4-4H2A10 10 0 1 0 12 2z" />
-    </svg>
-    <span class="nhsuk-action-link__text">Book a free NHS flu vaccine</span>
-  </a>
 
-                      <h2 class="nhsuk-heading-m">Help us improve our website</h2>
-                      <p>Can you answer some questions about your visit today?</p>
-                      <p><a href="#" class="nhsuk-link">Take our survey</a> (takes 30 seconds)</p>
-        
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-grid-row"> 
-              <div class="nhsuk-grid-column-one-half">
-              <img class="nhsuk-card__img" src="/images/AdobeStock_996610811_2.jpeg" alt="">
-            </div> 
-            <div class="nhsuk-grid-column-one-half" style="padding-top: 32px;">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="https://www.nhs.uk/healthier-families/recipes/">Visit the Healthier Families website</a>
-              </h2>
-              <p class="nhsuk-card__description" style="padding-right: 32px; padding-bottom: 16px;">Find over 100 healthy and easy-to-follow recipes to help you feel your best this winter.</p>
-          </div>
-          </div>
-          </div>
+                        <h2 class="nhsuk-heading-m">Help us improve our website</h2>
+                        <p>Can you answer some questions about your visit today?</p>
+                        <p><a href="#" class="nhsuk-link">Take our survey</a> (takes 30 seconds)</p>
+
+
+            
+
       </div>
       <!-- End of content -->
 
     </div>
   </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const inset = document.getElementById("flu-inset");
-  const vaccineChoice = localStorage.getItem("vaccineChoice");
 
-  // Show action link only if Single Jab was chosen
-  if (vaccineChoice === "COVID-19") {
-    inset.style.display = "block";
-  }
-});
-</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const display1 = document.getElementById("vaccine-display-1");
   const display2 = document.getElementById("vaccine-display-2");
 
   // Retrieve stored vaccine values
-  const vaccineChoice1 = localStorage.getItem("vaccineChoice1") || "COVID-19";
-  const vaccineChoice2 = localStorage.getItem("vaccineChoice2") || "COVID-19";
+  const vaccineChoice1 = localStorage.getItem("vaccineChoice1") || "RSV";
+  const vaccineChoice2 = localStorage.getItem("vaccineChoice2") || "RSV";
 
   // Display the saved values
   if (display1) display1.textContent = vaccineChoice1;

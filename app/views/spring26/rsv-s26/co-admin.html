@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -38,18 +39,19 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="choose-appt" method="get" class="form">
+      <form action="add-person" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Do you want to book a COVID-19 vaccine for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} in the same appointment?                
+                  Do you want to book a COVID-19 vaccine in the same appointment?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
                 If you want to book the vaccines separately, you can book a COVID-19 vaccine after you finish booking the RSV vaccine.
               </div>
+
           
               <div class="nhsuk-radios" data-module="nhsuk-radios">
 

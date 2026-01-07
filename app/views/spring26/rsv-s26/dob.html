@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -44,7 +45,7 @@ Book vaccinations prototype
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s date of birth?
+                What is your date of birth?
               </h1>
             </legend>
             <div class="nhsuk-hint" id="example-hint">
@@ -96,7 +97,7 @@ Book vaccinations prototype
 
 <script>
   
-function checkAgeAndRedirect() {
+  function checkAgeAndRedirect() {
   let day = document.getElementById("p1-day").value;
   let month = document.getElementById("p1-month").value;
   let year = document.getElementById("p1-year").value;
@@ -122,6 +123,7 @@ function checkAgeAndRedirect() {
 
   let dob = new Date(year, month - 1, day);
   let today = new Date();
+
   let age = today.getFullYear() - dob.getFullYear();
   let monthDiff = today.getMonth() - dob.getMonth();
   let dayDiff = today.getDate() - dob.getDate();
@@ -137,11 +139,11 @@ function checkAgeAndRedirect() {
   let monthName = monthNames[month - 1];
   let formattedDOB = `${day} ${monthName} ${year}`;
 
- // Store DOB and age
+  // Store data in localStorage
   localStorage.setItem("dob1", formattedDOB);
   localStorage.setItem("age1", age);
 
-  // Redirect immediately to confirm-details.html
+  // Redirect to confirmation page (decision made later)
   window.location.href = "confirm-details";
 }
 

@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -78,7 +79,7 @@ Book vaccinations prototype
     
             // Change form action dynamically before submitting
             if (postcodePattern.test(location)) {
-                form.action = `access-needs-2`; // Backend will handle {{ data['location-input'] }}
+                form.action = `access-needs`; // Backend will handle {{ data['location-input'] }}
             } else {
                 form.action = `find-by-city`; // Backend will handle {{ data['location-input'] }}
             }

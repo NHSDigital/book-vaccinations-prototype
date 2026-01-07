@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -43,11 +44,11 @@ Book vaccinations prototype
           <div class="nhsuk-form-group">
             <h1 class="nhsuk-label-wrapper">
               <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s NHS number?
+                What is your NHS number?
               </label>
             </h1>
             <div class="nhsuk-hint" id="nhs-number-hint">
-              An NHS number is a 10 digit number that you find on any letter the NHS has sent. For example, 485 777 3456.
+              An NHS number is a 10 digit number that you find on any letter the NHS has sent. For example, 999 123 4567.
             </div>
             <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
           </div>

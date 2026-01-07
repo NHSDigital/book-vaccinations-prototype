@@ -37,13 +37,12 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-
         <form action="confirmation-messages" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose an appointment time
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+                Choose an appointment time for {{data['first-name']}} {{data['last-name']}}
               </h1>
           </legend>
 
@@ -58,7 +57,7 @@ Book vaccinations prototype
             
           <div class="nhsuk-radios" data-module="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="pm">
+              <input class="nhsuk-radios__input" id="appt-time-radio" name="time" type="radio" value="pm" required>
               <label class="nhsuk-label nhsuk-radios__label" for="appt-time-radio">
                 {{data['hour']}}pm
               </label>
@@ -108,7 +107,7 @@ Book vaccinations prototype
         </button>
     </form>
 
-    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
+    <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy-2">
       Choose a different pharmacy
     </a>
 

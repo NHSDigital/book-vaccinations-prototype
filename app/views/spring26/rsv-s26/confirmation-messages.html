@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -41,8 +42,8 @@ Book vaccinations prototype
         <form action="confirmationMessages" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
                 Can we send you confirmation, reminder and cancellation messages?
               </h1>
           </legend>
@@ -58,14 +59,14 @@ Book vaccinations prototype
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="radioGroup" name="radioGroup" type="radio" value="Yes">
+              <input class="nhsuk-radios__input" id="radioGroup" name="radioGroup" type="radio" value="Yes" required>
               <label class="nhsuk-label nhsuk-radios__label" for="radioGroup-yes">
                 Yes
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="radioGroup" name="radioGroup" type="radio" value="no">
+              <input class="nhsuk-radios__input" id="radioGroup" name="radioGroup" type="radio" value="No" required>
               <label class="nhsuk-label nhsuk-radios__label" for="radioGroup-no">
                 No
               </label>

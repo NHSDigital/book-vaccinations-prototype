@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -43,7 +44,7 @@ Book vaccinations prototype
           <div class="nhsuk-form-group">
             <h1 class="nhsuk-label-wrapper">
               <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}'s NHS number?
+                What is {{data['first-name2']}} {{data['last-name2']}}'s NHS number?
               </label>
             </h1>
             <div class="nhsuk-hint" id="nhs-number-hint">

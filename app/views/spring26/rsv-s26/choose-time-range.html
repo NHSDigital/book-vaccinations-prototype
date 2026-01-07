@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -38,12 +39,12 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="chooseHour" method="get" class="form">
+        <form action="chooseHour" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose a time range
+            <h1 class="nhsuk-fieldset__heading">
+            Choose a time range
               </h1>
           </legend>
 
@@ -81,6 +82,13 @@ Book vaccinations prototype
             <p class="nhsuk-u-font-weight-bold">PM</p>
 
             <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="time-range-radio" name="hour" type="radio" value="12">
+              <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
+                12pm (midday) to 1pm
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="time-range-radio" name="hour" type="radio" value="2">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 2pm to 3pm
@@ -104,8 +112,8 @@ Book vaccinations prototype
     </form>
 
     <a class="nhsuk-button nhsuk-button--secondary" href="choose-pharmacy">
-        Choose a different pharmacy
-      </a>
+      Choose a different site
+    </a>
 
       
       </div>

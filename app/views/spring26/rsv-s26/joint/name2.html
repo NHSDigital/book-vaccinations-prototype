@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -48,18 +49,18 @@ Book vaccinations prototype
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the full name that is registered with their GP surgery with no abbreviations or nicknames
+                Enter the exact name that is registered with their GP surgery.
               </div>
           
               <label class="nhsuk-label" for="first-name">
                 First name
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="first-name2" name="first-name2" type="text">            
+              <input class="nhsuk-input nhsuk-input--width-20" id="first-name2" name="first-name2" type="text" required>            
 
               <label class="nhsuk-label" for="last-name">
                 Last name
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="last-name2" name="last-name2" type="text">            
+              <input class="nhsuk-input nhsuk-input--width-20" id="last-name2" name="last-name2" type="text" required>            
 
             </fieldset>
           

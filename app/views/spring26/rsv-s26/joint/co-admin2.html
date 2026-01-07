@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -44,12 +45,13 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Do you want to book a COVID-19 vaccine for {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }} in the same appointment?                
+                  Do you want to book a COVID-19 vaccine for {{data['first-name2']}} {{data['last-name2']}} in the same appointment?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
                 If you want to book the vaccines separately, you can book a COVID-19 vaccine after you finish booking the RSV vaccine.
               </div>
+
           
               <div class="nhsuk-radios" data-module="nhsuk-radios">
 

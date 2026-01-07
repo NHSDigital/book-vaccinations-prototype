@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -48,12 +49,12 @@ Book vaccinations prototype
           <a href="access-needs">Change access needs</a>
       </p>
 
-      <div id="coadmin-inset" class="nhsuk-inset-text" style="display: none;">
+<div id="co-admin-inset" class="nhsuk-inset-text" style="display: none;">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>
-    {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}:
+    {{data['first-name']}} {{data['last-name']}}:
     <span id="vaccine-display-1"></span><br>
-    {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}:
+    {{data['first-name2']}} {{data['last-name2']}}:
     <span id="vaccine-display-2"></span><br>
   </p>
   <p>
@@ -61,9 +62,6 @@ Book vaccinations prototype
     <a href="#" id="change-to-single">look for RSV only appointments</a>.
   </p>
 </div>
-
-
-
 
 
       <hr>
@@ -200,7 +198,7 @@ Book vaccinations prototype
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   function initVaccineChoice(options = {}) {
-    const insetId = options.insetId || "coadmin-inset";
+    const insetId = options.insetId || "co-admin-inset";
     const linkId = options.linkId || "change-to-single";
     const displayIds = options.displayIds || ["vaccine-display-1", "vaccine-display-2"];
 
@@ -214,9 +212,9 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.getItem("vaccineChoice2")
     ];
 
-    // Default any missing or blank values to "single"
+    // Default any missing or blank values to "COVID-19"
     vaccineChoices = vaccineChoices.map(choice =>
-      !choice || choice.trim() === "" ? "RSV" : choice
+      !choice || choice.trim() === "RSV" ? "RSV" : choice
     );
 
     // Store defaults if needed
@@ -232,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (span) span.textContent = vaccineChoices[i];
     });
 
-    // Handle link click → switch both to single only
+    // Handle link click → switch both to single
     if (inset && changeLink) {
       changeLink.addEventListener("click", function (e) {
         e.preventDefault();

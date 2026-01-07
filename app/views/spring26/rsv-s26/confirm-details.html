@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -38,17 +39,34 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-    <form onsubmit="event.preventDefault(); checkAgeAndRedirect();"  class="form">
+      <form class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Are these the correct details for {{data['first-name']}} {{data['last-name']}}?
+                  Are these the correct details?
                 </h1>
               </legend>
           <dl class="nhsuk-summary-list">
 
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{data['first-name']}} {{data['last-name']}}
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="appt-postcode">
+                  Change<span class="nhsuk-u-visually-hidden"> if we can send you confirmation and reminder messages</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
 
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
@@ -56,7 +74,16 @@ Book vaccinations prototype
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   999 123 4567
-                </dd>            
+                </dd>
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                <a href="contact-details">
+                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                  </a>
+            
+                </dd>-->
+            
               </div>
   
             <div class="nhsuk-summary-list__row">
@@ -65,7 +92,16 @@ Book vaccinations prototype
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <span id="dob-display"></span>
-              </dd>          
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="contact-details">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                </a>
+          
+              </dd>-->
+          
             </div>
 
   
@@ -77,17 +113,17 @@ Book vaccinations prototype
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="yes">
+              <input class="nhsuk-radios__input" id="person-radio-yes" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="person-radio-yes">
                 Yes, continue
-              </label>
+            </label>
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="no">
+              <input class="nhsuk-radios__input" id="person-radio-no" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="person-radio-no">
                 No, enter the details again
-              </label>
+            </label>
             </div>
       
           </div>
@@ -98,7 +134,7 @@ Book vaccinations prototype
           
           </div>
 
-<button class="nhsuk-button" id="continue-btn">Continue</button>    </form>
+        <button id="continue-button" class="nhsuk-button">Continue</button>    </form>
     
       </div>
       <!-- End of content -->
@@ -106,19 +142,41 @@ Book vaccinations prototype
     </div>
   </div>
 
-<script>
-  // Display stored DOB on page load
-  document.getElementById("dob-display").innerText = localStorage.getItem("dob1") || 'Unknown';
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const dob = localStorage.getItem("dob1");
+  const age = parseInt(localStorage.getItem("age1"), 10);
 
-  document.getElementById("continue-btn").addEventListener('click', function () {
-    const age = parseInt(localStorage.getItem("age1"), 10);
-    if (!isNaN(age) && age < 75) {
-      window.location.href = "self-referral";
+  if (dob) {
+    document.getElementById("dob-display").innerText = dob;
+  }
+
+  document.getElementById("continue-button").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const selectedOption = document.querySelector('input[name="radioGroup"]:checked');
+
+    if (!selectedOption) {
+      alert("Please select an option.");
+      return;
+    }
+
+    if (selectedOption.value === "no") {
+      // User chose to enter details again
+      window.location.href = "name";
     } else {
-      // If 75 or older, do nothing or redirect somewhere else if needed
-      window.location.href = "co-admin";
+      // User confirmed, now redirect based on age
+      if (!isNaN(age)) {
+  if ((age >= 75 && age <= 120)) {
+      window.location.href = "add-person";
+  } else {
+      window.location.href = "self-referral";
+  }
+      } else {
+        alert("Age information missing. Please go back and re-enter the date of birth.");
+      }
     }
   });
+});
 </script>
-
 {% endblock %}

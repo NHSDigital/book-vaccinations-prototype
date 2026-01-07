@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -42,8 +43,8 @@ Book vaccinations prototype
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1>
-                Choose an appointment time for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
+            <h1 class="nhsuk-fieldset__heading">
+                Choose an appointment time for {{data['first-name']}} {{data['last-name']}}
               </h1>
           </legend>
 

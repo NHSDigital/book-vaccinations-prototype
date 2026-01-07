@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -38,25 +39,26 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="rsvSelfReferral" method="get" class="form">
+        <form action="newEligibleFlu" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-              Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} over 28 weeks pregnant?
-              </h1>
-              </legend>
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Are you over 28 weeks pregnant?
+                          </h1>
+          </legend>
 
-              <p class="nhsuk-body">Because they're not the right age to get the RSV vaccine, they can get the vaccine if they're over 28 weeks pregnant.</p>
-
+          <p class="nhsuk-body">Because you're not the right age to get the RSV vaccine, you can get the vaccine if you're over 28 weeks pregnant.</p>
           
+
+
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, they're over 28 weeks pregnant
+                Yes, I'm over 28 weeks pregnant
               </label>
             </div>
       
@@ -64,7 +66,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, they're not over 28 weeks pregnant
+                  No, I'm not over 28 weeks pregnant
                 </label>
               </div>
   

@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
+
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -37,7 +38,6 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-
       <form action="choose-time-range" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
@@ -48,12 +48,11 @@ Book vaccinations prototype
           </legend>
           <p>{{data['pharmacy']}}</p>
 
+          <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
 
-                <div id="coadmin-inset" class="nhsuk-inset-text" style="display:none;">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>Appointment type: <span id="vaccine-display"></span></p>
-        <p><a href="#" id="change-to-single">Book an RSV only appointment</a>.</p>
-      </div>
+  <p>Appointments are available from 1 October onwards.</p>
+</div>
 
           <p class="nhsuk-body-l">Next 10 available days</p>
         <div class="nhsuk-form-group">
@@ -180,7 +179,7 @@ Book vaccinations prototype
                 <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="choose-date3">
                   <span class="nhsuk-pagination__title">Show later dates</span>
                   <span class="nhsuk-u-visually-hidden">:</span>
-                  <span class="nhsuk-pagination__page">Next 10 available days</span>
+                  <span class="nhsuk-pagination__page">Next 5 available days</span>
                   <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
                     <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
                   </svg>
@@ -203,55 +202,4 @@ Book vaccinations prototype
 
     </div>
   </div>
-
-      <script>
-document.addEventListener("DOMContentLoaded", function () {
-  function initVaccineChoice(options = {}) {
-    const insetId = options.insetId || "coadmin-inset";
-    const linkId = options.linkId || "change-to-single";
-    const displayId = options.displayId || "vaccine-display";
-
-    const inset = document.getElementById(insetId);
-    const changeLink = document.getElementById(linkId);
-    const displaySpan = document.getElementById(displayId);
-
-    // Get stored value
-    let vaccineChoice = localStorage.getItem("vaccineChoice");
-
-    // If no value exists or blank, default to "RSV"
-    if (!vaccineChoice || vaccineChoice.trim() === "") {
-      vaccineChoice = "RSV";
-      localStorage.setItem("vaccineChoice", vaccineChoice);
-    }
-
-    // Show inset only if vaccineChoice is "RSV and COVID-19"
-    if (inset) {
-      inset.style.display = (vaccineChoice === "RSV and COVID-19") ? "block" : "none";
-    }
-
-    // Handle link click to switch to "COVID-19" and hide inset
-    if (inset && changeLink) {
-      changeLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        vaccineChoice = "RSV";
-        localStorage.setItem("vaccineChoice", vaccineChoice);
-        inset.style.display = "none";
-        // Update display if on the same page
-        if (displaySpan) {
-          displaySpan.textContent = vaccineChoice;
-        }
-      });
-    }
-
-    // Display vaccine choice anywhere on page
-    if (displaySpan) {
-      displaySpan.textContent = vaccineChoice;
-    }
-  }
-
-  // Initialize with default IDs
-  initVaccineChoice();
-});
-</script>
-
 {% endblock %}
