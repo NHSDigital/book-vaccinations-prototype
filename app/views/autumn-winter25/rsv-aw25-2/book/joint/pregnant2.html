@@ -40,7 +40,7 @@ Book vaccinations prototype
 
         <form action="jointTwoPregnant" method="get" class="form">
 
-              <h1>is {{data['first-name2']}} {{data['last-name2']}} over 28 weeks pregnant?
+              <h1>is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }} over 28 weeks pregnant?
               </h1>
 
               <p class="nhsuk-body">Because they're not the right age to get the RSV vaccine, they can get the vaccine if they're over 28 weeks pregnant.</p>

@@ -55,7 +55,7 @@ Book vaccinations prototype
                 Name
               </dt>
               <dd class="nhsuk-summary-list__value">
-                {{data['first-name']}} {{data['last-name']}}
+                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">

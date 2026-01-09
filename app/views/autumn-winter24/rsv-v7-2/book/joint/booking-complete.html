@@ -85,12 +85,12 @@ Book vaccinations prototype
                             <tr role="row" class="nhsuk-table__row">
                               <td class="nhsuk-table__cell">1583033</td>
                               <td class="nhsuk-table__cell">4 March 1948</td>
-                              <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
+                              <td class="nhsuk-table__cell ">{{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}</td>
                             </tr>
                             <tr role="row" class="nhsuk-table__row">
                               <td class="nhsuk-table__cell">1583034</td>
                               <td class="nhsuk-table__cell">6 May 1945</td>
-                              <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
+                              <td class="nhsuk-table__cell ">{{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}</td>
                             </tr>
                           </tbody>
                         </table>        

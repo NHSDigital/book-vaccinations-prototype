@@ -43,7 +43,7 @@ Book vaccinations prototype
           <div class="nhsuk-form-group">
             <h1 class="nhsuk-label-wrapper">
               <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is {{data['first-name']}} {{data['last-name']}}'s NHS number?
+                What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s NHS number?
               </label>
             </h1>
             <div class="nhsuk-hint" id="nhs-number-hint">

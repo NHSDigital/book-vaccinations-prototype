@@ -80,7 +80,7 @@ Book vaccinations prototype
                 </h5>
 
               <p class="nhsuk-card__description">
-                {{data['date']}} at {{data['hour']}}{{data['time']}}
+                {{data['date']}} at {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
               </p>
 
               <br>

@@ -68,7 +68,7 @@ Book vaccinations prototype
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>
-                  {{data['first-name']}} {{data['last-name']}}</td>
+                  {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of Birth </span>
                   <span id="dob-display"></span></td>

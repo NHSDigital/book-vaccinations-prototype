@@ -30,7 +30,7 @@ Book vaccinations prototype
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <h1>We found 4 places that match '{{data['location-input']}}'</h1>
+      <h1>We found 4 places that match '{{ data['location-input'] | default('Epping') }}'</h1>
       <p>Choose one of the following:</p>
 
       <form action="access-needs" method="get" class="form">

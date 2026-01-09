@@ -43,7 +43,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                You've added this person to your booking
+                You can choose an appointment
               </h1>
           </legend>
 
@@ -68,7 +68,7 @@ Book vaccinations prototype
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>
-                  {{data['first-name']}} {{data['last-name']}}</td>
+                  {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of Birth </span>
                   <span id="dob-display"></span></td>

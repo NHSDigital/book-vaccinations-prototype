@@ -51,8 +51,8 @@ Book vaccinations prototype
 
                       <div id="flu-inset" class="nhsuk-inset-text" style="display: none;">
         <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>{{data['first-name']}} {{data['last-name']}}: {{data['vaccine']}}<br>
-            {{data['first-name2']}} {{data['last-name2']}}: {{data['vaccine2']}}</span>
+        <p>{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}: {{data['vaccine']}}<br>
+            {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}: {{data['vaccine2']}}</span>
           </p>
         <p>If you can't find a vaccination site near you, you can <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.</p>
       </div>

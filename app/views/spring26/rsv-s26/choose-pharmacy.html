@@ -36,7 +36,7 @@ Book vaccinations prototype
     
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-l">
-        Sites near {{data['location-input']}}
+        Sites near {{ data['location-input'] | default('Epping') }}
       </h1>
 
       <!-- Add your content here -->

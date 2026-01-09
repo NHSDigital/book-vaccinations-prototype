@@ -44,7 +44,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Is {{data['first-name2']}} {{data['last-name2']}} over 28 weeks pregnant?
+              Is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }} over 28 weeks pregnant?
                           </h1>
           </legend>
 

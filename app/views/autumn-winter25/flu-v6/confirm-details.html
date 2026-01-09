@@ -44,7 +44,7 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Are these the correct details for {{data['first-name']}} {{data['last-name']}}?
+                  Are these the correct details for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}?
                 </h1>
               </legend>
           <dl class="nhsuk-summary-list">

@@ -41,39 +41,31 @@ Book vaccinations prototype
         <form action="booking-complete" method="get" class="form">
 
             <h1 class="nhsuk-heading-xl">
-                Check your booking details
+                Check your booking
               </h1>
 
-                                      <table class="nhsuk-table">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Name
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Appointment
-                  </th>
-                <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Action
-                  </th>
-                </tr>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Jean Davidson</td>
-                <td class="nhsuk-table__cell">10:20am<br><span id="vaccine1-text">{{data['vaccine']}}</span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a> </td>
-              </tr>
-              <!--<tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Roger Davidson</td>
-                <td class="nhsuk-table__cell ">10:30am<br><span id="vaccine2-text">{{data['vaccine2']}}</span></td>
-                <td class="nhsuk-table__cell" style="text-align: right;"><a class="nhsuk-link" href="#">Change time</a></td>
-              </tr>-->
-            </tbody>
-          </table>        
+          <dl class="nhsuk-summary-list">  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+               {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+               {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display"></span>
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Change time<span class="nhsuk-u-visually-hidden"> for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</span>
+                </a>
+              </dd>
+            </div>
+
+
+          </dl>     
 
     
     
-              <h2 class="nhsuk-heading-m">Appointment details</h2>
+              <h2 class="nhsuk-heading-m">Appointment</h2>
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -219,5 +211,20 @@ Book vaccinations prototype
       document.getElementById('mobile-display').textContent = mobile || 'Not provided';
     });
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  let vaccineChoice = localStorage.getItem("vaccineChoice");
+
+  // Always ensure a valid value
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and RSV-hidden") {
+    vaccineChoice = "COVID-19";
+    localStorage.setItem("vaccineChoice", vaccineChoice);
+  }
+
+  document.getElementById("vaccine-display").textContent = vaccineChoice;
+});
+</script>
+
 
 {% endblock %}

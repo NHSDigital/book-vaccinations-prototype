@@ -38,7 +38,7 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-l">
-                We cannot find '{{data['location-input']}}'
+                We cannot find '{{ data['location-input'] | default('Epping') }}'
               </h1>
 
             <p class="nhsuk-body">If the place you searched for is in England you could:</p>

@@ -34,7 +34,7 @@ Book vaccinations prototype
     
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-l">
-        Sites near {{data['location-input']}}
+        Sites near {{ data['location-input'] | default('Epping') }}
       </h1>
 
       <!-- Add your content here -->
@@ -51,14 +51,14 @@ Book vaccinations prototype
 <div id="co-admin-inset" class="nhsuk-inset-text" style="display: none;">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>
-    {{data['first-name']}} {{data['last-name']}}:
+    {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}:
     <span id="vaccine-display-1"></span><br>
-    {{data['first-name2']}} {{data['last-name2']}}:
+    {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}:
     <span id="vaccine-display-2"></span><br>
   </p>
   <p>
     If you can't find a vaccination site near you, you can
-    <a href="#" id="change-to-single">look for flu only appointments</a>.
+    <a href="#" id="change-to-single">look for COVID-19 only appointments</a>.
   </p>
 </div>
 
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Default any missing or blank values to "COVID-19"
     vaccineChoices = vaccineChoices.map(choice =>
-      !choice || choice.trim() === "" ? "Flu" : choice
+      !choice || choice.trim() === "" ? "COVID-19" : choice
     );
 
     // Store defaults if needed
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
 
     // Determine if inset should be visible (if either includes flu)
-    const showInset = vaccineChoices.some(choice => choice.includes("COVID-19"));
+    const showInset = vaccineChoices.some(choice => choice.includes("RSV"));
     if (inset) inset.style.display = showInset ? "block" : "none";
 
     // Update displayed vaccine choices
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inset && changeLink) {
       changeLink.addEventListener("click", function (e) {
         e.preventDefault();
-        vaccineChoices = ["Flu", "Flu"];
+        vaccineChoices = ["COVID-19", "COVID-19"];
         localStorage.setItem("vaccineChoice1", vaccineChoices[0]);
         localStorage.setItem("vaccineChoice2", vaccineChoices[1]);
         inset.style.display = "none";

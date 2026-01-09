@@ -85,12 +85,12 @@ Book vaccinations prototype
                           <tr role="row" class="nhsuk-table__row">
                             <td class="nhsuk-table__cell">1583033</td>
                             <td class="nhsuk-table__cell">4 March 1948</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
+                            <td class="nhsuk-table__cell ">{{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}</td>
                           </tr>
                           <tr role="row" class="nhsuk-table__row">
                             <td class="nhsuk-table__cell">1583034</td>
                             <td class="nhsuk-table__cell">6 May 1945</td>
-                            <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
+                            <td class="nhsuk-table__cell ">{{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}</td>
                           </tr>
                         </tbody>
                       </table>-->        
@@ -141,7 +141,7 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['date']}} at {{data['hour']}}{{data['time']}}
+                  {{data['date']}} at {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
                 </dd>
             
               </div>
@@ -151,7 +151,7 @@ Book vaccinations prototype
                   Appointment 1
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                   {{data['first-name']}} {{data['last-name']}}<br>{{data['hour']}}{{data['time']}}
+                   {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}<br>{{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
                 </dd>
             
               </div>
@@ -161,7 +161,7 @@ Book vaccinations prototype
                   Appointment 2
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                   {{data['first-name2']}} {{data['last-name2']}}<br>{{data['hour']}}{{data['time-2']}}
+                   {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}<br>{{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}
                 </dd>
             
               </div>-->

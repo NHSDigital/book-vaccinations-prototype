@@ -113,13 +113,13 @@ Book vaccinations prototype
                           <tbody class="nhsuk-table__body">
                             <caption class="nhsuk-table__caption">Booked for</caption>
                             <tr role="row" class="nhsuk-table__row">
-                              <td class="nhsuk-table__cell">Jean Davidson</td>
-                              <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time']}}</td>
+                              <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
+                              <td class="nhsuk-table__cell ">{{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}</td>
                               <td class="nhsuk-table__cell ">COVID-19</td>
                             </tr>
                             <tr role="row" class="nhsuk-table__row">
-                              <td class="nhsuk-table__cell">Roger Davidson</td>
-                              <td class="nhsuk-table__cell ">{{data['hour']}}{{data['time-2']}}</td>
+                              <td class="nhsuk-table__cell">{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}</td>
+                              <td class="nhsuk-table__cell ">{{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}</td>
                               <td class="nhsuk-table__cell ">COVID-19</td>
                             </tr>
                           </tbody>

@@ -50,11 +50,11 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Does {{data['first-name']}} {{data['last-name']}} need to get their flu vaccination in 2 doses?
+              Does {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} need to get their flu vaccination in 2 doses?
                           </h1>
           </legend>
 
-          <p class="nhsuk-body">{{data['first-name']}} {{data['last-name']}} will need 2 doses if they:          </p>
+          <p class="nhsuk-body">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} will need 2 doses if they:          </p>
           
 <ul class="nhsuk-list nhsuk-list--bullet">
   <li>are in a clinical risk group or</li>

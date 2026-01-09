@@ -43,7 +43,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-                Do you know {{data['first-name2']}} {{data['last-name2']}}'s NHS number?
+                Do you know {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}'s NHS number?
               </h1>
           </legend>
 

@@ -35,7 +35,7 @@ Book vaccinations prototype
     
       <!-- Change the page title here -->
       <h1 class="nhsuk-heading-l">
-        Sites near {{data['location-input']}}
+        Sites near {{ data['location-input'] | default('Epping') }}
       </h1>
 
       <!-- Add your content here -->
@@ -52,9 +52,9 @@ Book vaccinations prototype
 <div id="co-admin-inset" class="nhsuk-inset-text" style="display: none;">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>
-    {{data['first-name']}} {{data['last-name']}}:
+    {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}:
     <span id="vaccine-display-1"></span><br>
-    {{data['first-name2']}} {{data['last-name2']}}:
+    {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}:
     <span id="vaccine-display-2"></span><br>
   </p>
   <p>

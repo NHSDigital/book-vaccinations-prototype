@@ -50,7 +50,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-fieldset__legend--l">
-                Is {{data['first-name']}} {{data['last-name']}} able to get a COVID-19 vaccine?
+                Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} able to get a COVID-19 vaccine?
               </h1>
           </legend>
 
