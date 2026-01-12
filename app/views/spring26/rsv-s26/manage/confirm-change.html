@@ -3,9 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
-
-<!-- 
+{% extends 'layout-rsv.html' %}<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -42,7 +40,7 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-l">
-                Do you want to book this appointment?
+                Do you want to change this RSV appointment?
               </h1>
 
 
@@ -53,24 +51,6 @@ Book vaccinations prototype
 
           <dl class="nhsuk-summary-list">
 
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Vaccination type
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                Flu
-              </dd>
-          
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="appt-postcode">
-                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
-                </a>
-          
-              </dd>-->
-          
-            </div>
-
   
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -88,48 +68,23 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}
+                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }} at 10am
                 </dd>
             
             
               </div>
-  
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Time
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  10am
-                </dd>
-            
+              
   
           
           </dl>       
 
             <h2 class="nhsuk-heading-m">
-                Existing appointment
+                Old appointment
               </h2>
 
 
 <dl class="nhsuk-summary-list">
 
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Vaccination type
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                flu
-              </dd>
-          
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="appt-postcode">
-                  Change<span class="nhsuk-u-visually-hidden"> postcode near where you'd like your appointment</span>
-                </a>
-          
-              </dd>-->
-          
-            </div>
 
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
@@ -139,13 +94,6 @@ Book vaccinations prototype
                 Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
               </dd>
           
-              <!--<dd class="nhsuk-summary-list__actions">
-          
-                <a href="#">
-                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
-                </a>
-          
-              </dd>-->
           
             </div>
 
@@ -154,24 +102,21 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }}
+                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }} at 11:15am
                 </dd>
             
               </div>
-  
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Time
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  10:15am
-                </dd>
-            
-          
-          </div></dl> 
+        </dl> 
+
             <form action="confirmChange" method="get" class="form">
 
                 <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-heading-m">
+                Change appointment?
+              </h1>
+          </legend>
+
         
             <div class="nhsuk-form-group">
                 <div class="nhsuk-radios" data-module="nhsuk-radios">
@@ -186,7 +131,7 @@ Book vaccinations prototype
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
                     <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                      No, keep the existing appointment
+                      No, keep the old appointment
                     </label>
                   </div>
             

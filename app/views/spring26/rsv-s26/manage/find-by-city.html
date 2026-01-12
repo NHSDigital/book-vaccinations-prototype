@@ -3,9 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
-
-<!-- 
+{% extends 'layout-rsv.html' %}<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -39,20 +37,20 @@ Book vaccinations prototype
       <ul class="nhsuk-list">
         <li>
                   <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping">
-                    <a>Epping, Essex, CM16</a>
+                    <a>{{ data['location-input'] | default('Epping') }}, CM16</a>
                   </button> 
                 </li>
         <li>
           <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping Green">
-            <a>Epping Green, Essex, CM16</a></button>
+            <a>{{data['location-input'] | default('Epping') }} Green, CM16</a></button>
         </li>
         <li>
           <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping Upland">
-            <a>Epping Upland, Essex, CM16</a></button>
+            <a>{{data['location-input' | default('Epping') ]}} Common, CM16</a></button>
         </li>
         <li>
           <button class="nhsuk-link__link" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer; font-size: 1.1875rem; line-height: 1.47368; text-decoration: underline; padding-left: 0px;"  name="location" value="Epping Green">
-            <a>Epping Green, Hertfordshire, SG13</a></button>
+            <a>North {{data['location-input'] | default('Epping') }}, SG13</a></button>
         </li>
       </ul>      
       

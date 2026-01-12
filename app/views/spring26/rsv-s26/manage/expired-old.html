@@ -3,8 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
-<!-- 
+{% extends 'layout-rsv.html' %}<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -18,7 +17,6 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -38,32 +36,17 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="dob-2" method="get" class="form">
+            <h1 class="nhsuk-heading-l">
+                This appointment was in April 2024
+              </h1>
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s postcode?
-                </h1>
-              </legend>
-              <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with the GP surgery.
-              </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
+              <p>if you're looking for a newer appointment, check your reference number and <a href="ref-no">try again</a>.</p>
 
-            </fieldset>
-          
-          </div>
+              <a class="nhsuk-button" href="../index">
+                Go back to start
+              </a>
+        
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
       </div>
       <!-- End of content -->
 

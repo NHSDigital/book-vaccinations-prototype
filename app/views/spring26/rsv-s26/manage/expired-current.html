@@ -3,8 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
-<!-- 
+{% extends 'layout-rsv.html' %}<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -44,7 +43,7 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What would you like to do with this appointment?
+                  This appointment is in the past
                 </h1>
               </legend>
 
@@ -54,7 +53,7 @@ Book vaccinations prototype
                {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
-               {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br>Flu
+               {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display"></span>
               </dd>
           
             </div>
@@ -82,7 +81,7 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }}
+                  {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': -2}) }}
                 </dd>
             
 
@@ -91,52 +90,26 @@ Book vaccinations prototype
           
           </dl>       
           
-          
-          <div class="nhsuk-radios" data-module="nhsuk-radios">
-      
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="change">
-                  <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-change">
-                    View other available appointments
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="cancel">
-                  <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-cancel">
-                    Cancel the appointment
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="home">
-                    <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-home">
-                      Go back to start
-                    </label>
-                  </div>
-  
-              </div>
+              <p>if {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} still needs a vaccine, you can <a href="appt-postcode">book another appointment</a>.</p>
     
             </fieldset>
           
           </div>
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
+    </form>
     
       </div>      <!-- End of content -->
 
     </div>
   </div>
 
-    <script>
+  <script>
 document.addEventListener("DOMContentLoaded", function () {
   let vaccineChoice = localStorage.getItem("vaccineChoice");
 
   // Always ensure a valid value
-  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "RSV and COVID-19-hidden") {
-    vaccineChoice = "Flu";
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and RSV-hidden") {
+    vaccineChoice = "COVID-19";
     localStorage.setItem("vaccineChoice", vaccineChoice);
   }
 

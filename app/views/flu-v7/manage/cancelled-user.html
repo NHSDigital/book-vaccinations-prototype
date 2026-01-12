@@ -3,7 +3,8 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}<!-- 
+{% extends 'layout-flu.html' %}
+<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -17,7 +18,6 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -37,24 +37,17 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="co-admin" method="get" class="form">
+            <h1 class="nhsuk-heading-l">
+                Someone cancelled this appointment online
+              </h1>
 
-        <div class="nhsuk-form-group">
-            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                <h1 class="nhsuk-fieldset__heading">
-                  You can now choose an appointment
-                </h1>
-              </legend>
+              <p>if {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} still needs a vaccine, you can <a href="appt-postcode">book another appointment</a>.</p>
 
-            </fieldset>
-          
-          </div>
+              <a class="nhsuk-button" href="../index">
+                Go back to start
+              </a>
+        
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
-    
       </div>
       <!-- End of content -->
 

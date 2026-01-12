@@ -17,7 +17,6 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -37,39 +36,24 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="cancelAppointment" method="get" class="form">
-
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-                Are you sure you want to cancel the appointment?
+            <h1 class="nhsuk-heading-l">
+                We cancelled this appointment
               </h1>
-          </legend>
 
-          <div class="nhsuk-radios" data-module="nhsuk-radios">
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="are-you-sure-1" name="radioGroup" type="radio" value="yes" required>
-              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-1">
-                Yes
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="are-you-sure-2" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="are-you-sure-2">
-                No
-              </label>
-            </div>
-      
-          </div>
-        </fieldset>
-        <br><br>
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-    </form>
-      
+              <p>We cancelled this appointment because our records show that {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} does not need a COVID-19 vaccine.</p>
+
+              <p>if {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} still needs a vaccine, contact their GP.</p>
+
+
+              <h3>Help us improve our website</h3>
+
+
+              <p>Can you answer some questions about your visit today?</p>
+
+              <a>Take our survey</a>
+        
+
       </div>
       <!-- End of content -->
 

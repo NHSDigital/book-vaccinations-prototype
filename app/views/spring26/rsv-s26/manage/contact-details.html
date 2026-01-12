@@ -3,9 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
-
-<!-- 
+{% extends 'layout-rsv.html' %}<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -144,7 +142,7 @@ Book vaccinations prototype
           params.append('mobile', encodeURIComponent(mobileValue));
         }
 
-        window.location.href = `cya-contact?${params.toString()}`;
+        window.location.href = `cya?${params.toString()}`;
       } else if (landlineChecked && !emailChecked && !mobileChecked) {
         window.location.href = 'landline';
       } else {

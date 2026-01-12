@@ -3,9 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-rsv.html' %}
-
-<!-- 
+{% extends 'layout-rsv.html' %}<!-- 
   In /views/layout.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
@@ -39,13 +37,13 @@ Book vaccinations prototype
     <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-    <form onsubmit="event.preventDefault(); checkAgeAndRedirect();"  class="form">
+      <form action="manage-appt" method="get" class="form">
 
       <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}'s date of birth?
+                What is the date of birth of the person this appointment is for?
               </h1>
             </legend>
             <div class="nhsuk-hint" id="example-hint">
@@ -66,7 +64,7 @@ Book vaccinations prototype
                   <label class="nhsuk-label nhsuk-date-input__label" for="p1-month">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p1-month" min="1" max="12" required>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" type="number" id="p1-month" min="1" max="12">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -95,65 +93,4 @@ Book vaccinations prototype
   </div>
 </div>
 
-<script>
-  
-  function checkAgeAndRedirect() {
-  let day = document.getElementById("p1-day").value;
-  let month = document.getElementById("p1-month").value;
-  let year = document.getElementById("p1-year").value;
-
-  if (!day || !month || !year) {
-      alert("Please enter a valid date of birth.");
-      return;
-  }
-
-  // Convert inputs to numbers
-  day = parseInt(day, 10);
-  month = parseInt(month, 10);
-  year = parseInt(year, 10);
-
-  let currentYear = new Date().getFullYear();
-  if (
-      isNaN(day) || isNaN(month) || isNaN(year) ||
-      day < 1 || day > 31 || month < 1 || month > 12 || 
-      year < currentYear - 120 || year > currentYear
-  ) {
-      alert("Please enter a valid date.");
-      return;
-  }
-
-  let dob = new Date(year, month - 1, day); // JS months are 0-indexed
-  let today = new Date();
-
-  let age = today.getFullYear() - dob.getFullYear();
-  let monthDiff = today.getMonth() - dob.getMonth();
-  let dayDiff = today.getDate() - dob.getDate();
-
-  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-      age--;
-  }
-
-  // Convert month number to month name
-  let monthNames = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-  ];
-  let monthName = monthNames[month - 1];
-
-  // Format DOB as "15 March 2000"
-  let formattedDOB = `${day} ${monthName} ${year}`;
-
-  // Store in localStorage
-  localStorage.setItem("dob1", formattedDOB);
-  localStorage.setItem("age1", age);
-
-  // Redirect based on age
-  if ((age >= 2 && age <= 17) || (age >= 65 && age <= 120)) {
-      window.location.href = "manage-appt";
-  } else {
-      window.location.href = "manage-appt";
-  }
-}  
-
-</script>
 {% endblock %}
