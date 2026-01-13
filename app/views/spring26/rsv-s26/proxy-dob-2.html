@@ -148,14 +148,10 @@ Book vaccinations prototype
   localStorage.setItem("age1", age);
 
   // Redirect based on age
-  if ((age >= 65 && age <= 120)) {
+  if ((age >= 75 && age <= 120)) {
       window.location.href = "proxy-co-admin";
-  } else if ((age >= 2 && age <= 3)) {
-      window.location.href = "eligible-2-3";
-        } else if (age >= 3 && age <= 18) {
-          window.location.href = "under-18";
   } else {
-      window.location.href = "proxy-eligible-flu";
+      window.location.href = "proxy-self-referral";
   }
 }  
 

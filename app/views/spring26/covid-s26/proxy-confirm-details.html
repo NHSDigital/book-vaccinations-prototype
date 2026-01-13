@@ -166,14 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // User confirmed, now redirect based on age
       if (!isNaN(age)) {
-        if (age >= 65 && age <= 120) {
+        if (age >= 75 && age <= 120) {
           window.location.href = "proxy-co-admin";
-        } else if (age >= 2 && age <= 3) {
-          window.location.href = "eligible-2-3";
-        } else if (age >= 3 && age <= 18) {
-          window.location.href = "under-18";
         } else {
-          window.location.href = "proxy-eligible-flu";
+          window.location.href = "proxy-self-referral";
         }
       } else {
         alert("Age information missing. Please go back and re-enter the date of birth.");

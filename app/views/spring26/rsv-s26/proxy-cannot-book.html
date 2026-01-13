@@ -46,25 +46,26 @@ Book vaccinations prototype
       </div>-->
 
 
- <h1 class="nhsuk-heading-xl">
-                You cannot book an appointment
-              </h1>
+      <form action="choose-appt" method="get" class="form">
 
-
-
-        
-            
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  You cannot book an appointment for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
+                </h1>
+              </legend>
 
             <p class="nhsuk-body">This may be because:</p>
 
             <ul class="nhsuk-list nhsuk-list--bullet">
-              <li>you are not aged 75-79 (currently only people in this age range can book online)</li>
-              <li>you are not more than 28 weeks pregnant</li>
-              <li>you do not need a vaccine</li>
-              <li>you have an existing booking that would need to be cancelled first</li>
+              <li>they are not aged 75-79 (currently only people in this age range can book online)</li>
+              <li>they are not more than 28 weeks pregnant</li>
+              <li>they do not need a vaccine</li>
+              <li>they have an existing booking that would need to be cancelled first</li>
                 </ul>  
 
-            <p class="nhsuk-body">If you're pregnant, you can get the RSV vaccination after 28 weeks.</p>
+            <p class="nhsuk-body">If they are pregnant, they can get the RSV vaccination after 28 weeks.</p>
 
             <p class="nhsuk-body">You can only book online appointments at pharmacies in some areas of Essex, Leicestershire, Suffolk, the West Midlands, London and the North West.</p>
 
