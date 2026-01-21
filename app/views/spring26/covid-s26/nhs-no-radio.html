@@ -18,7 +18,10 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 {% endblock %}
 
 <!-- For adding a back link -->

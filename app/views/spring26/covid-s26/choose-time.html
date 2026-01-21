@@ -23,7 +23,10 @@ Book vaccinations prototype
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
-<a class="nhsuk-back-link" href="javascript:history.back()">Back</a>
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 {% endblock %}
 
 <!-- For adding page content -->
