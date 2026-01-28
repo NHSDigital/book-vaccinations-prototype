@@ -18,6 +18,10 @@ Book vaccinations prototype
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -35,10 +39,6 @@ Book vaccinations prototype
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-{{ backLink({
-  href: "javascript:history.back()",
-  text: "Back"
-}) }}
 
 
       <form action="choose-pharmacy-2" method="get" class="form">

@@ -4,7 +4,6 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
-
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -100,63 +99,54 @@ Book vaccinations prototype
 
 <script>
   
-  function checkAgeAndRedirect() {
+function checkAgeAndRedirect() {
   let day = document.getElementById("p1-day").value;
   let month = document.getElementById("p1-month").value;
   let year = document.getElementById("p1-year").value;
 
   if (!day || !month || !year) {
-      alert("Please enter a valid date of birth.");
-      return;
+    alert("Please enter a valid date of birth.");
+    return;
   }
 
-  // Convert inputs to numbers
   day = parseInt(day, 10);
   month = parseInt(month, 10);
   year = parseInt(year, 10);
 
   let currentYear = new Date().getFullYear();
   if (
-      isNaN(day) || isNaN(month) || isNaN(year) ||
-      day < 1 || day > 31 || month < 1 || month > 12 || 
-      year < currentYear - 120 || year > currentYear
+    isNaN(day) || isNaN(month) || isNaN(year) ||
+    day < 1 || day > 31 || month < 1 || month > 12 ||
+    year < currentYear - 120 || year > currentYear
   ) {
-      alert("Please enter a valid date.");
-      return;
+    alert("Please enter a valid date.");
+    return;
   }
 
-  let dob = new Date(year, month - 1, day); // JS months are 0-indexed
+  let dob = new Date(year, month - 1, day);
   let today = new Date();
-
   let age = today.getFullYear() - dob.getFullYear();
   let monthDiff = today.getMonth() - dob.getMonth();
   let dayDiff = today.getDate() - dob.getDate();
 
   if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-      age--;
+    age--;
   }
 
-  // Convert month number to month name
   let monthNames = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
   ];
   let monthName = monthNames[month - 1];
-
-  // Format DOB as "15 March 2000"
   let formattedDOB = `${day} ${monthName} ${year}`;
 
-  // Store in localStorage
+ // Store DOB and age
   localStorage.setItem("dob2", formattedDOB);
   localStorage.setItem("age2", age);
 
-  // Redirect based on age
-  if ((age >= 75 && age <= 120)) {
-      window.location.href = "co-admin2";
-  } else {
-      window.location.href = "eligible-flu2";
-  }
-}  
+  // Redirect immediately to confirm-details.html
+  window.location.href = "postcode2";
+}
 
 </script>
 {% endblock %}

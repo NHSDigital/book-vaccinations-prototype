@@ -170,12 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // User confirmed, now redirect based on age
       if (!isNaN(age)) {
-        if (age >= 65 && age <= 120) {
-          window.location.href = "co-admin2";
-        } else if (age >= 2 && age <= 3) {
-          window.location.href = "eligible-2-3";
-        } else if (age >= 3 && age <= 18) {
-          window.location.href = "under-18";
+        if (age >= 75 && age <= 120) {
+          window.location.href = "add-person2";
         } else {
           window.location.href = "self-referral-joint";
         }

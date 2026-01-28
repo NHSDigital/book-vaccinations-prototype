@@ -41,7 +41,7 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="proxy-dob-2" method="get" class="form">
+      <form class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
@@ -63,13 +63,42 @@ Book vaccinations prototype
           
           </div>
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>    </form>
+        <button id="continue-button" class="nhsuk-button" type="button">Continue</button>    
+      </form>
     
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const continueButton = document.getElementById("continue-button");
+
+  if (!continueButton) {
+    console.error("Continue button not found");
+    return;
+  }
+
+  continueButton.addEventListener("click", function () {
+
+    const age = parseInt(localStorage.getItem("age1"), 10);
+
+    if (isNaN(age)) {
+      alert("Age information missing. Please go back and re-enter your date of birth.");
+      return;
+    }
+
+    // Route based on age
+    if (age >= 75 && age <= 120) {
+      window.location.href = "proxy-add-person";
+    } else {
+      window.location.href = "proxy-self-referral";
+    }
+  });
+});
+</script>
+
 {% endblock %}

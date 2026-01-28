@@ -41,14 +41,18 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="interimProxyAddSecondPerson" method="get" class="form">
+        <form action="addSecondPerson" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                You've added this person to your booking
+                You have already added this person to your booking
               </h1>
           </legend>
+
+          <div class="nhsuk-hint" id="duplicate-hint">
+                Check who you've already added to your booking
+            </div>
 
           <table class="nhsuk-table-responsive">
             <thead role="rowgroup" class="nhsuk-table__head">
@@ -59,10 +63,10 @@ Book vaccinations prototype
                 <th role="columnheader" class="" scope="col">
                     Date of birth
                   </th>
-                <!--<th role="columnheader" class="" scope="col">
+                <th role="columnheader" class="" scope="col">
                     Vaccine type
                   </th>
-                <th role="columnheader" class="" scope="col" style="text-align: right;">
+                <!--<th role="columnheader" class="" scope="col" style="text-align: right;">
                     Action
                   </th>-->               
                 </tr>
@@ -75,10 +79,10 @@ Book vaccinations prototype
                 <td class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of Birth </span>
                   <span id="dob-display"></span></td>
-                <!--<td class="nhsuk-table__cell">
+                <td class="nhsuk-table__cell">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Vaccine type </span>
                   {{data['vaccine']}}</td>
-                <td class="nhsuk-table__cell" style="text-align: right;">
+                <!--<td class="nhsuk-table__cell" style="text-align: right;">
                   <span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span>
                   <a href="co-admin">Change vaccine type</a></td>-->
               </tr>

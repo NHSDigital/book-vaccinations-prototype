@@ -772,4 +772,69 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         }
     });
 
+
+            router.get(/twoNhsNumberRadio/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('nhs-no');
+                    }
+                else {
+                    res.redirect('dob-2');
+                    }
+                });
+
+
+            router.get(/twoProxyNhsNumberRadio/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('proxy-nhs-no');
+                    }
+                else {
+                    res.redirect('proxy-dob-2');
+                    }
+                });
+
+            router.get(/newJointNhsNumberRadio/, function (req, res) {
+                if (req.query.radioGroup === "yes" ) {
+                    res.redirect('nhs-no2');
+                    }
+                else {
+                    res.redirect('dob-2-joint');
+                    }
+                });
+
+            router.get(/interimAddSecondPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('joint/name2');
+            }
+        else {
+            res.redirect('co-admin');
+            }
+        });
+
+                    router.get(/interimProxyAddSecondPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('joint/name2');
+            }
+        else {
+            res.redirect('proxy-co-admin');
+            }
+        });
+
+                    router.get(/proxyAddSecondPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('joint/name2');
+            }
+        else {
+            res.redirect('proxy-co-admin');
+            }
+        });
+
+                        router.get(/newProxyEligible/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('proxy-cannot-book');
+        }
+    else {
+        res.redirect('proxy-add-person');
+        }
+    });
+
 module.exports = router;
