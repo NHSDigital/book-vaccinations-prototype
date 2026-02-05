@@ -837,4 +837,17 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         }
     });
 
+
+    // Access needs routing //
+
+   router.get(/accessNeeds/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('choose-site');
+        }
+    else {
+        res.redirect('access-needs');
+        }
+    });
+
+
 module.exports = router;
