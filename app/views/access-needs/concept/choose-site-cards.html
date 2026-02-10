@@ -214,51 +214,131 @@ Book vaccinations prototype
 
 
 
-      <!--<div id="flu-inset" class="nhsuk-inset-text" style="display:none;">
+      <div id="flu-inset" class="nhsuk-inset-text" style="display:none;">
         <span class="nhsuk-u-visually-hidden">Information: </span>
         <p>Appointment type: <span id="vaccine-display"></span></p>
         <p><a href="#" id="change-to-single">Book a COVID-19 only appointment</a>.</p>
-      </div>-->
+      </div>
       
       <hr>
               
 
 
-    <h2 class="nhsuk-heading-l">2 sites meet all your access needs</h2>
-    <ul>
-      <li>Accessible toilet</li>
-      <li>Disabled parking spaces</li>
-      <li>Wheelchair access</li>
-    </ul>
-
+    <h2 class="nhsuk-heading-l">2 sites match your access needs exactly</h2>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>{{data['accessibility']}}</li>
+      </ul>
       <p>
           <a href="access-needs">Change access needs</a>
       </p>
 
-      
-
-    <ol class="nhsuk-list results service-results">
-        <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
-            <p id="distance_0" class="nhsuk-body-s"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
+    <div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+                <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
             <form action="choose-date" method="get" class="form">
                 <span class="nhsapp-tag nhsapp-tag--blue">GP practice</span>
                 <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">The Surgery (Brooke Road)</h3>
-                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
+                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
                     <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR</p>
-                    
-                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
+                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
                         <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
                             Get directions (opens in Google maps)<span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
                         </a>
                     </p>
                     <p><span class="nhsuk-u-visually-hidden">Phone number:</span>02072545652</p>
+                    
 
-                    <p><strong class="nhsapp-tag nhsapp-tag--white">Close to bus stop</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Gender inclusive toilet</strong></p>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to tube station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Gender inclusive toilet</strong>
 
 
 
+                    <br><br>
+
+                    <div class="nhsuk-form-group">
+                        <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #ffffff; cursor: pointer; margin-bottom: 0;"  name="pharmacy" value="Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <a>Book at The surgery (Brooke road)</a>
+                        </button>
+                    </div>
+
+    </div>
+    </div>
+      
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+                        <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
+                    <form action="choose-date" method="get" class="form">
+                        <!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>-->
+
+                        <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
+
+                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
+                            <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
+                            <p><a href="walk-in">Find out when you can walk in</a></p>
+                        </div>
+
+                        <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
+                            <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+                            190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
+                        </p>
+
+                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                            <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                                Get directions (opens in Google maps)
+                                <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                            </a>
+                        </p>
+                        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+                            02072542696
+                        </p>
+
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to tube station</strong>
+
+                    <br><br>
+                    <div class="nhsuk-form-group">
+                        <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #ffffff; cursor: pointer; margin-bottom: 0;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <a>Book at Benjamin Chemist</a>
+                        </button>
+                    </div>
+
+    </div>
+    </div>
+
+
+    <!--<ol class="nhsuk-list results service-results">
+        <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
+            <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
+            <form action="choose-date" method="get" class="form">
+                <span class="nhsapp-tag nhsapp-tag--blue">GP practice</span>
+                <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">The Surgery (Brooke Road)</h3>
+                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
+                    <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR</p>
+                    <p><span class="nhsuk-u-visually-hidden">Phone number:</span>02072545652</p>
+                    
+                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                        <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                            Get directions (opens in Google maps)<span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                        </a>
+                    </p>
+                    <br>
+
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to tube station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Gender inclusive toilet</strong>
+
+
+
+                    <br><br>
 
                     <div class="nhsuk-form-group">
                         <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR">
@@ -273,7 +353,7 @@ Book vaccinations prototype
         <li id="result_item_1" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
                     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
                     <form action="choose-date" method="get" class="form">
-                        <!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>-->
+                        <!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>
 
                         <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
 
@@ -282,24 +362,26 @@ Book vaccinations prototype
                             <p><a href="walk-in">Find out when you can walk in</a></p>
                         </div>
 
-                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
+                        <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
                             <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
                             190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
-                        </p>
-
-                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
-                            <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-                                Get directions (opens in Google maps)
-                                <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                            </a>
                         </p>
                         <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
                             02072542696
                         </p>
 
-                    <p><strong class="nhsapp-tag nhsapp-tag--white">Close to bus stop</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong></p>
+                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+                            <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                                Get directions (opens in Google maps)
+                                <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                            </a>
+                        </p>
+                    <br>
 
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--grey">Close to tube station</strong>
+
+                    <br><br>
                     <div class="nhsuk-form-group">
                         <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
                             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
@@ -309,11 +391,11 @@ Book vaccinations prototype
                             <a>Book at Benjamin Chemist</a>
                         </button>
                     </div>
-        </li>
+        </li>-->
 
         </ol>
 
-            <h2 class="nhsuk-heading-l">2 sites meet 2 out of 3 access needs</h2>
+            <h2 class="nhsuk-heading-l">2 sites closely match your access needs</h2>
 
            <details class="show-more">
   <summary class="show-more__summary">
@@ -326,32 +408,28 @@ Book vaccinations prototype
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
-      <p>This site does not have <span  class="nhsuk-u-font-weight-bold">wheelchair access</span> </p>
-  
+    
     <h3 class="nhsuk-heading-m">Green Light Pharmacy</h3>
-
     
     <p id="address_0" class="nhsuk-list nhsuk-u-margin-bottom-2">
     <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
     170-172 Stamford Hill, London, N16 6QX
     </p>
                 
+        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+          02088006166
+    </p>
 
-                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
+    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
         <a id="map_link_0" href="https://www.google.com/maps/place/Green+Light+Pharmacy+-+Stamford+Hill+Broadway/@51.572472,-0.0913213,15z/data=!4m6!3m5!1s0x48761c698bfa120d:0x98c1d9aa3075d56f!8m2!3d51.572472!4d-0.0722669!16s%2Fg%2F1hc4pg4v6?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
           Get directions (opens in Google maps)
           <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
         </a>
         </p>
-        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
-          02088006166
-    </p>
 
-                    <p>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong>
-                  </p>
 
                 
+        <br>
     
       <div class="nhsuk-form-group">
               <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Green Light Pharmacy, 170-172 Stamford Hill, London, N16 6QXD">
@@ -365,35 +443,26 @@ Book vaccinations prototype
         </li>
         <li id="result_item_3" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
         <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.7 miles away</p>
-             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> </p>
-       
+        
         <h3 class="nhsuk-heading-m">Asvacare Limited - Clapton</h3>
-
-
         
         <p id="address_0" class="nhsuk-list nhsuk-u-margin-bottom-2">
         <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
         97, Upper Clapton road, Clapton, London, E59BU
         </p>
                     
+<p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+        02088053316
+        </p>
 
-
-                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
+        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
             <a id="map_link_0" href="https://www.google.com/maps/place/AsvaCare+Pharmacy/@51.5639956,-0.061973,17z/data=!3m1!4b1!4m6!3m5!1s0x48761dbe78e1b911:0x5eee18fc5695214!8m2!3d51.5639923!4d-0.0593981!16s%2Fg%2F11qm0ft81t?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
               Get directions (opens in Google maps)
               <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
             </a>
             </p>
- <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
-        02088053316
-        </p>    
+<br>
         
-                            <p>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to bus station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Quiet room available</strong>
-                  </p>
-
         
           <div class="nhsuk-form-group">
                   <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Asvacare Limited - Clapton, 97, Upper Clapton road, Clapton, London, E59BU">

@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -51,15 +51,11 @@ Book vaccinations prototype
           </legend>
           <p>{{data['pharmacy']}}</p>
 
-                      <div id="flu-inset" class="nhsuk-inset-text" style="display: none;">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}: {{data['vaccine']}}<br>
-            {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}: {{data['vaccine2']}}</span>
-          </p>
-        <p>If you can't find a vaccination site near you, you can <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.</p>
-      </div>
+          <!--<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
 
-
+  <p>Appointments are available from 1 October onwards.</p>
+</div>-->
 
           <p class="nhsuk-body-l">Next 10 available days</p>
         <div class="nhsuk-form-group">
@@ -71,8 +67,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +1}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Available
+                Morning and afternoon available
               </div>
             </div>
       
@@ -82,8 +77,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -93,8 +87,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -104,8 +97,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +4}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -115,8 +107,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +5}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -126,8 +117,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +6}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Available
+                Morning and afternoon available
               </div>
             </div>
       
@@ -137,8 +127,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -148,8 +137,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +8}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -159,8 +147,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +9}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -170,8 +157,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +10}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 

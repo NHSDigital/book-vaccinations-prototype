@@ -1,12 +1,12 @@
-<!-- Use this page as the index for your project -->
+<!-- Use this page as the index for theyr project -->
 
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- ADDING CUSTOM CSS - Add theyr custom CSS or Sass in /app/assets/sass/main.scss -->
 
-<!-- Extends the layout from /views/layout.html -->
+<!-- Extends the latheyt from /views/latheyt.html -->
 {% extends 'layout-rsv.html' %}
 
 <!-- 
-  In /views/layout.html you can:
+  In /views/latheyt.html they can:
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
@@ -31,27 +31,34 @@ Book vaccinations prototype
 {% endblock %}
 
 <!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+<!-- Page latheyt code can be found at https://service-manual.nhs.uk/design-system/styles/latheyt -->
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page title here -->
 
-      <!-- Add your content here -->
+      <!-- Add theyr content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
     <form action="newProxyEligibleFlu" method="get" class="form">
 
-        <fieldset class="nhsuk-fieldset">
+              <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} over 28 weeks pregnant?
+              Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} able to get an RSV vaccine?
                           </h1>
           </legend>
 
-          <p class="nhsuk-body">Because they're not the right age to get the RSV vaccine, they can get the vaccine if they're over 28 weeks pregnant.</p>
+          <p class="nhsuk-body">As they're under 75, they might be able to get an RSV vaccine if they:</p>
+
+          <ul>
+            <li>are pregnant (over 28 weeks)</li>
+            <li>Are a resident of a care home for older adults</li>
+          </ul>
+          
+          <p>They might be asked some questions at the vaccination site to check they're aligible for an RSV vaccine.</p>
 
 
         <div class="nhsuk-form-group">
@@ -60,7 +67,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, they're over 28 weeks pregnant
+                Yes, they're eligible for an RSV vaccine
               </label>
             </div>
       
@@ -68,13 +75,14 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, they're not over 28 weeks pregnant
+                  No, they are not eligible
                 </label>
               </div>
   
           </div>
           </div>
         </fieldset>
+
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Continue
         </button>

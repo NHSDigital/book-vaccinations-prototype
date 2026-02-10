@@ -1937,3 +1937,128 @@ hgroup {
 .nhsuk-list.results .results__item {
     border-top: 4px solid #d8dde0;
 }
+
+
+// Show more sites CSS //
+
+.show-more {
+    color: #212b32;
+    display: block
+}
+
+@media print {
+    .show-more {
+        color: #000
+    }
+}
+
+.show-more {
+    font-size: 1rem;
+    line-height: 1.5
+}
+
+@media (min-width: 40.0625em) {
+    .show-more {
+        font-size:1.1875rem;
+        line-height: 1.4736842105
+    }
+}
+
+@media print {
+    .show-more {
+        font-size: 13pt;
+        line-height: 1.25
+    }
+}
+
+.show-more {
+    margin-bottom: 16px
+}
+
+@media (min-width: 40.0625em) {
+    .show-more {
+        margin-bottom:24px
+    }
+}
+
+.show-more__summary {
+    display: block
+}
+
+.show-more__text>:first-child {
+    margin-top: 0
+}
+
+.show-more__text>:last-child {
+    margin-bottom: 0
+}
+
+@media screen\0 {
+    .show-more {
+        margin-top: 8px;
+        padding: 16px 0 16px 1.25rem
+    }
+
+    .show-more__summary-text {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 16px
+    }
+}
+
+
+
+@supports not (-ms-ime-align:auto) {
+    .show-more__summary {
+        color: #005eb8;
+        cursor: pointer;
+        position: relative;
+        width: -webkit-fit-content;
+        width: fit-content
+    }
+
+    .show-more__summary:hover {
+        color: #7c2855
+    }
+
+    .show-more__summary:focus {
+        background-color: #ffeb3b;
+        box-shadow: 0 -2px #ffeb3b,0 4px #212b32;
+        outline: 4px solid transparent;
+        text-decoration: none
+    }
+
+    .show-more__summary:focus,.show-more__summary:focus .nhsuk-icon {
+        color: #212b32;
+        fill: #212b32
+    }
+
+    .show-more__summary:focus .show-more__summary-text,.show-more__summary:hover .show-more__summary-text {
+        text-decoration: none
+    }
+
+    .show-more__summary::-webkit-details-marker {
+        display: none
+    }
+
+
+    .show-more[open]>.show-more__summary:before {
+        border-color: transparent;
+        border-style: solid;
+        border-top-color: inherit;
+        border-width: .75775rem .4375rem 0;
+        -webkit-clip-path: polygon(0 0,50% 100%,100% 0);
+        clip-path: polygon(0 0,50% 100%,100% 0);
+        display: block;
+        height: 0;
+        width: 0
+    }
+
+    .show-more__summary-text {
+        text-decoration: underline
+    }
+
+    .show-more__text {
+        margin-top: 8px;
+    }
+}
