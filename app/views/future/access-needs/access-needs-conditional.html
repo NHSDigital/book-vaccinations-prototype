@@ -1,0 +1,398 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-covid.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <form action="choose-pharmacy" method="get" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="symptoms-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Are there any access needs for anyone attending the appointment?
+                </h1>
+              </legend>
+
+              <p>If you need a carer you can bring them with you on the day.</p>
+        
+              <div class="nhsuk-hint" id="symptoms-hint">
+                Select all options that are relevant.
+              </div>
+        
+<fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  </legend>
+                        
+                  <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+            
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="service-1" name="service" type="checkbox" value="covid" aria-controls="conditional-contact-1" aria-expanded="false">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="service-1">
+                        Building features
+                      </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__conditional" id="conditional-contact-1">
+            
+                      <div class="nhsuk-form-group">
+                        <div class="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                              Accessible changing room
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                              Accessible toilet
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Automatic/easy-open doors
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Baby changing facility
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                             Gender inclusive toilet
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Lift access
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Step-free access
+                            </label>
+                          </div>
+                                                    <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Visual signage to direct where to go
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Wheelchair access
+                            </label>
+                          </div>
+
+                  
+                        </div>
+                      </div>
+            
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="service-2" name="service" type="checkbox" value="flu" aria-controls="conditional-contact-2" aria-expanded="false">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="service-2">
+                        Communication and language
+                      </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__conditional" id="conditional-contact-2">
+            
+                      <div class="nhsuk-form-group">
+                        <div class="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="service-3" name="service" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="service-3">
+                              British sign language (BSL) support
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="service-4" name="service" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="service-4">
+                              Deaf blind support
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Foreign language support
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Written instructions
+                            </label>
+                          </div>
+                  
+                        </div>
+                      </div>
+
+            
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="service-3" name="service" type="checkbox" value="Shingles" aria-controls="conditional-contact-3" aria-expanded="false">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="service-3">
+                        Parking and transport
+                      </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__conditional" id="conditional-contact-3">
+            
+                      <div class="nhsuk-form-group">
+                        <div class="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                              Disabled parking
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                              Off-site parking
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              On-site parking
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Public transport options
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Clear parking signage
+                            </label>
+                          </div>
+                  
+                        </div>
+                      </div>
+
+            
+                    </div>
+
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="service-4" name="service" type="checkbox" value="Pneumonia" aria-controls="conditional-contact-4" aria-expanded="true">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="service-4">
+                        People
+                      </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__conditional" id="conditional-contact-4">
+            
+                      <div class="nhsuk-form-group">
+                        <div class="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                              Staff chaperone
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                              Staff assistance
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Staff trained for disability awareness
+                            </label>
+                          </div>                  
+                        </div>
+                      </div>
+
+            
+                    </div>
+
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="service-5" name="service" type="checkbox" value="RSV" aria-controls="conditional-contact-5" aria-expanded="true">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="service-5">
+                        Safe spaces
+                      </label>
+                    </div>
+
+                    
+                    <div class="nhsuk-checkboxes__conditional" id="conditional-contact-5">
+            
+                      <div class="nhsuk-form-group">
+                        <div class="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                              Ability to lie down during vaccination
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                              Private waiting area
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Quiet room/area
+                            </label>
+                          </div>                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Room to pray
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Seating in waiting area
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Women's only time/space
+                            </label>
+                          </div>
+                  
+                        </div>
+                      </div>
+
+            
+                    </div>
+
+                     <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="service-5" name="service" type="checkbox" value="RSV" aria-controls="conditional-contact-5" aria-expanded="true">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="service-5">
+                        Support and assistance
+                      </label>
+                    </div>
+
+                    
+                    <div class="nhsuk-checkboxes__conditional" id="conditional-contact-5">
+            
+                      <div class="nhsuk-form-group">
+                        <div class="nhsuk-checkboxes">
+
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                              Audio/text-to-speech facility
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                              Braille
+                            </label>
+                          </div>
+                  
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Hearing loop
+                            </label>
+                          </div>                          
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Large print
+                            </label>
+                          </div>
+                          <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                              Mobility aides available
+                            </label>
+                          </div>
+                  
+                        </div>
+                      </div>
+
+            
+                    </div>
+                   
+                  </div>
+                </fieldset>
+
+            </fieldset>
+        
+          </div>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>    </form>
+    
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

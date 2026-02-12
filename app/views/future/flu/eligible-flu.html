@@ -1,0 +1,99 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-flu.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+        <form action="newEligibleFlu" method="get" class="form">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Are you able to get a free flu vaccine?
+                          </h1>
+          </legend>
+
+          <p class="nhsuk-body">As you're under 65, you're only able to get a free flu vaccine if you:          </p>
+          
+<ul class="nhsuk-list nhsuk-list--bullet">
+  <li>have a serious long-term health condition</li>
+  <li>are having treatment or medication which means they are at increased risk</li>
+  <li>are pregnant</li>
+  <li>are in long-term residential care</li>
+  <li>receive a carer's allowance, or are the main carer of an elderly or disabled person who may be at risk if you get sick</li>
+  <li>live with or are in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)</li>
+  <li>a frontline health or social care worker (if your workplace doesn't offer an occupational health scheme)</li>
+</ul>
+
+<p class="nhsuk-body">you might be asked some questions at the vaccination site to check you're eligible for a free flu vaccine.</p>
+
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
+                Yes, I'm eligible for a free flu vaccine
+              </label>
+            </div>
+      
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
+                  No, I am not eligible
+                </label>
+              </div>
+  
+          </div>
+          </div>
+        </fieldset>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+    </form>
+      
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

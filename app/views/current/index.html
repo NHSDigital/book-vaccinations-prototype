@@ -1,0 +1,107 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Current work
+            </h1>
+
+
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>Current journeys are for START of spring 26 season.</p>
+            </div>
+
+                    <h3 class="nhsuk-heading-m">Flu journey - END OF A/W</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="flu/index" class="nhsuk-link">Book a flu vaccination</a> - Includes MC joint bookings - NO co-admin due to covid closure<span class="nhsuk-u-font-weight-bold"></span></li>        
+        <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;">
+        </ul>
+              </ul> 
+
+
+
+              <h3 class="nhsuk-heading-m">COVID-19 journey</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="covid/index" class="nhsuk-link">Book a COVID-19 vaccination</a> - Includes joint bookings and RSV co-admin upsell<span class="nhsuk-u-font-weight-bold"></span></li>
+          <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;">
+            <li><a href="covid/co-admin" class="nhsuk-link">RSV co-admin upsell</a></li>
+            <li><a href="covid/joint/cya" class="nhsuk-link">CYA page iteration</a> - Joint</li>
+            <li><a href="covid/cya" class="nhsuk-link">CYA page iteration</a> - Single</li>
+            <li><a href="covid/choose-pharmacy-gp-wic" class="nhsuk-link">GP and walk-in availability display</a></li>
+            <li><a href="covid/add-person" class="nhsuk-link">Add another person</a> - FIRST PERSON</li>
+            <li><a href="covid/proxy-add-person" class="nhsuk-link">Add another person</a> - PROXY USER</li>
+            <li><a href="covid/add-person-duplicate" class="nhsuk-link">Added same person twice</a></li>
+            <li><a href="covid/details-no-match" class="nhsuk-link">PDS fail</a> - FIRST PERSON</li>
+            <li><a href="covid/details-no-match-proxy" class="nhsuk-link">PDS fail</a> - PROXY USER</li>
+            <li><a href="covid/ineligible" class="nhsuk-link">Ineligible</a> - FIRST PERSON</li>
+            <li><a href="covid/ineligible-proxy" class="nhsuk-link">Ineligible</a> - PROXY USER</li>
+         </ul><br>
+        <li><span class="nhsuk-u-font-weight-bold">Manage journey improvements</span></li>
+          <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;">
+            <li><a href="covid/manage/ref-no" class="nhsuk-link">reference number</a> - streamlined booking matching</li>
+            <li><a href="covid/manage/dob" class="nhsuk-link">Date of birth</a> - streamlined booking matching</li>
+            <li><a href="covid/manage/manage-appt" class="nhsuk-link">Manage appointment page</a> - updated layout (to match check your answers screen)</li>
+            <li><a href="covid/manage/confirm-change" class="nhsuk-link">Confirm reschedule page</a> - updated layout (to match check your answers screen)</li>
+            <li><a href="covid/manage/cancelled-site" class="nhsuk-link">Cancelled by site</a></li>
+            <li><a href="covid/manage/cancelled-user" class="nhsuk-link">Cancelled by user</a></li>
+            <li><a href="covid/manage/cancelled-service" class="nhsuk-link">Cancelled by NBS (auto-cancelled)</a></li>
+            <li><a href="covid/manage/expired-current" class="nhsuk-link">Expired (current season)</a></li>
+            <li><a href="covid/manage/expired-old" class="nhsuk-link">Expired (old season)</a></li>
+          </ul>
+        </ul>        
+
+  
+        <h3 class="nhsuk-heading-m">RSV journey - S26</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="rsv/index" class="nhsuk-link">Book an RSV vaccination</a> - Includes joint bookings with COVID co-admin <span class="nhsuk-u-font-weight-bold"></span></li>        
+        <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;">
+          <li><a href="rsv/co-admin" class="nhsuk-link">COVID co-admin upsell</a> - Single - LATE SPRING</li>
+          <li><a href="rsv/self-referral" class="nhsuk-link">self-referral</a> - FIRST PERSON</li>
+          <li><a href="rsv/proxy-self-referral" class="nhsuk-link">self-referral</a> - PROXY USER</li>
+          <li><a href="rsv/ineligible" class="nhsuk-link">ineligible</a> - FIRST PERSON</li>
+          <li><a href="rsv/proxy-ineligible" class="nhsuk-link">ineligible</a> - PROXY USER</li>
+        </ul>
+              </ul> 
+
+              
+       
+
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

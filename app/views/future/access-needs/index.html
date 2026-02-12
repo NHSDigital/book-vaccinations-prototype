@@ -1,0 +1,89 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Access needs
+            </h1>
+
+              <h3 class="nhsuk-heading-m">Comprehensive approach</h3>
+              <p>Implement all ideas from early ideation, including:
+                            <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="concept/access-needs-radio" class="nhsuk-link">Access needs filter question</a></li>
+        <li><a href="concept/access-needs" class="nhsuk-link">Access needs checklist</a></li>
+        <li><a href="concept/choose-site" class="nhsuk-link">Upgraded site view</a> - Includes:
+        <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;">
+          <li>Filtering for facilities (and dates)</li>
+          <li>Site tags to display journey planning info</li>
+          <li>progressive reveal of sites, displaying closest matches first, in order of distance</li>
+        </ul></li>
+        </ul>        
+
+              </p>
+
+
+
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Early ideation
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+              <h3 class="nhsuk-heading-m">Select all needs up-front approach</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="access-needs" class="nhsuk-link">Checkbox list</a> - Red and yellow needs included</li>
+        <li><a href="access-needs-conditional" class="nhsuk-link">Conditional checkbox list</a> - Separated into categories with conditional reveals - all needs included</li>
+        </ul>        
+
+                      <h3 class="nhsuk-heading-m">Select some up-front, filter for others on site list</h3>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="access-needs" class="nhsuk-link">Checkbox list</a> - Red and yellow needs included</li>
+        <li><a href="choose-pharmacy-gp-wic" class="nhsuk-link">Site list with filters</a></li>
+        </ul>        
+
+        </div>
+        </details>
+  
+
+              
+       
+
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
