@@ -876,6 +876,15 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         }
     });
 
+                        router.get(/newEligible/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('add-person');
+        }
+    });
+
 
 
 module.exports = router;
