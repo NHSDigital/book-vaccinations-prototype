@@ -460,13 +460,13 @@ router.get(/jointImmuneSystem/, function (req, res) {
 
             router.get(/jointIneligible/, function (req, res) {
                 if (req.query.radioGroup === "joint" ) {
-                    res.redirect('book/joint/nhs-no-radio2');
+                    res.redirect('name2');
                     }
                 else if (req.query.radioGroup === "single" ) {
-                        res.redirect('book/appt-postcode');
+                        res.redirect('appt-postcode');
                         }
                 else {
-                    res.redirect('book/index');
+                    res.redirect('index');
                     }
                 });
         
@@ -710,7 +710,7 @@ router.get(/jointEligible/, function (req, res) {
         res.redirect('cannot-book2');
         }
     else {
-        res.redirect('co-admin2');
+        res.redirect('add-person2');
         }
     });
 
@@ -848,6 +848,34 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         res.redirect('access-needs');
         }
     });
+
+                router.get(/newTwoDoseFlu/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('proxy-add-person');
+            }
+        else {
+            res.redirect('second-dose-ko');
+            }
+        });
+
+                        router.get(/secondTwoDoseFlu/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('add-person2');
+            }
+        else {
+            res.redirect('second-dose-ko');
+            }
+        });
+
+                    router.get(/interimEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('add-person');
+        }
+    });
+
 
 
 module.exports = router;
