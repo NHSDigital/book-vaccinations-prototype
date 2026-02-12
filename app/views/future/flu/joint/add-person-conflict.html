@@ -41,16 +41,16 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="addSecondPerson" method="get" class="form">
+        <form action="jointConflict" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                You can choose an appointment from 1 October 2026
+                You cannot book jointly for these people until 1 October
               </h1>
           </legend>
 
-          <table class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
                 <th role="columnheader" class="" scope="col">
@@ -59,40 +59,34 @@ Book vaccinations prototype
                 <th role="columnheader" class="" scope="col">
                     Date of birth
                   </th>
-                <!--<th role="columnheader" class="" scope="col">
+                <th role="columnheader" class="" scope="col">
+                    Can book from
+                  </th>                
+                  <!--<th role="columnheader" class="" scope="col">
                     Vaccine type
-                  </th>
-                <th role="columnheader" class="" scope="col" style="text-align: right;">
-                    Action
-                  </th>-->               
+                  </th>-->
                 </tr>
-            </thead>
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Name </span>
-                  {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
-                <td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Date of Birth </span>
-                  <span id="dob-display"></span></td>
-                <!--<td class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Vaccine type </span>
-                  {{data['vaccine']}}</td>
-                <td class="nhsuk-table__cell" style="text-align: right;">
-                  <span class="nhsuk-table-responsive__heading" aria-hidden="true">Action </span>
-                  <a href="co-admin">Change vaccine type</a></td>-->
+                <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
+                <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
+                <td class="nhsuk-table__cell ">1 October</td>
+                <!--<td class="nhsuk-table__cell ">{{data['vaccine']}}</td>-->
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}</td>
+                <td class="nhsuk-table__cell "><span id="dob-display2"></span></td>
+                <td class="nhsuk-table__cell ">1 September</td>
+                <!--<td class="nhsuk-table__cell ">{{data['vaccine2']}}</td>-->
               </tr>
             </tbody>
           </table>        
           
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                         <h1 class="nhsuk-fieldset__heading">
-                Do you want to add another person to your booking?
-              </h1></legend>
-                            <div class="nhsuk-hint" id="example-hint">
-                You can book appointments for 2 people on the same day
-              </div>
-                      
+                What do you want to do?
+              </h1>
+                      </legend>
 
           <div class="nhsuk-form-group">
           <div class="nhsuk-radios" data-module="nhsuk-radios">
@@ -100,17 +94,22 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, add another person
+                Just book for [first person]
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, continue without adding anyone else
+                Just book for [second person]
               </label>
             </div>
-      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
+                Book appointments for both from 1 October 2026
+              </label>
+            </div>      
           </div>
           </div>
         </fieldset>

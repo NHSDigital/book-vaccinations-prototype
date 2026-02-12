@@ -1,0 +1,157 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-flu.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code checkboxOptions can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code checkboxOptions can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+        <form action="/earlyAccess" method="post" class="form">
+
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Are you able to get a free flu vaccine before 1 October?
+                          </h1>
+          </legend>
+
+          <p class="nhsuk-body-l">You'll be able to get the free flu vaccine from 1 October. If any of these apply to you, you might be able to get it sooner.          </p>
+          
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="checkboxOption-hint">
+    <div id="checkboxOption-hint" class="nhsuk-hint">
+      Select all that apply
+    </div>
+    <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption" name="checkboxOption" type="checkbox" value="health condition" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption">
+          I have a serious long-term health condition
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="treatment or meds" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-2">
+          I am having treatment or medication which mean I am at increased risk
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="pregnant" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
+          I am Pregnant
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="resident of care home" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
+          I am in long term residential care
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="carer" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
+          I receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if you get sick
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="close contact" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
+          I live with or am in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="front line worker" data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
+          I am a frontline health or social care worker (if your workplace doesn't offer an occupational health scheme)
+        </label>
+      </div>
+      <div class="nhsuk-checkboxes__divider">or</div>
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="checkboxOption-5" name="checkboxOption" type="checkbox" value="None of these" data-checkbox-exclusive data-checkbox-exclusive-group="checkboxOption-list">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-5">
+          None of these, I can only get my free flu vaccine from 1 October
+        </label>
+      </div>    
+    </div>
+  </fieldset>
+</div>
+
+<p class="nhsuk-body">you might be asked some questions at your appointment to check you're eligible for a free flu vaccine.</p>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+    </form>
+      
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form.form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop normal form submission
+
+    const checkedBoxes = Array.from(
+      form.querySelectorAll('input[name="checkboxOption"]:checked')
+    );
+
+    const values = checkedBoxes.map(cb => cb.value);
+
+    // Routing logic
+    if (values.includes("pregnant")) {
+      window.location.href = "add-person-early";
+    } 
+    else if (values.includes("None of these")) {
+      window.location.href = "add-person";
+    } 
+    else if (values.length > 0) {
+      window.location.href = "add-person";
+    } 
+    else {
+      // Optional: prevent routing if nothing selected
+      alert("Please select at least one option.");
+    }
+  });
+});
+</script>
+{% endblock %}
