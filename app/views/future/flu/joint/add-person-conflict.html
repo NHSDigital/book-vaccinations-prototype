@@ -46,11 +46,27 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                You cannot book jointly for these people until 1 October
+                Are you sure you want to book for both people?
               </h1>
           </legend>
 
-          <table class="nhsuk-table">
+          <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>
+    {{ data['first-name'] | default('Jane') }} {{ data['last-name'] | default('Smith') }} can get the flu vaccine from 1 September. 
+    {{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Smith') }} can get the flu vaccine from 1 October.
+  </p>
+</div>
+
+<p>You can book for:</p>
+
+<ul>
+  <li>{{ data['first-name'] | default('Jane') }} {{ data['last-name'] | default('Smith') }} only from 1 September</li>
+  <li>{{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Smith') }} only from 1 October</li>
+  <li>both people on the same day from 1 October</li>
+</ul>
+
+          <!--<table class="nhsuk-table">
             <thead role="rowgroup" class="nhsuk-table__head">
               <tr role="row">
                 <th role="columnheader" class="" scope="col">
@@ -62,25 +78,25 @@ Book vaccinations prototype
                 <th role="columnheader" class="" scope="col">
                     Can book from
                   </th>                
-                  <!--<th role="columnheader" class="" scope="col">
+                  <th role="columnheader" class="" scope="col">
                     Vaccine type
-                  </th>-->
+                  </th>
                 </tr>
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
                 <td class="nhsuk-table__cell ">1 October</td>
-                <!--<td class="nhsuk-table__cell ">{{data['vaccine']}}</td>-->
+                <td class="nhsuk-table__cell ">{{data['vaccine']}}</td>
               </tr>
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}</td>
                 <td class="nhsuk-table__cell "><span id="dob-display2"></span></td>
                 <td class="nhsuk-table__cell ">1 September</td>
-                <!--<td class="nhsuk-table__cell ">{{data['vaccine2']}}</td>-->
+                <td class="nhsuk-table__cell ">{{data['vaccine2']}}</td>
               </tr>
             </tbody>
-          </table>        
+          </table>-->        
           
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                         <h1 class="nhsuk-fieldset__heading">
@@ -94,20 +110,20 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Just book for [first person]
+                Book for {{ data['first-name'] | default('Jane') }} {{ data['last-name'] | default('Smith') } from 1 September
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                Just book for [second person]
+                Book for {{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Smith') }} from 1 October
               </label>
             </div>
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                Book appointments for both from 1 October 2026
+                Book for both people on the same day from 1 October
               </label>
             </div>      
           </div>
