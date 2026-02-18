@@ -191,10 +191,17 @@ Book vaccinations prototype
             </div>
         </div>
 
+      <strong class="nhsapp-tag nhsapp-tag--filter" style="margin-top: 3px;">On-site parking <svg class="nhsuk-icon nhsuk-icon--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="true" aria-hidden="true" style="width: 0.8rem; height: 0.8rem;">
+  <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z" />
+</svg></strong>
+
+      <strong class="nhsapp-tag nhsapp-tag--filter" style="margin-top: 3px;">Baby changing facility <svg class="nhsuk-icon nhsuk-icon--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="true" aria-hidden="true" style="width: 0.8rem; height: 0.8rem;">
+  <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z" />
+</svg></strong>
+
         <div id="num-selected" class="nhsuk-u-margin-top-4">
-            <p id="num-filters">0 filters applied</p>
-        </div>
-    </div>
+            <a href="#" id="num-filters">Clear all filters</a>
+        </div>    </div>
 
 
 
@@ -208,107 +215,28 @@ Book vaccinations prototype
               
 
 
-    <h2 class="nhsuk-heading-m">Your access needs</h2>
+
+      <div class="nhsuk-card nhsuk-card--warning">
+  <div class="nhsuk-card__content">
+    <h3 class="nhsuk-card__heading">
+      <span role="text">
+        <span class="nhsuk-u-visually-hidden">Important:</span> No exact matches
+      </span>
+    </h3>
+    <p class="nhsuk-card__description">We cannot find sites that match all of your access needs and have these facilities:</p><br>
+     <!--<h2 class="nhsuk-heading-m">Your access needs</h2>-->
     <ul>
-      <li>Accessible toilet</li>
-      <li>Disabled parking spaces</li>
-      <li>Wheelchair access</li>
+      <li>Baby-changing facility</li>
+      <li>On-site parking</li>
     </ul>
 
-      <p>
-          <a href="access-needs">Change access needs</a>
-      </p>
-
-      
-    <h2 class="nhsuk-heading-l">2 sites meet all your access needs</h2>
-
-    <ol class="nhsuk-list results service-results">
-        <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
-            <p id="distance_0" class="nhsuk-body-s"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
-            <form action="choose-date" method="get" class="form">
-                <span class="nhsapp-tag nhsapp-tag--blue">GP practice</span>
-                <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">The Surgery (Brooke Road)</h3>
-                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
-                    <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR</p>
-                    
-                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
-                        <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-                            Get directions (opens in Google maps)<span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                        </a>
-                    </p>
-                    <p><span class="nhsuk-u-visually-hidden">Phone number:</span>02072545652</p>
-
-                    <p>
-                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus stop</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Gender inclusive toilet</strong></p>
+</div>
+</div>
 
 
+            <h2 class="nhsuk-heading-l">2 sites meet most of your access needs</h2>
 
 
-                    <div class="nhsuk-form-group">
-                        <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR">
-                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                            </svg>
-                            <a>Book at The surgery (Brooke road)</a>
-                        </button>
-                    </div>
-        </li>
-        <li id="result_item_1" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
-                    <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
-                    <form action="choose-date" method="get" class="form">
-                        <!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>-->
-
-                        <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
-
-                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
-                            <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
-                            <p><a href="walk-in">Find out when you can walk in</a></p>
-                        </div>
-
-                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
-                            <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
-                            190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
-                        </p>
-
-                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
-                            <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
-                                Get directions (opens in Google maps)
-                                <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
-                            </a>
-                        </p>
-                        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
-                            02072542696
-                        </p>
-
-                    <p><strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus stop</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong></p>
-
-                    <div class="nhsuk-form-group">
-                        <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
-                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                            </svg>
-                            <a>Book at Benjamin Chemist</a>
-                        </button>
-                    </div>
-        </li>
-
-        </ol>
-
-            <h2 class="nhsuk-heading-l">2 sites meet 2 out of 3 access needs</h2>
-
-           <details class="show-more">
-  <summary class="show-more__summary">
-    <span class="show-more__summary-text">
-      Show sites
-      </span>
-      </summary>
-
-            <div class="show-more__text">
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
@@ -393,10 +321,95 @@ Book vaccinations prototype
         </li>
     </ol>
 
-                <h2 class="nhsuk-heading-l">4 sites match some of your access needs</h2>
-                <p><a>Show sites</a></p>
+                <h2 class="nhsuk-heading-l">2 sites match some of your access needs</h2>
+                <details class="show-more">
+  <summary class="show-more__summary">
+    <span class="show-more__summary-text">
+      Show sites
+      </span>
+      </summary>
 
-    </div>
+            <div class="show-more__text">
+    <ol class="nhsuk-list results service-results">
+        <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
+            <p id="distance_0" class="nhsuk-body-s"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
+                  <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Wheelchair access</span> <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+<form action="choose-date" method="get" class="form">
+                <span class="nhsapp-tag nhsapp-tag--blue">GP practice</span>
+                <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">The Surgery (Brooke Road)</h3>
+                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
+                    <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR</p>
+                    
+                    <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
+                        <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                            Get directions (opens in Google maps)<span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                        </a>
+                    </p>
+                    <p><span class="nhsuk-u-visually-hidden">Phone number:</span>02072545652</p>
+
+                    <p>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Gender inclusive toilet</strong></p>
+
+
+
+
+                    <div class="nhsuk-form-group">
+                        <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Brooke Road Surgery, 40-42 Brooke Road, Stoke Newington, London, Greater London, N16 7LR">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <a>Book at The surgery (Brooke road)</a>
+                        </button>
+                    </div>
+        </li>
+        <li id="result_item_1" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
+                    <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
+                         <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Accessible toilet</span> <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+             <form action="choose-date" method="get" class="form">
+                        <!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>-->
+
+                        <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
+
+                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
+                            <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
+                            <p><a href="walk-in">Find out when you can walk in</a></p>
+                        </div>
+
+                <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
+                            <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+                            190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
+                        </p>
+
+                        <p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0" style="padding-bottom: 8px;">
+                            <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+                                Get directions (opens in Google maps)
+                                <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+                            </a>
+                        </p>
+                        <p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+                            02072542696
+                        </p>
+
+                    <p><strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong></p>
+
+                    <div class="nhsuk-form-group">
+                        <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <a>Book at Benjamin Chemist</a>
+                        </button>
+                    </div>
+        </li>
+
+        </ol>
+
+    </div></details>
     
       <!-- End of content -->
 

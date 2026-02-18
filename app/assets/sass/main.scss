@@ -1196,6 +1196,20 @@ a:hover {
   color: #4c4612;
 }
 
+.nhsapp-tag--filter {
+  background-color: #F0F4F5;
+  border-color: #7F8689;
+  color: #212b32;
+
+}
+
+.nhsapp-tag--filter:focus {
+  background: #ffeb3b;
+  box-shadow: 0 4px 0 #003087;
+  color: #003087;
+  outline: none;
+}
+
 // Button styled as link //
 
 .nhsuk-link-button {

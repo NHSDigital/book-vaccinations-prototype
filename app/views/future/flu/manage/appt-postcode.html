@@ -81,7 +81,7 @@ Book vaccinations prototype
     
             // Change form action dynamically before submitting
             if (postcodePattern.test(location)) {
-                form.action = `access-needs-2`; // Backend will handle {{ data['location-input'] }}
+                form.action = `choose-site`; // Backend will handle {{ data['location-input'] }}
             } else {
                 form.action = `find-by-city`; // Backend will handle {{ data['location-input'] }}
             }

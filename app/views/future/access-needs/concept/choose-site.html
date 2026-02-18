@@ -64,12 +64,7 @@ Book vaccinations prototype
                         </label>
 
                         <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
-                              Automatic/easy open doors
-                            </label>
-                          </div>
+
                           <div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
@@ -77,11 +72,6 @@ Book vaccinations prototype
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
-                              Documents available in large print
-                            </label>
-                          </div><div class="nhsuk-checkboxes__item">
                             <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
                               On-site parking
@@ -91,12 +81,6 @@ Book vaccinations prototype
                             <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
                             <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
                               Off-site parking
-                            </label>
-                          </div>
-                          <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
-                              Seating in waiting area
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
@@ -163,7 +147,7 @@ Book vaccinations prototype
                     </div>
                     </fieldset>
 
-                      <!--<fieldset class="nhsuk-fieldset">
+                      <fieldset class="nhsuk-fieldset">
 
                         <label class="nhsuk-label" for="student-name" style="font-weight: bold;">
                           Show sites offering
@@ -187,14 +171,14 @@ Book vaccinations prototype
 
                         </div>
 
-                        <form action="choose-pharmacy-nhsd-filter-active" method="POST">
+                        <form action="choose-site-filtered" method="POST">
                           <button style="float: left; clear: left; margin-top:24px;" class="nhsuk-button" data-module="nhsuk-button">
                             Apply filters
                           </button>
                         </form>
 
                         
-                      </fieldset>-->                       
+                      </fieldset>                      
 
 
                       <p><a class="nhsuk-link" href="#">Clear all filters</a></p>
@@ -254,9 +238,10 @@ Book vaccinations prototype
                     </p>
                     <p><span class="nhsuk-u-visually-hidden">Phone number:</span>02072545652</p>
 
-                    <p><strong class="nhsapp-tag nhsapp-tag--white">Close to bus stop</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Gender inclusive toilet</strong></p>
+                    <p>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Gender inclusive toilet</strong></p>
 
 
 
@@ -298,8 +283,8 @@ Book vaccinations prototype
                             02072542696
                         </p>
 
-                    <p><strong class="nhsapp-tag nhsapp-tag--white">Close to bus stop</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong></p>
+                    <p><strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus stop</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong></p>
 
                     <div class="nhsuk-form-group">
                         <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;"  name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
@@ -327,7 +312,7 @@ Book vaccinations prototype
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
-      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Wheelchair access</span> </p>
+      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Wheelchair access</span> </p>
   
     <h3 class="nhsuk-heading-m">Green Light Pharmacy</h3>
 
@@ -349,7 +334,7 @@ Book vaccinations prototype
     </p>
 
                     <p>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong>
                   </p>
 
                 
@@ -366,7 +351,7 @@ Book vaccinations prototype
         </li>
         <li id="result_item_3" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
         <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.7 miles away</p>
-             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> </p>
+             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
        
         <h3 class="nhsuk-heading-m">Asvacare Limited - Clapton</h3>
 
@@ -390,9 +375,9 @@ Book vaccinations prototype
         </p>    
         
                             <p>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to tube station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Close to bus station</strong>
-                    <strong class="nhsapp-tag nhsapp-tag--white">Quiet room available</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to tube station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Close to bus station</strong>
+                    <strong class="nhsapp-tag nhsapp-tag--purple" style="margin-top: 3px;">Quiet room available</strong>
                   </p>
 
         

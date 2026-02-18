@@ -551,18 +551,6 @@ router.get(/jointImmuneSystem/, function (req, res) {
         });
 
 
-// MYA routes //
-
-router.get(/addSessionType/, function (req, res) {
-    if (req.query.radioGroup === "Repeat" ) {
-        res.redirect('availability-date-range');
-    }
-    else {
-        res.redirect('session-date');
-    }
-});
-
-
 // updated joint booking routes //
 
 router.get(/proxyJointBooking/, function (req, res) {
@@ -884,6 +872,27 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         res.redirect('add-person');
         }
     });
+
+                                    router.get(/newManageAppointment/, function (req, res) {
+                                        if (req.query.radioGroup === "change" ) {
+                                            res.redirect('access-needs');
+                                            }
+                                        else if (req.query.radioGroup === "cancel" ) {
+                                            res.redirect('cancel-sure');
+                                            }
+                                        else {
+                                                res.redirect('index');
+                                                }
+                                        });
+
+    router.get(/newAddSecondPerson/, function (req, res) {
+        if (req.query.radioGroup === "yes" ) {
+            res.redirect('joint/name2');
+            }
+        else {
+            res.redirect('access-needs');
+            }
+        });
 
 
 module.exports = router;

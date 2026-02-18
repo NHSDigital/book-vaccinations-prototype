@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -54,7 +54,6 @@ Book vaccinations prototype
                     </summary>
 
                     <div id="filter-panel" class="nhsuk-details__text nhsuk-form-group__fieldset">
-                        <form name="FilterForm" id="filter-form" method="get" aria-label="filter services form" action="/service-search/pharmacy/find-a-pharmacy/results/N16">
                      <div class="nhsuk-form-group">
 
                       <fieldset class="nhsuk-fieldset">
@@ -66,26 +65,26 @@ Book vaccinations prototype
                         <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
 
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                            <input class="nhsuk-checkboxes__input" id="facilities" name="facilities" type="checkbox" value="Baby changing facility">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities">
                               Baby changing facility
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="On-site parking" checked="true">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               On-site parking
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="Off-site parking">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               Off-site parking
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="Staff trained for disability awareness">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               Staff trained for disability awareness
                             </label>
                           </div>
@@ -95,7 +94,7 @@ Book vaccinations prototype
                       </fieldset>                        
 
 
-                      <fieldset class="nhsuk-fieldset">
+                      <!--<fieldset class="nhsuk-fieldset">
 
                         <label class="nhsuk-label" for="student-name" style="font-weight: bold;">
                           Show site with availability
@@ -103,44 +102,44 @@ Book vaccinations prototype
 
                         <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                            <input class="nhsuk-checkboxes__input" id="facilities" name="facilities" type="checkbox" value="1">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities">
                               Tomorrow
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                            <input class="nhsuk-checkboxes__input" id="facilities" name="facilities" type="checkbox" value="2">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities">
                               {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }}
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-3">
+                            <input class="nhsuk-checkboxes__input" id="facilities-3" name="facilities" type="checkbox" value="3">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-3">
                               {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }}
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +4}) }}
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +5}) }}
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +6}) }}
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="4">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-4">
+                            <input class="nhsuk-checkboxes__input" id="facilities-4" name="facilities" type="checkbox" value="4">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities-4">
                               {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}
                             </label>
                           </div>
@@ -155,21 +154,22 @@ Book vaccinations prototype
 
                         <div class="nhsuk-checkboxes nhsuk-checkboxes--small nhsuk-u-padding-bottom-5" data-module="nhsuk-checkboxes">
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status">
+                            <input class="nhsuk-checkboxes__input" id="facilities" name="facilities" type="checkbox" value="1">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities">
                               Co-admin
                             </label>
                           </div>
                           <div class="nhsuk-checkboxes__item">
-                            <input class="nhsuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-                            <label class="nhsuk-label nhsuk-checkboxes__label" for="status-2">
+                            <input class="nhsuk-checkboxes__input" id="facilities" name="facilities" type="checkbox" value="2">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="facilities">
                               Single jab
                             </label>
                           </div>
-
-
-
                         </div>
+                      </fieldset>-->
+
+
+                        
 
                         <form action="choose-site-filtered" method="POST">
                           <button style="float: left; clear: left; margin-top:24px;" class="nhsuk-button" data-module="nhsuk-button">
@@ -178,21 +178,25 @@ Book vaccinations prototype
                         </form>
 
                         
-                      </fieldset>                      
+                                            
 
 
-                      <p><a class="nhsuk-link" href="#">Clear all filters</a></p>
+                      <!--<p><a class="nhsuk-link" href="#">Clear all filters</a></p>-->
 
 
                     </div>
-                        </form>
                     </div>
                 </details>
             </div>
         </div>
 
+      <a href="choose-site"><strong class="nhsapp-tag nhsapp-tag--filter" style="margin-top: 3px;">On-site parking  <svg class="nhsuk-icon nhsuk-icon--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="true" aria-hidden="true" style="width: 0.8rem; height: 0.8rem;">
+  <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z" />
+</svg></strong></a>
+
+
         <div id="num-selected" class="nhsuk-u-margin-top-4">
-            <p id="num-filters">0 filters applied</p>
+            <a href="#" id="num-filters">Clear all filters</a>
         </div>
     </div>
 
@@ -312,7 +316,7 @@ Book vaccinations prototype
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
-      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Wheelchair access</span> </p>
+      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Wheelchair access</span> <span class="nhsapp-tag nhsapp-tag--yellow">On-site parking</span> </p>
   
     <h3 class="nhsuk-heading-m">Green Light Pharmacy</h3>
 
@@ -351,7 +355,7 @@ Book vaccinations prototype
         </li>
         <li id="result_item_3" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
         <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.7 miles away</p>
-             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> </p>
        
         <h3 class="nhsuk-heading-m">Asvacare Limited - Clapton</h3>
 

@@ -62,7 +62,7 @@ Book vaccinations prototype
           <div class="nhsuk-radios" data-module="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 1 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +1}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +1}) }}
               </label>
@@ -72,7 +72,7 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 2 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }}
               </label>
@@ -82,7 +82,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 3 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }}
               </label>
@@ -92,7 +92,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday, 6 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +4}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +4}) }}
               </label>
@@ -102,7 +102,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday, 7 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +5}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +5}) }}
               </label>
@@ -112,7 +112,7 @@ Book vaccinations prototype
             </div>
 
                         <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Wednesday, 8 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +6}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +6}) }}
               </label>
@@ -122,7 +122,7 @@ Book vaccinations prototype
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Thursday, 9 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +7}) }}
               </label>
@@ -132,7 +132,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Friday, 10 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +8}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +8}) }}
               </label>
@@ -142,7 +142,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Monday, 13 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +9}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +9}) }}
               </label>
@@ -152,7 +152,7 @@ Book vaccinations prototype
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="Tuesday, 14 October">
+              <input class="nhsuk-radios__input" id="appt-days-radio" name="date" type="radio" value="{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +10}) }}">
               <label class="nhsuk-label nhsuk-radios__label" for="appt-days-radio">
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +10}) }}
               </label>
