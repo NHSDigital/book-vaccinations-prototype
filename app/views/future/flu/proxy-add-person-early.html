@@ -46,7 +46,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                You can choose an appointment from 1 September 2026
+                You can choose an appointment for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} from 1 September 2026
               </h1>
           </legend>
 

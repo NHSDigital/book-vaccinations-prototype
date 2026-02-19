@@ -215,27 +215,63 @@ Book vaccinations prototype
         <span class="nhsuk-u-visually-hidden">Important:</span> No exact matches
       </span>
     </h3>
-    <p class="nhsuk-card__description">We cannot find sites that match your access needs exactly.</p><br>
+    <p class="nhsuk-card__description">We cannot find sites that match your accessibility needs exactly.</p><br>
      <!--<h2 class="nhsuk-heading-m">Your access needs</h2>-->
-    <ul>
-      <li>Accessible toilet</li>
-      <li>Disabled parking spaces</li>
-      <li>Wheelchair access</li>
-    </ul>
+  <ul id="accessibility-list" class="nhsuk-list nhsuk-list--bullet"></ul>
 
       <p>
-          <a href="access-needs">Change access needs</a>
+          <a href="access-needs">Change accessibility needs</a>
       </p> </div>
 </div>
 
 
-            <h2 class="nhsuk-heading-l">2 sites meet most of your access needs</h2>
+            <h2 class="nhsuk-heading-l">2 sites meet most of your accessibility needs</h2>
 
 
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
-      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Wheelchair access</span> </p>
+      <p>This site does not have: 
+ <!--<span id="tag-automatic-doors" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Automatic or easy-open doors
+  </span>
+  <span id="tag-lift-access" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Lift access
+  </span>
+  <span id="tag-disabled-parking" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Disabled parking spaces
+  </span>
+  <span id="tag-step-free" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Step-free access
+  </span>-->
+  <span id="tag-wheelchair" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Wheelchair access
+  </span>
+  <!--<span id="tag-accessible-toilet" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Accessible toilet
+  </span>
+  <span id="tag-audio-info" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Audio information or text to speech facility
+  </span>
+  <span id="tag-large-print" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Documents available in large print
+  </span>
+  <span id="tag-language" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Foreign language support
+  </span>
+  <span id="tag-hearing-loop" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Hearing loop
+  </span>
+  <span id="tag-mobility-aides" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Mobility aides available
+  </span>
+  <span id="tag-seating" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Seating in waiting area
+  </span>
+  <span id="tag-chaperone" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
+    Staff chaperone
+  </span>-->     
+</p>
   
     <h3 class="nhsuk-heading-m">Green Light Pharmacy</h3>
 
@@ -321,7 +357,7 @@ Book vaccinations prototype
         </li>
     </ol>
 
-                <h2 class="nhsuk-heading-l">2 sites match some of your access needs</h2>
+                <h2 class="nhsuk-heading-l">2 sites match some of your accessibility needs</h2>
                 <details class="show-more">
   <summary class="show-more__summary">
     <span class="show-more__summary-text">
@@ -333,7 +369,10 @@ Book vaccinations prototype
     <ol class="nhsuk-list results service-results">
         <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
             <p id="distance_0" class="nhsuk-body-s"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
-                  <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Wheelchair access</span> <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+                  <p>This site does not have: 
+                    <span class="nhsapp-tag nhsapp-tag--yellow" id="wheelchair-access"></span> 
+                    <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> 
+                  </p>
                 <span class="nhsapp-tag nhsapp-tag--blue">GP practice</span>
                 <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">The Surgery (Brooke Road)</h3>
                 <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
@@ -469,4 +508,85 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+  const list = document.getElementById("accessibility-list");
+  const stored = sessionStorage.getItem("accessibilityNeeds");
+
+  if (stored) {
+    const items = JSON.parse(stored);
+    items.forEach(function(item) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  } else {
+    const li = document.createElement("li");
+    li.textContent = "No accessibility needs selected";
+    list.appendChild(li);
+  }
+</script>
+
+<script>
+  const accessibility = JSON.parse(sessionStorage.getItem("accessibilityNeeds") || "[]");
+
+  function showIfSelected(value, elementId, text) {
+    if (accessibility.includes(value)) {
+      document.getElementById(elementId).textContent = text;
+    }
+  }
+
+  showIfSelected("Wheelchair access", "wheelchair-access", "Wheelchair access");
+  showIfSelected("Hearing loop", "hearing-loop", "Hearing loop");
+  showIfSelected("Staff chaperone", "chaperone", "Staff chaperone");
+</script>
+
+<script>
+  (function () {
+
+    const selected = JSON.parse(
+      sessionStorage.getItem("accessibilityNeeds") || "[]"
+    );
+
+    if (!selected.length) return;
+
+    // Map checkbox values to tag IDs
+    const tagMap = {
+      "No accessibility needs": "tag-no-needs",
+      "Automatic or easy-open doors": "tag-automatic-doors",
+      "Lift access": "tag-lift-access",
+      "Disabled parking spaces": "tag-disabled-parking",
+      "Step-free access": "tag-step-free",
+      "Wheelchair access": "tag-wheelchair",
+      "Accessible toilet": "tag-accessible-toilet",
+      "Audio information or text to speech facility": "tag-audio-info",
+      "Documents available in large print": "tag-large-print",
+      "Foreign language support": "tag-language",
+      "Hearing loop": "tag-hearing-loop",
+      "Mobility aides available": "tag-mobility-aides",
+      "Seating in waiting area": "tag-seating",
+      "Staff chaperone": "tag-chaperone"
+    };
+
+    selected.forEach(function (item) {
+      const tagId = tagMap[item];
+      if (tagId) {
+        const el = document.getElementById(tagId);
+        if (el) {
+          el.style.display = "inline-block";
+        }
+      }
+    });
+
+    // Handle exclusive "No accessibility needs"
+    if (selected.includes("No accessibility needs")) {
+      Object.values(tagMap).forEach(function (id) {
+        if (id !== "tag-no-needs") {
+          const el = document.getElementById(id);
+          if (el) el.style.display = "none";
+        }
+      });
+    }
+
+  })();
+</script>
   {% endblock %}

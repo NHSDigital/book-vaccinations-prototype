@@ -138,13 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Routing logic
     if (values.includes("pregnant")) {
-      window.location.href = "add-person-early";
+      window.location.href = "proxy-add-person-early";
     } 
     else if (values.includes("None of these")) {
-      window.location.href = "add-person";
+      window.location.href = "proxy-add-person";
     } 
     else if (values.length > 0) {
-      window.location.href = "add-person";
+      window.location.href = "proxy-add-person";
     } 
     else {
       // Optional: prevent routing if nothing selected

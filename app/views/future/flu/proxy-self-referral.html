@@ -45,11 +45,11 @@ Book vaccinations prototype
 
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} can get a free flu vaccine from 1 October
+             Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} able to get a free flu vaccine?
                           </h1>
           </legend>
 
-          <p class="nhsuk-body-l">If some of these apply to them, they might be able to get a free flu vaccine from 1 September.</p>
+          <p class="nhsuk-body">As they're under 65, they're only able to get a free flu vaccine if any of these apply to them:          </p>
           
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="checkboxOption-hint">
@@ -84,32 +84,33 @@ Book vaccinations prototype
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="carer" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          They receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if you get sick
+          They receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if they get sick
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="close contact" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          They live with or am in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)
+          they live with or are in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="front line worker" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          They're a frontline health or social care worker and their work does not offer an occupational health scheme
+          They're a frontline health or social care worker and their work doesn't offer an occupational health scheme
         </label>
       </div>
-      <div class="nhsuk-checkboxes__divider">Or</div>
+      <div class="nhsuk-checkboxes__divider">or</div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-5" name="checkboxOption" type="checkbox" value="None of these" data-checkbox-exclusive data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-5">
-          None of these, continue to book
+          None of these
         </label>
       </div>    
     </div>
   </fieldset>
 </div>
 
+<p class="nhsuk-body">They might be asked some questions at their appointment to check they're eligible for a free flu vaccine.</p>
 
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -141,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "add-person-early";
     } 
     else if (values.includes("None of these")) {
-      window.location.href = "add-person";
+      window.location.href = "ineligible";
     } 
     else if (values.length > 0) {
       window.location.href = "add-person";
