@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -217,16 +217,12 @@ Book vaccinations prototype
   <div class="nhsuk-card__content">
     <h3 class="nhsuk-card__heading">
       <span role="text">
-        <span class="nhsuk-u-visually-hidden">Important:</span> No exact matches
+        <span class="nhsuk-u-visually-hidden">Important:</span> No exact meetes
       </span>
     </h3>
-    <p class="nhsuk-card__description">We cannot find sites that match your accessibility needs exactly.</p><br>
+    <p class="nhsuk-card__description">We cannot find sites that meet your accessibility needs exactly.</p><br>
      <!--<h2 class="nhsuk-heading-m">Your access needs</h2>-->
-    <ul>
-      <li>{{data['accessibility']}}</li>
-      <li>Disabled parking spaces</li>
-      <li>Wheelchair access</li>
-    </ul>
+  <ul id="accessibility-list" class="nhsuk-list nhsuk-list--bullet"></ul>
 
       <p>
           <a href="access-needs">Change accessibility needs</a>
@@ -321,7 +317,7 @@ Book vaccinations prototype
         </li>
     </ol>
 
-                <h2 class="nhsuk-heading-l">2 sites match some of your accessibility needs</h2>
+                <h2 class="nhsuk-heading-l">2 sites meet some of your accessibility needs</h2>
                 <details class="show-more">
   <summary class="show-more__summary">
     <span class="show-more__summary-text">
@@ -373,10 +369,10 @@ Book vaccinations prototype
 
                         <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
 
-                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
+                        <!--<div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
                             <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
                             <p><a href="walk-in">Find out when you can walk in</a></p>
-                        </div>
+                        </div>-->
 
                 <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
                             <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
@@ -465,6 +461,38 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize with default IDs
   initVaccineChoice();
 });
+</script>
+
+<script>
+  const list = document.getElementById("accessibility-list");
+  const stored = sessionStorage.getItem("accessibilityNeeds");
+
+  if (stored) {
+    const items = JSON.parse(stored);
+    items.forEach(function(item) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  } else {
+    const li = document.createElement("li");
+    li.textContent = "No accessibility needs selected";
+    list.appendChild(li);
+  }
+</script>
+
+<script>
+  const accessibility = JSON.parse(sessionStorage.getItem("accessibilityNeeds") || "[]");
+
+  function showIfSelected(value, elementId, text) {
+    if (accessibility.includes(value)) {
+      document.getElementById(elementId).textContent = text;
+    }
+  }
+
+  showIfSelected("Wheelchair access", "wheelchair-access", "Wheelchair access");
+  showIfSelected("Hearing loop", "hearing-loop", "Hearing loop");
+  showIfSelected("Staff chaperone", "chaperone", "Staff chaperone");
 </script>
 
   {% endblock %}

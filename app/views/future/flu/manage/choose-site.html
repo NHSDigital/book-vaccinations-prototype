@@ -207,19 +207,16 @@ Book vaccinations prototype
               
 
 
-    <h2 class="nhsuk-heading-m">Your access needs</h2>
-    <ul>
-      <li>Accessible toilet</li>
-      <li>Disabled parking spaces</li>
-      <li>Wheelchair access</li>
-    </ul>
+    <h2 class="nhsuk-heading-m">Your accessibility needs</h2>
+  <ul id="accessibility-list" class="nhsuk-list nhsuk-list--bullet"></ul>
+
 
       <p>
-          <a href="access-needs">Change access needs</a>
+          <a href="access-needs">Change accessibility needs</a>
       </p>
 
       
-    <h2 class="nhsuk-heading-l">2 sites meet all your access needs</h2>
+    <h2 class="nhsuk-heading-l">2 sites meet all your accessibility needs</h2>
 
     <ol class="nhsuk-list results service-results">
         <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
@@ -262,10 +259,10 @@ Book vaccinations prototype
 
                         <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
 
-                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
-                            <p id="opening_hour_facilities_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
+                        <!--<div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
+                            <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
                             <p><a href="walk-in">Find out when you can walk in</a></p>
-                        </div>
+                        </div>-->
 
                 <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
                             <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
@@ -298,7 +295,7 @@ Book vaccinations prototype
 
         </ol>
 
-            <h2 class="nhsuk-heading-l">2 sites meet 2 out of 3 access needs</h2>
+            <h2 class="nhsuk-heading-l">2 sites meet most of your accessibility needs</h2>
 
            <details class="show-more">
   <summary class="show-more__summary">
@@ -311,7 +308,7 @@ Book vaccinations prototype
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
-      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Wheelchair access</span> </p>
+      <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Wheelchair access</span> </p>
   
     <h3 class="nhsuk-heading-m">Green Light Pharmacy</h3>
 
@@ -350,7 +347,7 @@ Book vaccinations prototype
         </li>
         <li id="result_item_3" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
         <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.7 miles away</p>
-             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> </p>
        
         <h3 class="nhsuk-heading-m">Asvacare Limited - Clapton</h3>
 
@@ -392,7 +389,7 @@ Book vaccinations prototype
         </li>
     </ol>
 
-                <h2 class="nhsuk-heading-l">4 sites match some of your access needs</h2>
+                <h2 class="nhsuk-heading-l">4 sites meet some of your accessibility needs</h2>
                 <p><a>Show sites</a></p>
 
     </div>
@@ -451,6 +448,38 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize with default IDs
   initVaccineChoice();
 });
+</script>
+
+<script>
+  const list = document.getElementById("accessibility-list");
+  const stored = sessionStorage.getItem("accessibilityNeeds");
+
+  if (stored) {
+    const items = JSON.parse(stored);
+    items.forEach(function(item) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  } else {
+    const li = document.createElement("li");
+    li.textContent = "No accessibility needs selected";
+    list.appendChild(li);
+  }
+</script>
+
+<script>
+  const accessibility = JSON.parse(sessionStorage.getItem("accessibilityNeeds") || "[]");
+
+  function showIfSelected(value, elementId, text) {
+    if (accessibility.includes(value)) {
+      document.getElementById(elementId).textContent = text;
+    }
+  }
+
+  showIfSelected("Wheelchair access", "wheelchair-access", "Wheelchair access");
+  showIfSelected("Hearing loop", "hearing-loop", "Hearing loop");
+  showIfSelected("Staff chaperone", "chaperone", "Staff chaperone");
 </script>
 
   {% endblock %}

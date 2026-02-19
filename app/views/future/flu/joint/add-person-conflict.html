@@ -46,7 +46,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-heading-l">
-                Are you sure you want to book for both people?
+                Are you sure you want to add {{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Smith') }} to your booking?
               </h1>
           </legend>
 
@@ -58,46 +58,14 @@ Book vaccinations prototype
   </p>
 </div>
 
-<p>You can book for:</p>
+<!--<p>You can book for:</p>
 
 <ul>
   <li>{{ data['first-name'] | default('Jane') }} {{ data['last-name'] | default('Smith') }} only from 1 September</li>
   <li>{{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Smith') }} only from 1 October</li>
   <li>both people on the same day from 1 October</li>
-</ul>
+</ul>-->
 
-          <!--<table class="nhsuk-table">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Name
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Date of birth
-                  </th>
-                <th role="columnheader" class="" scope="col">
-                    Can book from
-                  </th>                
-                  <th role="columnheader" class="" scope="col">
-                    Vaccine type
-                  </th>
-                </tr>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</td>
-                <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
-                <td class="nhsuk-table__cell ">1 October</td>
-                <td class="nhsuk-table__cell ">{{data['vaccine']}}</td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}</td>
-                <td class="nhsuk-table__cell "><span id="dob-display2"></span></td>
-                <td class="nhsuk-table__cell ">1 September</td>
-                <td class="nhsuk-table__cell ">{{data['vaccine2']}}</td>
-              </tr>
-            </tbody>
-          </table>-->        
-          
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                         <h1 class="nhsuk-fieldset__heading">
                 What do you want to do?

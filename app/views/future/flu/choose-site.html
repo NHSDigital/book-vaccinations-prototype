@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-flu.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -231,46 +231,7 @@ Book vaccinations prototype
               <ol class="nhsuk-list results service-results">
               <li id="result_item_2" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.4 miles away</p>
-      <p>This site does not have: 
- <!--<span id="tag-automatic-doors" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Automatic or easy-open doors
-  </span>
-  <span id="tag-lift-access" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Lift access
-  </span>
-  <span id="tag-disabled-parking" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Disabled parking spaces
-  </span>
-  <span id="tag-step-free" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Step-free access
-  </span>-->
-  <span id="tag-wheelchair" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Wheelchair access
-  </span>
-  <!--<span id="tag-accessible-toilet" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Accessible toilet
-  </span>
-  <span id="tag-audio-info" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Audio information or text to speech facility
-  </span>
-  <span id="tag-large-print" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Documents available in large print
-  </span>
-  <span id="tag-language" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Foreign language support
-  </span>
-  <span id="tag-hearing-loop" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Hearing loop
-  </span>
-  <span id="tag-mobility-aides" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Mobility aides available
-  </span>
-  <span id="tag-seating" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Seating in waiting area
-  </span>
-  <span id="tag-chaperone" class="nhsapp-tag nhsapp-tag--yellow" style="display:none;">
-    Staff chaperone
-  </span>-->     
+             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Wheelchair access</span> </p>
 </p>
   
     <h3 class="nhsuk-heading-m">Green Light Pharmacy</h3>
@@ -313,7 +274,7 @@ Book vaccinations prototype
         </li>
         <li id="result_item_3" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
         <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-2"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.7 miles away</p>
-             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+             <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> </p>
        
         <h3 class="nhsuk-heading-m">Asvacare Limited - Clapton</h3>
 
@@ -357,7 +318,7 @@ Book vaccinations prototype
         </li>
     </ol>
 
-                <h2 class="nhsuk-heading-l">2 sites match some of your accessibility needs</h2>
+                <h2 class="nhsuk-heading-l">2 sites meet some of your accessibility needs</h2>
                 <details class="show-more">
   <summary class="show-more__summary">
     <span class="show-more__summary-text">
@@ -370,8 +331,8 @@ Book vaccinations prototype
         <li id="result_item_0" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
             <p id="distance_0" class="nhsuk-body-s"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.2 miles away</p>
                   <p>This site does not have: 
-                    <span class="nhsapp-tag nhsapp-tag--yellow" id="wheelchair-access"></span> 
-                    <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> 
+                    <span class="nhsapp-tag nhsapp-tag--red" id="wheelchair-access"></span> 
+                    <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> 
                   </p>
                 <span class="nhsapp-tag nhsapp-tag--blue">GP practice</span>
                 <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">The Surgery (Brooke Road)</h3>
@@ -407,15 +368,15 @@ Book vaccinations prototype
         </li>
         <li id="result_item_1" class="results__item nhsuk-u-margin-bottom-5 nhsuk-u-padding-top-7">
                     <p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
-                         <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--yellow">Accessible toilet</span> <span class="nhsapp-tag nhsapp-tag--yellow">Disabled parking</span> </p>
+                         <p>This site does not have: <span class="nhsapp-tag nhsapp-tag--red">Accessible toilet</span> <span class="nhsapp-tag nhsapp-tag--red">Disabled parking</span> </p>
                         <!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>-->
 
                         <h3 class="nhsuk-heading-m nhsuk-u-padding-top-0">Benjamin Chemist</h3>
 
-                        <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
+                        <!--<div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
                             <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
                             <p><a href="walk-in">Find out when you can walk in</a></p>
-                        </div>
+                        </div>-->
 
                 <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2;" style="margin-bottom: 8px;">
                             <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
@@ -540,53 +501,4 @@ document.addEventListener("DOMContentLoaded", function () {
   showIfSelected("Staff chaperone", "chaperone", "Staff chaperone");
 </script>
 
-<script>
-  (function () {
-
-    const selected = JSON.parse(
-      sessionStorage.getItem("accessibilityNeeds") || "[]"
-    );
-
-    if (!selected.length) return;
-
-    // Map checkbox values to tag IDs
-    const tagMap = {
-      "No accessibility needs": "tag-no-needs",
-      "Automatic or easy-open doors": "tag-automatic-doors",
-      "Lift access": "tag-lift-access",
-      "Disabled parking spaces": "tag-disabled-parking",
-      "Step-free access": "tag-step-free",
-      "Wheelchair access": "tag-wheelchair",
-      "Accessible toilet": "tag-accessible-toilet",
-      "Audio information or text to speech facility": "tag-audio-info",
-      "Documents available in large print": "tag-large-print",
-      "Foreign language support": "tag-language",
-      "Hearing loop": "tag-hearing-loop",
-      "Mobility aides available": "tag-mobility-aides",
-      "Seating in waiting area": "tag-seating",
-      "Staff chaperone": "tag-chaperone"
-    };
-
-    selected.forEach(function (item) {
-      const tagId = tagMap[item];
-      if (tagId) {
-        const el = document.getElementById(tagId);
-        if (el) {
-          el.style.display = "inline-block";
-        }
-      }
-    });
-
-    // Handle exclusive "No accessibility needs"
-    if (selected.includes("No accessibility needs")) {
-      Object.values(tagMap).forEach(function (id) {
-        if (id !== "tag-no-needs") {
-          const el = document.getElementById(id);
-          if (el) el.style.display = "none";
-        }
-      });
-    }
-
-  })();
-</script>
   {% endblock %}

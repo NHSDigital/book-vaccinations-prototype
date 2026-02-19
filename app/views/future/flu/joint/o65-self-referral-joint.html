@@ -45,11 +45,11 @@ Book vaccinations prototype
 
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              You can get a free flu vaccine from 1 October
+              {{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Smith') }} can get a free flu vaccine from 1 October
                           </h1>
           </legend>
 
-          <p class="nhsuk-body-l">If some of these apply to you, you might be able to get a free flu vaccine from 1 September.</p>
+          <p class="nhsuk-body-l">If some of these apply to them, they might be able to get a free flu vaccine from 1 September.</p>
           
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="checkboxOption-hint">
@@ -60,43 +60,43 @@ Book vaccinations prototype
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption" name="checkboxOption" type="checkbox" value="health condition" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption">
-          I have a serious long-term health condition
+          They have a serious long-term health condition
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="treatment or meds" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-2">
-          I am having treatment or medication which mean I am at increased risk
+          They're having treatment or medication which mean They're at increased risk
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="pregnant" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          I am Pregnant
+          They're Pregnant
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="resident of care home" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          I am in long term residential care
+          They're in long term residential care
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="carer" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          I receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if you get sick
+          They receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if you get sick
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="close contact" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          I live with or am in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)
+          They live with or am in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)
         </label>
       </div>
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="front line worker" data-checkbox-exclusive-group="checkboxOption-list">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
-          I am a frontline health or social care worker and my work does not offer an occupational health scheme
+          They're a frontline health or social care worker and their work does not offer an occupational health scheme
         </label>
       </div>
       <div class="nhsuk-checkboxes__divider">Or</div>
@@ -138,13 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Routing logic
     if (values.includes("pregnant")) {
-      window.location.href = "add-person-early";
+      window.location.href = "add-person-conflict";
     } 
     else if (values.includes("None of these")) {
-      window.location.href = "add-person";
+      window.location.href = "add-person-conflict";
     } 
     else if (values.length > 0) {
-      window.location.href = "add-person";
+      window.location.href = "add-person-conflict";
     } 
     else {
       // Optional: prevent routing if nothing selected
