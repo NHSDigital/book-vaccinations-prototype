@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let vaccineChoice = localStorage.getItem("vaccineChoice");
 
   // Always ensure a valid value
-  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "COVID-19 and RSV-hidden") {
+  if (!vaccineChoice || vaccineChoice.trim() === "" || vaccineChoice === "Flu-hidden") {
     vaccineChoice = "Flu";
     localStorage.setItem("vaccineChoice", vaccineChoice);
   }
