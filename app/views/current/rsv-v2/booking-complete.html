@@ -165,7 +165,17 @@ Book vaccinations prototype
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const inset = document.getElementById("flu-inset");
+  const vaccineChoice = localStorage.getItem("vaccineChoice");
 
+  // Show action link only if Single Jab was chosen
+  if (vaccineChoice === "RSV") {
+    inset.style.display = "block";
+  }
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   let vaccineChoice = localStorage.getItem("vaccineChoice");
