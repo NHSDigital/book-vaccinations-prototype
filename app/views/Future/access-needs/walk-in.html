@@ -1,0 +1,134 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-covid.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}          
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-l">
+        Walk in at Benjamin Chemist
+      </h1>
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
+        <span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+        190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
+      </p>
+            
+<p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+02072542696
+</p>
+
+      <p id="distance_0" class="nhsuk-body nhsuk-u-margin-bottom-3">
+        <span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>
+          0.1 miles away
+      </p>
+
+<p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+    <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+    Get directions (opens in Google maps)
+    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+    </a>
+    </p>
+    <br>
+      <h2 class="nhsuk-heading-m">
+        Walk in times
+      </h2>
+
+      <table class="nhsuk-table">
+  <thead class="nhsuk-table__head">
+    <tr>
+      <th scope="col" class="nhsuk-table__header">Day</th>
+      <th scope="col" class="nhsuk-table__header">Times</th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Monday</td>
+      <td class="nhsuk-table__cell">9:30am to 12:30pm<br>2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Tuesday</td>
+      <td class="nhsuk-table__cell">2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Wednesday</td>
+      <td class="nhsuk-table__cell">9:30am to 12:30pm<br>2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Thursday</td>
+      <td class="nhsuk-table__cell">2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Friday</td>
+      <td class="nhsuk-table__cell">9:30am to 12:30pm<br>2pm to 6pm</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>You can walk in to this site during these times without an appointment to get your vaccine.</p>
+  </div>
+
+
+  <!--<form action="choose-date" method="get" class="form">
+          <p>If you do not want to walk in you can 
+            <button class="nhsuk-link-button" data-module="nhsuk-button" type="submit" name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD">
+              <a>book an appointment at this site</a></button>
+             or 
+             <a href="choose-pharmacy">choose a different site</a></p>
+</form>-->
+
+  <form class="form">
+    <p>
+      If you do not want to walk in you can 
+      <a href="choose-date?pharmacy=Benjamin%20Chemist,%20190%20S/NEWINGTON%20HIGH%20ST,%20STOKE%20NEWINGTON,%20LONDON,%20N16%207JD">
+        book an appointment at this site
+      </a>
+      or 
+      <a href="choose-pharmacy">choose a different site</a>.
+    </p>
+  </form>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+

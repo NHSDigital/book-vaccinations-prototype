@@ -1,0 +1,149 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <form action="confirmPerson" method="get" class="form">
+
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  Are these the correct details for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}?
+                </h1>
+              </legend>
+          <dl class="nhsuk-summary-list">
+
+            <!--<div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                John Smith
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="appt-postcode">
+                  Change<span class="nhsuk-u-visually-hidden"> if we can send you confirmation and reminder messages</span>
+                </a>
+          
+              </dd>
+          
+            </div>-->
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  NHS number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  999 123 4567
+                </dd>
+            
+                <!--<dd class="nhsuk-summary-list__actions">
+            
+                <a href="contact-details">
+                    Change<span class="nhsuk-u-visually-hidden"> mobile number</span>
+                  </a>
+            
+                </dd>-->
+            
+              </div>
+  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                12 October 2023
+              </dd>
+          
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="contact-details">
+                  Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                </a>
+          
+              </dd>-->
+          
+            </div>
+
+  
+  
+          
+          </dl>   
+          
+                  <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="person-radio-yes">
+                Yes, continue
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="person-radio" name="radioGroup" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="person-radio-no">
+                No, enter the details again
+              </label>
+            </div>
+      
+          </div>
+          </div>
+
+
+            </fieldset>
+          
+          </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>    </form>
+    
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

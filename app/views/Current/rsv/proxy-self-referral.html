@@ -1,0 +1,96 @@
+<!-- Use this page as the index for theyr project -->
+
+<!-- ADDING CUSTOM CSS - Add theyr custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the latheyt from /views/latheyt.html -->
+{% extends 'layout-rsv.html' %}
+
+<!-- 
+  In /views/latheyt.html they can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page latheyt code can be found at https://service-manual.nhs.uk/design-system/styles/latheyt -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add theyr content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+    <form action="newProxyEligible" method="get" class="form">
+
+              <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Is {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} able to get an RSV vaccine?
+                          </h1>
+          </legend>
+
+          <p class="nhsuk-body">As they're under 75, they might be able to get an RSV vaccine if they:</p>
+
+          <ul>
+            <li>are pregnant (over 28 weeks)</li>
+            <li>Are a resident of a care home for older adults</li>
+          </ul>
+          
+          <p>They might be asked some questions at the vaccination site to check they're aligible for an RSV vaccine.</p>
+
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
+                Yes, they're eligible for an RSV vaccine
+              </label>
+            </div>
+      
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
+                  No, they are not eligible
+                </label>
+              </div>
+  
+          </div>
+          </div>
+        </fieldset>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+    </form>
+      
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

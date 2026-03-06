@@ -1,0 +1,253 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-covid.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}          
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+    
+      <!-- Change the page title here -->
+<div>
+<p id="distance_0" class="nhsuk-body-s nhsuk-u-margin-bottom-3"><span class="nhsuk-u-visually-hidden">This organisation is &nbsp;</span>0.1 miles away</p>
+<form action="choose-date" method="get" class="form">
+<!--<span class="nhsapp-tag nhsapp-tag--green">Your chosen pharmacy</span>-->
+  <h2 style="margin-top: 8px;">Benjamin Chemist</h2>
+
+
+<p name="address" class="nhsuk-list nhsuk-u-margin-bottom-2">
+<span class="nhsuk-u-visually-hidden">Address for this organisation is &nbsp;</span>
+190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD
+</p>
+            
+<p><span class="nhsuk-u-visually-hidden">Phone number:</span>
+02072542696
+</p>
+
+  <strong class="nhsapp-tag nhsapp-tag--grey">
+    Close to bus stop
+  </strong>
+
+  <strong class="nhsapp-tag nhsapp-tag--grey">
+    On-site parking
+  </strong>
+
+  <strong class="nhsapp-tag nhsapp-tag--grey">
+    Private waiting area
+  </strong>
+  <br><br>
+<p class="nhsuk-u-margin-bottom-0 nhsuk-u-padding-top-0">
+    <a id="map_link_0" href="https://www.google.com/maps/place/Benjamin+Chemist/@51.562084,-0.0760146,17z/data=!3m1!4b1!4m6!3m5!1s0x48761c60d5fa851d:0xda497e41847bcaae!8m2!3d51.5620807!4d-0.0734397!16s%2Fg%2F1th81fc3?entry=ttu&amp;g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D" rel="noreferrer" class="maplink">
+    Get directions (opens in Google maps)
+    <span class="nhsuk-u-visually-hidden">&nbsp;for this organisation</span>
+    </a>
+    </p>
+
+
+  <div class="nhsuk-inset-text nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-3 nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0" style="border-left-color: #007f3b;">
+  <p id="opening_hour_status_mesg_0" class="callout--info__mesg nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-1">Accepts walk-ins</p>
+  <p>
+ </div>
+
+
+  <details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Find out when you can walk in
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+      <p>You can walk in to this site during these times without an appointment to get your vaccine.</p>
+
+          <table class="nhsuk-table">
+  <thead class="nhsuk-table__head">
+    <tr>
+      <th scope="col" class="nhsuk-table__header">Day</th>
+      <th scope="col" class="nhsuk-table__header">Times</th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Monday</td>
+      <td class="nhsuk-table__cell">9:30am to 12:30pm<br>2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Tuesday</td>
+      <td class="nhsuk-table__cell">2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Wednesday</td>
+      <td class="nhsuk-table__cell">9:30am to 12:30pm<br>2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Thursday</td>
+      <td class="nhsuk-table__cell">2pm to 6pm</td>
+    </tr>
+    <tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Friday</td>
+      <td class="nhsuk-table__cell">9:30am to 12:30pm<br>2pm to 6pm</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+  </div>
+</details>
+
+<br>
+
+<p>This site has appointments on:</p>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--primary">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +1}) }}</a>
+        </h2>
+        <svg class="nhsuk-icon nhsuk-icon--chevron-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-.3 5.8a1 1 0 1 0-1.5 1.4l2.9 2.8-2.9 2.8a1 1 0 0 0 1.5 1.4l3.5-3.5c.4-.4.4-1 0-1.4Z" />
+        </svg>
+      </div>
+    </div>
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--primary">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +2}) }}</a>
+        </h2>
+        <svg class="nhsuk-icon nhsuk-icon--chevron-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-.3 5.8a1 1 0 1 0-1.5 1.4l2.9 2.8-2.9 2.8a1 1 0 0 0 1.5 1.4l3.5-3.5c.4-.4.4-1 0-1.4Z" />
+        </svg>
+      </div>
+    </div>
+        </li>
+                <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--primary">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +3}) }}</a>
+        </h2>
+        <svg class="nhsuk-icon nhsuk-icon--chevron-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-.3 5.8a1 1 0 1 0-1.5 1.4l2.9 2.8-2.9 2.8a1 1 0 0 0 1.5 1.4l3.5-3.5c.4-.4.4-1 0-1.4Z" />
+        </svg>
+      </div>
+    </div>
+        </li>
+
+                <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--primary">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +4}) }}</a>
+        </h2>
+        <svg class="nhsuk-icon nhsuk-icon--chevron-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-.3 5.8a1 1 0 1 0-1.5 1.4l2.9 2.8-2.9 2.8a1 1 0 0 0 1.5 1.4l3.5-3.5c.4-.4.4-1 0-1.4Z" />
+        </svg>
+      </div>
+    </div>
+        </li>
+
+                <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--primary">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +5}) }}</a>
+        </h2>
+        <svg class="nhsuk-icon nhsuk-icon--chevron-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-.3 5.8a1 1 0 1 0-1.5 1.4l2.9 2.8-2.9 2.8a1 1 0 0 0 1.5 1.4l3.5-3.5c.4-.4.4-1 0-1.4Z" />
+        </svg>
+      </div>
+    </div>
+        </li>
+
+                        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--primary">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">{{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +6}) }}</a>
+        </h2>
+        <svg class="nhsuk-icon nhsuk-icon--chevron-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20Zm-.3 5.8a1 1 0 1 0-1.5 1.4l2.9 2.8-2.9 2.8a1 1 0 0 0 1.5 1.4l3.5-3.5c.4-.4.4-1 0-1.4Z" />
+        </svg>
+      </div>
+    </div>
+        </li>
+    </ul>
+
+
+
+  <div class="nhsuk-form-group">
+          <button class="nhsuk-action-link action-link-button" data-module="nhsuk-button" type="submit" style="border: 0px; background-color: #f0f4f5; cursor: pointer;" name="pharmacy" value="Benjamin Chemist, 190 S/NEWINGTON HIGH ST, STOKE NEWINGTON, LONDON, N16 7JD" data-nhsuk-button-init="">
+<svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+            <a>See more dates at Benjamin Chemist</a>
+          </button>
+      </div> 
+</form></div>
+    <br>
+
+
+<nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+
+  <ul class="nhsuk-list nhsuk-pagination__list">
+    <li class="nhsuk-pagination-item--previous">
+
+    </li>
+
+    <li class="nhsuk-pagination-item--next">
+      <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#" rel="next">
+        <span class="nhsuk-pagination__title">
+          Next<span class="nhsuk-u-visually-hidden"> page</span>
+        </span>
+        <span class="nhsuk-u-visually-hidden">:</span>
+        <span class="nhsuk-pagination__page">Next site</span>
+        <svg class="nhsuk-icon nhsuk-icon--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+          <path d="m14.7 6.3 5 5c.2.2.3.4.3.7 0 .3-.1.5-.3.7l-5 5a1 1 0 0 1-1.4-1.4l3.3-3.3H5a1 1 0 0 1 0-2h11.6l-3.3-3.3a1 1 0 1 1 1.4-1.4Z" />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
+

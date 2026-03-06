@@ -1,0 +1,137 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1 class="nhsuk-heading-xl">
+        Book, change or cancel an RSV vaccination
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p>Use this service to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>book a vaccination appointment</li>
+        <li>check your existing appointment details</li>
+        <li>change your appointment</li>
+        <li>cancel your appointment</li>
+      </ul>
+
+                  <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>You may also be offered a COVID-19 vaccine in the same appointment, if you are eligible.</p>
+  </div>
+
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            Important
+          </span>
+        </h3>
+        <p>Currently, you can only book online appointments at some GP surgeries and at pharmacies in some areas of Essex, Lancashire, Leicestershire, London, Merseyside, Suffolk, the North West and the West Midlands.</p>
+        <p>You can currently use this service if either:
+          <ul>
+            <li>you’re aged 75 or over</li>
+            <li>you’re pregnant (over 28 weeks)</li>
+            <li>you're a resident of a care home for older adults</li>
+          </ul>
+        </p>
+
+        <p>More pharmacies will offer RSV vaccinations soon. If you cannot find an appointment in your area, contact your GP surgery.</p>
+      </div>
+
+      <h2>
+        Booking for 2 people
+      </h2>
+
+      <p>You can book appointments for 2 people on the same day.</p>
+
+      <h2>
+        How it works
+      </h2>
+
+      <p>The service will check if you need a vaccine before you book.</p>
+
+      <p>You'll need the booking reference number we sent you to change or cancel your appointment.</p>
+      
+      <a class="nhsuk-button" href="proxy-booking">
+        Book an appointment
+      </a>
+      <br>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="manage/ref-no">
+        View, cancel or change an existing appointment
+      </a>
+
+            <h2 class="nhsuk-heading-l" style="font-size: 32px;">Booking with the NHS App</h2>
+      
+      <p>If you've signed up for the NHS app, you can use it to book a flu vaccine.</p>
+
+      <p>you can <a href="https://www.nhs.uk/nhs-app/">download or sign up for the NHS app</a> if you haven't used it before.</p>
+
+      <h2 class="nhsuk-heading-l" style="font-size: 32px;">
+        If you have difficulties communicating or hearing
+      </h2>
+
+      <p>You can use textphone 18001 or the <a class="nhsuk-link" href="#">NHS 119 British Sign Language (BSL) interpreter service</a> if you have difficulties communicating or hearing, or if you are a BSL user.</p>
+
+      <h2>Find a pharmacy walk-in service</h2>
+
+      <p>Some community pharmacies offer RSV vaccine walk-in appointments.</p>
+
+      <ul>
+        <li>
+          <a class="nhsuk-link" href="#">Suffolk and North East Essex</a></li>
+          <li><a class="nhsuk-link" href="#">Mid and South East Essex</a>
+        </li></ul>
+
+
+      <h2>
+        More information
+      </h2>
+
+      <p>
+          <a href="#">Find out more about RSV (respiratory syncytial virus)</a>
+      </p>
+
+      <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-0">
+        Page last reviewed: {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'day': -8}) }}<br>
+        Next review due: 1 {{ date({month: 'long', year: 'numeric'}, {'month': +3}) }}
+      </p>
+      
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
