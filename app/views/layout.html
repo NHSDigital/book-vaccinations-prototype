@@ -7,9 +7,9 @@
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "prototype-kit-template.njk" %}
 
-<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block head %}
-  <link href="/main.css" rel="stylesheet">
+  <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+  <link href="/assets/sass/main.css" rel="stylesheet">
 {% endblock %}
 
 <!-- Set the page title -->
@@ -53,6 +53,7 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  <script type="module" src="/application.js"></script>
   {{ super() }}
+  <script type="module" src="/assets/javascript/main.js"></script>
+  {% block pageScripts %}{% endblock %}
 {% endblock %}
