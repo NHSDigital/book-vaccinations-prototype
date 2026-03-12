@@ -38,10 +38,36 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-l">
-                This appointment was in April 2024
+                This appointment is in the past
               </h1>
 
-              <p>if you're looking for a newer appointment, check your reference number and <a href="ref-no">try again</a>.</p>
+                        <dl class="nhsuk-summary-list">  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Site location
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
+              </dd>
+          
+          
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}, {'day': -20, 'year': -1}) }}
+                </dd>
+            
+
+            
+              </div>  
+          
+          </dl>       
+
+              <p>If you're looking for a newer appointment, check your reference number and <a href="ref-no">try again</a>.</p>
 
               <a class="nhsuk-button" href="../index">
                 Go back to start
