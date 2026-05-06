@@ -47,32 +47,7 @@ Book vaccinations prototype
                 Check appointment details
               </h1>
 
-              <!--<h2 class="nhsuk-heading-m">Booked for</h2>
 
-              <table class="nhsuk-table">
-                <thead role="rowgroup" class="nhsuk-table__head">
-                  <tr role="row">
-                    <th role="columnheader" class="" scope="col">
-                      Name
-                    </th>
-                    <th role="columnheader" class="" scope="col">
-                        Date of birth
-                      </th>
-                    </tr>
-                </thead>
-                <tbody class="nhsuk-table__body">
-                  <tr role="row" class="nhsuk-table__row">
-                    <td class="nhsuk-table__cell">John Doe</td>
-                    <td class="nhsuk-table__cell "><span id="dobDisplay"></span></td>
-                  </tr>
-                </tbody>
-              </table>-->
-              
-    
-    
-              <!--<p><a class="nhsuk-link" href="#">Change who this booking is for</a></p>-->
-
-                            <h2 class="nhsuk-heading-m">Appointment details</h2>
 
           <dl class="nhsuk-summary-list">
 
@@ -154,7 +129,7 @@ Book vaccinations prototype
                   Time
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  12:40pm
+                  {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
                 </dd>
             
                 <!--<dd class="nhsuk-summary-list__actions">
@@ -168,7 +143,14 @@ Book vaccinations prototype
               </div>-->
   
           
-          </div></dl>       
+          </div></dl>     
+          
+                <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>If your 2nd dose appointment is less than 4 weeks after you got your 1st dose, you will not be vaccinated at the appointment.
+        </p>
+      </div>
+
 
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit" data-nhsuk-button-init="">

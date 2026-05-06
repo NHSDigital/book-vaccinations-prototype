@@ -160,7 +160,7 @@ router.get(/nhsNumberRadio/, function (req, res) {
 
                     router.get(/manageAppointment/, function (req, res) {
                         if (req.query.radioGroup === "change" ) {
-                            res.redirect('appt-postcode');
+                            res.redirect('access-needs');
                             }
                         else if (req.query.radioGroup === "cancel" ) {
                             res.redirect('cancel-sure');
