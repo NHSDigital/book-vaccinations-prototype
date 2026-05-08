@@ -46,27 +46,24 @@ Book vaccinations prototype
       </div>-->
 
 
-            <h1 class="nhsuk-heading-xl">
-                You cannot book an appointment
+
+            <h1 class="nhsuk-heading-l">
+                We cannot find any details matching {{ data['first-name'] | default('Arvid') }} {{ data['last-name'] | default('Lindblad') }}
               </h1>
 
-              <p class="nhsuk-body">This may be because:</p>
+            <p class="nhsuk-body">This may be because:</p>
 
-              <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>you do not need a vaccine</li>
-                <li>you have an existing booking that would need to be cancelled first</li>
-                  </ul>  
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>their details have not been entered correctly</li>
+              <li>the name has been spelt differently to how it appears with their GP surgery</li>
+              <li>this person is not registered with the NHS in England</li>
+              </ul>
+        
 
-                        <h2 class="nhsuk-heading-l" style="font-size: 32px;">
-        Older students
-      </h2>
+                                <p>You can check the details and <a href="book/name">try again</a>.</p>
 
-      <p>If you're aged 18-24 and starting university this year, contact your GP about getting a MenB vaccine.</p>
 
-    
-                  <a class="nhsuk-button" href="book/index">Go back to start</a>
-  
-  
+        
 
                     <h5 class="nhsuk-card__heading nhsuk-heading-m">
                         Help us improve our website
@@ -82,7 +79,6 @@ Book vaccinations prototype
                         
                         </a>
                         </p>
-
 
       </div>
       <!-- End of content -->

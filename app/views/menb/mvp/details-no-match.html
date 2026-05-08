@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-menb.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -48,62 +48,22 @@ Book vaccinations prototype
 
 
             <h1 class="nhsuk-heading-l">
-                We cannot find any details matching [firstname] [lastname]
+                We cannot find your details
               </h1>
 
             <p class="nhsuk-body">This may be because:</p>
 
             <ul class="nhsuk-list nhsuk-list--bullet">
-              <li>their details have not been entered correctly</li>
-              <li>the name has been spelt differently to how it appears with their GP surgery</li>
-              <li>this person is not registered with the NHS in England</li>
+              <li>your details have not been entered correctly</li>
+              <li>your name has been spelt differently to how it appears with your GP surgery</li>
+              <li>you are not registered with the NHS in England</li>
               </ul>
         
-
-              <!--<form action="proxyDetailsNoMatch" method="get" class="form">
-
-                <div class="nhsuk-form-group">
-                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-        
-        
-        
-                    <div class="nhsuk-radios" data-module="nhsuk-radios">
-              
-                        <div class="nhsuk-radios__item">
-                          <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="nhsnumber">
-                          <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-change">
-                            Try again
-                          </label>
-                        </div>
-                  
-        
-                        <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="home">
-                            <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-home">
-                              Go back to start
-                            </label>
-                          </div>
-          
-                      </div>
-            
-                    </fieldset>
-                  
-                  </div>
-        
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-                  Continue
-                </button>    </form>-->
 
                                 <p>You can check the details and <a href="book/name">try again</a>.</p>
 
 
-                <p>You can also <a href="https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/">find a walk-in COVID-19 vaccination site</a> to get a COVID-19 vaccine without an appointment.</p>
         
-      <h2 class="nhsuk-heading-l" style="font-size: 32px;">Booking with the NHS App</h2>
-      
-      <p>If you've signed up for the NHS app, you can use it to book a flu vaccine.</p>
-
-      <p>you can <a href="https://www.nhs.uk/nhs-app/">download or sign up for the NHS app</a> if you haven't used it before.</p>
 
                     <h5 class="nhsuk-card__heading nhsuk-heading-m">
                         Help us improve our website
