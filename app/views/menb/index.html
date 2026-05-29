@@ -39,26 +39,38 @@
 
               <h3 class="nhsuk-heading-m">Men B journey - RELEASE 2</h3>
 
-              <p>No technical implementation for 2 dose requirement - content only mitigation</p>
+              <p>ELiD integration and dose history</p>
             <ul class="nhsuk-list nhsuk-list--bullet">
               <li>
                 <a href="v2/index" class="nhsuk-link">Get a meningitis B vaccine</a><span class="nhsuk-u-font-weight-bold"></span>
               </li>
-                            <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;"> 
-              <li>
-                <a href="v2/choose-date" class="nhsuk-link">choose a date</a><span class="nhsuk-u-font-weight-bold"> - no existing doses in imms history - book from tomorrow</span>
-              </li>              
-              <li>
-                <a href="v2/choose-date-delayed" class="nhsuk-link">choose a date</a><span class="nhsuk-u-font-weight-bold"> - 1 existing dose in imms history - book from 28 days after dose 1</span>
-              </li>              
+                    <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: circle;"> 
+                      <li>
+                        <a href="v2/choose-date" class="nhsuk-link">choose a date</a>
+                          <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: none;"><li>
+                            <li><span class="nhsuk-u-font-weight-bold"></span>- Dose 1 MORE than 28 days ago OR no doses in imms history - 1st booking date = tomorrow</span>
+                            </li>
+                          </ul>
+                      </li>
+                      
+                      <li>
+                        <a href="v2/choose-date-delayed" class="nhsuk-link">choose a date</a>
+                        <ul class="nhsuk-list nhsuk-list--bullet" style="list-style-type: none;">
+                          <li><span class="nhsuk-u-font-weight-bold"></span>- Dose 1 LESS than 28 days ago - 1st booking date = dose 1 + 28 days (later than tomorrow)</span>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>              
               <li>
                 <a href="v2/cya" class="nhsuk-link">check appointment details</a><span class="nhsuk-u-font-weight-bold"></span>
               </li>              
               <li>
                 <a href="v2/booking-complete" class="nhsuk-link">Booking complete</a><span class="nhsuk-u-font-weight-bold"></span>
               </li>              
+              <li>
+                <a href="v2/elid-error" class="nhsuk-link">ELiD 4XX error screen</a><span class="nhsuk-u-font-weight-bold"></span>
+              </li>              
               </ul>
-            </ul>   
 
 
               <h3 class="nhsuk-heading-m">Men B journey - MVP RELEASE 1</h3>
