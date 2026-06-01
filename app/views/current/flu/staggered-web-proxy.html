@@ -41,17 +41,17 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form action="name" method="get" class="form">
+      <form action="choose-appt" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  Are you pregnant or under 18?
+                  Is {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }} pregnant?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Pregnant people and under 18s can get the flu vaccine from 1 September. 
+                Pregnant people can get a flu vaccine from 1 September.
               </div>
 
           
@@ -60,14 +60,14 @@ Book vaccinations prototype
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="example-1" name="vaccine" type="radio" value="Flu and COVID-19">
                   <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                    Yes
+                    Yes, they're pregnant
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="example-2" name="vaccine" type="radio" value="Flu">
                   <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                    No
+                    No, they are not pregnant
                   </label>
                 </div>
             </fieldset>
