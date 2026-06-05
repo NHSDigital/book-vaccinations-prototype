@@ -41,24 +41,28 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="newTwoDoseFlu" method="get" class="form">
+    <form action="newProxyEligibleFlu" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Does {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} need to get their flu vaccine in 2 doses?
+              Is {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }} able to get a free flu vaccine?
                           </h1>
           </legend>
 
-          <p class="nhsuk-body">{{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }} will need 2 doses if they:          </p>
+          <p class="nhsuk-body">As they're under 65, they're only able to get a free flu vaccine if they:</p>
           
-<ul class="nhsuk-list nhsuk-list--bullet">
-  <li>are in a clinical risk group or</li>
-  <li>live with someone with a weakened immune system</li>
-</ul>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>have a serious long-term health condition</li>
+                <li>are having treatment or medication which means they are at increased risk</li>
+                <li>are pregnant</li>
+                <li>are in long-term residential care</li>
+                <li>receive a carer's allowance, or those who are the main carer of an elderly or disabled person who may be at risk if they get sick</li>
+                <li>live with or are in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)</li>
+                <li>a frontline health or social care worker (if their workplace doesn't offer an occupational health scheme)</li>
+            </ul>
 
-<p class="nhsuk-body">The 2 doses need to be at least 4 weeks apart.</p>
-
+            <p class="nhsuk-body">They might be asked some questions at the their appointment to check they can get a free flu vaccine.</p>
 
 
         <div class="nhsuk-form-group">
@@ -67,7 +71,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, they need 2 doses
+                Yes, they're eligible for a free flu vaccine
               </label>
             </div>
       
@@ -75,7 +79,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, they only need 1 dose
+                  No, they are not eligible
                 </label>
               </div>
   
@@ -86,7 +90,6 @@ Book vaccinations prototype
           Continue
         </button>
     </form>
-<p class="nhsuk-body"><a href="https://www.nhs.uk/vaccinations/child-flu-vaccine/" target="_blank">Find out more about the child flu vaccination</a> (opens in a new tab)</p>
       
       </div>
       <!-- End of content -->

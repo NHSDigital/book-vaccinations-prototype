@@ -49,7 +49,7 @@ Book vaccinations prototype
           <dl class="nhsuk-summary-list">  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-               {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}
+               {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}
               </dt>
               <dd class="nhsuk-summary-list__value">
                {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display"></span>
@@ -57,7 +57,7 @@ Book vaccinations prototype
           
               <dd class="nhsuk-summary-list__actions">
                 <a href="#">
-                  Change time<span class="nhsuk-u-visually-hidden"> for {{ data['first-name'] | default('John') }} {{ data['last-name'] | default('Doe') }}</span>
+                  Change time<span class="nhsuk-u-visually-hidden"> for {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}</span>
                 </a>
               </dd>
             </div>
