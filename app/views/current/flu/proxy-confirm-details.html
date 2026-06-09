@@ -173,10 +173,10 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = "proxy-co-admin";
         } else if (age >= 2 && age <= 3) {
           window.location.href = "proxy-eligible-2-3";
-        } else if (age >= 3 && age <= 18) {
-          window.location.href = "under-18";
+        } else if (age >= 4 && age <= 15) {
+          window.location.href = "4-15-self-referral";
         } else {
-          window.location.href = "proxy-eligible-flu";
+          window.location.href = "staggered-web-proxy";
         }
       } else {
         alert("Age information missing. Please go back and re-enter the date of birth.");
