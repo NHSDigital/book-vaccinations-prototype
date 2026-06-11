@@ -898,4 +898,23 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         });
 
 
+router.get(/staggeredOpening/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('add-person');
+        }
+    else {
+        res.redirect('self-referral');
+        }
+    });
+
+    router.get(/proxyStaggeredOpening/, function (req, res) {
+    if (req.query.radioGroup === "yes" ) {
+        res.redirect('proxy-add-person');
+        }
+    else {
+        res.redirect('proxy-self-referral');
+        }
+    });
+
+
 module.exports = router;
