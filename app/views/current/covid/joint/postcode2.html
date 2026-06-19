@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout-covid.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -40,7 +40,6 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-
       <form class="form">
 
         <div class="nhsuk-form-group">
@@ -51,7 +50,7 @@ Book vaccinations prototype
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with their GP surgery.
+                Enter the postcode that is currently registered with the GP surgery.
               </div>
           
               <label class="nhsuk-label" for="postcode">
@@ -72,7 +71,7 @@ Book vaccinations prototype
     </div>
   </div>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const continueButton = document.getElementById("continue-button");
@@ -92,13 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Route based on age
-        if (age >= 65 && age <= 120) {
+    if (age >= 75 && age <= 120) {
       window.location.href = "add-person2";
-    }  else {
+    } else {
       window.location.href = "self-referral2";
     }
   });
 });
 </script>
-
 {% endblock %}

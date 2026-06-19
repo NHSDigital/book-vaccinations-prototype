@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -40,17 +40,18 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
+
       <form class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}'s postcode?
+                  What is {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}'s postcode?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with the GP surgery.
+                Enter the postcode that is currently registered with their GP surgery.
               </div>
           
               <label class="nhsuk-label" for="postcode">
@@ -71,7 +72,7 @@ Book vaccinations prototype
     </div>
   </div>
 
-<script>
+  <script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const continueButton = document.getElementById("continue-button");
@@ -91,12 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Route based on age
-    if (age >= 75 && age <= 120) {
-      window.location.href = "add-person2";
+        if (age >= 75 && age <= 120) {
+      window.location.href = "add-person";
+    } else if (age >= 65 && age <= 74) {
+      window.location.href = "self-referral-65-74";
     } else {
-      window.location.href = "self-referral2";
+      window.location.href = "self-referral";
     }
   });
 });
 </script>
+
 {% endblock %}

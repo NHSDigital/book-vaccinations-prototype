@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-flu.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -47,11 +47,11 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}'s postcode?
+                  What is your postcode?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with their GP surgery.
+                Enter the postcode that is currently registered with your GP surgery.
               </div>
           
               <label class="nhsuk-label" for="postcode">
@@ -72,7 +72,7 @@ Book vaccinations prototype
     </div>
   </div>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const continueButton = document.getElementById("continue-button");
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   continueButton.addEventListener("click", function () {
 
-    const age = parseInt(localStorage.getItem("age2"), 10);
+    const age = parseInt(localStorage.getItem("age1"), 10);
 
     if (isNaN(age)) {
       alert("Age information missing. Please go back and re-enter your date of birth.");
@@ -92,10 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Route based on age
-        if (age >= 65 && age <= 120) {
-      window.location.href = "add-person2";
-    }  else {
-      window.location.href = "self-referral2";
+    if (age >= 75 && age <= 120) {
+      window.location.href = "add-person";
+    } else if (age >= 65 && age <= 74) {
+      window.location.href = "self-referral-65-74";
+    } else {
+      window.location.href = "self-referral";
     }
   });
 });

@@ -41,30 +41,42 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-      <form class="form">
+      <form action="appt-postcode" method="get" class="form">
 
         <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
+                  Do you want to book a flu vaccine in the same appointment?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
+                If you want to book the vaccines separately, you can book a flu vaccine after you finish booking the COVID-19 vaccine.
               </div>
-          
-              <label class="nhsuk-label" for="postcode">
-                Postcode
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">            
 
+          
+              <div class="nhsuk-radios" data-module="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="vaccine" type="radio" value="COVID-19 and flu">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    Yes, book a COVID-19 and flu vaccine in the same appointment
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-2" name="vaccine" type="radio" value="COVID-19">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    No, only book a COVID-19 vaccine
+                  </label>
+                </div>
             </fieldset>
           
           </div>
 
-        <button id="continue-button" class="nhsuk-button" type="button">Continue</button>    
-      </form>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>    </form>
     
       </div>
       <!-- End of content -->
@@ -72,33 +84,16 @@ Book vaccinations prototype
     </div>
   </div>
 
-<script>
+    <script>
 document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
 
-  const continueButton = document.getElementById("continue-button");
-
-  if (!continueButton) {
-    console.error("Continue button not found");
-    return;
-  }
-
-  continueButton.addEventListener("click", function () {
-
-    const age = parseInt(localStorage.getItem("age1"), 10);
-
-    if (isNaN(age)) {
-      alert("Age information missing. Please go back and re-enter your date of birth.");
-      return;
-    }
-
-    // Route based on age
-    if (age >= 75 && age <= 120) {
-      window.location.href = "add-person";
-    } else {
-      window.location.href = "self-referral";
+  form.addEventListener("submit", function (event) {
+    const selected = document.querySelector('input[name="vaccine"]:checked');
+    if (selected) {
+      localStorage.setItem("vaccineChoice", selected.value);
     }
   });
 });
 </script>
-
 {% endblock %}

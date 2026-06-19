@@ -166,15 +166,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (selectedOption.value === "no") {
       // User chose to enter details again
-      window.location.href = "name";
+      window.location.href = "proxy-name";
     } else {
       // User confirmed, now redirect based on age
       if (!isNaN(age)) {
-  if ((age >= 75 && age <= 120)) {
+            if (age >= 75 && age <= 120) {
       window.location.href = "add-person";
-  } else {
+    } else if (age >= 65 && age <= 74) {
+      window.location.href = "self-referral-65-74";
+    } else {
       window.location.href = "self-referral";
-  }
+    }
       } else {
         alert("Age information missing. Please go back and re-enter the date of birth.");
       }

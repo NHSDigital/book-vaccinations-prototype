@@ -579,7 +579,7 @@ router.get(/proxyJointBooking/, function (req, res) {
                 res.redirect('nhs-no2');
                 }
             else {
-                res.redirect('postcode2');
+                res.redirect('dob-2-joint');
                 }
             });
 
@@ -864,6 +864,15 @@ router.get(/rsvJointSelfReferral/, function (req, res) {
         }
     else {
         res.redirect('add-person');
+        }
+    });
+
+                        router.get(/interimProxyEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('proxy-add-person');
         }
     });
 

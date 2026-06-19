@@ -47,7 +47,7 @@ Book vaccinations prototype
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is your date of birth?
+                What is {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}'s date of birth?
               </h1>
             </legend>
             <div class="nhsuk-hint" id="example-hint">
@@ -99,7 +99,7 @@ Book vaccinations prototype
 
 <script>
   
-  function checkAgeAndRedirect() {
+function checkAgeAndRedirect() {
   let day = document.getElementById("p1-day").value;
   let month = document.getElementById("p1-month").value;
   let year = document.getElementById("p1-year").value;
@@ -125,7 +125,6 @@ Book vaccinations prototype
 
   let dob = new Date(year, month - 1, day);
   let today = new Date();
-
   let age = today.getFullYear() - dob.getFullYear();
   let monthDiff = today.getMonth() - dob.getMonth();
   let dayDiff = today.getDate() - dob.getDate();
@@ -141,12 +140,12 @@ Book vaccinations prototype
   let monthName = monthNames[month - 1];
   let formattedDOB = `${day} ${monthName} ${year}`;
 
-  // Store data in localStorage
-  localStorage.setItem("dob1", formattedDOB);
-  localStorage.setItem("age1", age);
+ // Store DOB and age
+  localStorage.setItem("dob2", formattedDOB);
+  localStorage.setItem("age2", age);
 
-  // Redirect to confirmation page (decision made later)
-  window.location.href = "postcode";
+  // Redirect immediately to postcode2.html
+  window.location.href = "postcode2";
 }
 
 </script>

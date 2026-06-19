@@ -136,8 +136,8 @@ Book vaccinations prototype
 document.addEventListener("DOMContentLoaded", function() {
   function displaySavedVaccines() {
     // Pull values from localStorage
-    const vaccine1 = localStorage.getItem("vaccine1") || "Not selected";
-    const vaccine2 = localStorage.getItem("vaccine2") || "Not selected";
+    const vaccine1 = localStorage.getItem("vaccine1") || "Flu";
+    const vaccine2 = localStorage.getItem("vaccine2") || "Flu";
 
     // Update the visible text
     document.getElementById("vaccine1-display").textContent = vaccine1;
