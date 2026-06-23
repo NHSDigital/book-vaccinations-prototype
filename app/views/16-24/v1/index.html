@@ -1,0 +1,82 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-1624.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        Book a 16-24 vaccine catch-up appointment
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <P>You can use this service if you are 16-24 and are registered with a GP surgery in England.</P>
+
+      <p>Find out <a href="#">how to register with a GP surgery</a> if you are not registered.</p>
+
+      <p>You can also use a walk-in service if you are not registered with a GP surgery.</p>
+
+
+
+     <h2 class="nhsuk-heading-l" style="font-size: 32px;">How it works</h2>
+
+      <p>Use this service to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>book an catch-up appointment</li>
+        <li>check your existing appointment details</li>
+        <li>change an appointment</li>
+        <li>cancel an appointment</li>
+      </ul>
+
+
+      <!--<p>To change or cancel an appointment, you'll need the booking reference number we sent you.</p>-->
+
+
+      <a class="nhsuk-button" href="proxy-booking">
+        Book a vaccination appointment
+      </a>
+      <br>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="manage/ref-no">
+        View, cancel or change an existing appointment
+      </a>
+
+
+            <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-0">
+        Page last reviewed: {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'month': -1}) }}<br>
+        Next review due: 1 {{ date({month: 'long', year: 'numeric'}, {'month': +1}) }}
+      </p>
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

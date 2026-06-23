@@ -22,7 +22,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "text": "Book a vaccination",
+        "text": "16-24 catch-up vaccinations",
         "href": "/"
       }
     })
@@ -32,24 +32,12 @@
 <!-- Edit the footer -->
 <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-{{ footer({
+  {{ footer({
   meta: {
     items: [
       {
         href: "/",
         text: "Home"
-      },
-      {
-        href: "https://design-history.prevention-services.nhs.uk/",
-        text: "Design history"
-      },
-      {
-        href: "other-work/index",
-        text: "Useful stuff"
-      },
-      {
-        href: "16-24/index",
-        text: "16-24 catch up"
       }
     ]
   }
