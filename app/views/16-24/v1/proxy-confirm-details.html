@@ -169,8 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // User confirmed, now redirect based on age
       if (!isNaN(age)) {
-        if (age >= 17 && age <= 18) {
-          window.location.href = "appt-postcode";
+        if (age >= 16 && age <= 24) {
+          window.location.href = "choose-appt";
         } else {
           window.location.href = "cannot-book";
         }
