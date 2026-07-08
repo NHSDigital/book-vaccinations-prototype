@@ -41,25 +41,25 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-    <form action="u16ProxyEligibleFlu" method="get" class="form">
+    <form action="u16SecondEligibleFlu" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Are you able to get a flu vaccine?
+              Is {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }} able to get a flu vaccine?
                           </h1>
           </legend>
 
-          <p class="nhsuk-body">You can get a flu vaccine if you:</p>
+          <p class="nhsuk-body">They can get a flu vaccine if they:</p>
           
             <ul class="nhsuk-list nhsuk-list--bullet">
                 <li>have a serious long-term health condition</li>
-                <li>are having treatment or medication which means you are at increased risk</li>
+                <li>are having treatment or medication which means they are at increased risk</li>
                 <li>live with or are in close contact with someone more likely to get infections (such as someone who has HIV, has had a transplant, is having certain treatments for cancer, lupus or rheumatoid arthritis)</li>
 
             </ul>
 
-            <p class="nhsuk-body">The vaccinator will ask some questions at the the appointment to check you can get a free flu vaccine.</p>
+            <p class="nhsuk-body">The vaccinator will ask some questions at the the appointment to check {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }} can get a free flu vaccine.</p>
 
 
         <div class="nhsuk-form-group">
@@ -68,7 +68,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, I can get a flu vaccine
+                Yes, they can get a flu vaccine
               </label>
             </div>
       
@@ -76,7 +76,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, I cannot get a flu vaccine
+                  No, they cannot get a flu vaccine
                 </label>
               </div>
   

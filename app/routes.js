@@ -926,4 +926,42 @@ router.get(/staggeredOpening/, function (req, res) {
     });
 
 
+
+                router.get(/u16EligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book');
+        }
+    else {
+        res.redirect('add-person-u16');
+        }
+    });
+
+                router.get(/u16ProxyEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('proxy-cannot-book');
+        }
+    else {
+        res.redirect('u16-add-person');
+        }
+    });
+
+                    router.get(/u16AddSecondPerson/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('appt-postcode');
+        }
+    else {
+        res.redirect('joint/name2');
+        }
+    });
+
+                    router.get(/u16SecondEligibleFlu/, function (req, res) {
+    if (req.query.radioGroup === "no" ) {
+        res.redirect('cannot-book2');
+        }
+    else {
+        res.redirect('add-person2');
+        }
+    });
+
+
 module.exports = router;

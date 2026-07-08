@@ -92,9 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Route based on age
-        if (age >= 65 && age <= 120) {
-      window.location.href = "add-person";
-    }  else {
+    if (age >= 65 && age <= 120) {
+      window.location.href = "proxy-add-person";
+    } else if (age >= 2 && age <= 16) {
+      window.location.href = "4-15-self-referral";
+    } else {
       window.location.href = "proxy-self-referral";
     }
   });

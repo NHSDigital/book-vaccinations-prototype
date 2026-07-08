@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   continueButton.addEventListener("click", function () {
 
-    const age = parseInt(localStorage.getItem("age2"), 10);
+    const age = parseInt(localStorage.getItem("age1"), 10);
 
     if (isNaN(age)) {
       alert("Age information missing. Please go back and re-enter your date of birth.");
@@ -92,9 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Route based on age
-        if (age >= 65 && age <= 120) {
+    if (age >= 65 && age <= 120) {
       window.location.href = "add-person2";
-    }  else {
+    } else if (age >= 2 && age <= 16) {
+      window.location.href = "4-15-self-referral2";
+    } else {
       window.location.href = "self-referral2";
     }
   });
