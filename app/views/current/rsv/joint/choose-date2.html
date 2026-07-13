@@ -41,7 +41,6 @@ Book vaccinations prototype
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-
       <form action="choose-time-range" method="get" class="form">
 
         <fieldset class="nhsuk-fieldset">
@@ -52,15 +51,11 @@ Book vaccinations prototype
           </legend>
           <p>{{data['pharmacy']}}</p>
 
-                                <div id="flu-inset" class="nhsuk-inset-text" style="display: none;">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>{{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}: {{data['vaccine']}}<br>
-            {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}: {{data['vaccine2']}}</span>
-          </p>
-        <p>If you can't find a vaccination site near you, you can <a href="#" id="change-to-covid">look for COVID-19 only appointments</a>.</p>
-      </div>
+          <div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
 
-
+  <p>Appointments are available from 1 October onwards.</p>
+</div>
 
           <p class="nhsuk-body-l">Next 10 available days</p>
         <div class="nhsuk-form-group">
@@ -72,8 +67,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +11}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Available
+                Morning and afternoon available
               </div>
             </div>
       
@@ -83,8 +77,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +12}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -94,8 +87,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +13}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -105,8 +97,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +14}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -116,8 +107,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +15}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Afternoon available
               </div>
             </div>
 
@@ -127,8 +117,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +16}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Available
+                Morning and afternoon available
               </div>
             </div>
       
@@ -138,8 +127,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +17}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -149,8 +137,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +18}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -160,8 +147,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +19}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -171,8 +157,7 @@ Book vaccinations prototype
                 {{ date({weekday: 'long', day: 'numeric', month: 'long'}, {'day': +20}) }}
               </label>
               <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                AM - Available <br>
-                PM - Unavailable
+                Morning available
               </div>
             </div>
 
@@ -197,7 +182,7 @@ Book vaccinations prototype
                 <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="choose-date3">
                   <span class="nhsuk-pagination__title">Show later dates</span>
                   <span class="nhsuk-u-visually-hidden">:</span>
-                  <span class="nhsuk-pagination__page">Next 10 available days</span>
+                  <span class="nhsuk-pagination__page">Next 5 available days</span>
                   <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="34" height="34">
                     <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
                   </svg>

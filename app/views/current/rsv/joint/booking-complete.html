@@ -68,31 +68,18 @@ Book vaccinations prototype
                 </div>
             <hr>
               <h2 class="nhsuk-heading-m">Booking details</h2>
-           <table class="nhsuk-table">
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Name
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Appointment
-                  </th>
-                </tr>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}</td>
-                <td class="nhsuk-table__cell">{{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display-1"></span></td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">{{ data['first-name2'] | default('John') }} {{ data['last-name2'] | default('Doe') }}</td>
-                <td class="nhsuk-table__cell">{{data['hour'] | default('10') }}{{data['time-2'] | default(':30am')}}<br><span id="vaccine-display-2"></span></td>
-              </tr>
-            </tbody>
-          </table>        
-
-    
-    
           <dl class="nhsuk-summary-list">  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Vaccine type
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                RSV (Respiratory syncytial virus)
+              </dd>
+          
+          
+            </div>
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Site location
@@ -113,7 +100,30 @@ Book vaccinations prototype
                 </dd>
             
             
-              </div>  
+              </div>
+              
+             <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                First appointment
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}<br>
+                {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
+              </dd>
+          
+            </div>
+            
+             <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Second appointment
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['first-name2'] | default('Arvid') }} {{ data['last-name2'] | default('Lindblad') }}<br>
+                {{data['hour'] | default('10') }}{{data['time-2'] | default(':40am')}}
+              </dd>
+          
+            </div>
+
           
           </dl>       
               

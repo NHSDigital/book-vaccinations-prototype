@@ -170,11 +170,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // User confirmed, now redirect based on age
       if (!isNaN(age)) {
-        if (age >= 75 && age <= 120) {
-          window.location.href = "add-person2";
-        } else {
-          window.location.href = "self-referral-joint";
-        }
+      if (age >= 75 && age <= 120) {
+      window.location.href = "add-person-2";
+    } else if (age >= 65 && age <= 74) {
+      window.location.href = "self-referral-65-74-2";
+    } else {
+      window.location.href = "self-referral-2";
+    }
       } else {
         alert("Age information missing. Please go back and re-enter the date of birth.");
       }
