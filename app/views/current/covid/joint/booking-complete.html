@@ -67,42 +67,53 @@ Book vaccinations prototype
                 </div>
               <h2 class="nhsuk-heading-m">Booking details</h2>
 
-                        <dl class="nhsuk-summary-list">  
+          <dl class="nhsuk-summary-list">
+
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
-               {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}
+                Vaccination type
               </dt>
               <dd class="nhsuk-summary-list__value">
-               {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}<br><span id="vaccine-display-1"></span>
+                <span id="vaccine-display">COVID-19</span>
               </dd>
           
-
+          
             </div>
 
-            <div class="nhsuk-summary-list__row">
+            <!--<div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                  {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}
+                  Access needs
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['hour'] | default('10') }}{{data['time-2'] | default(':40am') }}<br><span id="vaccine-display-2"></span>
+                  Accessible toilet available</br>
+                  Braille translation service
                 </dd>
             
-              </div>  
-
-          </dl>     
-
-    
-    
-              <h2 class="nhsuk-heading-m">Appointment</h2>
-          <dl class="nhsuk-summary-list">  
+                <dd class="nhsuk-summary-list__actions">
+            
+                  <a href="appt-postcode">
+                    Change<span class="nhsuk-u-visually-hidden"> Access needs for anyone attending the appointment</span>
+                  </a>
+            
+                </dd>
+            
+              </div>-->
+  
             <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 Site location
               </dt>
               <dd class="nhsuk-summary-list__value">
-                Benjamin Chemist<br>190 S/Newington High st<br>Stoke Newington<br>London<br>N16 7JD
+               {{data ['pharmacy']}}
               </dd>
           
+              <!--<dd class="nhsuk-summary-list__actions">
+          
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                </a>
+          
+              </dd>-->
           
             </div>
 
@@ -111,14 +122,40 @@ Book vaccinations prototype
                   Date
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  {{data['date']}}
+               {{data ['date']}}
                 </dd>
             
-
+                <!--<dd class="nhsuk-summary-list__actions">
             
-              </div>  
-          
-          </dl>       
+                  <a href="choose-date">
+                    Change<span class="nhsuk-u-visually-hidden"> appointment date</span>
+                  </a>
+            
+                </dd>-->
+            
+              </div>
+  
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  First appointment
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                   {{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}<br>
+                   {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  First appointment
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                   {{ data['first-name2'] | default('Jane') }} {{ data['last-name2'] | default('Doe') }}<br>
+                   {{data['hour'] | default('10') }}{{data['time'] | default(':30am') }}
+                </dd>       
+              </div>
+            
+            </dl>     
               
 
 
