@@ -1,0 +1,81 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-rsv.html' %}
+
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <form action="proxy-booking" method="get" class="form">
+
+                <h1>
+                  No RSV vaccination sites found within 60 miles
+                </h1>
+
+                <p>We could not find any site offering RSV vaccination within 60 miles of your location</p>
+
+                <p>You can currently only book online appointments at some GP surgeries and pharmacies in parts of:</p>
+
+                <ul>
+                  <li>Essex</li>
+                  <li>Lancashire</li>
+                  <li>Leicestershire</li>
+                  <li>London</li>
+                  <li>Merseyside</li>
+                  <li>Suffolk</li>
+                  <li>The West Midlands</li>
+                </ul>
+
+                <p>If you need an RSV vaccine, you can book an appointment at a participating site in one of these areas, or contact your GP surgery to ask about local availability.</p>
+
+                <p>You may need to travel outside of your area to get vaccinated. </p>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue and book
+        </button>    </form>
+
+        <p><u href="#">Find a walk-in RSV site</u></p>
+    
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+
+        {% endblock %}
