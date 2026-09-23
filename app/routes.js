@@ -640,10 +640,10 @@ router.get(/jointSecondEligible/, function (req, res) {
 
 router.get(/jointEligible/, function (req, res) {
             if (req.query.radioGroup === "yes" ) {
-                res.redirect('co-admin');
+                res.redirect('co-admin2');
                 }
             else {
-                res.redirect('../ineligible-joint');
+                res.redirect('../cannot-book2');
                 }
             });
 
@@ -935,6 +935,7 @@ router.get(/staggeredOpening/, function (req, res) {
         res.redirect('add-person-u16');
         }
     });
+    
 
                 router.get(/u16ProxyEligibleFlu/, function (req, res) {
     if (req.query.radioGroup === "no" ) {
