@@ -33,19 +33,10 @@ Book vaccinations prototype
 
       <!-- Change the page title here -->
       <h1>
-        Book a 16-24 vaccine catch-up appointment
+        Book a {{ data['vaccineName'] }} appointment
       </h1>
 
-      <p>You can use this service if you've been invited for one of these vaccines:</p>
-
-      <ul>
-        <li>MMR</li>
-        <li>HPV</li>
-        <li>MenACWY</li>
-        <li>Td/IPV</li>
-      </ul>
-
-      <p>If you need more than one of these, you can get them at the same time. You only need to book one appointment</p>
+      <p>You can use this service if you've been invited for a {{ data['vaccineName'] }} vaccine.</p>
 
      <h2 class="nhsuk-heading-l" style="font-size: 32px;">Who can use this service</h2>
 
