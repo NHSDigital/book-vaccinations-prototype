@@ -58,7 +58,7 @@ Book vaccinations prototype
 <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional" data-module="nhsuk-checkboxes">
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="true" data-checkbox-exclusive-group="checkboxOption" checked="true">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption" checked="true">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-email">
             Email
           </label>
@@ -71,7 +71,7 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send email reminders
       </div>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" value="leighton.will1@email.com">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text" value="{{ data['email'] | default('leighton.will1@email.com') }}">
           </div>
         </div>
 
@@ -90,28 +90,12 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send text reminders
       </div>
-      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text" value="07766123456">
-          </div>
-      </div>
-
-              <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="landline" aria-controls="conditional-contact-3" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
-            Landline
-          </label>
-        </div>
-        <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-3">
-          <div class="nhsuk-form-group">
-            <p>We cannot send reminders to a landline. The vaccination site may call this number if they need to cancel or change the appointment. </p>
-            <label class="nhsuk-label" for="landline">
-              Landline number
-            </label> 
-      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="landline" name="landline" type="text">
+      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text" value="{{ data['phone'] | default('07712345678') }}">
           </div>
       </div>
 
 
-        <!--<div class="nhsuk-checkboxes__divider">or</div>
+        <div class="nhsuk-checkboxes__divider">or</div>
 
 
         <div class="nhsuk-checkboxes__item">
@@ -119,7 +103,7 @@ Book vaccinations prototype
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-phone">
             I do not have an email or mobile
           </label>
-        </div>-->
+        </div>
 
   </div>
 
