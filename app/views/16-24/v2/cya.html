@@ -61,7 +61,7 @@ Book vaccinations prototype
                 <tbody class="nhsuk-table__body">
                   <tr role="row" class="nhsuk-table__row">
                     <td class="nhsuk-table__cell">{{ data['first-name'] | default('Leighton') }} {{ data['last-name'] | default('Williams') }}</td>
-                    <td class="nhsuk-table__cell "><span id="dobDisplay"></span></td>
+                    <td class="nhsuk-table__cell "><span id="dob-display"></span></td>
                   </tr>
                 </tbody>
               </table>
@@ -80,7 +80,7 @@ Book vaccinations prototype
                 Vaccination type
               </dt>
               <dd class="nhsuk-summary-list__value">
-                <span id="vaccine-display">{{ data['vaccineName'] }}</span>
+                <span id="vaccine-display">{{ data['vaccineName'] | default('Td/IPV') }}</span>
               </dd>
           
               <!--<dd class="nhsuk-summary-list__actions">
@@ -206,15 +206,5 @@ Book vaccinations prototype
 
 </script>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const email = decodeURIComponent(params.get('email') || '');
-      const mobile = decodeURIComponent(params.get('mobile') || '');
-
-      document.getElementById('email-display').textContent = email || 'Not provided';
-      document.getElementById('mobile-display').textContent = mobile || 'Not provided';
-    });
-  </script>
 
 {% endblock %}

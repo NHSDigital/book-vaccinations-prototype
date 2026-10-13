@@ -58,7 +58,7 @@ Book vaccinations prototype
 <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional" data-module="nhsuk-checkboxes">
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption" checked="true">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-email">
             Email
           </label>
@@ -71,13 +71,13 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send email reminders
       </div>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text"  value="{{ data['pds-email'] | default('leighton.will1@email.com') }}">
           </div>
         </div>
 
 
         <div class="nhsuk-checkboxes__item">
-          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="mobile" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption">
+          <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="mobile" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption" checked="true">
           <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
             Mobile
           </label>
@@ -90,7 +90,7 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send text reminders
       </div>
-      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text" value="{{ data['pds-phone'] | default('07712345678') }}">
           </div>
       </div>
 
@@ -153,4 +153,5 @@ Book vaccinations prototype
         alert('Please select valid contact options and enter details if needed.');
       }
     }
-  </script>{% endblock %}
+  </script>
+  {% endblock %}

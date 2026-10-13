@@ -47,11 +47,11 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
+                  What is <span data-person-word="name"></span><span data-person-word="nameEnding"></span> postcode?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
+                Enter the postcode that is currently registered with <span data-person-word="possessive"></span> GP surgery.
               </div>
           
               <label class="nhsuk-label" for="postcode">
@@ -91,14 +91,37 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Route based on age
-    if (age >= 16 && age <= 24) {
-      window.location.href = "choose-appt";
-    } else {
-      window.location.href = "ineligible";
-    }
+      window.location.href = "email";
   });
 });
 </script>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+const personWords = {
+  name: person.pronoun === 'you'
+    ? 'your'
+    : person.fullName || '',
+  nameEnding: person.pronoun === 'you' ? '' : "'s",
+  subject: (pronounForms[person.pronoun] || pronounForms.you).subject,
+  object: (pronounForms[person.pronoun] || pronounForms.you).object,
+  possessive: (pronounForms[person.pronoun] || pronounForms.you).possessive,
+  myPossessive: person.pronoun === 'you' ? 'my' : 'their'
+};
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
 
 {% endblock %}

@@ -46,7 +46,7 @@ Book vaccinations prototype
           <div class="nhsuk-form-group">
             <h1 class="nhsuk-label-wrapper">
               <label class="nhsuk-label nhsuk-label--l" for="nhs-number">
-                What is your NHS number?
+                What is <span data-person-word="name"></span><span data-person-word="nameEnding"></span> NHS number?
               </label>
             </h1>
 <div class="nhsuk-hint" id="nhs-number-hint">This is a 10 digit number (like 999 123 4567) that you can find on an NHS letter, prescription or in the NHS App</div>            <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
@@ -61,4 +61,32 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+const personWords = {
+  name: person.pronoun === 'you'
+    ? 'your'
+    : person.fullName || '',
+  nameEnding: person.pronoun === 'you' ? '' : "'s",
+  subject: (pronounForms[person.pronoun] || pronounForms.you).subject,
+  object: (pronounForms[person.pronoun] || pronounForms.you).object,
+  possessive: (pronounForms[person.pronoun] || pronounForms.you).possessive,
+  myPossessive: person.pronoun === 'you' ? 'my' : 'their'
+};
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
 {% endblock %}

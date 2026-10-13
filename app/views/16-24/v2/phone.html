@@ -1,0 +1,153 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-1624.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{{ backLink({
+  href: "javascript:history.back()",
+  text: "Back"
+}) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <form class="form">
+
+          <div class="nhsuk-form-group">
+            <h1 class="nhsuk-label-wrapper">
+              <label class="nhsuk-label nhsuk-label--l" for="email">
+                What is the phone number registered with <span data-person-word="name"></span><span data-person-word="nameEnding"></span> GP?
+              </label>
+            </h1>
+
+            <p>We can use this to match it to their NHS record</p>
+
+<div class="nhsuk-hint" id="email-hint">For example 07700 900 000, or 020 7946 0000</div>   
+         
+<input class="nhsuk-input nhsuk-input--width-20" id="pds-phone" name="pds-phone" type="text" aria-describedby="phone-hint" required>
+          </div>
+  
+          <p><a href="#" id="skip-link"><span data-person-word="firstPersonSubject"></span> do not have a phone number registered with <span data-person-word="myPossessive"></span> GP</a></p>
+        <button id="continue-button" class="nhsuk-button" type="button">Continue</button>    
+        </form>
+      
+      </div>
+      <!-- End of content -->
+
+    </div>
+  </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const continueButton = document.getElementById("continue-button");
+  const skipLink = document.getElementById("skip-link");
+
+  if (continueButton) {
+    continueButton.addEventListener("click", function () {
+
+      const age = parseInt(localStorage.getItem("age1"), 10);
+
+      if (isNaN(age)) {
+        alert("Age information missing. Please go back and re-enter your date of birth.");
+        return;
+      }
+
+          if (age >= 16 && age <= 24) {
+      window.location.href = "choose-appt";
+    } else {
+      window.location.href = "ineligible";
+    }
+      });
+  }
+
+  if (skipLink) {
+    skipLink.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const age = parseInt(localStorage.getItem("age1"), 10);
+
+      if (isNaN(age)) {
+        alert("Age information missing. Please go back and re-enter your date of birth.");
+        return;
+      }
+
+      // Set your skip destination here
+          if (age >= 16 && age <= 24) {
+      window.location.href = "choose-appt";
+    } else {
+      window.location.href = "ineligible";
+    }
+      });
+  }
+
+});
+</script>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  // Default to second person if no pronoun was saved
+  const savedPronoun = person.pronoun || sessionStorage.getItem('pronoun') || 'you';
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+  const selectedPronouns =
+    pronounForms[savedPronoun] || pronounForms.you;
+
+  const isSecondPerson = savedPronoun === 'you';
+
+  const personWords = {
+    name: isSecondPerson ? 'your' : person.fullName || '',
+    nameEnding: isSecondPerson ? '' : "'s",
+    subject: selectedPronouns.subject,
+    object: selectedPronouns.object,
+    possessive: selectedPronouns.possessive,
+    myPossessive: isSecondPerson ? 'my' : 'their',
+    firstPersonSubject: isSecondPerson ? 'I' : 'they',
+    firstPersonPossessive: isSecondPerson ? 'my' : 'their'
+  };
+
+  // Populate all matching placeholders on the page
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+{% endblock %}
