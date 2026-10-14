@@ -965,20 +965,11 @@ router.get(/staggeredOpening/, function (req, res) {
     });
 
 
-// new proxy booking handler //
+// new  //
 
-router.get('/newProxyBooker', (req, res) => {
-  const answer = req.query.radioGroup;
-  const pronoun = getPronoun(answer);
-
-  if (!pronoun) {
-    return res.redirect('/name');
-  }
-
-  // Store the pronoun for the rest of the journey
-  req.session.bookingPronoun = pronoun;
-
-  res.redirect('/next-page');
+router.post('/email', function (req, res) {
+  req.session.data['pds-email'] = req.body['pds-email'] || '';
+  res.redirect('/phone');
 });
 
 module.exports = router;

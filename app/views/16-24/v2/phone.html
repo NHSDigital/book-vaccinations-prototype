@@ -50,7 +50,7 @@ Book vaccinations prototype
               </label>
             </h1>
 
-            <p>We can use this to match it to their NHS record</p>
+            <p>We can use this to match it to <span data-person-word="possessive"></span> NHS record</p>
 
 <div class="nhsuk-hint" id="email-hint">For example 07700 900 000, or 020 7946 0000</div>   
          
@@ -68,28 +68,34 @@ Book vaccinations prototype
   </div>
 
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const continueButton = document.getElementById("continue-button");
   const skipLink = document.getElementById("skip-link");
+  const phoneInput = document.getElementById("pds-phone");
 
-  if (continueButton) {
-    continueButton.addEventListener("click", function () {
+  function continueToNextPage() {
+    const age = parseInt(localStorage.getItem("age1"), 10);
 
-      const age = parseInt(localStorage.getItem("age1"), 10);
+    if (isNaN(age)) {
+      alert("Age information missing. Please go back and re-enter your date of birth.");
+      return;
+    }
 
-      if (isNaN(age)) {
-        alert("Age information missing. Please go back and re-enter your date of birth.");
-        return;
-      }
+    // Save the phone number for later pages
+    sessionStorage.setItem("pds-phone", phoneInput.value.trim());
 
-          if (age >= 16 && age <= 24) {
+    // Preserve existing routing
+    if (age >= 16 && age <= 24) {
       window.location.href = "choose-appt";
     } else {
       window.location.href = "ineligible";
     }
-      });
+  }
+
+  if (continueButton) {
+    continueButton.addEventListener("click", continueToNextPage);
   }
 
   if (skipLink) {
@@ -103,15 +109,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Set your skip destination here
-          if (age >= 16 && age <= 24) {
-      window.location.href = "choose-appt";
-    } else {
-      window.location.href = "ineligible";
-    }
-      });
-  }
+      // Clear any previously saved phone number when skipping
+      sessionStorage.removeItem("pds-phone");
 
+      if (age >= 16 && age <= 24) {
+        window.location.href = "choose-appt";
+      } else {
+        window.location.href = "ineligible";
+      }
+    });
+  }
 });
 </script>
 

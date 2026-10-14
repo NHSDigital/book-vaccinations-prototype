@@ -71,7 +71,7 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send email reminders
       </div>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text"  value="{{ data['pds-email'] | default('leighton.will1@email.com') }}">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="pds-email" name="pds-email" type="email" value="">
           </div>
         </div>
 
@@ -90,7 +90,7 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send text reminders
       </div>
-      <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text" value="{{ data['pds-phone'] | default('07712345678') }}">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="pds-phone" name="pds-phone" type="phone" value="">
           </div>
       </div>
 
@@ -122,6 +122,40 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Retrieve saved contact details
+  const contactDetails = {
+    email: sessionStorage.getItem("pds-email") || "",
+    phone: sessionStorage.getItem("pds-phone") || ""
+  };
+
+  // Make both values available to other scripts on this page
+  window.pdsContactDetails = contactDetails;
+
+  // Populate any matching output placeholders
+  document.querySelectorAll("[data-pds-contact]").forEach(function (element) {
+    const field = element.dataset.pdsContact;
+
+    if (field in contactDetails) {
+      element.textContent = contactDetails[field] || "Not provided";
+    }
+  });
+
+  const emailInput = document.getElementById("pds-email");
+const phoneInput = document.getElementById("pds-phone");
+
+if (emailInput) {
+  emailInput.value = sessionStorage.getItem("pds-email") || "";
+}
+
+if (phoneInput) {
+  phoneInput.value = sessionStorage.getItem("pds-phone") || "";
+}
+});
+</script>
+
 
 <script>
     function handleContactFormSubmission(event) {

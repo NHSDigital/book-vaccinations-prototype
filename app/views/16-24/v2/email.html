@@ -73,19 +73,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const continueButton = document.getElementById("continue-button");
   const skipLink = document.getElementById("skip-link");
 
-  if (continueButton) {
-    continueButton.addEventListener("click", function () {
+if (continueButton) {
+  continueButton.addEventListener("click", function () {
+    const age = parseInt(localStorage.getItem("age1"), 10);
 
-      const age = parseInt(localStorage.getItem("age1"), 10);
+    if (isNaN(age)) {
+      alert("Age information missing. Please go back and re-enter your date of birth.");
+      return;
+    }
 
-      if (isNaN(age)) {
-        alert("Age information missing. Please go back and re-enter your date of birth.");
-        return;
-      }
+    // Save the email address for later use
+    const email = document.getElementById("pds-email").value.trim();
+    sessionStorage.setItem("pds-email", email);
 
-      window.location.href = "phone";
-    });
-  }
+    // Keep your existing routing
+    window.location.href = "phone";
+  });
+}
 
   if (skipLink) {
     skipLink.addEventListener("click", function (event) {
