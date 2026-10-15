@@ -73,7 +73,7 @@ Book vaccinations prototype
                   Mobile number
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                  <span id="mobile-display">Loading...</span>
+                  <span id="phone-display"></span>
                 </dd>
             
                 <dd class="nhsuk-summary-list__actions">
@@ -112,10 +112,10 @@ Book vaccinations prototype
     window.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       const email = decodeURIComponent(params.get('email') || '');
-      const mobile = decodeURIComponent(params.get('mobile') || '');
+      const phone = decodeURIComponent(params.get('phone') || '');
 
       document.getElementById('email-display').textContent = email || 'Not provided';
-      document.getElementById('mobile-display').textContent = mobile || 'Not provided';
+      document.getElementById('phone-display').textContent = phone || 'Not provided';
     });
   </script>
 {% endblock %}

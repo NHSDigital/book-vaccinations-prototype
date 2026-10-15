@@ -54,7 +54,7 @@ Book vaccinations prototype
 
 <div class="nhsuk-hint" id="email-hint">For example, name@example.com</div>   
 
-<input class="nhsuk-input nhsuk-input--width-20" id="pds-email" name="pds-email" type="text" aria-describedby="email-hint">
+<input class="nhsuk-input nhsuk-input--width-20" id="email" name="email" type="text" aria-describedby="email-hint">
           </div>
   
           <p><a href="#" id="skip-link"><span data-person-word="firstPersonSubject"></span> do not have an email address registered with <span data-person-word="myPossessive"></span> GP</a></p>
@@ -83,8 +83,8 @@ if (continueButton) {
     }
 
     // Save the email address for later use
-    const email = document.getElementById("pds-email").value.trim();
-    sessionStorage.setItem("pds-email", email);
+    const email = document.getElementById("email").value.trim();
+    sessionStorage.setItem("email", email);
 
     // Keep your existing routing
     window.location.href = "phone";

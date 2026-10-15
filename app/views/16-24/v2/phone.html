@@ -54,7 +54,7 @@ Book vaccinations prototype
 
 <div class="nhsuk-hint" id="email-hint">For example 07700 900 000, or 020 7946 0000</div>   
          
-<input class="nhsuk-input nhsuk-input--width-20" id="pds-phone" name="pds-phone" type="text" aria-describedby="phone-hint" required>
+<input class="nhsuk-input nhsuk-input--width-20" id="phone" name="phone" type="text" aria-describedby="phone-hint" required>
           </div>
   
           <p><a href="#" id="skip-link"><span data-person-word="firstPersonSubject"></span> do not have a phone number registered with <span data-person-word="myPossessive"></span> GP</a></p>
@@ -73,7 +73,7 @@ Book vaccinations prototype
 document.addEventListener("DOMContentLoaded", function () {
   const continueButton = document.getElementById("continue-button");
   const skipLink = document.getElementById("skip-link");
-  const phoneInput = document.getElementById("pds-phone");
+  const phoneInput = document.getElementById("phone");
 
   function continueToNextPage() {
     const age = parseInt(localStorage.getItem("age1"), 10);
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Save the phone number for later pages
-    sessionStorage.setItem("pds-phone", phoneInput.value.trim());
+    sessionStorage.setItem("phone", phoneInput.value.trim());
 
     // Preserve existing routing
     if (age >= 16 && age <= 24) {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Clear any previously saved phone number when skipping
-      sessionStorage.removeItem("pds-phone");
+      sessionStorage.removeItem("phone");
 
       if (age >= 16 && age <= 24) {
         window.location.href = "choose-appt";

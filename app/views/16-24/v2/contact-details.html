@@ -41,7 +41,7 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form class="form">
+  <form class="form">
 
 
 
@@ -59,7 +59,7 @@ Book vaccinations prototype
 
         <div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="checkboxOption-1" name="checkboxOption" type="checkbox" value="email" aria-controls="conditional-contact-1" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption" checked="true">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-email">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-1">
             Email
           </label>
         </div>
@@ -71,16 +71,16 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send email reminders
       </div>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="pds-email" name="pds-email" type="email" value="">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="email" value="">
           </div>
         </div>
 
 
         <div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="checkboxOption-2" name="checkboxOption" type="checkbox" value="mobile" aria-controls="conditional-contact-2" aria-expanded="false" data-checkbox-exclusive-group="checkboxOption" checked="true">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-text">
-            Mobile
-          </label>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-2">
+             mobile
+            </label>
         </div>
         <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-contact-2">
           <div class="nhsuk-form-group">
@@ -90,7 +90,7 @@ Book vaccinations prototype
             <div class="nhsuk-hint" id="contact-hint">
         We'll use this to send text reminders
       </div>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="pds-phone" name="pds-phone" type="phone" value="">
+            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="phone" value="">
           </div>
       </div>
 
@@ -100,9 +100,9 @@ Book vaccinations prototype
 
         <div class="nhsuk-checkboxes__item">
           <input class="nhsuk-checkboxes__input" id="checkboxOption-3" name="checkboxOption" type="checkbox" value="landline" data-checkbox-exclusive data-checkbox-exclusive-group="checkboxOption">
-          <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-phone">
-            I do not have an email or mobile
-          </label>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="checkboxOption-3">
+             I do not have an email or mobile
+            </label>
         </div>
 
   </div>
@@ -127,8 +127,8 @@ Book vaccinations prototype
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve saved contact details
   const contactDetails = {
-    email: sessionStorage.getItem("pds-email") || "",
-    phone: sessionStorage.getItem("pds-phone") || ""
+    email: sessionStorage.getItem("email") || "",
+    phone: sessionStorage.getItem("phone") || ""
   };
 
   // Make both values available to other scripts on this page
@@ -143,49 +143,93 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const emailInput = document.getElementById("pds-email");
-const phoneInput = document.getElementById("pds-phone");
+  const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
 
 if (emailInput) {
-  emailInput.value = sessionStorage.getItem("pds-email") || "";
+  emailInput.value = sessionStorage.getItem("email") || "";
 }
 
 if (phoneInput) {
-  phoneInput.value = sessionStorage.getItem("pds-phone") || "";
+  phoneInput.value = sessionStorage.getItem("phone") || "";
 }
 });
 </script>
 
 
+
 <script>
-    function handleContactFormSubmission(event) {
-      event.preventDefault();
+  function handleContactFormSubmission(event) {
+    event.preventDefault();
 
-      // Checkbox states
-      const emailChecked = document.getElementById('checkboxOption-1').checked;
-      const mobileChecked = document.getElementById('checkboxOption-2').checked;
-      const landlineChecked = document.getElementById('checkboxOption-3').checked;
+    // Checkbox states
+    const emailChecked = document.getElementById('checkboxOption-1').checked;
+    const phoneChecked = document.getElementById('checkboxOption-2').checked;
+    const landlineChecked = document.getElementById('checkboxOption-3').checked;
 
-      // Input values
-      const emailValue = document.getElementById('email').value.trim();
-      const mobileValue = document.getElementById('mobile').value.trim();
+    // Input values
+    const emailValue = document.getElementById('email').value.trim();
+    const phoneValue = document.getElementById('phone').value.trim();
 
-      if ((emailChecked || mobileChecked) && !landlineChecked) {
-        // Build URL parameters
-        const params = new URLSearchParams();
-        if (emailChecked && emailValue) {
-          params.append('email', encodeURIComponent(emailValue));
-        }
-        if (mobileChecked && mobileValue) {
-          params.append('mobile', encodeURIComponent(mobileValue));
-        }
-
-        window.location.href = `cya-contact?${params.toString()}`;
-      } else if (landlineChecked && !emailChecked && !mobileChecked) {
-        window.location.href = 'landline';
-      } else {
-        alert('Please select valid contact options and enter details if needed.');
+    // Landline is exclusive: it cannot be selected with other options
+    if (landlineChecked) {
+      if (emailChecked || phoneChecked) {
+        alert('Please select either email/mobile or the option indicating you have neither.');
+        return;
       }
+
+      // Clear saved contact details when neither method is available
+      sessionStorage.removeItem('email');
+      sessionStorage.removeItem('phone');
+
+      window.location.href = 'landline';
+      return;
     }
-  </script>
+
+    // At least one contact method must be selected
+    if (!emailChecked && !phoneChecked) {
+      alert('Please select at least one contact option.');
+      return;
+    }
+
+    // Validate required details for selected methods
+    if (emailChecked && !emailValue) {
+      alert('Please enter your email address.');
+      document.getElementById('email').focus();
+      return;
+    }
+
+    if (phoneChecked && !phoneValue) {
+      alert('Please enter your mobile phone number.');
+      document.getElementById('phone').focus();
+      return;
+    }
+
+    // Save contact details for the first script and subsequent pages
+    if (emailChecked) {
+      sessionStorage.setItem('email', emailValue);
+    } else {
+      sessionStorage.removeItem('email');
+    }
+
+    if (phoneChecked) {
+      sessionStorage.setItem('phone', phoneValue);
+    } else {
+      sessionStorage.removeItem('phone');
+    }
+
+    // Build URL parameters for the confirmation page
+    const params = new URLSearchParams();
+
+    if (emailChecked) {
+      params.set('email', emailValue);
+    }
+
+    if (phoneChecked) {
+      params.set('phone', phoneValue);
+    }
+
+    window.location.href = `cya-contact?${params.toString()}`;
+  }
+</script>
   {% endblock %}
