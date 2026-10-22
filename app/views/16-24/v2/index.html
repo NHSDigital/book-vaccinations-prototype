@@ -34,29 +34,33 @@ Book vaccinations prototype
       <!-- Change the page title here -->
 
 
-      <div class="placeholder">
+      <!--<div class="placeholder">
       
                           <br><br><p>This is a placeholder page, the content does not accurately reflect the requirements for these services.</p>
-                       </div>
+                       </div>-->
 
       <h1>
-        Book a {{ data['vaccineName'] }} appointment
+        Book, change or cancel a Td/IPV vaccination appointment
       </h1>
 
-      <p>You can use this service if you've been invited for a {{ data['vaccineName'] }} vaccine.</p>
+      <p class="nhsuk-body-l">The Td/IPV vaccine (also called the 3-in-1 teenage booster) helps protect against tetanus, diphtheria and polio.</p>
 
-      <p>A quick sentence to describe what the vaccine is</p>
+      <p>Use this service to:</p>
 
-      <p><span class="nhsuk-u-font-weight-bold">OPTIONAL</span> sentence to let users know if the vaccine is routinely given in more than 1 dose</p>
+      <ul>
+        <li>book, change or cancel an appointment</li>
+        <li>check your appointment details</li>
+      </ul>
 
-     <h2 class="nhsuk-heading-l" style="font-size: 32px;">Who can use this service</h2>
+      <h2>Who can get the Td/IPV 3-in-1 teenage booster?</h2>
 
-      <P>You can use this service if you are 16-24 and are registered with a GP surgery in England.</P>
+            <ul>
+        <li>Sixteen to 24 year olds (up to the day before their 25th birthday)</li>
+        <li>Those who have not had a dose of the 3-in-1 teenage booster before</li>
+      </ul>
 
-      <p>Find out <a href="#">how to register with a GP surgery</a> if you are not registered.</p>
-
-      <p>links to devolved countries - <span class="nhsuk-u-font-weight-bold">IF WE CAN FIND THEM.</span></p>
-
+      <h2>How it works</h2>
+      <p data-block-key="39ih3">Most people can have the 3-in-1 teenage booster, including if they are pregnant or breastfeeding.</p><p data-block-key="2c28m">The service will check if they need a vaccine before booking.</p><p data-block-key="cmkdj"><b>We'll ask for your NHS number and/or personal details, including your date of birth, when booking.</b></p><p data-block-key="4pig3">To change or cancel an appointment, you'll need the booking reference number we sent you.</p>
 
       <a class="nhsuk-button" href="proxy-booking">
         Book a vaccination appointment
@@ -67,9 +71,16 @@ Book vaccinations prototype
         View, cancel or change an existing appointment
       </a>
 
-     <h2 class="nhsuk-heading-l" style="font-size: 32px;">Find a walk-in centre</h2>
+     <!--<h2 class="nhsuk-heading-l" style="font-size: 32px;">Find a walk-in centre</h2>
 
-     <p>You can find a walk-in vaccination site to get a [vaccine-type] vaccine</p>
+     <p>You can find a walk-in vaccination site to get a [vaccine-type] vaccine</p>-->
+
+     <h2>Booking with the NHS App</h2>
+
+     <p>If you've signed up for the NHS App, you can use it to book a Td/IPV vaccination.</p>
+
+     <p>You can <a href="#">download or sign up for the NHS App</a> if you have not used it before.</p>
+
 
      <h2>Book over the phone</h2>
 
@@ -82,10 +93,10 @@ Book vaccinations prototype
       <a href="https://signvideo.co.uk/nhs119/">NHS 119 British Sign Language (BSL) interpreter service</a> 
       if you have difficulties communicating or hearing, or if you are a BSL user.</p>
 
-      <h2>More information</h2>
+      <!--<h2>More information</h2>
       <ul>
         <li><a href="#">Find out more about the [vaccine-type] vaccine</a></li>
-    </ul>
+    </ul>-->
 
             <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-0">
         Page last reviewed: {{ date({day: 'numeric', month: 'long', year: 'numeric'}, {'month': -1}) }}<br>
