@@ -46,18 +46,18 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-              Are you able to get a COVID-19 vaccine?
+              <span data-person-word="Are"></span> <span data-person-word="name"></span> able to get a COVID-19 vaccine?
                           </h1>
           </legend>
 
-          <p class="nhsuk-body">As you're under 75, you might be able to get a COVID-19 vaccine if you:          </p>
+          <p class="nhsuk-body">As <span data-person-word="subject"></span>'re under 75, <span data-person-word="subject"></span> might be able to get a COVID-19 vaccine if <span data-person-word="subject"></span>:          </p>
           
 <ul class="nhsuk-list nhsuk-list--bullet">
   <li>have a weakened immune system (immunosuppressed)</li>
   <li>are in a long-stay residential care home for older adults</li>
 </ul>
 
-<p class="nhsuk-body">You might be asked some questions at the appointment to check you can get a COVID-19 vaccine.</p>
+<p class="nhsuk-body"><span data-person-word="Subject"></span> might be asked some questions at the appointment to check <span data-person-word="subject"></span> can get a COVID-19 vaccine.</p>
 
 
         <div class="nhsuk-form-group">
@@ -66,7 +66,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-yes">
-                Yes, I'm eligible for a COVID-19 vaccine
+                Yes, <span data-person-word="am"></span> can get a COVID-19 vaccine
               </label>
             </div>
       
@@ -74,7 +74,7 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="immune-radio" name="radioGroup" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="immune-radio-no">
-                  No, I am not eligible
+                  No, <span data-person-word="am"></span> cannot get a COVID-19 vaccine
                 </label>
               </div>
   
@@ -91,4 +91,62 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+  const isFirstPerson = person.pronoun === 'you';
+  const pronouns = pronounForms[person.pronoun] || pronounForms.you;
+
+  const personWords = {
+    name: isFirstPerson ? 'you' : person.fullName || '',
+    nameEnding: isFirstPerson ? '' : "'s",
+
+    subject: pronouns.subject,
+    object: pronouns.object,
+    possessive: pronouns.possessive,
+    myPossessive: isFirstPerson ? 'my' : 'their',
+
+    // Linking verb immediately before the name variable
+    are: isFirstPerson ? 'are' : 'is',
+
+    // First-person and third-person forms
+    am: isFirstPerson ? "I" : "they",
+    contraction: isFirstPerson ? "I'm" : "they're",
+    contractionExpanded: isFirstPerson ? 'I am' : 'they are',
+
+    // Capitalised versions of all variables
+    Name: isFirstPerson ? 'Your' : person.fullName || '',
+    NameEnding: isFirstPerson ? '' : "'s",
+
+    Subject: capitalize(pronouns.subject),
+    Object: capitalize(pronouns.object),
+    Possessive: capitalize(pronouns.possessive),
+    MyPossessive: isFirstPerson ? 'My' : 'Their',
+
+    Are: isFirstPerson ? 'Are' : 'Is',
+
+    Am: isFirstPerson ? "I" : "They",
+    Contraction: isFirstPerson ? "I'm" : "They're",
+    ContractionExpanded: isFirstPerson ? 'I am' : 'They are'
+  };
+
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
 {% endblock %}

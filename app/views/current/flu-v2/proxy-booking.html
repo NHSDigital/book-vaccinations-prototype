@@ -41,46 +41,70 @@ Book vaccinations prototype
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
 
-        <form action="newProxyBooker" method="get" class="form">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend">
-            <h1 class="nhsuk-heading-l">
-                Are you booking for yourself or someone else?
-              </h1>
-          </legend>
+<form id="bookingForm" class="form">
+  <fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend">
+      <h1 class="nhsuk-heading-l">
+        Are you booking for yourself or someone else?
+      </h1>
+    </legend>
 
-          <div class="nhsuk-hint" id="nhs-number-hint">
-          <p>You can add a second person to this booking later</p>
-        </div>
-        <div class="nhsuk-form-group">
-          <div class="nhsuk-radios" data-module="nhsuk-radios">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Book for myself
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                Book for someone else
-              </label>
-            </div>
-      
-          </div>
-          </div>
-        </fieldset>
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-    </form>
-      
+    <div class="nhsuk-radios">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="booking-yes" name="radioGroup" type="radio" value="yes" required>
+        <label class="nhsuk-label nhsuk-radios__label" for="booking-yes">
+          Book for myself
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="booking-no" name="radioGroup" type="radio" value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="booking-no">
+          Book for someone else
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <br>
+
+  <button class="nhsuk-button" type="submit">
+    Continue
+  </button>
+</form>      
       </div>
       <!-- End of content -->
 
     </div>
   </div>
+
+<script>
+  function getPronoun(answer) {
+    let pronoun;
+
+    if (answer === 'yes') {
+      pronoun = 'you';
+    } else if (answer === 'no') {
+      pronoun = 'they';
+    }
+
+    return pronoun;
+  }
+
+  document.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const answer = document.querySelector(
+      'input[name="radioGroup"]:checked'
+    );
+
+    if (!answer) return;
+
+    const pronoun = getPronoun(answer.value);
+
+    sessionStorage.setItem('pronoun', pronoun);
+
+    window.location.href = 'name';
+  });
+</script>
 {% endblock %}

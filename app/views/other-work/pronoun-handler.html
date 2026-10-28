@@ -1,0 +1,344 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Book vaccinations prototype
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h2>Javascript</h2>
+
+      <p>Copy this JS and place it at the bottom of your page</p>
+<div class="script-container">
+  <div class="script-header">
+    <span>JavaScript — Person &amp; Pronouns</span>
+    <button
+      type="button"
+      class="copy-script-button"
+      onclick="copyPersonScript(this)"
+    >
+      Copy code
+    </button>
+  </div>
+
+  <pre><code id="person-script-code">&lt;script&gt;
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+  const isFirstPerson = person.pronoun === 'you';
+  const pronouns = pronounForms[person.pronoun] || pronounForms.you;
+
+  const personWords = {
+    name: isFirstPerson ? 'your' : person.fullName || '',
+    nameEnding: isFirstPerson ? '' : "'s",
+
+    subject: pronouns.subject,
+    object: pronouns.object,
+    possessive: pronouns.possessive,
+    myPossessive: isFirstPerson ? 'my' : 'their',
+
+    are: isFirstPerson ? 'are' : 'is',
+
+    contraction: isFirstPerson ? "I'm" : "they're",
+    contractionExpanded: isFirstPerson ? 'I am' : 'they are',
+
+    Name: isFirstPerson ? 'Your' : person.fullName || '',
+    NameEnding: isFirstPerson ? '' : "'s",
+
+    Subject: capitalize(pronouns.subject),
+    Object: capitalize(pronouns.object),
+    Possessive: capitalize(pronouns.possessive),
+    MyPossessive: isFirstPerson ? 'My' : 'Their',
+
+    Are: isFirstPerson ? 'Are' : 'Is',
+
+    Contraction: isFirstPerson ? "I'm" : "They're",
+    ContractionExpanded: isFirstPerson ? 'I am' : 'They are'
+  };
+
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+&lt;/script&gt;</code></pre>
+</div>
+
+<style>
+  .script-container {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111827;
+    color: #e5e7eb;
+    font-family: system-ui, sans-serif;
+  }
+
+  .script-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #1f2937;
+    border-bottom: 1px solid #374151;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .copy-script-button {
+    padding: 8px 13px;
+    border: 0;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .copy-script-button:hover {
+    background: #1d4ed8;
+  }
+
+  .script-container pre {
+    margin: 0;
+    padding: 18px;
+    max-height: 520px;
+    overflow: auto;
+    white-space: pre;
+    tab-size: 2;
+    font: 13px/1.65 monospace;
+  }
+
+  .script-container code {
+    color: #d1fae5;
+  }
+</style>
+
+<script>
+  function copyPersonScript(button) {
+    const code = document.getElementById('person-script-code');
+    const text = code.textContent
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+
+    navigator.clipboard.writeText(text).then(function () {
+      const original = button.textContent;
+      button.textContent = 'Copied!';
+      setTimeout(function () {
+        button.textContent = original;
+      }, 2000);
+    }).catch(function () {
+      const range = document.createRange();
+      range.selectNodeContents(code);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      button.textContent = 'Select and copy';
+    });
+  }
+</script>
+<br><br>
+<h3>Table with language variables</h3>
+
+<p>Use the variables here wherever you need to call the right pronoun/verb</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Span snippet code</th>
+      <th>Example rendered output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td><code>&lt;span data-person-word="name"&gt;&lt;/span&gt;</code></td>
+      <td>your / Alex</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><code>&lt;span data-person-word="Name"&gt;&lt;/span&gt;</code></td>
+      <td>Your / Alex</td>
+    </tr>
+    <tr>
+      <td>nameEnding</td>
+      <td><code>&lt;span data-person-word="nameEnding"&gt;&lt;/span&gt;</code></td>
+      <td>'s / empty</td>
+    </tr>
+    <tr>
+      <td>NameEnding</td>
+      <td><code>&lt;span data-person-word="NameEnding"&gt;&lt;/span&gt;</code></td>
+      <td>'s / empty</td>
+    </tr>
+    <tr>
+      <td>subject</td>
+      <td><code>&lt;span data-person-word="subject"&gt;&lt;/span&gt;</code></td>
+      <td>he / she / they / you</td>
+    </tr>
+    <tr>
+      <td>Subject</td>
+      <td><code>&lt;span data-person-word="Subject"&gt;&lt;/span&gt;</code></td>
+      <td>He / She / They / You</td>
+    </tr>
+    <tr>
+      <td>object</td>
+      <td><code>&lt;span data-person-word="object"&gt;&lt;/span&gt;</code></td>
+      <td>him / her / them / you</td>
+    </tr>
+    <tr>
+      <td>Object</td>
+      <td><code>&lt;span data-person-word="Object"&gt;&lt;/span&gt;</code></td>
+      <td>Him / Her / Them / You</td>
+    </tr>
+    <tr>
+      <td>possessive</td>
+      <td><code>&lt;span data-person-word="possessive"&gt;&lt;/span&gt;</code></td>
+      <td>his / her / their / your</td>
+    </tr>
+    <tr>
+      <td>Possessive</td>
+      <td><code>&lt;span data-person-word="Possessive"&gt;&lt;/span&gt;</code></td>
+      <td>His / Her / Their / Your</td>
+    </tr>
+    <tr>
+      <td>myPossessive</td>
+      <td><code>&lt;span data-person-word="myPossessive"&gt;&lt;/span&gt;</code></td>
+      <td>my / their</td>
+    </tr>
+    <tr>
+      <td>MyPossessive</td>
+      <td><code>&lt;span data-person-word="MyPossessive"&gt;&lt;/span&gt;</code></td>
+      <td>My / Their</td>
+    </tr>
+    <tr>
+      <td>are</td>
+      <td><code>&lt;span data-person-word="are"&gt;&lt;/span&gt;</code></td>
+      <td>are / is</td>
+    </tr>
+    <tr>
+      <td>Are</td>
+      <td><code>&lt;span data-person-word="Are"&gt;&lt;/span&gt;</code></td>
+      <td>Are / Is</td>
+    </tr>
+    <tr>
+      <td>contraction</td>
+      <td><code>&lt;span data-person-word="contraction"&gt;&lt;/span&gt;</code></td>
+      <td>I'm / they're</td>
+    </tr>
+    <tr>
+      <td>Contraction</td>
+      <td><code>&lt;span data-person-word="Contraction"&gt;&lt;/span&gt;</code></td>
+      <td>I'm / They're</td>
+    </tr>
+    <tr>
+      <td>contractionExpanded</td>
+      <td><code>&lt;span data-person-word="contractionExpanded"&gt;&lt;/span&gt;</code></td>
+      <td>I am / they are</td>
+    </tr>
+    <tr>
+      <td>ContractionExpanded</td>
+      <td><code>&lt;span data-person-word="ContractionExpanded"&gt;&lt;/span&gt;</code></td>
+      <td>I am / They are</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </div>
+  </div>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+  const isFirstPerson = person.pronoun === 'you';
+  const pronouns = pronounForms[person.pronoun] || pronounForms.you;
+
+  const personWords = {
+    name: isFirstPerson ? 'your' : person.fullName || '',
+    nameEnding: isFirstPerson ? '' : "'s",
+
+    subject: pronouns.subject,
+    object: pronouns.object,
+    possessive: pronouns.possessive,
+    myPossessive: isFirstPerson ? 'my' : 'their',
+
+    // Linking verb immediately before the name variable
+    are: isFirstPerson ? 'are' : 'is',
+
+    // First-person and third-person forms
+    contraction: isFirstPerson ? "I'm" : "they're",
+    contractionExpanded: isFirstPerson ? 'I am' : 'they are',
+
+    // Capitalised versions of all variables
+    Name: isFirstPerson ? 'Your' : person.fullName || '',
+    NameEnding: isFirstPerson ? '' : "'s",
+
+    Subject: capitalize(pronouns.subject),
+    Object: capitalize(pronouns.object),
+    Possessive: capitalize(pronouns.possessive),
+    MyPossessive: isFirstPerson ? 'My' : 'Their',
+
+    Are: isFirstPerson ? 'Are' : 'Is',
+
+    Contraction: isFirstPerson ? "I'm" : "They're",
+    ContractionExpanded: isFirstPerson ? 'I am' : 'They are'
+  };
+
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
+{% endblock %}
