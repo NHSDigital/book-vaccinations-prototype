@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-covid.html' %}
+{% extends 'layout-rsv.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -46,7 +46,7 @@ Book vaccinations prototype
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend">
             <h1 class="nhsuk-heading-l">
-                Do you know your NHS number?
+                Do you know <span data-person-word="name"></span><span data-person-word="nameEnding"></span> NHS number?
               </h1>
           </legend>
 
@@ -57,15 +57,18 @@ Book vaccinations prototype
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-yes">
-                Yes, I know my NHS number
+                Yes, I know <span data-person-word="myPossessive"></span> NHS number
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="nhs-no-radio" name="radioGroup" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="nhs-no-radio-no">
-                No, enter my postcode and date of birth instead
+                No, I'll enter other personal details instead
               </label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-item-hint">
+                For example, date of birth, postcode and phone number
+              </div>
             </div>
       
           </div>
@@ -81,4 +84,32 @@ Book vaccinations prototype
 
     </div>
   </div>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+const personWords = {
+  name: person.pronoun === 'you'
+    ? 'your'
+    : person.fullName || '',
+  nameEnding: person.pronoun === 'you' ? '' : "'s",
+  subject: (pronounForms[person.pronoun] || pronounForms.you).subject,
+  object: (pronounForms[person.pronoun] || pronounForms.you).object,
+  possessive: (pronounForms[person.pronoun] || pronounForms.you).possessive,
+  myPossessive: person.pronoun === 'you' ? 'my' : 'their'
+};
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
 {% endblock %}

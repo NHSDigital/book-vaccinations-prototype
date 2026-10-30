@@ -4,7 +4,6 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-rsv.html' %}
-
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -48,7 +47,7 @@ Book vaccinations prototype
           <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is your date of birth?
+                What is <span data-person-word="name"></span><span data-person-word="nameEnding"></span> date of birth?
               </h1>
             </legend>
             <div class="nhsuk-hint" id="example-hint">
@@ -151,4 +150,32 @@ Book vaccinations prototype
 }
 
 </script>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+const personWords = {
+  name: person.pronoun === 'you'
+    ? 'your'
+    : person.fullName || '',
+  nameEnding: person.pronoun === 'you' ? '' : "'s",
+  subject: (pronounForms[person.pronoun] || pronounForms.you).subject,
+  object: (pronounForms[person.pronoun] || pronounForms.you).object,
+  possessive: (pronounForms[person.pronoun] || pronounForms.you).possessive,
+  myPossessive: person.pronoun === 'you' ? 'my' : 'their'
+};
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
 {% endblock %}

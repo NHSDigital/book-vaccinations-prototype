@@ -47,11 +47,11 @@ Book vaccinations prototype
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                 <h1 class="nhsuk-fieldset__heading">
-                  What is your postcode?
+                  What is <span data-person-word="name"></span><span data-person-word="nameEnding"></span> postcode?
                 </h1>
               </legend>
               <div class="nhsuk-hint" id="example-hint">
-                Enter the postcode that is currently registered with your GP surgery.
+                Enter the postcode that is currently registered with <span data-person-word="possessive"></span> GP surgery.
               </div>
           
               <label class="nhsuk-label" for="postcode">
@@ -94,13 +94,63 @@ document.addEventListener("DOMContentLoaded", function () {
     // Route based on age
     if (age >= 75 && age <= 120) {
       window.location.href = "co-admin";
-    } else if (age >= 65 && age <= 74) {
-      window.location.href = "self-referral-65-74";
     } else {
       window.location.href = "self-referral";
     }
   });
 });
 </script>
+
+<script>
+  const person = JSON.parse(sessionStorage.getItem('person') || '{}');
+
+  const pronounForms = {
+    he:   { subject: 'he',   object: 'him',  possessive: 'his' },
+    she:  { subject: 'she',  object: 'her',  possessive: 'her' },
+    they: { subject: 'they', object: 'them', possessive: 'their' },
+    you:  { subject: 'you',  object: 'you',  possessive: 'your' }
+  };
+
+  const isFirstPerson = person.pronoun === 'you';
+  const pronouns = pronounForms[person.pronoun] || pronounForms.you;
+
+  const personWords = {
+    name: isFirstPerson ? 'your' : person.fullName || '',
+    nameEnding: isFirstPerson ? '' : "'s",
+
+    subject: pronouns.subject,
+    object: pronouns.object,
+    possessive: pronouns.possessive,
+    myPossessive: isFirstPerson ? 'my' : 'their',
+
+    are: isFirstPerson ? 'are' : 'is',
+
+    contraction: isFirstPerson ? "I'm" : "they're",
+    contractionExpanded: isFirstPerson ? 'I am' : 'they are',
+
+    Name: isFirstPerson ? 'You' : person.fullName || '',
+    NameEnding: isFirstPerson ? '' : "'s",
+
+    Subject: capitalize(pronouns.subject),
+    Object: capitalize(pronouns.object),
+    Possessive: capitalize(pronouns.possessive),
+    MyPossessive: isFirstPerson ? 'My' : 'Their',
+
+    Are: isFirstPerson ? 'Are' : 'Is',
+
+    Contraction: isFirstPerson ? "I'm" : "They're",
+    ContractionExpanded: isFirstPerson ? 'I am' : 'They are'
+  };
+
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  document.querySelectorAll('[data-person-word]').forEach(function (element) {
+    const word = element.dataset.personWord;
+    element.textContent = personWords[word] || '';
+  });
+</script>
+
 
 {% endblock %}
